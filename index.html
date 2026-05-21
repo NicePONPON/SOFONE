@@ -355,11 +355,9 @@
       logo.style.transform = 'scale(1.2) rotate(-6deg)';
       setTimeout(function() { logo.style.transform = ''; }, 350);
 
-      const heroInner = document.querySelector('.hero-inner');
-      const rect = heroInner.getBoundingClientRect();
-      const cx = rect.left + rect.width  / 2;
-      const cy = rect.top  + rect.height / 2;
-      const radius = (Math.max(rect.width, rect.height) / 2 + 72) * 0.5;
+      const cx = window.innerWidth / 2;
+      const cy = window.innerHeight / 2;
+      const radius = Math.min(window.innerWidth, window.innerHeight) * 0.22;
 
       const COUNT = 12;
       const emojis = FOOD_EMOJIS.slice().sort(function() { return Math.random() - 0.5; }).slice(0, COUNT);
