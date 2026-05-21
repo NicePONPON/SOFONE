@@ -228,6 +228,14 @@ body {
   text-align: left;
 }
 
+@media (min-width: 640px) {
+  .sol-grid {
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 
 .sol-card {
   background: rgba(255, 255, 255, 0.05);
