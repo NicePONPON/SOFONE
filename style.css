@@ -42,7 +42,6 @@ body {
   align-items: center;
   gap: 2.5rem;
   width: 100%;
-  transform: translateY(-100px);
 }
 
 .hero-main {
