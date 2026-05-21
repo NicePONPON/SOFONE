@@ -35,13 +35,13 @@
         無需更換核心 ERP，協助品牌快速落地展店。
       </p>
     </div>
-    <div class="scroll-hint" aria-hidden="true">
+    <button class="scroll-hint" aria-label="向下捲動至品牌故事">
       <svg width="24" height="32" viewBox="0 0 24 32" fill="none">
         <line x1="12" y1="0" x2="12" y2="20" stroke="#aaaaaa" stroke-width="2" stroke-linecap="round"/>
         <polyline points="6,14 12,22 18,14" stroke="#aaaaaa" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
-    </div>
+    </button>
   </section>
 
   <!-- ── 2. Brand Story ──────────────────────────── -->
@@ -93,7 +93,12 @@
               <p class="sol-situation">新店開張、跨國佈局，或系統整合需求</p>
               <p class="sol-value">無需更換既有 ERP，極速整合軟硬體</p>
             </div>
-            <span class="sol-chevron" aria-hidden="true">↓</span>
+            <span class="sol-chevron" aria-hidden="true">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
+                <polyline points="1,1 6.5,7 12,1" stroke="currentColor" stroke-width="1.75"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="sol-detail" hidden>
             <p>從單店到千店，我們協助品牌在不中斷既有 ERP 的前提下，快速完成軟硬體整合、跨國系統部署與新店開幕，讓展店速度成為您的競爭優勢。</p>
@@ -112,7 +117,12 @@
               <p class="sol-situation">人力吃緊、行銷活動無法精準落地</p>
               <p class="sol-value">門店營運與行銷自動化，數據直接變現</p>
             </div>
-            <span class="sol-chevron" aria-hidden="true">↓</span>
+            <span class="sol-chevron" aria-hidden="true">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
+                <polyline points="1,1 6.5,7 12,1" stroke="currentColor" stroke-width="1.75"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="sol-detail" hidden>
             <p>透過自動化排程、精準行銷與即時數據儀表板，讓每一家門店都能以更少的人力創造更高的坪效與營收，行銷活動從規劃到落地一氣呵成。</p>
@@ -130,7 +140,12 @@
               <p class="sol-situation">擔心系統當機、數據延遲</p>
               <p class="sol-value">高穩定性與擴充性，確保海內外門店毫秒級同步</p>
             </div>
-            <span class="sol-chevron" aria-hidden="true">↓</span>
+            <span class="sol-chevron" aria-hidden="true">
+              <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
+                <polyline points="1,1 6.5,7 12,1" stroke="currentColor" stroke-width="1.75"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </button>
           <div class="sol-detail" hidden>
             <p>以高併發架構設計，支援海內外門店數據毫秒級同步，提供全天候系統穩定性保障，讓您的全球連鎖營運不再有後顧之憂。</p>
@@ -266,6 +281,11 @@
   </section>
 
   <script>
+    /* ── Scroll hint → smooth scroll to brand story ──────────── */
+    document.querySelector('.scroll-hint').addEventListener('click', function() {
+      document.querySelector('.story').scrollIntoView({ behavior: 'smooth' });
+    });
+
     /* ── Solution cards accordion ─────────────────────────────── */
     document.querySelectorAll('.sol-toggle').forEach(function(btn) {
       btn.addEventListener('click', function() {
@@ -305,7 +325,7 @@
       const rect = heroInner.getBoundingClientRect();
       const cx = rect.left + rect.width  / 2;
       const cy = rect.top  + rect.height / 2;
-      const radius = Math.max(rect.width, rect.height) / 2 + 72;
+      const radius = (Math.max(rect.width, rect.height) / 2 + 72) * 0.5;
 
       const COUNT = 12;
       const emojis = FOOD_EMOJIS.slice().sort(function() { return Math.random() - 0.5; }).slice(0, COUNT);
