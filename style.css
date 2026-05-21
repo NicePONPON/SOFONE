@@ -360,6 +360,19 @@ body {
   margin-right: 0.35em;
 }
 
+.sol-more-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--c-violet);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: opacity 0.2s ease;
+}
+
+.sol-more-link:hover { opacity: 0.7; }
+
 .sol-cta-wrap {
   margin-top: 2.5rem;
   display: flex;
