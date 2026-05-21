@@ -412,9 +412,9 @@
       }, 1500);
     });
 
-    /* ── Hide missing partner logos ───────────────────────────────── */
+    /* ── Hide missing partner logos (keep layout space) ──────────── */
     document.querySelectorAll('.marquee-track img').forEach(function(img) {
-      img.addEventListener('error', function() { this.style.display = 'none'; });
+      img.addEventListener('error', function() { this.style.opacity = '0'; });
     });
 
     /* ── Brand Story scroll-fade ───────────────────────────────────── */

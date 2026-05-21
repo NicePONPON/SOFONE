@@ -452,9 +452,8 @@ body {
 
 .marquee-track img {
   flex-shrink: 0;
+  width: 120px;
   height: 52px;
-  width: auto;
-  max-width: 140px;
   object-fit: contain;
   opacity: 0.85;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -465,9 +464,9 @@ body {
   transform: scale(1.08);
 }
 
-/* hide images that fail to load */
-.marquee-track img[src=""] ,
-.marquee-track img:not([src]) { display: none; }
+/* keep layout space even when image fails — only hide visually */
+.marquee-track img[src=""],
+.marquee-track img:not([src]) { opacity: 0; }
 
 @keyframes marquee-scroll {
   0%   { transform: translateX(0); }
