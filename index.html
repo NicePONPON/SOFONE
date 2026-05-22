@@ -13,6 +13,14 @@
 </head>
 <body>
 
+  <!-- ── Language Picker ───────────────────────────── -->
+  <div class="lang-picker" role="group" aria-label="Language selection">
+    <button class="lang-btn active" data-lang="zh-TW">繁中</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="ja">日本語</button>
+    <button class="lang-btn" data-lang="vi">Viet</button>
+  </div>
+
   <!-- ── 1. Hero ─────────────────────────────────── -->
   <section class="hero">
     <div class="hero-inner">
@@ -25,15 +33,11 @@
         </div>
         <div class="hero-sep" aria-hidden="true"></div>
         <h1 class="hero-taglines">
-          <span>串聯軟硬體</span>
-          <span>賦能數位轉型</span>
+          <span data-i18n="tagline1">串聯軟硬體</span>
+          <span data-i18n="tagline2">賦能數位轉型</span>
         </h1>
       </div>
-      <p class="hero-sub">
-        以高彈性、低耦合的系統整合方案，<br>
-        為企業打造更強健的營運生態圈。<br>
-        無需更換核心 ERP，協助品牌快速落地展店。
-      </p>
+      <p class="hero-sub" data-i18n-html="sub">以高彈性、低耦合的系統整合方案，<br>為企業打造更強健的營運生態圈。<br>無需更換核心 ERP，協助品牌快速落地展店。</p>
     </div>
     <button class="scroll-hint" aria-label="向下捲動至品牌故事">
       <svg width="24" height="32" viewBox="0 0 24 32" fill="none">
@@ -47,28 +51,16 @@
   <!-- ── 2. Brand Story ──────────────────────────── -->
   <section class="story">
     <div class="story-inner">
-      <p class="story-eyebrow">OUR STORY</p>
-      <h2 class="story-headline">智慧商業，全球佈局</h2>
+      <p class="story-eyebrow" data-i18n="story_eyebrow">OUR STORY</p>
+      <h2 class="story-headline" data-i18n="story_headline">智慧商業，全球佈局</h2>
 
       <div class="story-beats">
-        <p class="beat" data-beat="0">
-          SOFONE 碩豐數位科技 是一家專注於 智慧商用設備、SaaS 應用與 AI 數據營運 的科技企業，致力於打造可跨國部署的智慧商業技術平台。
-        </p>
-        <p class="beat" data-beat="1">
-          公司以 軟硬整合能力 為核心，服務涵蓋 IoT 設備管理、餐飲零售中台、商用系統整合與 POS 終端應用，協助企業加速營運數位化與智慧化。
-        </p>
-        <p class="beat beat--bold" data-beat="2">
-          碩豐提供的不僅是產品，而是一套從設備、系統到數據的全生命週期整合能力（End-to-End Value Chain）服務商。
-        </p>
-        <p class="beat" data-beat="3">
-          透過自研平台與模組化架構，我們為餐飲、零售與商用設備製造商提供可快速複製、可規模化擴展、可全球化運行的數位解決方案。
-        </p>
-        <p class="beat beat--pillars" data-beat="4">
-          IoT 設備管理&nbsp;&nbsp;·&nbsp;&nbsp;餐飲零售中台&nbsp;&nbsp;·&nbsp;&nbsp;商用系統整合
-        </p>
-        <p class="beat beat--label" data-beat="5">
-          SOFONE 碩豐數位科技 — END-TO-END VALUE CHAIN
-        </p>
+        <p class="beat" data-beat="0" data-i18n="beat_0">SOFONE 碩豐數位科技 是一家專注於 智慧商用設備、SaaS 應用與 AI 數據營運 的科技企業，致力於打造可跨國部署的智慧商業技術平台。</p>
+        <p class="beat" data-beat="1" data-i18n="beat_1">公司以 軟硬整合能力 為核心，服務涵蓋 IoT 設備管理、餐飲零售中台、商用系統整合與 POS 終端應用，協助企業加速營運數位化與智慧化。</p>
+        <p class="beat beat--bold" data-beat="2" data-i18n="beat_2">碩豐提供的不僅是產品，而是一套從設備、系統到數據的全生命週期整合能力（End-to-End Value Chain）服務商。</p>
+        <p class="beat" data-beat="3" data-i18n="beat_3">透過自研平台與模組化架構，我們為餐飲、零售與商用設備製造商提供可快速複製、可規模化擴展、可全球化運行的數位解決方案。</p>
+        <p class="beat beat--pillars" data-beat="4" data-i18n-html="beat_4">IoT 設備管理&nbsp;&nbsp;·&nbsp;&nbsp;餐飲零售中台&nbsp;&nbsp;·&nbsp;&nbsp;商用系統整合</p>
+        <p class="beat beat--label" data-beat="5">SOFONE 碩豐數位科技 — END-TO-END VALUE CHAIN</p>
       </div>
     </div>
   </section>
@@ -76,8 +68,8 @@
   <!-- ── 3. Solutions ───────────────────────────── -->
   <section class="solutions">
     <div class="solutions-inner">
-      <p class="solutions-eyebrow">CORE TECHNOLOGY ENGINES</p>
-      <h2 class="solutions-heading">四大核心技術引擎</h2>
+      <p class="solutions-eyebrow" data-i18n="solutions_eyebrow">CORE TECHNOLOGY ENGINES</p>
+      <h2 class="solutions-heading" data-i18n="solutions_heading">四大核心技術引擎</h2>
 
       <div class="sol-grid">
 
@@ -89,8 +81,8 @@
             </div>
             <div class="sol-info">
               <h3 class="sol-title">Autopos</h3>
-              <p class="sol-situation">全球佈局的企業級 POS 生態</p>
-              <p class="sol-value">跨國境的營運穩定性與 AI 智慧管理</p>
+              <p class="sol-situation" data-i18n="autopos_situation">全球佈局的企業級 POS 生態</p>
+              <p class="sol-value" data-i18n="autopos_value">跨國境的營運穩定性與 AI 智慧管理</p>
             </div>
             <span class="sol-chevron" aria-hidden="true">
               <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
@@ -101,11 +93,11 @@
           </button>
           <div class="sol-detail" hidden>
             <ul class="sol-bullets">
-              <li><strong>全球化部署</strong>具備跨國稅務、金流對接及報表整合能力，導入 AI 輔助分析提升決策效率。</li>
-              <li><strong>高規格硬體</strong>獨家提供 IP54 防潑水等級 POS 與 Kiosk 硬體，穩定性優於業界標準。</li>
-              <li><strong>模組化擴充</strong>支援零錢找零、多元支付（QR Code）等模組隨插即用，彈性滿足複雜展店需求。</li>
+              <li data-i18n-html="autopos_b1"><strong>全球化部署</strong>具備跨國稅務、金流對接及報表整合能力，導入 AI 輔助分析提升決策效率。</li>
+              <li data-i18n-html="autopos_b2"><strong>高規格硬體</strong>獨家提供 IP54 防潑水等級 POS 與 Kiosk 硬體，穩定性優於業界標準。</li>
+              <li data-i18n-html="autopos_b3"><strong>模組化擴充</strong>支援零錢找零、多元支付（QR Code）等模組隨插即用，彈性滿足複雜展店需求。</li>
             </ul>
-            <a href="https://autopos.tw/" target="_blank" rel="noopener noreferrer" class="sol-more-link">更多資訊 →</a>
+            <a href="https://autopos.tw/" target="_blank" rel="noopener noreferrer" class="sol-more-link" data-i18n="more_info">更多資訊 →</a>
           </div>
         </div>
 
@@ -117,8 +109,8 @@
             </div>
             <div class="sol-info">
               <h3 class="sol-title">CentrDX</h3>
-              <p class="sol-situation">敏捷上手的數位化先鋒</p>
-              <p class="sol-value">快速導入、輕量化、開箱即用</p>
+              <p class="sol-situation" data-i18n="centrdx_situation">敏捷上手的數位化先鋒</p>
+              <p class="sol-value" data-i18n="centrdx_value">快速導入、輕量化、開箱即用</p>
             </div>
             <span class="sol-chevron" aria-hidden="true">
               <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
@@ -129,10 +121,10 @@
           </button>
           <div class="sol-detail" hidden>
             <ul class="sol-bullets">
-              <li><strong>入門首選</strong>專為輕量化、無客製化需求的店型設計。</li>
-              <li><strong>高效作業</strong>提供掃碼點餐與自動出單功能，協助連鎖品牌快速達成標準化展店目標。</li>
+              <li data-i18n-html="centrdx_b1"><strong>入門首選</strong>專為輕量化、無客製化需求的店型設計。</li>
+              <li data-i18n-html="centrdx_b2"><strong>高效作業</strong>提供掃碼點餐與自動出單功能，協助連鎖品牌快速達成標準化展店目標。</li>
             </ul>
-            <a href="https://centrdx.shop/" target="_blank" rel="noopener noreferrer" class="sol-more-link">更多資訊 →</a>
+            <a href="https://centrdx.shop/" target="_blank" rel="noopener noreferrer" class="sol-more-link" data-i18n="more_info">更多資訊 →</a>
           </div>
         </div>
 
@@ -144,8 +136,8 @@
             </div>
             <div class="sol-info">
               <h3 class="sol-title">IMSDOM</h3>
-              <p class="sol-situation">集團運營與品質標準化引擎</p>
-              <p class="sol-value">人才複製、經驗傳承、大幅降低 HR 訓練成本</p>
+              <p class="sol-situation" data-i18n="imsdom_situation">集團運營與品質標準化引擎</p>
+              <p class="sol-value" data-i18n="imsdom_value">人才複製、經驗傳承、大幅降低 HR 訓練成本</p>
             </div>
             <span class="sol-chevron" aria-hidden="true">
               <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
@@ -156,10 +148,10 @@
           </button>
           <div class="sol-detail" hidden>
             <ul class="sol-bullets">
-              <li><strong>自動化考核</strong>內建集團級教育訓練與考核評分系統，自動化取代人工培訓作業。</li>
-              <li><strong>品質均質化</strong>確保無論直營或加盟，全體門店擁有一致的服務與考核標準。</li>
+              <li data-i18n-html="imsdom_b1"><strong>自動化考核</strong>內建集團級教育訓練與考核評分系統，自動化取代人工培訓作業。</li>
+              <li data-i18n-html="imsdom_b2"><strong>品質均質化</strong>確保無論直營或加盟，全體門店擁有一致的服務與考核標準。</li>
             </ul>
-            <a href="https://www.imsdom.com/" target="_blank" rel="noopener noreferrer" class="sol-more-link">更多資訊 →</a>
+            <a href="https://www.imsdom.com/" target="_blank" rel="noopener noreferrer" class="sol-more-link" data-i18n="more_info">更多資訊 →</a>
           </div>
         </div>
 
@@ -171,8 +163,8 @@
             </div>
             <div class="sol-info">
               <h3 class="sol-title">Nubis</h3>
-              <p class="sol-situation">全球連鎖的智慧控制塔</p>
-              <p class="sol-value">遠端維運、數據透明、一鍵同步</p>
+              <p class="sol-situation" data-i18n="nubis_situation">全球連鎖的智慧控制塔</p>
+              <p class="sol-value" data-i18n="nubis_value">遠端維運、數據透明、一鍵同步</p>
             </div>
             <span class="sol-chevron" aria-hidden="true">
               <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
@@ -183,24 +175,24 @@
           </button>
           <div class="sol-detail" hidden>
             <ul class="sol-bullets">
-              <li><strong>遠端全監控</strong>即時掌握場區內所有硬體與連網設備狀態，無需派人跑現場。</li>
-              <li><strong>一鍵同步管理</strong>支援遠端軟體更新與資料夾內容同步，即時掌握設備運作狀況，將維護成本降至最低。</li>
+              <li data-i18n-html="nubis_b1"><strong>遠端全監控</strong>即時掌握場區內所有硬體與連網設備狀態，無需派人跑現場。</li>
+              <li data-i18n-html="nubis_b2"><strong>一鍵同步管理</strong>支援遠端軟體更新與資料夾內容同步，即時掌握設備運作狀況，將維護成本降至最低。</li>
             </ul>
-            <a href="https://centrdx.shop/" target="_blank" rel="noopener noreferrer" class="sol-more-link">更多資訊 →</a>
+            <a href="https://centrdx.shop/" target="_blank" rel="noopener noreferrer" class="sol-more-link" data-i18n="more_info">更多資訊 →</a>
           </div>
         </div>
 
       </div>
 
       <div class="sol-cta-wrap">
-        <a href="#contact" class="sol-cta-btn">預約展店規劃諮詢</a>
+        <a href="#contact" class="sol-cta-btn" data-i18n="cta">預約展店規劃諮詢</a>
       </div>
     </div>
   </section>
 
   <!-- ── 4. Partners ────────────────────────────── -->
   <section class="partners">
-    <h2 class="partners-heading">合作夥伴</h2>
+    <h2 class="partners-heading" data-i18n="partners_heading">合作夥伴</h2>
 
     <div class="marquee-rows">
       <!-- Row 1: Customer 1–14 → left -->
@@ -310,7 +302,7 @@
   <section class="contact-section" id="contact">
     <div class="contact-card">
       <p class="contact-name">Chris Chen 陳泓宇</p>
-      <p class="contact-title">Sales Manager</p>
+      <p class="contact-title" data-i18n="contact_title">Sales Manager</p>
       <p class="contact-company">SOFONE 碩豐數位科技</p>
       <a href="tel:+886933857545" class="contact-link">0933-857-545</a>
       <a href="mailto:chris.chen@sofone.ai" class="contact-link">chris.chen@sofone.ai</a>
@@ -329,6 +321,173 @@
   </section>
 
   <script>
+    /* ── Translations ──────────────────────────────────────────── */
+    var TRANSLATIONS = {
+      'zh-TW': {
+        tagline1: '串聯軟硬體',
+        tagline2: '賦能數位轉型',
+        sub: '以高彈性、低耦合的系統整合方案，<br>為企業打造更強健的營運生態圈。<br>無需更換核心 ERP，協助品牌快速落地展店。',
+        story_eyebrow: 'OUR STORY',
+        story_headline: '智慧商業，全球佈局',
+        beat_0: 'SOFONE 碩豐數位科技 是一家專注於 智慧商用設備、SaaS 應用與 AI 數據營運 的科技企業，致力於打造可跨國部署的智慧商業技術平台。',
+        beat_1: '公司以 軟硬整合能力 為核心，服務涵蓋 IoT 設備管理、餐飲零售中台、商用系統整合與 POS 終端應用，協助企業加速營運數位化與智慧化。',
+        beat_2: '碩豐提供的不僅是產品，而是一套從設備、系統到數據的全生命週期整合能力（End-to-End Value Chain）服務商。',
+        beat_3: '透過自研平台與模組化架構，我們為餐飲、零售與商用設備製造商提供可快速複製、可規模化擴展、可全球化運行的數位解決方案。',
+        beat_4: 'IoT 設備管理&nbsp;&nbsp;·&nbsp;&nbsp;餐飲零售中台&nbsp;&nbsp;·&nbsp;&nbsp;商用系統整合',
+        solutions_eyebrow: 'CORE TECHNOLOGY ENGINES',
+        solutions_heading: '四大核心技術引擎',
+        autopos_situation: '全球佈局的企業級 POS 生態',
+        autopos_value: '跨國境的營運穩定性與 AI 智慧管理',
+        autopos_b1: '<strong>全球化部署</strong>具備跨國稅務、金流對接及報表整合能力，導入 AI 輔助分析提升決策效率。',
+        autopos_b2: '<strong>高規格硬體</strong>獨家提供 IP54 防潑水等級 POS 與 Kiosk 硬體，穩定性優於業界標準。',
+        autopos_b3: '<strong>模組化擴充</strong>支援零錢找零、多元支付（QR Code）等模組隨插即用，彈性滿足複雜展店需求。',
+        centrdx_situation: '敏捷上手的數位化先鋒',
+        centrdx_value: '快速導入、輕量化、開箱即用',
+        centrdx_b1: '<strong>入門首選</strong>專為輕量化、無客製化需求的店型設計。',
+        centrdx_b2: '<strong>高效作業</strong>提供掃碼點餐與自動出單功能，協助連鎖品牌快速達成標準化展店目標。',
+        imsdom_situation: '集團運營與品質標準化引擎',
+        imsdom_value: '人才複製、經驗傳承、大幅降低 HR 訓練成本',
+        imsdom_b1: '<strong>自動化考核</strong>內建集團級教育訓練與考核評分系統，自動化取代人工培訓作業。',
+        imsdom_b2: '<strong>品質均質化</strong>確保無論直營或加盟，全體門店擁有一致的服務與考核標準。',
+        nubis_situation: '全球連鎖的智慧控制塔',
+        nubis_value: '遠端維運、數據透明、一鍵同步',
+        nubis_b1: '<strong>遠端全監控</strong>即時掌握場區內所有硬體與連網設備狀態，無需派人跑現場。',
+        nubis_b2: '<strong>一鍵同步管理</strong>支援遠端軟體更新與資料夾內容同步，即時掌握設備運作狀況，將維護成本降至最低。',
+        more_info: '更多資訊 →',
+        cta: '預約展店規劃諮詢',
+        partners_heading: '合作夥伴',
+        contact_title: 'Sales Manager'
+      },
+      'en': {
+        tagline1: 'Connect Hardware & Software',
+        tagline2: 'Power Your Digital Transformation',
+        sub: 'Flexible, low-coupling system integration,<br>building a resilient operational ecosystem for enterprises.<br>No ERP replacement needed — accelerate your expansion.',
+        story_eyebrow: 'OUR STORY',
+        story_headline: 'Smart Commerce, Global Reach',
+        beat_0: 'SOFONE 碩豐數位科技 is a technology company specializing in smart commercial devices, SaaS applications, and AI-driven data operations — committed to building a cross-border intelligent business platform.',
+        beat_1: 'Hardware-software integration is our core competency. Our services span IoT device management, F&B retail middleware, commercial system integration, and POS applications — helping enterprises accelerate digital transformation.',
+        beat_2: "SOFONE doesn't just deliver products — we provide an end-to-end value chain capability spanning devices, systems, and data across the full lifecycle.",
+        beat_3: 'Through proprietary platforms and modular architecture, we offer rapidly replicable, scalable, and globally deployable digital solutions for F&B, retail, and commercial device manufacturers.',
+        beat_4: 'IoT Device Management&nbsp;&nbsp;·&nbsp;&nbsp;F&B Retail Middleware&nbsp;&nbsp;·&nbsp;&nbsp;Commercial System Integration',
+        solutions_eyebrow: 'CORE TECHNOLOGY ENGINES',
+        solutions_heading: 'Four Core Technology Engines',
+        autopos_situation: 'Enterprise POS Ecosystem for Global Chains',
+        autopos_value: 'Cross-border operational stability with AI-powered management',
+        autopos_b1: '<strong>Global Deployment</strong>Cross-border tax, payment integration & consolidated reporting with AI-assisted analytics for smarter decisions.',
+        autopos_b2: '<strong>High-Spec Hardware</strong>Exclusive IP54 splash-proof POS & Kiosk hardware — reliability above industry standard.',
+        autopos_b3: '<strong>Modular Expansion</strong>Plug-and-play change-making & multi-payment (QR Code) modules — flexible for complex expansion needs.',
+        centrdx_situation: 'The Agile Digital Pioneer',
+        centrdx_value: 'Fast deployment, lightweight, out-of-the-box ready',
+        centrdx_b1: '<strong>Beginner-Friendly</strong>Designed for lightweight operations with no customisation requirements.',
+        centrdx_b2: '<strong>Efficient Operations</strong>QR code ordering & auto-receipt printing — helping chains achieve standardised expansion fast.',
+        imsdom_situation: 'Group Operations & Quality Standardisation Engine',
+        imsdom_value: 'Talent replication, knowledge transfer, drastically reduce HR training costs',
+        imsdom_b1: '<strong>Automated Assessment</strong>Built-in group-level training & evaluation system — automates manual training workflows.',
+        imsdom_b2: '<strong>Quality Consistency</strong>Uniform service & evaluation standards across all outlets, whether direct or franchised.',
+        nubis_situation: 'Smart Control Tower for Global Chains',
+        nubis_value: 'Remote operations, transparent data, one-click sync',
+        nubis_b1: '<strong>Full Remote Monitoring</strong>Real-time visibility of all on-site hardware & networked devices — no need to dispatch staff.',
+        nubis_b2: '<strong>One-Click Sync</strong>Remote software updates & content sync — keep devices current and minimise maintenance costs.',
+        more_info: 'Learn More →',
+        cta: 'Book Your Expansion Planning Consultation',
+        partners_heading: 'Partners',
+        contact_title: 'Sales Manager'
+      },
+      'ja': {
+        tagline1: 'ハードとソフトを繋ぐ',
+        tagline2: 'デジタル変革を加速する',
+        sub: '柔軟で低結合のシステム統合ソリューションで、<br>企業の強固な運営エコシステムを構築します。<br>既存のERPはそのままに、迅速な展店を実現します。',
+        story_eyebrow: 'OUR STORY',
+        story_headline: 'スマートコマース、グローバル展開',
+        beat_0: 'SOFONE 碩豐數位科技は、スマート商用デバイス・SaaSアプリ・AIデータ運営に特化したテクノロジー企業であり、国境を越えて展開可能なインテリジェントビジネスプラットフォームの構築に取り組んでいます。',
+        beat_1: 'ハードウェアとソフトウェアの統合能力を核心に、IoTデバイス管理・飲食小売ミドルウェア・商用システム統合・POSアプリなど幅広いサービスを提供し、企業のデジタル化と知能化を加速します。',
+        beat_2: 'SOFONEが提供するのは製品だけでなく、デバイス・システム・データにわたるエンド・ツー・エンドバリューチェーン全体の統合能力です。',
+        beat_3: '自社プラットフォームとモジュラーアーキテクチャにより、飲食・小売・商用デバイスメーカー向けに、迅速複製・拡張・グローバル展開可能なデジタルソリューションを提供します。',
+        beat_4: 'IoTデバイス管理&nbsp;&nbsp;·&nbsp;&nbsp;飲食小売ミドルウェア&nbsp;&nbsp;·&nbsp;&nbsp;商用システム統合',
+        solutions_eyebrow: 'CORE TECHNOLOGY ENGINES',
+        solutions_heading: '4つのコアテクノロジーエンジン',
+        autopos_situation: 'グローバルチェーン向けエンタープライズPOSエコシステム',
+        autopos_value: '国境を越えた運営安定性とAIスマート管理',
+        autopos_b1: '<strong>グローバル展開</strong>越境税務・決済連携・レポート統合に対応し、AI分析で意思決定効率を向上します。',
+        autopos_b2: '<strong>高性能ハードウェア</strong>独自IP54防滴POS・Kioskハードウェアで業界標準を超える安定性を実現します。',
+        autopos_b3: '<strong>モジュラー拡張</strong>つり銭機・QRコード決済などのモジュールがプラグアンドプレイで対応します。',
+        centrdx_situation: 'アジャイルなデジタル先駆者',
+        centrdx_value: '迅速導入・軽量・すぐに使える',
+        centrdx_b1: '<strong>入門向け</strong>カスタマイズ不要の軽量店舗向けに設計されています。',
+        centrdx_b2: '<strong>効率的な運営</strong>QRコード注文と自動伝票発行で、チェーンの標準化展店を迅速に実現します。',
+        imsdom_situation: 'グループ運営・品質標準化エンジン',
+        imsdom_value: '人材育成・ノウハウ継承・HR研修コストを大幅削減',
+        imsdom_b1: '<strong>自動化評価</strong>グループレベルの研修・評価システムを内蔵し、手動研修を自動化します。',
+        imsdom_b2: '<strong>品質の均質化</strong>直営・フランチャイズを問わず、全店舗で統一されたサービスと評価基準を確保します。',
+        nubis_situation: 'グローバルチェーンのスマートコントロールタワー',
+        nubis_value: 'リモート運営・データの透明性・ワンクリック同期',
+        nubis_b1: '<strong>完全リモート監視</strong>店舗内のすべてのデバイスの状態をリアルタイムで把握し、現場派遣が不要です。',
+        nubis_b2: '<strong>ワンクリック同期</strong>リモートでのソフトウェア更新とデータ同期でメンテナンスコストを最小化します。',
+        more_info: '詳細はこちら →',
+        cta: '展店計画コンサルティングを予約する',
+        partners_heading: 'パートナー',
+        contact_title: '営業マネージャー'
+      },
+      'vi': {
+        tagline1: 'Kết nối Phần cứng & Phần mềm',
+        tagline2: 'Thúc đẩy Chuyển đổi số',
+        sub: 'Giải pháp tích hợp hệ thống linh hoạt, kết nối lỏng,<br>xây dựng hệ sinh thái vận hành bền vững cho doanh nghiệp.<br>Không cần thay thế ERP — mở rộng thương hiệu nhanh chóng.',
+        story_eyebrow: 'CÂU CHUYỆN CỦA CHÚNG TÔI',
+        story_headline: 'Thương mại Thông minh, Tầm vóc Toàn cầu',
+        beat_0: 'SOFONE 碩豐數位科技 là doanh nghiệp công nghệ chuyên về thiết bị thương mại thông minh, ứng dụng SaaS và vận hành dữ liệu AI, cam kết xây dựng nền tảng kinh doanh thông minh triển khai xuyên quốc gia.',
+        beat_1: 'Lấy năng lực tích hợp phần cứng - phần mềm làm cốt lõi, dịch vụ bao gồm quản lý thiết bị IoT, middleware F&B, tích hợp hệ thống thương mại và POS — giúp doanh nghiệp đẩy nhanh chuyển đổi số.',
+        beat_2: 'SOFONE không chỉ cung cấp sản phẩm — mà là năng lực tích hợp chuỗi giá trị đầu-cuối toàn vòng đời, từ thiết bị, hệ thống đến dữ liệu.',
+        beat_3: 'Thông qua nền tảng tự phát triển và kiến trúc module, chúng tôi cung cấp giải pháp số có thể nhân rộng, mở rộng quy mô và vận hành toàn cầu cho ngành F&B, bán lẻ và sản xuất thiết bị thương mại.',
+        beat_4: 'Quản lý thiết bị IoT&nbsp;&nbsp;·&nbsp;&nbsp;Middleware F&B&nbsp;&nbsp;·&nbsp;&nbsp;Tích hợp hệ thống thương mại',
+        solutions_eyebrow: 'CORE TECHNOLOGY ENGINES',
+        solutions_heading: 'Bốn Động cơ Công nghệ Cốt lõi',
+        autopos_situation: 'Hệ sinh thái POS doanh nghiệp cho chuỗi toàn cầu',
+        autopos_value: 'Ổn định vận hành xuyên biên giới với quản lý thông minh AI',
+        autopos_b1: '<strong>Triển khai toàn cầu</strong>Hỗ trợ thuế xuyên biên giới, tích hợp thanh toán và báo cáo với AI phân tích nâng cao hiệu quả quyết định.',
+        autopos_b2: '<strong>Phần cứng cao cấp</strong>POS và Kiosk chống nước IP54 độc quyền — độ ổn định vượt tiêu chuẩn ngành.',
+        autopos_b3: '<strong>Mở rộng module</strong>Máy trả tiền thừa, QR Code plug-and-play — linh hoạt cho nhu cầu mở rộng phức tạp.',
+        centrdx_situation: 'Tiên phong số hóa linh hoạt',
+        centrdx_value: 'Triển khai nhanh, nhẹ nhàng, sẵn dùng ngay',
+        centrdx_b1: '<strong>Dễ khởi đầu</strong>Thiết kế cho các mô hình cửa hàng nhẹ, không yêu cầu tùy chỉnh.',
+        centrdx_b2: '<strong>Vận hành hiệu quả</strong>Đặt hàng QR và in phiếu tự động — giúp chuỗi đạt chuẩn mở rộng nhanh chóng.',
+        imsdom_situation: 'Động cơ vận hành tập đoàn & chuẩn hóa chất lượng',
+        imsdom_value: 'Nhân rộng nhân tài, kế thừa kinh nghiệm, giảm chi phí đào tạo HR',
+        imsdom_b1: '<strong>Đánh giá tự động</strong>Hệ thống đào tạo và chấm điểm cấp tập đoàn — tự động thay thế đào tạo thủ công.',
+        imsdom_b2: '<strong>Đồng đều chất lượng</strong>Tiêu chuẩn dịch vụ và đánh giá nhất quán tại tất cả cửa hàng, trực tiếp hay nhượng quyền.',
+        nubis_situation: 'Tháp kiểm soát thông minh cho chuỗi toàn cầu',
+        nubis_value: 'Vận hành từ xa, dữ liệu minh bạch, đồng bộ một cú nhấp',
+        nubis_b1: '<strong>Giám sát từ xa toàn diện</strong>Nắm bắt trạng thái thiết bị theo thời gian thực — không cần cử người đến hiện trường.',
+        nubis_b2: '<strong>Đồng bộ một cú nhấp</strong>Cập nhật phần mềm từ xa và đồng bộ dữ liệu — giảm chi phí bảo trì xuống mức tối thiểu.',
+        more_info: 'Xem thêm →',
+        cta: 'Đặt lịch Tư vấn Kế hoạch Mở rộng',
+        partners_heading: 'Đối tác',
+        contact_title: 'Giám đốc Kinh doanh'
+      }
+    };
+
+    function applyLanguage(lang) {
+      var t = TRANSLATIONS[lang] || TRANSLATIONS['zh-TW'];
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.dataset.i18n;
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
+        var key = el.dataset.i18nHtml;
+        if (t[key] !== undefined) el.innerHTML = t[key];
+      });
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      document.documentElement.lang = lang;
+      localStorage.setItem('sofone_lang', lang);
+    }
+
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() { applyLanguage(this.dataset.lang); });
+    });
+
+    applyLanguage(localStorage.getItem('sofone_lang') || 'zh-TW');
+
     /* ── Scroll hint → smooth scroll to brand story ──────────── */
     document.querySelector('.scroll-hint').addEventListener('click', function() {
       document.querySelector('.story').scrollIntoView({ behavior: 'smooth' });
