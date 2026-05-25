@@ -13,16 +13,16 @@
 </head>
 <body>
 
-  <!-- ── Language Picker ──────────────────────────────────── -->
-  <div class="lang-picker" role="group" aria-label="Language selection">
-    <button class="lang-btn active" data-lang="zh-TW">繁中</button>
-    <button class="lang-btn" data-lang="en">EN</button>
-    <button class="lang-btn" data-lang="ja">日本語</button>
-    <button class="lang-btn" data-lang="vi">Viet</button>
-  </div>
-
   <!-- ── 1. Hero ──────────────────────────────────────────── -->
   <section class="hero-section" id="hero">
+
+    <!-- Language Picker — absolute inside hero-section (position:relative) so it scrolls with the page -->
+    <div class="lang-picker" role="group" aria-label="Language selection">
+      <button class="lang-btn active" data-lang="zh-TW">繁中</button>
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="ja">日本語</button>
+      <button class="lang-btn" data-lang="vi">Viet</button>
+    </div>
 
     <!-- Left Column: Brand & Copy -->
     <div class="hero-left">
