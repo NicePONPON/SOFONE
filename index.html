@@ -618,6 +618,12 @@
     </div>
   </section>
 
+  <!-- Shared device tooltip — lives at body level to escape overflow:hidden -->
+  <div id="deviceTooltip" class="device-tooltip-shared" role="tooltip" aria-live="polite">
+    <p class="tooltip-title" id="dtTitle"></p>
+    <p class="tooltip-desc"  id="dtDesc"></p>
+  </div>
+
   <script>
     /* ── Scroll Reveal ─────────────────────────────────────── */
     const revealObserver = new IntersectionObserver(
@@ -782,11 +788,6 @@
     });
   </script>
 
-  <!-- Shared device tooltip — lives at body level to escape overflow:hidden -->
-  <div id="deviceTooltip" class="device-tooltip-shared" role="tooltip" aria-live="polite">
-    <p class="tooltip-title" id="dtTitle"></p>
-    <p class="tooltip-desc"  id="dtDesc"></p>
-  </div>
 
 </body>
 </html>
