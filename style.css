@@ -921,13 +921,6 @@ td.col-autopos strong {
   flex-direction: column;
   gap: 2rem;
 }
-.imsdom-features-col--right .imsdom-feature-item {
-  flex-direction: row-reverse;
-  text-align: right;
-}
-.imsdom-features-col--right .imsdom-feature-text {
-  align-items: flex-end;
-}
 
 .imsdom-feature-item {
   display: flex;
@@ -1194,8 +1187,6 @@ td.col-autopos strong {
   .imsdom-layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .imsdom-img-wrap { order: -1; }
   .imsdom-phone-img { max-width: 260px; }
-  .imsdom-features-col--right .imsdom-feature-item { flex-direction: row; text-align: left; }
-  .imsdom-features-col--right .imsdom-feature-text { align-items: flex-start; }
   .hotspot-tooltip { width: 200px; font-size: 0.78rem; }
 }
 
