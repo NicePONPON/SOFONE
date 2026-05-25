@@ -49,6 +49,13 @@
 
     <!-- Right Column: Interactive 2.5D Restaurant Map -->
     <div class="hero-right" id="hero-interactive-map">
+
+      <!-- Fixed info bar — always at the top of the map area -->
+      <div class="map-info-bar" id="mapInfoBar">
+        <p class="map-info-title" id="mapInfoTitle"></p>
+        <p class="map-info-desc" id="mapInfoDesc"></p>
+      </div>
+
       <div class="map-stage">
 
         <!-- Base isometric background -->
@@ -642,26 +649,49 @@
       });
     }
 
-    /* ── Map Device Tooltips ───────────────────────────────── */
+    /* ── Map Device Info Bar ──────────────────────────────── */
     var allDevices = document.querySelectorAll('.map-device');
+    var infoBar   = document.getElementById('mapInfoBar');
+    var infoTitle = document.getElementById('mapInfoTitle');
+    var infoDesc  = document.getElementById('mapInfoDesc');
+
+    function showInfo(device) {
+      infoTitle.textContent = device.querySelector('.tooltip-title').textContent;
+      infoDesc.textContent  = device.querySelector('.tooltip-desc').textContent;
+      infoBar.classList.add('is-visible');
+    }
+    function hideInfo() {
+      infoBar.classList.remove('is-visible');
+    }
     function clearActive(except) {
       allDevices.forEach(function(d) {
         if (d !== except) d.classList.remove('is-active');
       });
     }
+
     allDevices.forEach(function(device) {
       device.addEventListener('mouseenter', function() {
         clearActive(this);
+        showInfo(this);
+      });
+      device.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('is-active')) hideInfo();
       });
       device.addEventListener('click', function(e) {
         var isActive = this.classList.contains('is-active');
         clearActive(null);
-        if (!isActive) this.classList.add('is-active');
+        if (!isActive) {
+          this.classList.add('is-active');
+          showInfo(this);
+        } else {
+          hideInfo();
+        }
         e.stopPropagation();
       });
     });
     document.addEventListener('click', function() {
       clearActive(null);
+      hideInfo();
     });
 
     /* ── Autopos Tabs ──────────────────────────────────────── */
