@@ -891,6 +891,126 @@ td.col-autopos strong {
   line-height: 1.65;
 }
 
+/* ── Nubis Block & Feature List ─────────────────────────── */
+.nubis-block {
+  margin-bottom: 2rem;
+}
+.nubis-block-title {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--c-white);
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.nubis-value-prop {
+  font-size: clamp(0.85rem, 1.4vw, 0.94rem);
+  color: var(--c-muted);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+  padding: 0.9rem 1.2rem;
+  background: rgba(106, 204, 172, 0.06);
+  border-left: 3px solid var(--c-accent);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+.nubis-vp-label {
+  font-weight: 700;
+  color: var(--c-accent);
+}
+.nubis-feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.nubis-feature-list li {
+  font-size: clamp(0.83rem, 1.3vw, 0.9rem);
+  color: var(--c-muted);
+  line-height: 1.7;
+  padding-left: 1.5rem;
+  position: relative;
+}
+.nubis-feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0.1rem;
+  top: 0.58em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  opacity: 0.75;
+}
+.nubis-feature-list li strong {
+  color: var(--c-white);
+  font-weight: 600;
+}
+
+/* ── Nubis Comparison Tables ─────────────────────────────── */
+.nubis-cast-divider {
+  border: none;
+  border-top: 1px solid var(--c-border);
+  margin: 2.5rem 0;
+}
+.nubis-table-wrap {
+  margin-bottom: 2.5rem;
+}
+.nubis-table-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--c-muted);
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+}
+.nubis-compare-scroll {
+  overflow-x: auto;
+  border-radius: var(--r-md);
+  border: 1px solid var(--c-border);
+}
+.nubis-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 540px;
+}
+.nubis-compare-table thead tr {
+  background: rgba(106, 204, 172, 0.07);
+}
+.nubis-compare-table th {
+  padding: 0.85rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: left;
+  border-bottom: 1px solid var(--c-border);
+}
+.nubis-compare-table td {
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  border-bottom: 1px solid rgba(106, 204, 172, 0.07);
+  vertical-align: top;
+}
+.nubis-compare-table tbody tr:last-child td { border-bottom: none; }
+.nubis-compare-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
+.nc-dim {
+  color: var(--c-white);
+  font-weight: 700;
+  width: 18%;
+  white-space: nowrap;
+}
+.nc-legacy {
+  color: var(--c-muted);
+  width: 41%;
+}
+.nc-win {
+  color: var(--c-accent);
+  width: 41%;
+  font-weight: 500;
+}
+
 /* ── IMSDOM Section ──────────────────────────────────────── */
 .imsdom-section { background: var(--c-bg); }
 

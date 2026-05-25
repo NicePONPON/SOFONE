@@ -324,54 +324,119 @@
       <p class="section-eyebrow reveal" data-i18n="nubis.eyebrow">Nubis · IoT UEM 全球控制塔</p>
       <h2 class="section-h2 reveal" data-i18n="nubis.h2">連鎖規模化，您的 IT 維護成本也跟著失控了嗎？</h2>
 
-      <div class="nubis-stage reveal">
-        <div class="nubis-map-placeholder">
-          <div class="nubis-map-inner">
-            <div class="nubis-grid-overlay"></div>
-            <img src="assets/nubis-logo.png" alt="Nubis 控制台"
-                 class="nubis-logo-bg"
-                 onerror="this.style.display='none'">
-            <p class="nubis-placeholder-text" data-i18n="nubis.placeholder">Nubis 全球設備監控台示意圖</p>
-          </div>
-        </div>
+      <!-- ── Nubis Core ─────────────────────────────────── -->
+      <div class="nubis-block reveal">
+        <h3 class="nubis-block-title" data-i18n="nubis.core.title">核心重點：全球連鎖智慧控制塔</h3>
+        <p class="nubis-value-prop">
+          <span class="nubis-vp-label" data-i18n="nubis.vp.label">一句話價值：</span><span data-i18n="nubis.core.vp">透過雲端中控平台，實現跨國設備的一鍵同步、遠端維運與即時數據透明，大幅降低門市維護人力成本。</span>
+        </p>
+        <ul class="nubis-feature-list">
+          <li><strong data-i18n="nubis.core.f1.label">自動化排程</strong><span data-i18n="nubis.core.f1.desc">：門市數位內容自動隨時段變換，無需人工操作。</span></li>
+          <li><strong data-i18n="nubis.core.f2.label">規模化部署</strong><span data-i18n="nubis.core.f2.desc">：一鍵完成全鏈路佈署，適用跨國、跨區域統一管理。</span></li>
+          <li><strong data-i18n="nubis.core.f3.label">智能化預警</strong><span data-i18n="nubis.core.f3.desc">：設備異常自動檢測並通知總部，問題遠端修復，降低停機時間。</span></li>
+          <li><strong data-i18n="nubis.core.f4.label">分權管理</strong><span data-i18n="nubis.core.f4.desc">：具備七層級權限，總部決策、區域分權，確保品牌識別一致。</span></li>
+        </ul>
+      </div>
 
-        <!-- Hotspot 1 -->
-        <div class="hotspot" style="top: 22%; left: 16%;" data-hotspot="1">
-          <button class="hotspot-dot" aria-label="告別無效出勤說明">
-            <span class="hotspot-ring"></span>
-            <span class="hotspot-ring hotspot-ring--2"></span>
-            <span class="hotspot-core"></span>
-          </button>
-          <div class="hotspot-tooltip hotspot-tooltip--right">
-            <p class="tooltip-title" data-i18n="nubis.hs1.title">告別無效出勤</p>
-            <p data-i18n="nubis.hs1.desc">設備當機紅燈警示，一鍵「遠端重啟」，省下動輒數千元的 IT 單次到店維修費。</p>
-          </div>
+      <!-- Nubis comparison table -->
+      <div class="nubis-table-wrap reveal">
+        <p class="nubis-table-title" data-i18n="nubis.table1.title">Nubis vs. 傳統維運模式比較表</p>
+        <div class="nubis-compare-scroll">
+          <table class="nubis-compare-table">
+            <thead>
+              <tr>
+                <th class="nc-dim" data-i18n="nubis.table.dim">比較維度</th>
+                <th class="nc-legacy" data-i18n="nubis.table1.col1">傳統維運模式 (人工巡店/單機維護)</th>
+                <th class="nc-win" data-i18n="nubis.table1.col2">Nubis 智慧控制塔 (碩豐)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table1.r1.dim">維護人力</td>
+                <td class="nc-legacy" data-i18n="nubis.table1.r1.legacy">需派員實地巡店，效率低且耗時</td>
+                <td class="nc-win" data-i18n="nubis.table1.r1.win">遠端一鍵排查、修復，人力需求降至最低</td>
+              </tr>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table1.r2.dim">佈署效率</td>
+                <td class="nc-legacy" data-i18n="nubis.table1.r2.legacy">逐台手動更新，跨國佈署極慢</td>
+                <td class="nc-win" data-i18n="nubis.table1.r2.win">雲端一鍵同步，全鏈路規模化佈署</td>
+              </tr>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table1.r3.dim">數據透明度</td>
+                <td class="nc-legacy" data-i18n="nubis.table1.r3.legacy">資訊孤島，總部難即時掌握設備狀態</td>
+                <td class="nc-win" data-i18n="nubis.table1.r3.win">全域數據視覺化，設備狀態即時回報</td>
+              </tr>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table1.r4.dim">營運靈活度</td>
+                <td class="nc-legacy" data-i18n="nubis.table1.r4.legacy">變更內容困難，反應滯後</td>
+                <td class="nc-win" data-i18n="nubis.table1.r4.win">排程靈活調整，秒級同步門店行銷</td>
+              </tr>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table1.r5.dim">系統整合</td>
+                <td class="nc-legacy" data-i18n="nubis.table1.r5.legacy">各品牌設備不相容，管理破碎</td>
+                <td class="nc-win" data-i18n="nubis.table1.r5.win">一套 CMS 橫跨多種硬體，高度整合</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
 
-        <!-- Hotspot 2 -->
-        <div class="hotspot" style="top: 50%; left: 50%;" data-hotspot="2">
-          <button class="hotspot-dot" aria-label="Nubis Cast 雲端派發說明">
-            <span class="hotspot-ring"></span>
-            <span class="hotspot-ring hotspot-ring--2"></span>
-            <span class="hotspot-core"></span>
-          </button>
-          <div class="hotspot-tooltip hotspot-tooltip--top">
-            <p class="tooltip-title" data-i18n="nubis.hs2.title">Nubis Cast 雲端派發</p>
-            <p data-i18n="nubis.hs2.desc">破除 USB 隨身碟更新夢魘。行銷部一鍵上傳，全台門市數位看板零時差同步。</p>
-          </div>
-        </div>
+      <!-- ── Nubis Cast ──────────────────────────────────── -->
+      <hr class="nubis-cast-divider">
 
-        <!-- Hotspot 3 -->
-        <div class="hotspot" style="top: 70%; left: 74%;" data-hotspot="3">
-          <button class="hotspot-dot" aria-label="跨設備上帝視角說明">
-            <span class="hotspot-ring"></span>
-            <span class="hotspot-ring hotspot-ring--2"></span>
-            <span class="hotspot-core"></span>
-          </button>
-          <div class="hotspot-tooltip hotspot-tooltip--left">
-            <p class="tooltip-title" data-i18n="nubis.hs3.title">跨設備上帝視角</p>
-            <p data-i18n="nubis.hs3.desc">單一後台監控 CPU 溫度與記憶體狀態，將「災難救援」轉為「事前預防」。</p>
-          </div>
+      <div class="nubis-block reveal">
+        <h3 class="nubis-block-title" data-i18n="nubis.cast.title">Nubis Cast：零時差的全球行銷中樞</h3>
+        <p class="nubis-value-prop">
+          <span class="nubis-vp-label" data-i18n="nubis.vp.label">一句話價值：</span><span data-i18n="nubis.cast.vp">告別 USB 隨身碟與人工更新，透過雲端後台一鍵推送全台門市促銷影片與電子菜單，確保品牌訊息 100% 同步。</span>
+        </p>
+        <ul class="nubis-feature-list">
+          <li><strong data-i18n="nubis.cast.f1.label">雲端中央控管</strong><span data-i18n="nubis.cast.f1.desc">：總部一鍵派發，無論百家店面還是跨國佈局，行銷訊息零時差落地。</span></li>
+          <li><strong data-i18n="nubis.cast.f2.label">靈活時段排程</strong><span data-i18n="nubis.cast.f2.desc">：自動切換早午晚餐、平假日與限時活動菜單，最大化坪效。</span></li>
+          <li><strong data-i18n="nubis.cast.f3.label">全兼容顯示</strong><span data-i18n="nubis.cast.f3.desc">：支援各式 Android 數位看板、TV，無須替換既有設備，平滑升級。</span></li>
+          <li><strong data-i18n="nubis.cast.f4.label">即時監控預警</strong><span data-i18n="nubis.cast.f4.desc">：系統自動檢測播放狀態，斷網或當機即刻通知總部，徹底解決「看板播錯畫面」的災難。</span></li>
+        </ul>
+      </div>
+
+      <!-- Nubis Cast comparison table -->
+      <div class="nubis-table-wrap reveal">
+        <p class="nubis-table-title" data-i18n="nubis.table2.title">Nubis Cast vs. 傳統 USB 更新模式比較表</p>
+        <div class="nubis-compare-scroll">
+          <table class="nubis-compare-table">
+            <thead>
+              <tr>
+                <th class="nc-dim" data-i18n="nubis.table.dim">比較維度</th>
+                <th class="nc-legacy" data-i18n="nubis.table2.col1">傳統更新 (USB/人工巡店)</th>
+                <th class="nc-win" data-i18n="nubis.table2.col2">Nubis Cast (雲端派發)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table2.r1.dim">作業效率</td>
+                <td class="nc-legacy" data-i18n="nubis.table2.r1.legacy">需派員跑門市，耗時數日</td>
+                <td class="nc-win" data-i18n="nubis.table2.r1.win">雲端一鍵派發，全門市秒級同步</td>
+              </tr>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table2.r2.dim">品牌一致性</td>
+                <td class="nc-legacy" data-i18n="nubis.table2.r2.legacy">常發生門店未更新，行銷混亂</td>
+                <td class="nc-win" data-i18n="nubis.table2.r2.win">系統強制同步，確保品牌統一曝光</td>
+              </tr>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table2.r3.dim">設備維運</td>
+                <td class="nc-legacy" data-i18n="nubis.table2.r3.legacy">看板壞了也不知道，無法即時處理</td>
+                <td class="nc-win" data-i18n="nubis.table2.r3.win">即時狀態回報，異常自動報警</td>
+              </tr>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table2.r4.dim">成本支出</td>
+                <td class="nc-legacy" data-i18n="nubis.table2.r4.legacy">高額交通/人力費用，隱形成本大</td>
+                <td class="nc-win" data-i18n="nubis.table2.r4.win">大幅節省人力，降低長期營運總成本</td>
+              </tr>
+              <tr>
+                <td class="nc-dim" data-i18n="nubis.table2.r5.dim">靈活度</td>
+                <td class="nc-legacy" data-i18n="nubis.table2.r5.legacy">無法即時因應市場變動</td>
+                <td class="nc-win" data-i18n="nubis.table2.r5.win">彈性排程，隨時切換促銷內容</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
@@ -678,13 +743,36 @@
         'autopos.cta': '了解 Autopos →',
         'nubis.eyebrow': 'Nubis · IoT UEM 全球控制塔',
         'nubis.h2': '連鎖規模化，您的 IT 維護成本也跟著失控了嗎？',
-        'nubis.placeholder': 'Nubis 全球設備監控台示意圖',
-        'nubis.hs1.title': '告別無效出勤',
-        'nubis.hs1.desc': '設備當機紅燈警示，一鍵「遠端重啟」，省下動輒數千元的 IT 單次到店維修費。',
-        'nubis.hs2.title': 'Nubis Cast 雲端派發',
-        'nubis.hs2.desc': '破除 USB 隨身碟更新夢魘。行銷部一鍵上傳，全台門市數位看板零時差同步。',
-        'nubis.hs3.title': '跨設備上帝視角',
-        'nubis.hs3.desc': '單一後台監控 CPU 溫度與記憶體狀態，將「災難救援」轉為「事前預防」。',
+        'nubis.vp.label': '一句話價值：',
+        'nubis.core.title': '核心重點：全球連鎖智慧控制塔',
+        'nubis.core.vp': '透過雲端中控平台，實現跨國設備的一鍵同步、遠端維運與即時數據透明，大幅降低門市維護人力成本。',
+        'nubis.core.f1.label': '自動化排程', 'nubis.core.f1.desc': '：門市數位內容自動隨時段變換，無需人工操作。',
+        'nubis.core.f2.label': '規模化部署', 'nubis.core.f2.desc': '：一鍵完成全鏈路佈署，適用跨國、跨區域統一管理。',
+        'nubis.core.f3.label': '智能化預警', 'nubis.core.f3.desc': '：設備異常自動檢測並通知總部，問題遠端修復，降低停機時間。',
+        'nubis.core.f4.label': '分權管理',   'nubis.core.f4.desc': '：具備七層級權限，總部決策、區域分權，確保品牌識別一致。',
+        'nubis.table.dim': '比較維度',
+        'nubis.table1.title': 'Nubis vs. 傳統維運模式比較表',
+        'nubis.table1.col1': '傳統維運模式 (人工巡店/單機維護)',
+        'nubis.table1.col2': 'Nubis 智慧控制塔 (碩豐)',
+        'nubis.table1.r1.dim': '維護人力', 'nubis.table1.r1.legacy': '需派員實地巡店，效率低且耗時', 'nubis.table1.r1.win': '遠端一鍵排查、修復，人力需求降至最低',
+        'nubis.table1.r2.dim': '佈署效率', 'nubis.table1.r2.legacy': '逐台手動更新，跨國佈署極慢', 'nubis.table1.r2.win': '雲端一鍵同步，全鏈路規模化佈署',
+        'nubis.table1.r3.dim': '數據透明度', 'nubis.table1.r3.legacy': '資訊孤島，總部難即時掌握設備狀態', 'nubis.table1.r3.win': '全域數據視覺化，設備狀態即時回報',
+        'nubis.table1.r4.dim': '營運靈活度', 'nubis.table1.r4.legacy': '變更內容困難，反應滯後', 'nubis.table1.r4.win': '排程靈活調整，秒級同步門店行銷',
+        'nubis.table1.r5.dim': '系統整合', 'nubis.table1.r5.legacy': '各品牌設備不相容，管理破碎', 'nubis.table1.r5.win': '一套 CMS 橫跨多種硬體，高度整合',
+        'nubis.cast.title': 'Nubis Cast：零時差的全球行銷中樞',
+        'nubis.cast.vp': '告別 USB 隨身碟與人工更新，透過雲端後台一鍵推送全台門市促銷影片與電子菜單，確保品牌訊息 100% 同步。',
+        'nubis.cast.f1.label': '雲端中央控管', 'nubis.cast.f1.desc': '：總部一鍵派發，無論百家店面還是跨國佈局，行銷訊息零時差落地。',
+        'nubis.cast.f2.label': '靈活時段排程', 'nubis.cast.f2.desc': '：自動切換早午晚餐、平假日與限時活動菜單，最大化坪效。',
+        'nubis.cast.f3.label': '全兼容顯示',   'nubis.cast.f3.desc': '：支援各式 Android 數位看板、TV，無須替換既有設備，平滑升級。',
+        'nubis.cast.f4.label': '即時監控預警', 'nubis.cast.f4.desc': '：系統自動檢測播放狀態，斷網或當機即刻通知總部，徹底解決「看板播錯畫面」的災難。',
+        'nubis.table2.title': 'Nubis Cast vs. 傳統 USB 更新模式比較表',
+        'nubis.table2.col1': '傳統更新 (USB/人工巡店)',
+        'nubis.table2.col2': 'Nubis Cast (雲端派發)',
+        'nubis.table2.r1.dim': '作業效率', 'nubis.table2.r1.legacy': '需派員跑門市，耗時數日', 'nubis.table2.r1.win': '雲端一鍵派發，全門市秒級同步',
+        'nubis.table2.r2.dim': '品牌一致性', 'nubis.table2.r2.legacy': '常發生門店未更新，行銷混亂', 'nubis.table2.r2.win': '系統強制同步，確保品牌統一曝光',
+        'nubis.table2.r3.dim': '設備維運', 'nubis.table2.r3.legacy': '看板壞了也不知道，無法即時處理', 'nubis.table2.r3.win': '即時狀態回報，異常自動報警',
+        'nubis.table2.r4.dim': '成本支出', 'nubis.table2.r4.legacy': '高額交通/人力費用，隱形成本大', 'nubis.table2.r4.win': '大幅節省人力，降低長期營運總成本',
+        'nubis.table2.r5.dim': '靈活度', 'nubis.table2.r5.legacy': '無法即時因應市場變動', 'nubis.table2.r5.win': '彈性排程，隨時切換促銷內容',
         'nubis.cta': '了解 Nubis →',
         'imsdom.eyebrow': 'IMSDOM · 連鎖營運生命週期管理',
         'imsdom.h2': '別讓加盟擴張，成為品牌崩壞的開始。<br>用數據重塑 QSC。',
@@ -773,13 +861,36 @@
         'autopos.cta': 'Learn More: Autopos →',
         'nubis.eyebrow': 'Nubis · IoT UEM Global Control Tower',
         'nubis.h2': 'As you scale, is your IT maintenance cost spiraling out of control?',
-        'nubis.placeholder': 'Nubis Global Device Monitoring Dashboard',
-        'nubis.hs1.title': 'Eliminate Wasted On-Site Visits',
-        'nubis.hs1.desc': 'Red-light alerts for downed devices; remote restart with one click — saving thousands per IT call-out.',
-        'nubis.hs2.title': 'Nubis Cast Cloud Push',
-        'nubis.hs2.desc': 'No more USB nightmare. Marketing uploads once; all in-store digital signage syncs instantly nationwide.',
-        'nubis.hs3.title': 'God\'s-Eye View Across All Devices',
-        'nubis.hs3.desc': 'Monitor CPU temps and memory from a single dashboard — shift from disaster recovery to proactive prevention.',
+        'nubis.vp.label': 'The bottom line:',
+        'nubis.core.title': 'Smart Control: Global Chain Operations Hub',
+        'nubis.core.vp': 'A cloud command center that delivers one-click device sync, remote maintenance, and real-time visibility across every market — cutting store IT labor costs to a minimum.',
+        'nubis.core.f1.label': 'Automated Scheduling', 'nubis.core.f1.desc': ': Store digital content switches by time slot automatically — zero manual effort.',
+        'nubis.core.f2.label': 'Scalable Deployment',  'nubis.core.f2.desc': ': One-click full-chain rollout across countries and regions — unified management at scale.',
+        'nubis.core.f3.label': 'Intelligent Alerting', 'nubis.core.f3.desc': ': Device anomalies auto-detected and HQ notified instantly — remote resolution, minimal downtime.',
+        'nubis.core.f4.label': 'Tiered Permissions',   'nubis.core.f4.desc': ': Seven-level access control — HQ holds strategy, regions act locally, brand identity stays consistent.',
+        'nubis.table.dim': 'Dimension',
+        'nubis.table1.title': 'Nubis vs. Traditional Maintenance',
+        'nubis.table1.col1': 'Traditional (Manual Visits / Per-Device)',
+        'nubis.table1.col2': 'Nubis Smart Control Tower (SOFONE)',
+        'nubis.table1.r1.dim': 'Maintenance Labor', 'nubis.table1.r1.legacy': 'Must dispatch staff on-site — slow and costly', 'nubis.table1.r1.win': 'Remote one-click diagnosis & repair — labor needs at a minimum',
+        'nubis.table1.r2.dim': 'Deployment Speed', 'nubis.table1.r2.legacy': 'Manual update device-by-device — global rollout takes days', 'nubis.table1.r2.win': 'Cloud one-click sync — full-chain deployment in seconds',
+        'nubis.table1.r3.dim': 'Data Visibility', 'nubis.table1.r3.legacy': 'Information silos — HQ can\'t track device status in real time', 'nubis.table1.r3.win': 'Full-domain visualization — device status reported instantly',
+        'nubis.table1.r4.dim': 'Operational Agility', 'nubis.table1.r4.legacy': 'Content updates are painful and slow to roll out', 'nubis.table1.r4.win': 'Flexible scheduling — store marketing syncs in seconds',
+        'nubis.table1.r5.dim': 'System Integration', 'nubis.table1.r5.legacy': 'Incompatible hardware across brands — management fragmented', 'nubis.table1.r5.win': 'One CMS across all hardware types — deeply integrated',
+        'nubis.cast.title': 'Nubis Cast: Zero-Lag Global Marketing Hub',
+        'nubis.cast.vp': 'Say goodbye to USB drives and manual store visits. Push promotions and digital menus to every store in one click — brand messaging 100% in sync.',
+        'nubis.cast.f1.label': 'Cloud Central Control', 'nubis.cast.f1.desc': ': HQ pushes to hundreds — or thousands — of stores with zero time lag.',
+        'nubis.cast.f2.label': 'Smart Time-Slot Scheduling', 'nubis.cast.f2.desc': ': Auto-switch menus for breakfast, lunch, dinner, holidays, and flash promos — maximize revenue per square foot.',
+        'nubis.cast.f3.label': 'Universal Display Support', 'nubis.cast.f3.desc': ': Compatible with all Android digital signage and TVs — no hardware replacement needed, seamless upgrade.',
+        'nubis.cast.f4.label': 'Real-Time Monitoring',     'nubis.cast.f4.desc': ': Auto-detects playback status — network drop or crash instantly alerts HQ. End the "wrong content on screen" disaster.',
+        'nubis.table2.title': 'Nubis Cast vs. Traditional USB Update',
+        'nubis.table2.col1': 'Traditional (USB / Manual Visits)',
+        'nubis.table2.col2': 'Nubis Cast (Cloud Push)',
+        'nubis.table2.r1.dim': 'Operational Efficiency', 'nubis.table2.r1.legacy': 'Staff must run to every store — takes days', 'nubis.table2.r1.win': 'Cloud one-click push — all stores sync in seconds',
+        'nubis.table2.r2.dim': 'Brand Consistency', 'nubis.table2.r2.legacy': 'Stores frequently miss updates — marketing disarray', 'nubis.table2.r2.win': 'Force-sync ensures unified brand exposure across all locations',
+        'nubis.table2.r3.dim': 'Device Maintenance', 'nubis.table2.r3.legacy': 'Signage fails undetected — no way to respond in time', 'nubis.table2.r3.win': 'Real-time status reporting — anomalies auto-alert',
+        'nubis.table2.r4.dim': 'Cost Efficiency', 'nubis.table2.r4.legacy': 'High transport and labor costs — hidden expenses balloon', 'nubis.table2.r4.win': 'Massively cuts labor costs — reduces long-term total operating cost',
+        'nubis.table2.r5.dim': 'Agility', 'nubis.table2.r5.legacy': 'Can\'t respond to market changes in real time', 'nubis.table2.r5.win': 'Flexible scheduling — switch promotional content anytime',
         'nubis.cta': 'Learn More: Nubis →',
         'imsdom.eyebrow': 'IMSDOM · Chain Operations Lifecycle Management',
         'imsdom.h2': 'Don\'t let franchise expansion become the beginning of brand collapse.<br>Reshape QSC with data.',
@@ -868,13 +979,36 @@
         'autopos.cta': 'Autoposについて →',
         'nubis.eyebrow': 'Nubis · IoT UEM グローバルコントロールタワー',
         'nubis.h2': '規模拡大とともに、IT保守コストも制御不能になっていませんか？',
-        'nubis.placeholder': 'Nubis グローバルデバイス監視ダッシュボード',
-        'nubis.hs1.title': '無駄な現地訪問を排除',
-        'nubis.hs1.desc': 'デバイス障害を赤色警告で即通知、ワンクリックでリモート再起動。高額なIT訪問費用を節約。',
-        'nubis.hs2.title': 'Nubis Cast クラウド配信',
-        'nubis.hs2.desc': 'USBの悪夢とはおさらば。マーケティング担当が一度アップロードすれば、全店舗のデジタルサイネージが即時同期。',
-        'nubis.hs3.title': '全デバイスの俯瞰ビュー',
-        'nubis.hs3.desc': '単一ダッシュボードでCPU温度とメモリを監視し、災害対応から事前予防へ転換。',
+        'nubis.vp.label': '一言で言うと：',
+        'nubis.core.title': '核心機能：グローバルチェーンスマートコントロールタワー',
+        'nubis.core.vp': 'クラウド中央管理プラットフォームで、すべての国のデバイスを一括同期・遠隔保守・リアルタイム把握。店舗IT人件費を劇的に削減します。',
+        'nubis.core.f1.label': '自動スケジューリング', 'nubis.core.f1.desc': '：店舗のデジタルコンテンツを時間帯に合わせて自動切替。人手は一切不要。',
+        'nubis.core.f2.label': 'スケーラブル展開',     'nubis.core.f2.desc': '：ワンクリックでフルチェーン展開。跨国・跨地域の統一管理に対応。',
+        'nubis.core.f3.label': 'インテリジェントアラート', 'nubis.core.f3.desc': '：デバイス異常を自動検出してHQに即通知。遠隔修復でダウンタイムを最小化。',
+        'nubis.core.f4.label': '階層型権限管理',        'nubis.core.f4.desc': '：7段階のアクセス制御。本部が戦略を決定し、各地域が自律管理。ブランド統一性を確保。',
+        'nubis.table.dim': '比較項目',
+        'nubis.table1.title': 'Nubis vs. 従来の保守管理',
+        'nubis.table1.col1': '従来型（手動巡回/個別管理）',
+        'nubis.table1.col2': 'Nubisスマートコントロールタワー（SOFONE）',
+        'nubis.table1.r1.dim': '保守人件費', 'nubis.table1.r1.legacy': 'スタッフを現地派遣。低効率かつ時間がかかる', 'nubis.table1.r1.win': '遠隔ワンクリックで診断・修復。人員ニーズを最低限に',
+        'nubis.table1.r2.dim': '展開速度', 'nubis.table1.r2.legacy': '台ごとに手動更新。海外展開には何日もかかる', 'nubis.table1.r2.win': 'クラウド一括同期。全チェーンをスケールで瞬時に展開',
+        'nubis.table1.r3.dim': 'データ透明性', 'nubis.table1.r3.legacy': '情報サイロ。本部がリアルタイムでデバイス状況を把握できない', 'nubis.table1.r3.win': '全域データ可視化。デバイス状態を即時レポート',
+        'nubis.table1.r4.dim': '運営の俊敏性', 'nubis.table1.r4.legacy': 'コンテンツ変更が困難で対応が遅れる', 'nubis.table1.r4.win': '柔軟なスケジュール調整。店舗マーケティングを秒単位で同期',
+        'nubis.table1.r5.dim': 'システム統合', 'nubis.table1.r5.legacy': 'ブランド間でデバイスが互換しない。管理が分断', 'nubis.table1.r5.win': '1つのCMSが複数のハードに対応。高度に統合',
+        'nubis.cast.title': 'Nubis Cast：タイムラグゼロのグローバルマーケティングハブ',
+        'nubis.cast.vp': 'USBメモリと手動巡回に別れを告げましょう。クラウドから全国の店舗へプロモーション動画とデジタルメニューをワンクリックで配信。ブランドメッセージを100%同期。',
+        'nubis.cast.f1.label': 'クラウド中央管理',         'nubis.cast.f1.desc': '：本部からワンクリックで数百・数千店舗に即時配信。タイムラグゼロ。',
+        'nubis.cast.f2.label': 'スマート時間帯スケジュール', 'nubis.cast.f2.desc': '：朝・昼・夜食、休日、期間限定メニューを自動切替。坪効率を最大化。',
+        'nubis.cast.f3.label': '全デバイス対応',            'nubis.cast.f3.desc': '：あらゆるAndroidデジタルサイネージ・TVに対応。既存設備はそのまま、スムーズにアップグレード。',
+        'nubis.cast.f4.label': 'リアルタイム監視・アラート', 'nubis.cast.f4.desc': '：再生状態を自動検出。断線・クラッシュ時は即座にHQへ通知。「看板に誤ったコンテンツ」という悪夢を根絶。',
+        'nubis.table2.title': 'Nubis Cast vs. 従来のUSB更新',
+        'nubis.table2.col1': '従来型（USB/手動巡回）',
+        'nubis.table2.col2': 'Nubis Cast（クラウド配信）',
+        'nubis.table2.r1.dim': '作業効率', 'nubis.table2.r1.legacy': 'スタッフが各店舗を走り回る。数日かかる', 'nubis.table2.r1.win': 'クラウドワンクリック配信。全店舗が秒単位で同期',
+        'nubis.table2.r2.dim': 'ブランド一貫性', 'nubis.table2.r2.legacy': '未更新店舗が頻発。マーケティングが乱れる', 'nubis.table2.r2.win': '強制同期で全拠点のブランド露出を統一',
+        'nubis.table2.r3.dim': 'デバイス保守', 'nubis.table2.r3.legacy': '看板故障に気づかない。即時対応不可', 'nubis.table2.r3.win': 'リアルタイムステータス報告。異常は自動アラート',
+        'nubis.table2.r4.dim': 'コスト効率', 'nubis.table2.r4.legacy': '交通費・人件費が嵩む。隠れコストが膨大', 'nubis.table2.r4.win': '人件費を大幅削減。長期的な総運営コストを低下',
+        'nubis.table2.r5.dim': '俊敏性', 'nubis.table2.r5.legacy': '市場変化にリアルタイムで対応できない', 'nubis.table2.r5.win': '柔軟なスケジュール。プロモーション内容をいつでも切替',
         'nubis.cta': 'Nubisについて →',
         'imsdom.eyebrow': 'IMSDOM · チェーン運営ライフサイクル管理',
         'imsdom.h2': 'フランチャイズ拡大がブランド崩壊の始まりにならないように。<br>データでQSCを再構築。',
@@ -963,13 +1097,36 @@
         'autopos.cta': 'Tìm hiểu Autopos →',
         'nubis.eyebrow': 'Nubis · Tháp kiểm soát IoT UEM toàn cầu',
         'nubis.h2': 'Khi mở rộng quy mô, chi phí bảo trì IT của bạn có mất kiểm soát không?',
-        'nubis.placeholder': 'Bảng điều khiển giám sát thiết bị toàn cầu Nubis',
-        'nubis.hs1.title': 'Loại bỏ các chuyến thăm hiện trường vô ích',
-        'nubis.hs1.desc': 'Cảnh báo đỏ khi thiết bị hỏng; khởi động lại từ xa một cú click — tiết kiệm hàng nghìn USD chi phí IT mỗi lần đến nơi.',
-        'nubis.hs2.title': 'Nubis Cast phân phối đám mây',
-        'nubis.hs2.desc': 'Không còn ác mộng USB. Marketing tải lên một lần; biển hiệu kỹ thuật số tất cả cửa hàng đồng bộ tức thì.',
-        'nubis.hs3.title': 'Tầm nhìn toàn cảnh qua tất cả thiết bị',
-        'nubis.hs3.desc': 'Giám sát nhiệt độ CPU và bộ nhớ từ một bảng điều khiển duy nhất — chuyển từ khắc phục sự cố sang phòng ngừa chủ động.',
+        'nubis.vp.label': 'Tóm gọn:',
+        'nubis.core.title': 'Điểm cốt lõi: Tháp kiểm soát chuỗi toàn cầu thông minh',
+        'nubis.core.vp': 'Nền tảng điều phối đám mây cho phép đồng bộ hóa một cú nhấp, bảo trì từ xa và minh bạch dữ liệu thời gian thực — giảm mạnh chi phí nhân lực IT cửa hàng.',
+        'nubis.core.f1.label': 'Lập lịch tự động',         'nubis.core.f1.desc': ': Nội dung kỹ thuật số tự động chuyển đổi theo khung giờ — không cần thao tác thủ công.',
+        'nubis.core.f2.label': 'Triển khai có thể mở rộng', 'nubis.core.f2.desc': ': Hoàn thành triển khai toàn chuỗi chỉ bằng một cú nhấp — quản lý thống nhất xuyên quốc gia.',
+        'nubis.core.f3.label': 'Cảnh báo thông minh',       'nubis.core.f3.desc': ': Phát hiện lỗi thiết bị tự động và thông báo ngay cho HQ — khắc phục từ xa, giảm thiểu thời gian ngừng hoạt động.',
+        'nubis.core.f4.label': 'Phân quyền theo tầng',      'nubis.core.f4.desc': ': Kiểm soát truy cập 7 cấp — HQ đưa ra chiến lược, khu vực quản lý cục bộ, nhận diện thương hiệu nhất quán.',
+        'nubis.table.dim': 'Tiêu chí',
+        'nubis.table1.title': 'Nubis vs. Bảo trì truyền thống',
+        'nubis.table1.col1': 'Truyền thống (Tuần tra thủ công / Từng thiết bị)',
+        'nubis.table1.col2': 'Tháp kiểm soát thông minh Nubis (SOFONE)',
+        'nubis.table1.r1.dim': 'Nhân lực bảo trì', 'nubis.table1.r1.legacy': 'Phải cử nhân viên đến tận nơi — hiệu quả thấp, tốn thời gian', 'nubis.table1.r1.win': 'Chẩn đoán & sửa chữa từ xa một cú nhấp — nhu cầu nhân lực ở mức tối thiểu',
+        'nubis.table1.r2.dim': 'Tốc độ triển khai', 'nubis.table1.r2.legacy': 'Cập nhật thủ công từng thiết bị — triển khai toàn cầu cực chậm', 'nubis.table1.r2.win': 'Đồng bộ đám mây một cú nhấp — toàn chuỗi trong vài giây',
+        'nubis.table1.r3.dim': 'Minh bạch dữ liệu', 'nubis.table1.r3.legacy': 'Dữ liệu cô lập — HQ khó nắm bắt trạng thái thiết bị thời gian thực', 'nubis.table1.r3.win': 'Trực quan hóa dữ liệu toàn diện — trạng thái thiết bị báo cáo tức thì',
+        'nubis.table1.r4.dim': 'Linh hoạt vận hành', 'nubis.table1.r4.legacy': 'Thay đổi nội dung khó khăn, phản ứng chậm', 'nubis.table1.r4.win': 'Lập lịch linh hoạt — đồng bộ marketing cửa hàng trong vài giây',
+        'nubis.table1.r5.dim': 'Tích hợp hệ thống', 'nubis.table1.r5.legacy': 'Thiết bị các thương hiệu không tương thích — quản lý phân mảnh', 'nubis.table1.r5.win': 'Một CMS cho nhiều loại phần cứng — tích hợp sâu',
+        'nubis.cast.title': 'Nubis Cast: Trung tâm marketing toàn cầu không độ trễ',
+        'nubis.cast.vp': 'Nói lời tạm biệt với USB và tuần tra thủ công. Đẩy video khuyến mãi và thực đơn kỹ thuật số đến mọi cửa hàng toàn quốc chỉ bằng một cú nhấp — 100% thông điệp thương hiệu đồng bộ.',
+        'nubis.cast.f1.label': 'Kiểm soát trung tâm đám mây',      'nubis.cast.f1.desc': ': HQ phát đến hàng trăm — hoặc hàng nghìn — cửa hàng không độ trễ.',
+        'nubis.cast.f2.label': 'Lập lịch khung giờ thông minh',     'nubis.cast.f2.desc': ': Tự động chuyển menu bữa sáng, trưa, tối, ngày lễ và khuyến mãi giới hạn — tối đa hóa doanh thu mỗi mét vuông.',
+        'nubis.cast.f3.label': 'Hỗ trợ màn hình toàn diện',         'nubis.cast.f3.desc': ': Tương thích với mọi bảng hiệu kỹ thuật số Android và TV — không cần thay phần cứng, nâng cấp liền mạch.',
+        'nubis.cast.f4.label': 'Giám sát & cảnh báo thời gian thực', 'nubis.cast.f4.desc': ': Tự động phát hiện trạng thái phát — mất mạng hay sự cố kích hoạt cảnh báo ngay cho HQ. Chấm dứt thảm họa "sai nội dung trên màn hình".',
+        'nubis.table2.title': 'Nubis Cast vs. Cập nhật USB truyền thống',
+        'nubis.table2.col1': 'Truyền thống (USB / Tuần tra thủ công)',
+        'nubis.table2.col2': 'Nubis Cast (Phát đám mây)',
+        'nubis.table2.r1.dim': 'Hiệu quả hoạt động', 'nubis.table2.r1.legacy': 'Nhân viên phải chạy đến từng cửa hàng — mất nhiều ngày', 'nubis.table2.r1.win': 'Phát đám mây một cú nhấp — tất cả cửa hàng đồng bộ trong vài giây',
+        'nubis.table2.r2.dim': 'Nhất quán thương hiệu', 'nubis.table2.r2.legacy': 'Cửa hàng thường xuyên bỏ lỡ cập nhật — marketing hỗn loạn', 'nubis.table2.r2.win': 'Đồng bộ cưỡng bức đảm bảo nhận diện thương hiệu thống nhất',
+        'nubis.table2.r3.dim': 'Bảo trì thiết bị', 'nubis.table2.r3.legacy': 'Bảng hiệu hỏng không phát hiện được — không thể phản hồi kịp thời', 'nubis.table2.r3.win': 'Báo cáo trạng thái thời gian thực — bất thường tự động cảnh báo',
+        'nubis.table2.r4.dim': 'Hiệu quả chi phí', 'nubis.table2.r4.legacy': 'Chi phí đi lại và nhân công cao — chi phí ẩn phình to', 'nubis.table2.r4.win': 'Cắt giảm mạnh chi phí nhân lực — giảm tổng chi phí vận hành dài hạn',
+        'nubis.table2.r5.dim': 'Linh hoạt', 'nubis.table2.r5.legacy': 'Không thể phản ứng với thay đổi thị trường theo thời gian thực', 'nubis.table2.r5.win': 'Lập lịch linh hoạt — chuyển đổi nội dung khuyến mãi bất kỳ lúc nào',
         'nubis.cta': 'Tìm hiểu Nubis →',
         'imsdom.eyebrow': 'IMSDOM · Quản lý vòng đời vận hành chuỗi',
         'imsdom.h2': 'Đừng để mở rộng nhượng quyền trở thành khởi đầu của sự sụp đổ thương hiệu.<br>Định hình lại QSC bằng dữ liệu.',
