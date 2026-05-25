@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SOFONE · Device Positioning Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --panel-w:   316px;
+      --c-bg:      #0a1520;
+      --c-surface: #0f1e2e;
+      --c-card:    #142030;
+      --c-border:  rgba(106,204,172,0.14);
+      --c-accent:  #6ACCAC;
+      --c-text:    rgba(255,255,255,0.88);
+      --c-muted:   rgba(255,255,255,0.42);
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background: var(--c-bg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--c-text);
+    }
+
+    /* ── Layout ──────────────────────────────────────────── */
+    #app {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* ── Preview pane ────────────────────────────────────── */
+    #preview-pane {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      background: #050d15;
+      position: relative;
+    }
+
+    #preview-toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.5rem 0.85rem;
+      background: var(--c-surface);
+      border-bottom: 1px solid var(--c-border);
+      flex-shrink: 0;
+    }
+
+    .toolbar-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+    }
+
+    /* Viewport preset buttons */
+    .vp-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 5px;
+      color: var(--c-muted);
+      font-size: 0.7rem;
+      padding: 0.22rem 0.6rem;
+      cursor: pointer;
+      transition: all 0.18s;
+      font-family: inherit;
+    }
+    .vp-btn:hover,
+    .vp-btn.active { color: var(--c-accent); border-color: rgba(106,204,172,0.4); }
+
+    .toolbar-sep { flex: 1; }
+
+    #size-readout {
+      font-size: 0.68rem;
+      color: var(--c-muted);
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      background: rgba(255,255,255,0.04);
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+    }
+
+    #reload-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 5px;
+      color: var(--c-muted);
+      font-size: 0.72rem;
+      padding: 0.22rem 0.6rem;
+      cursor: pointer;
+      transition: all 0.18s;
+      font-family: inherit;
+    }
+    #reload-btn:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+    /* Iframe wrapper — centers constrained viewports */
+    #iframe-wrap {
+      flex: 1;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #preview {
+      border: none;
+      height: 100%;
+      width: 100%;
+      background: #fff;
+      transition: width 0.3s ease;
+    }
+
+    /* ── Control Panel ───────────────────────────────────── */
+    #panel {
+      width: var(--panel-w);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--c-surface);
+      border-left: 1px solid var(--c-border);
+      overflow: hidden;
+      transition: width 0.25s ease;
+    }
+    #panel.collapsed {
+      width: 40px;
+    }
+
+    /* Panel header */
+    #panel-header {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--c-border);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-shrink: 0;
+      background: var(--c-bg);
+    }
+
+    #panel-title-wrap { flex: 1; overflow: hidden; }
+    #panel-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      white-space: nowrap;
+    }
+    #panel-subtitle {
+      font-size: 0.65rem;
+      color: var(--c-muted);
+      margin-top: 0.12rem;
+      white-space: nowrap;
+    }
+
+    #collapse-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 5px;
+      color: var(--c-muted);
+      cursor: pointer;
+      padding: 0.25rem 0.45rem;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      transition: color 0.18s, border-color 0.18s;
+      line-height: 1;
+    }
+    #collapse-btn:hover { color: #fff; border-color: rgba(255,255,255,0.3); }
+
+    /* Panel body — scrollable */
+    #panel-body {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255,255,255,0.1) transparent;
+    }
+    #panel-body::-webkit-scrollbar { width: 4px; }
+    #panel-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+
+    /* Device group */
+    .dev-group {
+      border-bottom: 1px solid var(--c-border);
+      padding: 1rem 1rem 0.9rem;
+      transition: background 0.2s;
+    }
+    .dev-group:hover { background: rgba(255,255,255,0.015); }
+
+    .dev-group-header {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.85rem;
+      cursor: pointer;
+    }
+
+    .dev-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dev-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .dev-desc {
+      font-size: 0.62rem;
+      color: var(--c-muted);
+      margin-left: auto;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Controls */
+    .ctrl-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.55rem;
+    }
+    .ctrl-row:last-child { margin-bottom: 0; }
+
+    .ctrl-lbl {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      width: 24px;
+      flex-shrink: 0;
+    }
+
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      flex: 1;
+      height: 4px;
+      border-radius: 2px;
+      background: rgba(255,255,255,0.1);
+      cursor: pointer;
+      outline: none;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      cursor: pointer;
+      transition: transform 0.15s;
+      box-shadow: 0 0 0 3px rgba(106,204,172,0.18);
+    }
+    input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
+    input[type="range"]::-moz-range-thumb {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      border: none;
+      cursor: pointer;
+    }
+
+    .ctrl-num-wrap {
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .ctrl-num-wrap:focus-within {
+      border-color: rgba(106,204,172,0.5);
+      background: rgba(106,204,172,0.05);
+    }
+
+    input[type="number"] {
+      width: 44px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 0.75rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      padding: 0.22rem 0.35rem 0.22rem 0.5rem;
+      text-align: right;
+      -moz-appearance: textfield;
+      outline: none;
+    }
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+    .ctrl-unit {
+      font-size: 0.62rem;
+      color: var(--c-muted);
+      padding-right: 0.4rem;
+      user-select: none;
+    }
+
+    /* Panel footer */
+    #panel-footer {
+      padding: 0.9rem 1rem;
+      border-top: 1px solid var(--c-border);
+      background: var(--c-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .footer-btn {
+      width: 100%;
+      padding: 0.65rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.18s, transform 0.18s;
+      font-family: inherit;
+      letter-spacing: 0.02em;
+      border: none;
+    }
+    .footer-btn:hover { opacity: 0.85; }
+    .footer-btn:active { transform: scale(0.98); }
+
+    .footer-btn--primary { background: var(--c-accent); color: #0a1520; }
+    .footer-btn--secondary {
+      background: transparent;
+      color: var(--c-muted);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-btn--secondary:hover { color: #fff; border-color: rgba(255,255,255,0.28); }
+
+    /* CSS output box */
+    #css-output-wrap {
+      display: none;
+      margin-top: 0.5rem;
+    }
+    #css-output-wrap.visible { display: block; }
+
+    #css-output {
+      width: 100%;
+      background: #060e18;
+      border: 1px solid var(--c-border);
+      border-radius: 7px;
+      color: #a8d8c8;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.65rem;
+      line-height: 1.6;
+      padding: 0.7rem 0.75rem;
+      resize: none;
+      height: 160px;
+      outline: none;
+    }
+    .css-hint {
+      font-size: 0.62rem;
+      color: var(--c-muted);
+      margin-top: 0.35rem;
+      line-height: 1.5;
+    }
+
+    /* Toast notification */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      left: calc(50% - var(--panel-w) / 2);
+      transform: translateX(-50%) translateY(16px);
+      background: var(--c-accent);
+      color: #0a1520;
+      padding: 0.55rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s ease, transform 0.28s ease;
+      z-index: 9999;
+      box-shadow: 0 4px 20px rgba(106,204,172,0.35);
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Keyboard shortcut hint */
+    #shortcuts {
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--c-border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+    .shortcut-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.62rem;
+      color: var(--c-muted);
+    }
+    kbd {
+      display: inline-block;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 3px;
+      padding: 0.08rem 0.32rem;
+      font-family: 'SF Mono', monospace;
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Collapsed state */
+    #panel.collapsed #panel-title-wrap,
+    #panel.collapsed #shortcuts,
+    #panel.collapsed #panel-body,
+    #panel.collapsed #panel-footer { display: none; }
+    #panel.collapsed #panel-header { padding: 0.9rem 0.6rem; justify-content: center; }
+    #panel.collapsed #collapse-btn { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ── Preview Pane ──────────────────────────────────── -->
+  <div id="preview-pane">
+    <div id="preview-toolbar">
+      <span class="toolbar-label">Viewport</span>
+      <button class="vp-btn active" data-w="full">Full</button>
+      <button class="vp-btn" data-w="1440">1440</button>
+      <button class="vp-btn" data-w="1280">1280</button>
+      <button class="vp-btn" data-w="768">768</button>
+      <button class="vp-btn" data-w="390">390</button>
+      <span class="toolbar-sep"></span>
+      <span id="size-readout">— × —</span>
+      <button id="reload-btn">⟳ Reload</button>
+    </div>
+    <div id="iframe-wrap">
+      <iframe id="preview" src="index.html" title="SOFONE Preview"></iframe>
+    </div>
+  </div>
+
+  <!-- ── Control Panel ─────────────────────────────────── -->
+  <div id="panel">
+    <div id="panel-header">
+      <div id="panel-title-wrap">
+        <div id="panel-title">Device Positions</div>
+        <div id="panel-subtitle">Live-sync to preview</div>
+      </div>
+      <button id="collapse-btn" title="Toggle panel (P)">◀</button>
+    </div>
+
+    <div id="shortcuts">
+      <span class="shortcut-chip"><kbd>P</kbd> panel</span>
+      <span class="shortcut-chip"><kbd>R</kbd> reload</span>
+      <span class="shortcut-chip"><kbd>C</kbd> copy CSS</span>
+      <span class="shortcut-chip"><kbd>⌫</kbd> reset</span>
+    </div>
+
+    <div id="panel-body">
+      <!-- Device groups injected by JS -->
+    </div>
+
+    <div id="panel-footer">
+      <button class="footer-btn footer-btn--primary" id="copy-btn">📋  Copy CSS Variables</button>
+      <button class="footer-btn footer-btn--secondary" id="show-css-btn">Show generated CSS</button>
+      <div id="css-output-wrap">
+        <textarea id="css-output" readonly spellcheck="false"></textarea>
+        <p class="css-hint">Paste these values into the <code>:root</code> block in <code>style.css</code></p>
+      </div>
+      <button class="footer-btn footer-btn--secondary" id="reset-btn">↺  Reset all to defaults</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="toast">Copied to clipboard ✓</div>
+
+<script>
+/* ── Device definitions ────────────────────────────────── */
+var DEVICES = [
+  {
+    key: 'kiosk',
+    label: 'KIOSK',
+    desc: 'CentrDX 自助終端',
+    color: '#6ACCAC',
+    defaults: { top: 55, left: 37.5, w: 15 },
+    vars: {
+      top:  '--dev-kiosk-top',
+      left: '--dev-kiosk-left',
+      w:    '--dev-kiosk-w'
+    }
+  },
+  {
+    key: 'pos',
+    label: 'POS',
+    desc: 'Autopos 收銀中樞',
+    color: '#f9a825',
+    defaults: { top: 35, left: 34.5, w: 14.5 },
+    vars: {
+      top:  '--dev-pos-top',
+      left: '--dev-pos-left',
+      w:    '--dev-pos-w'
+    }
+  },
+  {
+    key: 'printer',
+    label: 'Printer',
+    desc: 'Nubis 物聯控制',
+    color: '#e57373',
+    defaults: { top: 42, left: 45, w: 6.5 },
+    vars: {
+      top:  '--dev-printer-top',
+      left: '--dev-printer-left',
+      w:    '--dev-printer-w'
+    }
+  },
+  {
+    key: 'qr',
+    label: 'QR Code',
+    desc: 'CentrDX QR 掃碼點餐',
+    color: '#ce93d8',
+    defaults: { top: 48, left: 64, w: 9 },
+    vars: {
+      top:  '--dev-qr-top',
+      left: '--dev-qr-left',
+      w:    '--dev-qr-w'
+    }
+  },
+  {
+    key: 'waitress',
+    label: 'Waitress',
+    desc: 'IMSDOM 智慧服務',
+    color: '#ffb74d',
+    defaults: { top: 45.5, left: 51.5, w: 10 },
+    vars: {
+      top:  '--dev-waitress-top',
+      left: '--dev-waitress-left',
+      w:    '--dev-waitress-w'
+    }
+  }
+];
+
+var DIMS = [
+  { key: 'top',  label: 'Top',  min: 0,  max: 100, step: 0.5 },
+  { key: 'left', label: 'Left', min: 0,  max: 100, step: 0.5 },
+  { key: 'w',    label: 'W',    min: 3,  max: 65,  step: 0.5 }
+];
+
+/* ── State ─────────────────────────────────────────────── */
+var STORAGE_KEY = 'sofone_dev_v1';
+
+function loadState() {
+  try {
+    var stored = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+    var state = {};
+    DEVICES.forEach(function(dev) {
+      state[dev.key] = {};
+      DIMS.forEach(function(dim) {
+        var stored_val = stored[dev.key] && stored[dev.key][dim.key];
+        state[dev.key][dim.key] = (stored_val != null) ? stored_val : dev.defaults[dim.key];
+      });
+    });
+    return state;
+  } catch(e) {
+    return buildDefaultState();
+  }
+}
+
+function buildDefaultState() {
+  var s = {};
+  DEVICES.forEach(function(d) {
+    s[d.key] = { top: d.defaults.top, left: d.defaults.left, w: d.defaults.w };
+  });
+  return s;
+}
+
+var state = loadState();
+
+function saveState() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+}
+
+/* ── Apply to iframe ───────────────────────────────────── */
+var iframe = document.getElementById('preview');
+
+function applyState() {
+  var doc = getIframeDoc();
+  if (!doc) return;
+  DEVICES.forEach(function(dev) {
+    DIMS.forEach(function(dim) {
+      doc.documentElement.style.setProperty(dev.vars[dim.key], state[dev.key][dim.key] + '%');
+    });
+  });
+}
+
+function getIframeDoc() {
+  try { return iframe.contentDocument || iframe.contentWindow.document; }
+  catch(e) { return null; }
+}
+
+/* ── Highlight device in iframe on hover ───────────────── */
+var HIGHLIGHT_STYLE_ID = 'sofone-dev-highlight';
+
+function injectHighlightStyle() {
+  var doc = getIframeDoc();
+  if (!doc) return;
+  if (doc.getElementById(HIGHLIGHT_STYLE_ID)) return;
+  var s = doc.createElement('style');
+  s.id = HIGHLIGHT_STYLE_ID;
+  s.textContent =
+    '.map-device.dev-hl .device-img {' +
+    '  filter: drop-shadow(0 0 18px rgba(255,220,80,0.95)) brightness(1.12) !important;' +
+    '  animation: none !important;' +
+    '  outline: 2px dashed rgba(255,220,80,0.6);' +
+    '  outline-offset: 4px;' +
+    '  transition: filter 0.15s, transform 0.15s !important;' +
+    '}';
+  doc.head.appendChild(s);
+}
+
+function setHighlight(devKey, on) {
+  var doc = getIframeDoc();
+  if (!doc) return;
+  var el = doc.querySelector('[data-device="' + devKey + '"]');
+  if (!el) return;
+  if (on) el.classList.add('dev-hl');
+  else el.classList.remove('dev-hl');
+}
+
+/* ── Build control panel UI ────────────────────────────── */
+var panelBody = document.getElementById('panel-body');
+
+DEVICES.forEach(function(dev) {
+  var group = document.createElement('div');
+  group.className = 'dev-group';
+  group.dataset.devKey = dev.key;
+
+  var header = document.createElement('div');
+  header.className = 'dev-group-header';
+  header.innerHTML =
+    '<span class="dev-dot" style="background:' + dev.color + '"></span>' +
+    '<span class="dev-name">' + dev.label + '</span>' +
+    '<span class="dev-desc">' + dev.desc + '</span>';
+  group.appendChild(header);
+
+  DIMS.forEach(function(dim) {
+    var row = document.createElement('div');
+    row.className = 'ctrl-row';
+
+    var lbl = document.createElement('span');
+    lbl.className = 'ctrl-lbl';
+    lbl.textContent = dim.label;
+
+    var range = document.createElement('input');
+    range.type = 'range';
+    range.id = dev.key + '-' + dim.key + '-range';
+    range.min = dim.min; range.max = dim.max; range.step = dim.step;
+    range.value = state[dev.key][dim.key];
+
+    var numWrap = document.createElement('div');
+    numWrap.className = 'ctrl-num-wrap';
+
+    var num = document.createElement('input');
+    num.type = 'number';
+    num.id = dev.key + '-' + dim.key + '-num';
+    num.min = dim.min; num.max = dim.max; num.step = dim.step;
+    num.value = state[dev.key][dim.key];
+
+    var unit = document.createElement('span');
+    unit.className = 'ctrl-unit';
+    unit.textContent = '%';
+
+    numWrap.appendChild(num);
+    numWrap.appendChild(unit);
+
+    row.appendChild(lbl);
+    row.appendChild(range);
+    row.appendChild(numWrap);
+    group.appendChild(row);
+
+    /* Sync range ↔ number ↔ state */
+    function update(val) {
+      val = parseFloat(val);
+      if (isNaN(val)) return;
+      val = Math.min(dim.max, Math.max(dim.min, val));
+      state[dev.key][dim.key] = val;
+      range.value = val;
+      num.value = val;
+      applyState();
+      saveState();
+    }
+
+    range.addEventListener('input', function() { update(this.value); });
+    num.addEventListener('input',   function() { update(this.value); });
+    num.addEventListener('change',  function() { update(this.value); });
+
+    /* Arrow keys in number field */
+    num.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowUp')   { update(parseFloat(this.value) + dim.step); e.preventDefault(); }
+      if (e.key === 'ArrowDown') { update(parseFloat(this.value) - dim.step); e.preventDefault(); }
+    });
+  });
+
+  /* Hover → highlight in preview */
+  group.addEventListener('mouseenter', function() { setHighlight(dev.key, true);  });
+  group.addEventListener('mouseleave', function() { setHighlight(dev.key, false); });
+
+  panelBody.appendChild(group);
+});
+
+/* ── Viewport presets ──────────────────────────────────── */
+document.querySelectorAll('.vp-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.vp-btn').forEach(function(b) { b.classList.remove('active'); });
+    this.classList.add('active');
+    var w = this.dataset.w;
+    if (w === 'full') {
+      iframe.style.width = '100%';
+      iframe.style.maxWidth = '';
+    } else {
+      iframe.style.width = w + 'px';
+      iframe.style.maxWidth = w + 'px';
+    }
+    setTimeout(updateSizeReadout, 100);
+  });
+});
+
+/* ── Size readout ──────────────────────────────────────── */
+var sizeReadout = document.getElementById('size-readout');
+function updateSizeReadout() {
+  try {
+    var w = iframe.contentWindow.innerWidth;
+    var h = iframe.contentWindow.innerHeight;
+    sizeReadout.textContent = w + ' × ' + h + 'px';
+  } catch(e) {
+    sizeReadout.textContent = '— × —';
+  }
+}
+
+/* ── Iframe events ─────────────────────────────────────── */
+iframe.addEventListener('load', function() {
+  applyState();
+  injectHighlightStyle();
+  updateSizeReadout();
+});
+
+window.addEventListener('resize', updateSizeReadout);
+
+/* ── Reload ────────────────────────────────────────────── */
+document.getElementById('reload-btn').addEventListener('click', function() {
+  iframe.src = iframe.src;
+});
+
+/* ── Panel collapse ────────────────────────────────────── */
+var panel = document.getElementById('panel');
+document.getElementById('collapse-btn').addEventListener('click', togglePanel);
+
+function togglePanel() {
+  panel.classList.toggle('collapsed');
+}
+
+/* ── Generate CSS text ─────────────────────────────────── */
+function generateCSS() {
+  var lines = [];
+  DEVICES.forEach(function(dev) {
+    lines.push('  --dev-' + dev.key + '-top:   ' + state[dev.key].top + '%;');
+    lines.push('  --dev-' + dev.key + '-left:  ' + state[dev.key].left + '%;');
+    lines.push('  --dev-' + dev.key + '-w:     ' + state[dev.key].w + '%;');
+    lines.push('');
+  });
+  return lines.join('\n').trimEnd();
+}
+
+/* ── Copy CSS ──────────────────────────────────────────── */
+document.getElementById('copy-btn').addEventListener('click', function() {
+  var text = generateCSS();
+  navigator.clipboard.writeText(text).then(function() {
+    showToast('Copied to clipboard ✓');
+  }).catch(function() {
+    /* fallback: select the textarea */
+    var ta = document.getElementById('css-output');
+    ta.value = text;
+    document.getElementById('css-output-wrap').classList.add('visible');
+    document.getElementById('show-css-btn').textContent = 'Hide CSS';
+    ta.select();
+    showToast('Select + copy the text above');
+  });
+});
+
+/* ── Show/hide CSS output ──────────────────────────────── */
+var cssOutputWrap = document.getElementById('css-output-wrap');
+var showCssBtn = document.getElementById('show-css-btn');
+var cssOutput = document.getElementById('css-output');
+
+showCssBtn.addEventListener('click', function() {
+  var visible = cssOutputWrap.classList.toggle('visible');
+  showCssBtn.textContent = visible ? 'Hide CSS' : 'Show generated CSS';
+  if (visible) cssOutput.value = generateCSS();
+});
+
+/* Update output if already visible when state changes */
+function maybeUpdateOutput() {
+  if (cssOutputWrap.classList.contains('visible')) {
+    cssOutput.value = generateCSS();
+  }
+}
+
+/* Patch update to also refresh output */
+(function() {
+  var origSave = saveState;
+  saveState = function() {
+    origSave();
+    maybeUpdateOutput();
+  };
+})();
+
+/* ── Reset ─────────────────────────────────────────────── */
+document.getElementById('reset-btn').addEventListener('click', function() {
+  state = buildDefaultState();
+  DEVICES.forEach(function(dev) {
+    DIMS.forEach(function(dim) {
+      var range = document.getElementById(dev.key + '-' + dim.key + '-range');
+      var num   = document.getElementById(dev.key + '-' + dim.key + '-num');
+      if (range) range.value = state[dev.key][dim.key];
+      if (num)   num.value   = state[dev.key][dim.key];
+    });
+  });
+  applyState();
+  saveState();
+  showToast('Reset to defaults');
+});
+
+/* ── Toast ─────────────────────────────────────────────── */
+var toastEl = document.getElementById('toast');
+var toastTimer;
+function showToast(msg) {
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function() { toastEl.classList.remove('show'); }, 2400);
+}
+
+/* ── Keyboard shortcuts ────────────────────────────────── */
+document.addEventListener('keydown', function(e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  switch(e.key.toLowerCase()) {
+    case 'p': togglePanel(); break;
+    case 'r': iframe.src = iframe.src; break;
+    case 'c':
+      navigator.clipboard.writeText(generateCSS()).then(function() {
+        showToast('Copied to clipboard ✓');
+      });
+      break;
+    case 'backspace':
+      e.preventDefault();
+      document.getElementById('reset-btn').click();
+      break;
+  }
+});
+</script>
+</body>
+</html>

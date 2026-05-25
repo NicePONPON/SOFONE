@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="SOFONE 碩豐數位科技 — 連鎖餐飲一站式數位轉型服務">
-  <meta property="og:title" content="SOFONE 碩豐數位科技">
-  <meta property="og:description" content="串聯軟硬體，賦能數位轉型">
+  <meta name="description" content="碩豐 SOFONE — 串聯軟硬體，賦能數位轉型。全球展店 POS 生態、Kiosk、IoT 設備管理、連鎖營運系統。">
+  <meta property="og:title" content="碩豐 SOFONE | 串聯軟硬體，賦能數位轉型">
+  <meta property="og:description" content="您的 ERP，我的系統整合。專注全球展店，技術瑣事交給碩豐。">
   <meta property="og:image" content="assets/sofone-logo.png">
   <link rel="icon" href="assets/favicon.png" type="image/png">
-  <title>SOFONE 碩豐數位科技</title>
+  <title>碩豐 SOFONE | 串聯軟硬體，賦能數位轉型</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ── Language Picker ───────────────────────────── -->
+  <!-- ── Language Picker ──────────────────────────────────── -->
   <div class="lang-picker" role="group" aria-label="Language selection">
     <button class="lang-btn active" data-lang="zh-TW">繁中</button>
     <button class="lang-btn" data-lang="en">EN</button>
@@ -21,216 +21,509 @@
     <button class="lang-btn" data-lang="vi">Viet</button>
   </div>
 
-  <!-- ── 1. Hero ─────────────────────────────────── -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-main">
+  <!-- ── 1. Hero ──────────────────────────────────────────── -->
+  <section class="hero-section" id="hero">
+
+    <!-- Left Column: Brand & Copy -->
+    <div class="hero-left">
+      <div class="hero-content">
         <div class="hero-brand">
           <img src="assets/sofone-logo.png" alt="SOFONE"
                class="hero-logo"
-               onerror="this.src='assets/placeholder.svg'">
-          <span class="hero-brand-name">碩豐 SOFONE</span>
+               onerror="this.style.display='none'">
         </div>
-        <div class="hero-sep" aria-hidden="true"></div>
-        <h1 class="hero-taglines">
-          <span data-i18n="tagline1">串聯軟硬體</span>
-          <span data-i18n="tagline2">賦能數位轉型</span>
-        </h1>
+        <p class="hero-eyebrow">碩豐 SOFONE</p>
+        <hr class="hero-divider">
+        <h1 class="hero-h1">串聯軟硬體<br>賦能數位轉型</h1>
+        <p class="hero-sub">
+          以高彈性、低耦合的系統整合方案，<br>
+          為企業打造更強健的營運生態圈。<br>
+          無需更換核心 ERP，協助品牌快速落地展店。
+        </p>
+        <div class="hero-ctas">
+          <a href="#contact" class="btn btn--ghost">下載完整解決方案</a>
+          <a href="#contact" class="btn btn--primary">預約顧問諮詢</a>
+        </div>
       </div>
-      <p class="hero-sub" data-i18n-html="sub">以高彈性、低耦合的系統整合方案，<br>為企業打造更強健的營運生態圈。<br>無需更換核心 ERP，協助品牌快速落地展店。</p>
     </div>
-    <button class="scroll-hint" aria-label="向下捲動至品牌故事">
+
+    <!-- Right Column: Interactive 2.5D Restaurant Map -->
+    <div class="hero-right" id="hero-interactive-map">
+      <div class="map-stage">
+
+        <!-- Base isometric background -->
+        <img src="assets/Cafe%20Background.png"
+             alt="餐廳場域示意圖"
+             class="map-bg"
+             draggable="false">
+
+        <!-- KIOSK — adjust --dev-kiosk-* in :root to reposition -->
+        <div class="map-device" data-device="kiosk">
+          <img src="assets/KIOSK.png" alt="CentrDX Kiosk" class="device-img" draggable="false">
+          <div class="device-tooltip">
+            <p class="tooltip-title">CentrDX 智慧自助終端</p>
+            <p class="tooltip-desc">專為輕量化設計，支援多元支付與多場域擴充，大幅降低排隊人潮與缺工壓力。</p>
+          </div>
+        </div>
+
+        <!-- POS — adjust --dev-pos-* in :root to reposition -->
+        <div class="map-device" data-device="pos">
+          <img src="assets/POS.png" alt="Autopos POS" class="device-img" draggable="false">
+          <div class="device-tooltip">
+            <p class="tooltip-title">Autopos 企業級收銀中樞</p>
+            <p class="tooltip-desc">專為全球跨國連鎖打造，支援多語系、跨國稅制，斷線也能穩定結帳。</p>
+          </div>
+        </div>
+
+        <!-- Printer — adjust --dev-printer-* in :root to reposition -->
+        <div class="map-device" data-device="printer">
+          <img src="assets/Printer.png" alt="出單列印機" class="device-img" draggable="false">
+          <div class="device-tooltip">
+            <p class="tooltip-title">Nubis 智慧物聯控制</p>
+            <p class="tooltip-desc">戰情室級的遠端監控，即時掌握硬體狀態與出單連動，大幅降低 IT 維運成本。</p>
+          </div>
+        </div>
+
+        <!-- QR Code — adjust --dev-qr-* in :root to reposition -->
+        <div class="map-device" data-device="qr">
+          <img src="assets/QR%20Code.png" alt="QR Code 掃碼點餐" class="device-img" draggable="false">
+          <div class="device-tooltip">
+            <p class="tooltip-title">CentrDX QR 掃碼點餐</p>
+            <p class="tooltip-desc">顧客掃碼即進入自助點餐流程，搭配 CentrDX 系統實現零接觸快速結帳。</p>
+          </div>
+        </div>
+
+        <!-- Waitress — adjust --dev-waitress-* in :root to reposition -->
+        <div class="map-device" data-device="waitress">
+          <img src="assets/Waitress.gif" alt="IMSDOM 數位服務員" class="device-img" draggable="false">
+          <div class="device-tooltip">
+            <p class="tooltip-title">IMSDOM 智慧服務管理</p>
+            <p class="tooltip-desc">即時排班派工、到店巡檢與服務評分，讓每位員工都能達到品牌最高服務標準。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <button class="scroll-hint" aria-label="向下捲動至解決方案">
       <svg width="24" height="32" viewBox="0 0 24 32" fill="none">
-        <line x1="12" y1="0" x2="12" y2="20" stroke="#aaaaaa" stroke-width="2" stroke-linecap="round"/>
-        <polyline points="6,14 12,22 18,14" stroke="#aaaaaa" stroke-width="2"
+        <line x1="12" y1="0" x2="12" y2="20" stroke="rgba(25,53,72,0.38)" stroke-width="2" stroke-linecap="round"/>
+        <polyline points="6,14 12,22 18,14" stroke="rgba(25,53,72,0.38)" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       </svg>
     </button>
+
   </section>
 
-  <!-- ── 2. Brand Story ──────────────────────────── -->
-  <section class="story">
-    <div class="story-inner">
-      <p class="story-eyebrow" data-i18n="story_eyebrow">OUR STORY</p>
-      <h2 class="story-headline" data-i18n="story_headline">智慧商業，全球佈局</h2>
+  <!-- ── 2. CentrDX Section ────────────────────────────────── -->
+  <section class="centrdx-section" id="centrdx">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">CentrDX · 輕量 Kiosk 點餐解決方案</p>
+      <h2 class="section-h2 reveal">別讓「排隊」成為您流失尖峰業績的致命傷。</h2>
 
-      <div class="story-beats">
-        <p class="beat" data-beat="0" data-i18n="beat_0">SOFONE 碩豐數位科技 是一家專注於 智慧商用設備、SaaS 應用與 AI 數據營運 的科技企業，致力於打造可跨國部署的智慧商業技術平台。</p>
-        <p class="beat" data-beat="1" data-i18n="beat_1">公司以 軟硬整合能力 為核心，服務涵蓋 IoT 設備管理、餐飲零售中台、商用系統整合與 POS 終端應用，協助企業加速營運數位化與智慧化。</p>
-        <p class="beat beat--bold" data-beat="2" data-i18n="beat_2">碩豐提供的不僅是產品，而是一套從設備、系統到數據的全生命週期整合能力（End-to-End Value Chain）服務商。</p>
-        <p class="beat" data-beat="3" data-i18n="beat_3">透過自研平台與模組化架構，我們為餐飲、零售與商用設備製造商提供可快速複製、可規模化擴展、可全球化運行的數位解決方案。</p>
-        <p class="beat beat--pillars" data-beat="4" data-i18n-html="beat_4">IoT 設備管理&nbsp;&nbsp;·&nbsp;&nbsp;餐飲零售中台&nbsp;&nbsp;·&nbsp;&nbsp;商用系統整合</p>
-        <p class="beat beat--label" data-beat="5">SOFONE 碩豐數位科技 — END-TO-END VALUE CHAIN</p>
+      <!-- Before / After -->
+      <div class="before-after reveal">
+        <div class="before-panel">
+          <span class="panel-label panel-label--bad">❌ BEFORE &nbsp;問題痛點</span>
+          <ul class="pain-list">
+            <li>
+              <span class="pain-icon">👷</span>
+              <div>
+                <strong>缺工招不到人？</strong>
+                <p>傳統人工收銀高度依賴人力，排班難、流動率高，旺季更難找人。</p>
+              </div>
+            </li>
+            <li>
+              <span class="pain-icon">💸</span>
+              <div>
+                <strong>結帳錯誤率高？</strong>
+                <p>人工點餐、手寫傳票，錯漏單導致廚房混亂，顧客抱怨層出不窮。</p>
+              </div>
+            </li>
+            <li>
+              <span class="pain-icon">⏱️</span>
+              <div>
+                <strong>點餐效率低？</strong>
+                <p>尖峰排隊超過 5 分鐘，顧客默默離開，業績在隊伍中悄悄流失。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="ba-divider" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="13" stroke="rgba(106,204,172,0.35)" stroke-width="1.5"/>
+            <polyline points="8,14 20,14 16,9" stroke="#6ACCAC" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="20,14 16,19" stroke="#6ACCAC" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="after-panel">
+          <span class="panel-label panel-label--good">✅ AFTER &nbsp;CentrDX 方案</span>
+          <ul class="solution-list">
+            <li>
+              <span class="check-icon">✅</span>
+              <div>
+                <strong>把每支手機變成您的收銀機</strong>
+                <p>顧客掃碼即點即付，廚房 KDS 秒速接單，零人工轉達。</p>
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✅</span>
+              <div>
+                <strong>釋放 1~1.5 個人力</strong>
+                <p>Kiosk 完美取代傳統收銀員，讓寶貴人力回歸出餐與服務。</p>
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✅</span>
+              <div>
+                <strong>零客製化，隨插即用</strong>
+                <p>適合各種微型與輕量化店型，今天裝機，明天營業。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hardware Grid -->
+      <p class="hw-grid-label reveal">選擇適合您場域的 Kiosk 尺寸</p>
+      <div class="hw-grid reveal">
+
+        <div class="hw-card">
+          <div class="hw-img-placeholder">
+            <span class="hw-size-badge">15"</span>
+          </div>
+          <h3 class="hw-name">15 吋</h3>
+          <p class="hw-desc">桌上型小型化，適合吧台收銀、快餐簡餐型店型。</p>
+        </div>
+
+        <div class="hw-card">
+          <div class="hw-img-placeholder">
+            <span class="hw-size-badge">22"</span>
+          </div>
+          <h3 class="hw-name">22 吋</h3>
+          <p class="hw-desc">標準站立式 Kiosk，最受連鎖品牌青睞的主流尺寸。</p>
+        </div>
+
+        <div class="hw-card hw-card--featured">
+          <div class="hw-img-placeholder">
+            <span class="hw-size-badge">27"</span>
+            <span class="hw-badge-best">最熱銷</span>
+          </div>
+          <h3 class="hw-name">27 吋</h3>
+          <p class="hw-desc">大螢幕廣角視覺，提升點餐轉換率，適合大型餐廳。</p>
+        </div>
+
+        <div class="hw-card">
+          <div class="hw-img-placeholder">
+            <span class="hw-size-badge">32"</span>
+          </div>
+          <h3 class="hw-name">32 吋</h3>
+          <p class="hw-desc">旗艦尺寸，沉浸式點餐體驗，適合高流量旗艦門市。</p>
+        </div>
+
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="https://centrdx.shop/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+          了解 CentrDX →
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ── 3. Solutions ───────────────────────────── -->
-  <section class="solutions">
-    <div class="solutions-inner">
-      <p class="solutions-eyebrow" data-i18n="solutions_eyebrow">CORE TECHNOLOGY ENGINES</p>
-      <h2 class="solutions-heading" data-i18n="solutions_heading">四大核心技術引擎</h2>
+  <!-- ── 3. Autopos Section ─────────────────────────────────── -->
+  <section class="autopos-section" id="autopos">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Autopos · 企業級 POS 生態</p>
+      <h2 class="section-h2 reveal">企業級全球跨國 POS 生態</h2>
 
-      <div class="sol-grid">
-
-        <!-- Card 1: Autopos -->
-        <div class="sol-card">
-          <button class="sol-toggle" aria-expanded="false">
-            <div class="sol-logos">
-              <img src="assets/autopos-logo.png" alt="Autopos" onerror="this.src='assets/placeholder.svg'">
+      <!-- Country Tabs -->
+      <div class="tabs reveal" id="autopos-tabs">
+        <div class="tab-list" role="tablist" aria-label="市場選擇">
+          <button class="tab-btn active" data-tab="tw" role="tab" aria-selected="true" aria-controls="tab-tw">🇹🇼 台灣</button>
+          <button class="tab-btn" data-tab="us" role="tab" aria-selected="false" aria-controls="tab-us">🇺🇸 美國</button>
+          <button class="tab-btn" data-tab="jp" role="tab" aria-selected="false" aria-controls="tab-jp">🇯🇵 日本</button>
+        </div>
+        <div class="tab-panels">
+          <div class="tab-panel active" id="tab-tw" role="tabpanel">
+            <div class="tab-img-placeholder">
+              <span class="tab-img-label">🇹🇼 台灣市場 — Autopos 後台介面截圖</span>
             </div>
-            <div class="sol-info">
-              <h3 class="sol-title">Autopos</h3>
-              <p class="sol-situation" data-i18n="autopos_situation">全球佈局的企業級 POS 生態</p>
-              <p class="sol-value" data-i18n="autopos_value">跨國境的營運穩定性與 AI 智慧管理</p>
+          </div>
+          <div class="tab-panel" id="tab-us" role="tabpanel">
+            <div class="tab-img-placeholder">
+              <span class="tab-img-label">🇺🇸 美國市場 — Autopos 後台介面截圖</span>
             </div>
-            <span class="sol-chevron" aria-hidden="true">
-              <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
-                <polyline points="1,1 6.5,7 12,1" stroke="currentColor" stroke-width="1.75"
-                          stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <div class="sol-detail" hidden>
-            <ul class="sol-bullets">
-              <li data-i18n-html="autopos_b1"><strong>全球化部署</strong>具備跨國稅務、金流對接及報表整合能力，導入 AI 輔助分析提升決策效率。</li>
-              <li data-i18n-html="autopos_b2"><strong>高規格硬體</strong>獨家提供 IP54 防潑水等級 POS 與 Kiosk 硬體，穩定性優於業界標準。</li>
-              <li data-i18n-html="autopos_b3"><strong>模組化擴充</strong>支援零錢找零、多元支付（QR Code）等模組隨插即用，彈性滿足複雜展店需求。</li>
-            </ul>
-            <a href="https://autopos.tw/" target="_blank" rel="noopener noreferrer" class="sol-more-link" data-i18n="more_info">更多資訊 →</a>
+          </div>
+          <div class="tab-panel" id="tab-jp" role="tabpanel">
+            <div class="tab-img-placeholder">
+              <span class="tab-img-label">🇯🇵 日本市場 — Autopos 後台介面截圖</span>
+            </div>
           </div>
         </div>
-
-        <!-- Card 2: CentrDX -->
-        <div class="sol-card">
-          <button class="sol-toggle" aria-expanded="false">
-            <div class="sol-logos">
-              <img src="assets/centrdx-logo.png" alt="CentrDX" onerror="this.src='assets/placeholder.svg'">
-            </div>
-            <div class="sol-info">
-              <h3 class="sol-title">CentrDX</h3>
-              <p class="sol-situation" data-i18n="centrdx_situation">敏捷上手的數位化先鋒</p>
-              <p class="sol-value" data-i18n="centrdx_value">快速導入、輕量化、開箱即用</p>
-            </div>
-            <span class="sol-chevron" aria-hidden="true">
-              <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
-                <polyline points="1,1 6.5,7 12,1" stroke="currentColor" stroke-width="1.75"
-                          stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <div class="sol-detail" hidden>
-            <ul class="sol-bullets">
-              <li data-i18n-html="centrdx_b1"><strong>入門首選</strong>專為輕量化、無客製化需求的店型設計。</li>
-              <li data-i18n-html="centrdx_b2"><strong>高效作業</strong>提供掃碼點餐與自動出單功能，協助連鎖品牌快速達成標準化展店目標。</li>
-            </ul>
-            <a href="https://centrdx.shop/" target="_blank" rel="noopener noreferrer" class="sol-more-link" data-i18n="more_info">更多資訊 →</a>
-          </div>
-        </div>
-
-        <!-- Card 3: IMSDOM -->
-        <div class="sol-card">
-          <button class="sol-toggle" aria-expanded="false">
-            <div class="sol-logos">
-              <img src="assets/imsdom-logo.png" alt="IMSDOM" onerror="this.src='assets/placeholder.svg'">
-            </div>
-            <div class="sol-info">
-              <h3 class="sol-title">IMSDOM</h3>
-              <p class="sol-situation" data-i18n="imsdom_situation">集團運營與品質標準化引擎</p>
-              <p class="sol-value" data-i18n="imsdom_value">人才複製、經驗傳承、大幅降低 HR 訓練成本</p>
-            </div>
-            <span class="sol-chevron" aria-hidden="true">
-              <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
-                <polyline points="1,1 6.5,7 12,1" stroke="currentColor" stroke-width="1.75"
-                          stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <div class="sol-detail" hidden>
-            <ul class="sol-bullets">
-              <li data-i18n-html="imsdom_b1"><strong>自動化考核</strong>內建集團級教育訓練與考核評分系統，自動化取代人工培訓作業。</li>
-              <li data-i18n-html="imsdom_b2"><strong>品質均質化</strong>確保無論直營或加盟，全體門店擁有一致的服務與考核標準。</li>
-            </ul>
-            <a href="https://www.imsdom.com/" target="_blank" rel="noopener noreferrer" class="sol-more-link" data-i18n="more_info">更多資訊 →</a>
-          </div>
-        </div>
-
-        <!-- Card 4: Nubis -->
-        <div class="sol-card">
-          <button class="sol-toggle" aria-expanded="false">
-            <div class="sol-logos">
-              <img src="assets/nubis-logo.png" alt="Nubis" onerror="this.src='assets/placeholder.svg'">
-            </div>
-            <div class="sol-info">
-              <h3 class="sol-title">Nubis</h3>
-              <p class="sol-situation" data-i18n="nubis_situation">全球連鎖的智慧控制塔</p>
-              <p class="sol-value" data-i18n="nubis_value">遠端維運、數據透明、一鍵同步</p>
-            </div>
-            <span class="sol-chevron" aria-hidden="true">
-              <svg width="13" height="8" viewBox="0 0 13 8" fill="none">
-                <polyline points="1,1 6.5,7 12,1" stroke="currentColor" stroke-width="1.75"
-                          stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </button>
-          <div class="sol-detail" hidden>
-            <ul class="sol-bullets">
-              <li data-i18n-html="nubis_b1"><strong>遠端全監控</strong>即時掌握場區內所有硬體與連網設備狀態，無需派人跑現場。</li>
-              <li data-i18n-html="nubis_b2"><strong>一鍵同步管理</strong>支援遠端軟體更新與資料夾內容同步，即時掌握設備運作狀況，將維護成本降至最低。</li>
-            </ul>
-            <a href="https://centrdx.shop/" target="_blank" rel="noopener noreferrer" class="sol-more-link" data-i18n="more_info">更多資訊 →</a>
-          </div>
-        </div>
-
       </div>
 
-      <div class="sol-cta-wrap">
-        <a href="#contact" class="sol-cta-btn" data-i18n="cta">預約展店規劃諮詢</a>
+      <!-- Comparison Table -->
+      <div class="comparison-table-wrap reveal">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="col-pain">您擔心的營運風險</th>
+              <th class="col-legacy">傳統 POS 系統</th>
+              <th class="col-autopos">🛡️ Autopos 企業級防護罩</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="col-pain">
+                <span class="risk-icon">📡</span>商場網路突然斷線
+              </td>
+              <td class="col-legacy">
+                <span class="legacy-x">✗</span>系統死機，發票印不出，顧客暴怒
+              </td>
+              <td class="col-autopos">
+                <strong>離線結帳技術</strong>斷線照常點餐結帳，連網後自動回傳雲端
+              </td>
+            </tr>
+            <tr>
+              <td class="col-pain">
+                <span class="risk-icon">🌡️</span>廚房極端高溫與油煙
+              </td>
+              <td class="col-legacy">
+                <span class="legacy-x">✗</span>平板容易過熱當機、壽命極短
+              </td>
+              <td class="col-autopos">
+                <strong>IP54 防塵防水</strong>工業級高規硬體，專為嚴苛餐飲環境打造
+              </td>
+            </tr>
+            <tr>
+              <td class="col-pain">
+                <span class="risk-icon">🌏</span>跨國展店的稅制與語言
+              </td>
+              <td class="col-legacy">
+                <span class="legacy-x">✗</span>各國系統獨立，報表需人工匯總翻譯
+              </td>
+              <td class="col-autopos">
+                <strong>多語系與多國稅制</strong>總部一鍵切換語系，跨國報表無縫合併
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="https://autopos.tw/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+          了解 Autopos →
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ── 4. Partners ────────────────────────────── -->
+  <!-- ── 4. Nubis Section ───────────────────────────────────── -->
+  <section class="nubis-section" id="nubis">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">Nubis · IoT UEM 全球控制塔</p>
+      <h2 class="section-h2 reveal">連鎖規模化，您的 IT 維護成本也跟著失控了嗎？</h2>
+
+      <div class="nubis-stage reveal">
+        <!-- Map placeholder (replace with actual dashboard image) -->
+        <div class="nubis-map-placeholder">
+          <div class="nubis-map-inner">
+            <div class="nubis-grid-overlay"></div>
+            <img src="assets/nubis-logo.png" alt="Nubis 控制台"
+                 class="nubis-logo-bg"
+                 onerror="this.style.display='none'">
+            <p class="nubis-placeholder-text">Nubis 全球設備監控台示意圖</p>
+          </div>
+        </div>
+
+        <!-- Hotspot 1 — top-left -->
+        <div class="hotspot" style="top: 22%; left: 16%;" data-hotspot="1">
+          <button class="hotspot-dot" aria-label="告別無效出勤說明">
+            <span class="hotspot-ring"></span>
+            <span class="hotspot-ring hotspot-ring--2"></span>
+            <span class="hotspot-core"></span>
+          </button>
+          <div class="hotspot-tooltip hotspot-tooltip--right">
+            <p class="tooltip-title">告別無效出勤</p>
+            <p>設備當機紅燈警示，一鍵「遠端重啟」，省下動輒數千元的 IT 單次到店維修費。</p>
+          </div>
+        </div>
+
+        <!-- Hotspot 2 — center -->
+        <div class="hotspot" style="top: 50%; left: 50%;" data-hotspot="2">
+          <button class="hotspot-dot" aria-label="Nubis Cast 雲端派發說明">
+            <span class="hotspot-ring"></span>
+            <span class="hotspot-ring hotspot-ring--2"></span>
+            <span class="hotspot-core"></span>
+          </button>
+          <div class="hotspot-tooltip hotspot-tooltip--top">
+            <p class="tooltip-title">Nubis Cast 雲端派發</p>
+            <p>破除 USB 隨身碟更新夢魘。行銷部一鍵上傳，全台門市數位看板零時差同步。</p>
+          </div>
+        </div>
+
+        <!-- Hotspot 3 — bottom-right -->
+        <div class="hotspot" style="top: 70%; left: 74%;" data-hotspot="3">
+          <button class="hotspot-dot" aria-label="跨設備上帝視角說明">
+            <span class="hotspot-ring"></span>
+            <span class="hotspot-ring hotspot-ring--2"></span>
+            <span class="hotspot-core"></span>
+          </button>
+          <div class="hotspot-tooltip hotspot-tooltip--left">
+            <p class="tooltip-title">跨設備上帝視角</p>
+            <p>單一後台監控 CPU 溫度與記憶體狀態，將「災難救援」轉為「事前預防」。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="#contact" class="btn btn--primary">了解 Nubis →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. IMSDOM Section ──────────────────────────────────── -->
+  <section class="imsdom-section" id="imsdom">
+    <div class="section-inner">
+      <p class="section-eyebrow reveal">IMSDOM · 連鎖營運生命週期管理</p>
+      <h2 class="section-h2 reveal">別讓加盟擴張，成為品牌崩壞的開始。<br>用數據重塑 QSC。</h2>
+
+      <div class="imsdom-layout reveal">
+
+        <!-- Left: image placeholder -->
+        <div class="imsdom-img-placeholder">
+          <div class="imsdom-img-inner">
+            <img src="assets/imsdom-logo.png" alt="IMSDOM"
+                 class="imsdom-logo"
+                 onerror="this.style.display='none'">
+            <p class="imsdom-img-label">IMSDOM 連鎖營運管理平台</p>
+          </div>
+        </div>
+
+        <!-- Right: accordion -->
+        <div class="accordion" id="imsdom-accordion">
+
+          <div class="accordion-item is-open">
+            <button class="accordion-header" aria-expanded="true">
+              <span class="accordion-num">01</span>
+              <span class="accordion-title">巡店稽核無紙化</span>
+              <span class="accordion-chevron" aria-hidden="true">
+                <svg width="15" height="9" viewBox="0 0 15 9" fill="none">
+                  <polyline points="1,1 7.5,8 14,1" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-body">
+              <p>督導用手機 App 逐項檢查，異常項目強制拍照上傳，總部即時追蹤改善進度，杜絕食安死角。</p>
+              <div class="accordion-tags">
+                <span class="tag">食安稽核</span>
+                <span class="tag">照片存證</span>
+                <span class="tag">即時追蹤</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-num">02</span>
+              <span class="accordion-title">數位化線上培訓</span>
+              <span class="accordion-chevron" aria-hidden="true">
+                <svg width="15" height="9" viewBox="0 0 15 9" fill="none">
+                  <polyline points="1,1 7.5,8 14,1" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-body">
+              <p>將厚重的紙本 SOP 化為線上微課程與測驗，新進員工透過手機隨時學習，大幅降低 HR 培訓成本。</p>
+              <div class="accordion-tags">
+                <span class="tag">線上測驗</span>
+                <span class="tag">微課程</span>
+                <span class="tag">行動學習</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header" aria-expanded="false">
+              <span class="accordion-num">03</span>
+              <span class="accordion-title">開店籌建追蹤</span>
+              <span class="accordion-chevron" aria-hidden="true">
+                <svg width="15" height="9" viewBox="0 0 15 9" fill="none">
+                  <polyline points="1,1 7.5,8 14,1" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-body">
+              <p>將工班、設備進場進度任務化，確保每一家新店準時、合規地開幕。</p>
+              <div class="accordion-tags">
+                <span class="tag">進度追蹤</span>
+                <span class="tag">任務管理</span>
+                <span class="tag">合規開店</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="section-cta reveal">
+        <a href="https://www.imsdom.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+          了解 IMSDOM →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. Partners ────────────────────────────────────────── -->
   <section class="partners">
-    <h2 class="partners-heading" data-i18n="partners_heading">合作夥伴</h2>
+    <h2 class="partners-heading">合作夥伴</h2>
 
     <div class="marquee-rows">
-      <!-- Row 1: Customer 1–14 → left -->
+
+      <!-- Row 1: 1–14 → left -->
       <div class="marquee-outer">
         <div class="marquee-track">
-          <img src="assets/partners/Customer-1.png" alt="Customer 1">
-          <img src="assets/partners/Customer-2.png" alt="Customer 2">
-          <img src="assets/partners/Customer-3.png" alt="Customer 3">
-          <img src="assets/partners/Customer-4.png" alt="Customer 4">
-          <img src="assets/partners/Customer-5.png" alt="Customer 5">
-          <img src="assets/partners/Customer-6.png" alt="Customer 6">
-          <img src="assets/partners/Customer-7.png" alt="Customer 7">
-          <img src="assets/partners/Customer-8.png" alt="Customer 8">
-          <img src="assets/partners/Customer-9.png" alt="Customer 9">
+          <img src="assets/partners/Customer-1.png"  alt="Customer 1">
+          <img src="assets/partners/Customer-2.png"  alt="Customer 2">
+          <img src="assets/partners/Customer-3.png"  alt="Customer 3">
+          <img src="assets/partners/Customer-4.png"  alt="Customer 4">
+          <img src="assets/partners/Customer-5.png"  alt="Customer 5">
+          <img src="assets/partners/Customer-6.png"  alt="Customer 6">
+          <img src="assets/partners/Customer-7.png"  alt="Customer 7">
+          <img src="assets/partners/Customer-8.png"  alt="Customer 8">
+          <img src="assets/partners/Customer-9.png"  alt="Customer 9">
           <img src="assets/partners/Customer-10.png" alt="Customer 10">
           <img src="assets/partners/Customer-11.png" alt="Customer 11">
           <img src="assets/partners/Customer-12.png" alt="Customer 12">
           <img src="assets/partners/Customer-13.png" alt="Customer 13">
           <img src="assets/partners/Customer-14.png" alt="Customer 14">
           <!-- duplicate for seamless loop -->
-          <img src="assets/partners/Customer-1.png" alt="Customer 1">
-          <img src="assets/partners/Customer-2.png" alt="Customer 2">
-          <img src="assets/partners/Customer-3.png" alt="Customer 3">
-          <img src="assets/partners/Customer-4.png" alt="Customer 4">
-          <img src="assets/partners/Customer-5.png" alt="Customer 5">
-          <img src="assets/partners/Customer-6.png" alt="Customer 6">
-          <img src="assets/partners/Customer-7.png" alt="Customer 7">
-          <img src="assets/partners/Customer-8.png" alt="Customer 8">
-          <img src="assets/partners/Customer-9.png" alt="Customer 9">
-          <img src="assets/partners/Customer-10.png" alt="Customer 10">
-          <img src="assets/partners/Customer-11.png" alt="Customer 11">
-          <img src="assets/partners/Customer-12.png" alt="Customer 12">
-          <img src="assets/partners/Customer-13.png" alt="Customer 13">
-          <img src="assets/partners/Customer-14.png" alt="Customer 14">
+          <img src="assets/partners/Customer-1.png"  alt="">
+          <img src="assets/partners/Customer-2.png"  alt="">
+          <img src="assets/partners/Customer-3.png"  alt="">
+          <img src="assets/partners/Customer-4.png"  alt="">
+          <img src="assets/partners/Customer-5.png"  alt="">
+          <img src="assets/partners/Customer-6.png"  alt="">
+          <img src="assets/partners/Customer-7.png"  alt="">
+          <img src="assets/partners/Customer-8.png"  alt="">
+          <img src="assets/partners/Customer-9.png"  alt="">
+          <img src="assets/partners/Customer-10.png" alt="">
+          <img src="assets/partners/Customer-11.png" alt="">
+          <img src="assets/partners/Customer-12.png" alt="">
+          <img src="assets/partners/Customer-13.png" alt="">
+          <img src="assets/partners/Customer-14.png" alt="">
         </div>
       </div>
 
-      <!-- Row 2: Customer 15–27 → right -->
+      <!-- Row 2: 15–27 → right -->
       <div class="marquee-outer">
         <div class="marquee-track marquee-track--reverse">
           <img src="assets/partners/Customer-15.png" alt="Customer 15">
@@ -246,24 +539,24 @@
           <img src="assets/partners/Customer-25.png" alt="Customer 25">
           <img src="assets/partners/Customer-26.png" alt="Customer 26">
           <img src="assets/partners/Customer-27.png" alt="Customer 27">
-          <!-- duplicate for seamless loop -->
-          <img src="assets/partners/Customer-15.png" alt="Customer 15">
-          <img src="assets/partners/Customer-16.png" alt="Customer 16">
-          <img src="assets/partners/Customer-17.png" alt="Customer 17">
-          <img src="assets/partners/Customer-18.png" alt="Customer 18">
-          <img src="assets/partners/Customer-19.png" alt="Customer 19">
-          <img src="assets/partners/Customer-20.png" alt="Customer 20">
-          <img src="assets/partners/Customer-21.png" alt="Customer 21">
-          <img src="assets/partners/Customer-22.png" alt="Customer 22">
-          <img src="assets/partners/Customer-23.png" alt="Customer 23">
-          <img src="assets/partners/Customer-24.png" alt="Customer 24">
-          <img src="assets/partners/Customer-25.png" alt="Customer 25">
-          <img src="assets/partners/Customer-26.png" alt="Customer 26">
-          <img src="assets/partners/Customer-27.png" alt="Customer 27">
+          <!-- duplicate -->
+          <img src="assets/partners/Customer-15.png" alt="">
+          <img src="assets/partners/Customer-16.png" alt="">
+          <img src="assets/partners/Customer-17.png" alt="">
+          <img src="assets/partners/Customer-18.png" alt="">
+          <img src="assets/partners/Customer-19.png" alt="">
+          <img src="assets/partners/Customer-20.png" alt="">
+          <img src="assets/partners/Customer-21.png" alt="">
+          <img src="assets/partners/Customer-22.png" alt="">
+          <img src="assets/partners/Customer-23.png" alt="">
+          <img src="assets/partners/Customer-24.png" alt="">
+          <img src="assets/partners/Customer-25.png" alt="">
+          <img src="assets/partners/Customer-26.png" alt="">
+          <img src="assets/partners/Customer-27.png" alt="">
         </div>
       </div>
 
-      <!-- Row 3: Customer 28–40 → left -->
+      <!-- Row 3: 28–40 → left (slower) -->
       <div class="marquee-outer">
         <div class="marquee-track" style="animation-duration: 26s;">
           <img src="assets/partners/Customer-28.png" alt="Customer 28">
@@ -279,40 +572,44 @@
           <img src="assets/partners/Customer-38.png" alt="Customer 38">
           <img src="assets/partners/Customer-39.png" alt="Customer 39">
           <img src="assets/partners/Customer-40.png" alt="Customer 40">
-          <!-- duplicate for seamless loop -->
-          <img src="assets/partners/Customer-28.png" alt="Customer 28">
-          <img src="assets/partners/Customer-29.png" alt="Customer 29">
-          <img src="assets/partners/Customer-30.png" alt="Customer 30">
-          <img src="assets/partners/Customer-31.png" alt="Customer 31">
-          <img src="assets/partners/Customer-32.png" alt="Customer 32">
-          <img src="assets/partners/Customer-33.png" alt="Customer 33">
-          <img src="assets/partners/Customer-34.png" alt="Customer 34">
-          <img src="assets/partners/Customer-35.png" alt="Customer 35">
-          <img src="assets/partners/Customer-36.png" alt="Customer 36">
-          <img src="assets/partners/Customer-37.png" alt="Customer 37">
-          <img src="assets/partners/Customer-38.png" alt="Customer 38">
-          <img src="assets/partners/Customer-39.png" alt="Customer 39">
-          <img src="assets/partners/Customer-40.png" alt="Customer 40">
+          <!-- duplicate -->
+          <img src="assets/partners/Customer-28.png" alt="">
+          <img src="assets/partners/Customer-29.png" alt="">
+          <img src="assets/partners/Customer-30.png" alt="">
+          <img src="assets/partners/Customer-31.png" alt="">
+          <img src="assets/partners/Customer-32.png" alt="">
+          <img src="assets/partners/Customer-33.png" alt="">
+          <img src="assets/partners/Customer-34.png" alt="">
+          <img src="assets/partners/Customer-35.png" alt="">
+          <img src="assets/partners/Customer-36.png" alt="">
+          <img src="assets/partners/Customer-37.png" alt="">
+          <img src="assets/partners/Customer-38.png" alt="">
+          <img src="assets/partners/Customer-39.png" alt="">
+          <img src="assets/partners/Customer-40.png" alt="">
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ── 5. Contact ──────────────────────────────── -->
+  <!-- ── 7. Contact ─────────────────────────────────────────── -->
   <section class="contact-section" id="contact">
     <div class="contact-card">
       <p class="contact-name">Chris Chen 陳泓宇</p>
-      <p class="contact-title" data-i18n="contact_title">Sales Manager</p>
+      <p class="contact-title">Sales Manager</p>
       <p class="contact-company">SOFONE 碩豐數位科技</p>
       <a href="tel:+886933857545" class="contact-link">0933-857-545</a>
       <a href="mailto:chris.chen@sofone.ai" class="contact-link">chris.chen@sofone.ai</a>
-      <a href="https://maps.google.com/?q=新北市汐止區新台五路一段75號11樓之4" target="_blank" rel="noopener noreferrer" class="contact-link contact-link--address">221 新北市汐止區文化里<br>新台五路一段75號11樓之4</a>
+      <a href="https://maps.google.com/?q=新北市汐止區新台五路一段75號11樓之4"
+         target="_blank" rel="noopener noreferrer"
+         class="contact-link contact-link--address">
+        221 新北市汐止區文化里<br>新台五路一段 75 號 11 樓之 4
+      </a>
       <iframe
         class="contact-map"
         src="https://maps.google.com/maps?q=新北市汐止區新台五路一段75號&output=embed&z=17&hl=zh-TW"
         width="100%"
         height="180"
-        style="border:0;"
         allowfullscreen=""
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
@@ -321,312 +618,141 @@
   </section>
 
   <script>
-    /* ── Translations ──────────────────────────────────────────── */
-    var TRANSLATIONS = {
-      'zh-TW': {
-        tagline1: '串聯軟硬體',
-        tagline2: '賦能數位轉型',
-        sub: '以高彈性、低耦合的系統整合方案，<br>為企業打造更強健的營運生態圈。<br>無需更換核心 ERP，協助品牌快速落地展店。',
-        story_eyebrow: 'OUR STORY',
-        story_headline: '智慧商業，全球佈局',
-        beat_0: 'SOFONE 碩豐數位科技 是一家專注於 智慧商用設備、SaaS 應用與 AI 數據營運 的科技企業，致力於打造可跨國部署的智慧商業技術平台。',
-        beat_1: '公司以 軟硬整合能力 為核心，服務涵蓋 IoT 設備管理、餐飲零售中台、商用系統整合與 POS 終端應用，協助企業加速營運數位化與智慧化。',
-        beat_2: '碩豐提供的不僅是產品，而是一套從設備、系統到數據的全生命週期整合能力（End-to-End Value Chain）服務商。',
-        beat_3: '透過自研平台與模組化架構，我們為餐飲、零售與商用設備製造商提供可快速複製、可規模化擴展、可全球化運行的數位解決方案。',
-        beat_4: 'IoT 設備管理&nbsp;&nbsp;·&nbsp;&nbsp;餐飲零售中台&nbsp;&nbsp;·&nbsp;&nbsp;商用系統整合',
-        solutions_eyebrow: 'CORE TECHNOLOGY ENGINES',
-        solutions_heading: '四大核心技術引擎',
-        autopos_situation: '全球佈局的企業級 POS 生態',
-        autopos_value: '跨國境的營運穩定性與 AI 智慧管理',
-        autopos_b1: '<strong>全球化部署</strong>具備跨國稅務、金流對接及報表整合能力，導入 AI 輔助分析提升決策效率。',
-        autopos_b2: '<strong>高規格硬體</strong>獨家提供 IP54 防潑水等級 POS 與 Kiosk 硬體，穩定性優於業界標準。',
-        autopos_b3: '<strong>模組化擴充</strong>支援零錢找零、多元支付（QR Code）等模組隨插即用，彈性滿足複雜展店需求。',
-        centrdx_situation: '敏捷上手的數位化先鋒',
-        centrdx_value: '快速導入、輕量化、開箱即用',
-        centrdx_b1: '<strong>入門首選</strong>專為輕量化、無客製化需求的店型設計。',
-        centrdx_b2: '<strong>高效作業</strong>提供掃碼點餐與自動出單功能，協助連鎖品牌快速達成標準化展店目標。',
-        imsdom_situation: '集團運營與品質標準化引擎',
-        imsdom_value: '人才複製、經驗傳承、大幅降低 HR 訓練成本',
-        imsdom_b1: '<strong>自動化考核</strong>內建集團級教育訓練與考核評分系統，自動化取代人工培訓作業。',
-        imsdom_b2: '<strong>品質均質化</strong>確保無論直營或加盟，全體門店擁有一致的服務與考核標準。',
-        nubis_situation: '全球連鎖的智慧控制塔',
-        nubis_value: '遠端維運、數據透明、一鍵同步',
-        nubis_b1: '<strong>遠端全監控</strong>即時掌握場區內所有硬體與連網設備狀態，無需派人跑現場。',
-        nubis_b2: '<strong>一鍵同步管理</strong>支援遠端軟體更新與資料夾內容同步，即時掌握設備運作狀況，將維護成本降至最低。',
-        more_info: '更多資訊 →',
-        cta: '預約展店規劃諮詢',
-        partners_heading: '合作夥伴',
-        contact_title: 'Sales Manager'
-      },
-      'en': {
-        tagline1: 'Connect Hardware & Software',
-        tagline2: 'Power Your Digital Transformation',
-        sub: 'Flexible, low-coupling system integration,<br>building a resilient operational ecosystem for enterprises.<br>No ERP replacement needed — accelerate your expansion.',
-        story_eyebrow: 'OUR STORY',
-        story_headline: 'Smart Commerce, Global Reach',
-        beat_0: 'SOFONE 碩豐數位科技 is a technology company specializing in smart commercial devices, SaaS applications, and AI-driven data operations — committed to building a cross-border intelligent business platform.',
-        beat_1: 'Hardware-software integration is our core competency. Our services span IoT device management, F&B retail middleware, commercial system integration, and POS applications — helping enterprises accelerate digital transformation.',
-        beat_2: "SOFONE doesn't just deliver products — we provide an end-to-end value chain capability spanning devices, systems, and data across the full lifecycle.",
-        beat_3: 'Through proprietary platforms and modular architecture, we offer rapidly replicable, scalable, and globally deployable digital solutions for F&B, retail, and commercial device manufacturers.',
-        beat_4: 'IoT Device Management&nbsp;&nbsp;·&nbsp;&nbsp;F&B Retail Middleware&nbsp;&nbsp;·&nbsp;&nbsp;Commercial System Integration',
-        solutions_eyebrow: 'CORE TECHNOLOGY ENGINES',
-        solutions_heading: 'Four Core Technology Engines',
-        autopos_situation: 'Enterprise POS Ecosystem for Global Chains',
-        autopos_value: 'Cross-border operational stability with AI-powered management',
-        autopos_b1: '<strong>Global Deployment</strong>Cross-border tax, payment integration & consolidated reporting with AI-assisted analytics for smarter decisions.',
-        autopos_b2: '<strong>High-Spec Hardware</strong>Exclusive IP54 splash-proof POS & Kiosk hardware — reliability above industry standard.',
-        autopos_b3: '<strong>Modular Expansion</strong>Plug-and-play change-making & multi-payment (QR Code) modules — flexible for complex expansion needs.',
-        centrdx_situation: 'The Agile Digital Pioneer',
-        centrdx_value: 'Fast deployment, lightweight, out-of-the-box ready',
-        centrdx_b1: '<strong>Beginner-Friendly</strong>Designed for lightweight operations with no customisation requirements.',
-        centrdx_b2: '<strong>Efficient Operations</strong>QR code ordering & auto-receipt printing — helping chains achieve standardised expansion fast.',
-        imsdom_situation: 'Group Operations & Quality Standardisation Engine',
-        imsdom_value: 'Talent replication, knowledge transfer, drastically reduce HR training costs',
-        imsdom_b1: '<strong>Automated Assessment</strong>Built-in group-level training & evaluation system — automates manual training workflows.',
-        imsdom_b2: '<strong>Quality Consistency</strong>Uniform service & evaluation standards across all outlets, whether direct or franchised.',
-        nubis_situation: 'Smart Control Tower for Global Chains',
-        nubis_value: 'Remote operations, transparent data, one-click sync',
-        nubis_b1: '<strong>Full Remote Monitoring</strong>Real-time visibility of all on-site hardware & networked devices — no need to dispatch staff.',
-        nubis_b2: '<strong>One-Click Sync</strong>Remote software updates & content sync — keep devices current and minimise maintenance costs.',
-        more_info: 'Learn More →',
-        cta: 'Book Your Expansion Planning Consultation',
-        partners_heading: 'Partners',
-        contact_title: 'Sales Manager'
-      },
-      'ja': {
-        tagline1: 'ハードとソフトを繋ぐ',
-        tagline2: 'デジタル変革を加速する',
-        sub: '柔軟で低結合のシステム統合ソリューションで、<br>企業の強固な運営エコシステムを構築します。<br>既存のERPはそのままに、迅速な展店を実現します。',
-        story_eyebrow: 'OUR STORY',
-        story_headline: 'スマートコマース、グローバル展開',
-        beat_0: 'SOFONE 碩豐數位科技は、スマート商用デバイス・SaaSアプリ・AIデータ運営に特化したテクノロジー企業であり、国境を越えて展開可能なインテリジェントビジネスプラットフォームの構築に取り組んでいます。',
-        beat_1: 'ハードウェアとソフトウェアの統合能力を核心に、IoTデバイス管理・飲食小売ミドルウェア・商用システム統合・POSアプリなど幅広いサービスを提供し、企業のデジタル化と知能化を加速します。',
-        beat_2: 'SOFONEが提供するのは製品だけでなく、デバイス・システム・データにわたるエンド・ツー・エンドバリューチェーン全体の統合能力です。',
-        beat_3: '自社プラットフォームとモジュラーアーキテクチャにより、飲食・小売・商用デバイスメーカー向けに、迅速複製・拡張・グローバル展開可能なデジタルソリューションを提供します。',
-        beat_4: 'IoTデバイス管理&nbsp;&nbsp;·&nbsp;&nbsp;飲食小売ミドルウェア&nbsp;&nbsp;·&nbsp;&nbsp;商用システム統合',
-        solutions_eyebrow: 'CORE TECHNOLOGY ENGINES',
-        solutions_heading: '4つのコアテクノロジーエンジン',
-        autopos_situation: 'グローバルチェーン向けエンタープライズPOSエコシステム',
-        autopos_value: '国境を越えた運営安定性とAIスマート管理',
-        autopos_b1: '<strong>グローバル展開</strong>越境税務・決済連携・レポート統合に対応し、AI分析で意思決定効率を向上します。',
-        autopos_b2: '<strong>高性能ハードウェア</strong>独自IP54防滴POS・Kioskハードウェアで業界標準を超える安定性を実現します。',
-        autopos_b3: '<strong>モジュラー拡張</strong>つり銭機・QRコード決済などのモジュールがプラグアンドプレイで対応します。',
-        centrdx_situation: 'アジャイルなデジタル先駆者',
-        centrdx_value: '迅速導入・軽量・すぐに使える',
-        centrdx_b1: '<strong>入門向け</strong>カスタマイズ不要の軽量店舗向けに設計されています。',
-        centrdx_b2: '<strong>効率的な運営</strong>QRコード注文と自動伝票発行で、チェーンの標準化展店を迅速に実現します。',
-        imsdom_situation: 'グループ運営・品質標準化エンジン',
-        imsdom_value: '人材育成・ノウハウ継承・HR研修コストを大幅削減',
-        imsdom_b1: '<strong>自動化評価</strong>グループレベルの研修・評価システムを内蔵し、手動研修を自動化します。',
-        imsdom_b2: '<strong>品質の均質化</strong>直営・フランチャイズを問わず、全店舗で統一されたサービスと評価基準を確保します。',
-        nubis_situation: 'グローバルチェーンのスマートコントロールタワー',
-        nubis_value: 'リモート運営・データの透明性・ワンクリック同期',
-        nubis_b1: '<strong>完全リモート監視</strong>店舗内のすべてのデバイスの状態をリアルタイムで把握し、現場派遣が不要です。',
-        nubis_b2: '<strong>ワンクリック同期</strong>リモートでのソフトウェア更新とデータ同期でメンテナンスコストを最小化します。',
-        more_info: '詳細はこちら →',
-        cta: '展店計画コンサルティングを予約する',
-        partners_heading: 'パートナー',
-        contact_title: '営業マネージャー'
-      },
-      'vi': {
-        tagline1: 'Kết nối Phần cứng & Phần mềm',
-        tagline2: 'Thúc đẩy Chuyển đổi số',
-        sub: 'Giải pháp tích hợp hệ thống linh hoạt, kết nối lỏng,<br>xây dựng hệ sinh thái vận hành bền vững cho doanh nghiệp.<br>Không cần thay thế ERP — mở rộng thương hiệu nhanh chóng.',
-        story_eyebrow: 'CÂU CHUYỆN CỦA CHÚNG TÔI',
-        story_headline: 'Thương mại Thông minh, Tầm vóc Toàn cầu',
-        beat_0: 'SOFONE 碩豐數位科技 là doanh nghiệp công nghệ chuyên về thiết bị thương mại thông minh, ứng dụng SaaS và vận hành dữ liệu AI, cam kết xây dựng nền tảng kinh doanh thông minh triển khai xuyên quốc gia.',
-        beat_1: 'Lấy năng lực tích hợp phần cứng - phần mềm làm cốt lõi, dịch vụ bao gồm quản lý thiết bị IoT, middleware F&B, tích hợp hệ thống thương mại và POS — giúp doanh nghiệp đẩy nhanh chuyển đổi số.',
-        beat_2: 'SOFONE không chỉ cung cấp sản phẩm — mà là năng lực tích hợp chuỗi giá trị đầu-cuối toàn vòng đời, từ thiết bị, hệ thống đến dữ liệu.',
-        beat_3: 'Thông qua nền tảng tự phát triển và kiến trúc module, chúng tôi cung cấp giải pháp số có thể nhân rộng, mở rộng quy mô và vận hành toàn cầu cho ngành F&B, bán lẻ và sản xuất thiết bị thương mại.',
-        beat_4: 'Quản lý thiết bị IoT&nbsp;&nbsp;·&nbsp;&nbsp;Middleware F&B&nbsp;&nbsp;·&nbsp;&nbsp;Tích hợp hệ thống thương mại',
-        solutions_eyebrow: 'CORE TECHNOLOGY ENGINES',
-        solutions_heading: 'Bốn Động cơ Công nghệ Cốt lõi',
-        autopos_situation: 'Hệ sinh thái POS doanh nghiệp cho chuỗi toàn cầu',
-        autopos_value: 'Ổn định vận hành xuyên biên giới với quản lý thông minh AI',
-        autopos_b1: '<strong>Triển khai toàn cầu</strong>Hỗ trợ thuế xuyên biên giới, tích hợp thanh toán và báo cáo với AI phân tích nâng cao hiệu quả quyết định.',
-        autopos_b2: '<strong>Phần cứng cao cấp</strong>POS và Kiosk chống nước IP54 độc quyền — độ ổn định vượt tiêu chuẩn ngành.',
-        autopos_b3: '<strong>Mở rộng module</strong>Máy trả tiền thừa, QR Code plug-and-play — linh hoạt cho nhu cầu mở rộng phức tạp.',
-        centrdx_situation: 'Tiên phong số hóa linh hoạt',
-        centrdx_value: 'Triển khai nhanh, nhẹ nhàng, sẵn dùng ngay',
-        centrdx_b1: '<strong>Dễ khởi đầu</strong>Thiết kế cho các mô hình cửa hàng nhẹ, không yêu cầu tùy chỉnh.',
-        centrdx_b2: '<strong>Vận hành hiệu quả</strong>Đặt hàng QR và in phiếu tự động — giúp chuỗi đạt chuẩn mở rộng nhanh chóng.',
-        imsdom_situation: 'Động cơ vận hành tập đoàn & chuẩn hóa chất lượng',
-        imsdom_value: 'Nhân rộng nhân tài, kế thừa kinh nghiệm, giảm chi phí đào tạo HR',
-        imsdom_b1: '<strong>Đánh giá tự động</strong>Hệ thống đào tạo và chấm điểm cấp tập đoàn — tự động thay thế đào tạo thủ công.',
-        imsdom_b2: '<strong>Đồng đều chất lượng</strong>Tiêu chuẩn dịch vụ và đánh giá nhất quán tại tất cả cửa hàng, trực tiếp hay nhượng quyền.',
-        nubis_situation: 'Tháp kiểm soát thông minh cho chuỗi toàn cầu',
-        nubis_value: 'Vận hành từ xa, dữ liệu minh bạch, đồng bộ một cú nhấp',
-        nubis_b1: '<strong>Giám sát từ xa toàn diện</strong>Nắm bắt trạng thái thiết bị theo thời gian thực — không cần cử người đến hiện trường.',
-        nubis_b2: '<strong>Đồng bộ một cú nhấp</strong>Cập nhật phần mềm từ xa và đồng bộ dữ liệu — giảm chi phí bảo trì xuống mức tối thiểu.',
-        more_info: 'Xem thêm →',
-        cta: 'Đặt lịch Tư vấn Kế hoạch Mở rộng',
-        partners_heading: 'Đối tác',
-        contact_title: 'Giám đốc Kinh doanh'
-      }
-    };
-
-    function applyLanguage(lang) {
-      var t = TRANSLATIONS[lang] || TRANSLATIONS['zh-TW'];
-      document.querySelectorAll('[data-i18n]').forEach(function(el) {
-        var key = el.dataset.i18n;
-        if (t[key] !== undefined) el.textContent = t[key];
-      });
-      document.querySelectorAll('[data-i18n-html]').forEach(function(el) {
-        var key = el.dataset.i18nHtml;
-        if (t[key] !== undefined) el.innerHTML = t[key];
-      });
-      document.querySelectorAll('.lang-btn').forEach(function(btn) {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-      document.documentElement.lang = lang;
-      localStorage.setItem('sofone_lang', lang);
-    }
-
-    document.querySelectorAll('.lang-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() { applyLanguage(this.dataset.lang); });
-    });
-
-    applyLanguage(localStorage.getItem('sofone_lang') || 'zh-TW');
-
-    /* ── Scroll hint → smooth scroll to brand story ──────────── */
-    document.querySelector('.scroll-hint').addEventListener('click', function() {
-      document.querySelector('.story').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    /* ── Solution cards accordion ─────────────────────────────── */
-    document.querySelectorAll('.sol-toggle').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var card = this.closest('.sol-card');
-        var detail = card.querySelector('.sol-detail');
-        var isOpen = card.classList.contains('is-open');
-        document.querySelectorAll('.sol-card').forEach(function(c) {
-          c.classList.remove('is-open');
-          c.querySelector('.sol-toggle').setAttribute('aria-expanded', 'false');
-          c.querySelector('.sol-detail').hidden = true;
-        });
-        if (!isOpen) {
-          card.classList.add('is-open');
-          btn.setAttribute('aria-expanded', 'true');
-          detail.hidden = false;
-        }
-      });
-    });
-
-    /* ── SOFONE logo — circle burst on click ──────────────────────── */
-    const FOOD_EMOJIS = ['🧋','☕','🍵','🥤','🍸','🍹','🍔','🍕',
-                         '🌮','🍜','🍣','🍦','🍩','🧃','🍻','🧁',
-                         '🍱','🥗','🍛','🥐','🍤','🫖','🍾','🥛'];
-
-    var _burstActive = false;
-
-    document.querySelector('.hero-logo').addEventListener('click', function() {
-      if (_burstActive) return;
-      _burstActive = true;
-
-      const logo = this;
-      logo.style.transition = 'transform 0.35s cubic-bezier(0.34,1.56,0.64,1)';
-      logo.style.transform = 'scale(1.2) rotate(-6deg)';
-      setTimeout(function() { logo.style.transform = ''; }, 350);
-
-      const cx = window.innerWidth / 2;
-      const cy = window.innerHeight / 2;
-      const radius = Math.min(window.innerWidth, window.innerHeight) * 0.22;
-
-      const COUNT = 12;
-      const emojis = FOOD_EMOJIS.slice().sort(function() { return Math.random() - 0.5; }).slice(0, COUNT);
-      const els = [];
-
-      const W = window.innerWidth, H = window.innerHeight;
-      const borderPts = [
-        { x: W * 0.25, y: -40 }, { x: W * 0.5, y: -40 }, { x: W * 0.75, y: -40 },
-        { x: W + 40,   y: H * 0.25 }, { x: W + 40, y: H * 0.5 }, { x: W + 40, y: H * 0.75 },
-        { x: W * 0.75, y: H + 40 }, { x: W * 0.5, y: H + 40 }, { x: W * 0.25, y: H + 40 },
-        { x: -40, y: H * 0.75 }, { x: -40, y: H * 0.5 }, { x: -40, y: H * 0.25 },
-      ];
-
-      emojis.forEach(function(emoji, i) {
-        const angle  = (i / COUNT) * Math.PI * 2 - Math.PI / 2;
-        const ex     = cx + Math.cos(angle) * radius;
-        const ey     = cy + Math.sin(angle) * radius;
-        const bp     = borderPts[i];
-        const odx    = bp.x - ex;
-        const ody    = bp.y - ey;
-
-        const el = document.createElement('span');
-        el.textContent = emoji;
-        el.style.cssText = 'position:fixed;left:' + ex + 'px;top:' + ey + 'px;' +
-          'font-size:1.55rem;z-index:9999;pointer-events:none;' +
-          'transform:translate(-50%,-50%) translate(' + odx + 'px,' + ody + 'px) scale(0.6);' +
-          'transition:transform 0.55s cubic-bezier(0.34,1.56,0.64,1);' +
-          'transition-delay:' + (i * 25) + 'ms;';
-        document.body.appendChild(el);
-        els.push({ el: el, odx: odx, ody: ody });
-
-        requestAnimationFrame(function() { requestAnimationFrame(function() {
-          el.style.transform = 'translate(-50%,-50%) scale(1)';
-        }); });
-      });
-
-      setTimeout(function() {
-        els.forEach(function(item, i) {
-          item.el.style.transition = 'transform 0.38s cubic-bezier(0.55,0,1,0.45)';
-          item.el.style.transitionDelay = (i * 15) + 'ms';
-          item.el.style.transform = 'translate(-50%,-50%) translate(' +
-            (item.odx * 1.6) + 'px,' + (item.ody * 1.6) + 'px) scale(0.8)';
-        });
-        setTimeout(function() {
-          els.forEach(function(item) { item.el.remove(); });
-          _burstActive = false;
-        }, 500);
-      }, 1500);
-    });
-
-    /* ── Hide missing partner logos (keep layout space) ──────────── */
-    document.querySelectorAll('.marquee-track img').forEach(function(img) {
-      img.addEventListener('error', function() { this.style.opacity = '0'; });
-    });
-
-    /* ── Brand Story scroll-fade ───────────────────────────────────── */
-    const OPACITY_MAX = 0.92;
-    const OPACITY_MIN = 0.22;
-    const DECAY_SCALE = 160;
-
-    function distToOpacity(dist) {
-      return OPACITY_MIN + (OPACITY_MAX - OPACITY_MIN) * Math.exp(-dist / DECAY_SCALE);
-    }
-
-    const beats = Array.from(document.querySelectorAll('.beat'));
-
-    function updateBeatOpacities() {
-      const vpCenter = window.innerHeight / 2;
-      beats.forEach(function(el) {
-        if (el.classList.contains('beat--label')) return;
-        const rect = el.getBoundingClientRect();
-        const dist = Math.abs(rect.top + rect.height / 2 - vpCenter);
-        const alpha = distToOpacity(dist);
-        el.style.color = 'rgba(255,255,255,' + alpha + ')';
-      });
-    }
-
-    window.addEventListener('scroll', updateBeatOpacities, { passive: true });
-    updateBeatOpacities();
-
-    /* ── Contact section reveal ────────────────────────────────────── */
-    const contactSection = document.querySelector('.contact-section');
-
+    /* ── Scroll Reveal ─────────────────────────────────────── */
     const revealObserver = new IntersectionObserver(
       function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
-            contactSection.classList.add('is-visible');
-            revealObserver.disconnect();
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.2 }
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     );
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      revealObserver.observe(el);
+    });
 
-    revealObserver.observe(contactSection);
+    /* ── Scroll hint → CentrDX ────────────────────────────── */
+    var scrollHint = document.querySelector('.scroll-hint');
+    if (scrollHint) {
+      scrollHint.addEventListener('click', function() {
+        document.querySelector('#centrdx').scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+
+    /* ── Map Device Tooltips ───────────────────────────────── */
+    var allDevices = document.querySelectorAll('.map-device');
+    function clearActive(except) {
+      allDevices.forEach(function(d) {
+        if (d !== except) d.classList.remove('is-active');
+      });
+    }
+    allDevices.forEach(function(device) {
+      device.addEventListener('mouseenter', function() {
+        clearActive(this);
+      });
+      device.addEventListener('click', function(e) {
+        var isActive = this.classList.contains('is-active');
+        clearActive(null);
+        if (!isActive) this.classList.add('is-active');
+        e.stopPropagation();
+      });
+    });
+    document.addEventListener('click', function() {
+      clearActive(null);
+    });
+
+    /* ── Autopos Tabs ──────────────────────────────────────── */
+    document.querySelectorAll('#autopos-tabs .tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var tab = this.dataset.tab;
+        document.querySelectorAll('#autopos-tabs .tab-btn').forEach(function(b) {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('#autopos-tabs .tab-panel').forEach(function(p) {
+          p.classList.remove('active');
+        });
+        this.classList.add('active');
+        this.setAttribute('aria-selected', 'true');
+        document.getElementById('tab-' + tab).classList.add('active');
+      });
+    });
+
+    /* ── IMSDOM Accordion ──────────────────────────────────── */
+    document.querySelectorAll('#imsdom-accordion .accordion-header').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.accordion-item');
+        var isOpen = item.classList.contains('is-open');
+
+        document.querySelectorAll('#imsdom-accordion .accordion-item').forEach(function(i) {
+          i.classList.remove('is-open');
+          i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isOpen) {
+          item.classList.add('is-open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ── Nubis Hotspots (touch/click toggle for mobile) ──── */
+    document.querySelectorAll('.hotspot-dot').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        var hotspot = this.closest('.hotspot');
+        var isActive = hotspot.classList.contains('is-active');
+        document.querySelectorAll('.hotspot').forEach(function(h) {
+          h.classList.remove('is-active');
+        });
+        if (!isActive) hotspot.classList.add('is-active');
+        e.stopPropagation();
+      });
+    });
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.hotspot').forEach(function(h) {
+        h.classList.remove('is-active');
+      });
+    });
+
+    /* ── Contact section reveal ────────────────────────────── */
+    var contactSection = document.querySelector('.contact-section');
+    new IntersectionObserver(
+      function(entries) {
+        if (entries[0].isIntersecting) {
+          contactSection.classList.add('is-visible');
+        }
+      },
+      { threshold: 0.2 }
+    ).observe(contactSection);
+
+    /* ── Language Picker ───────────────────────────────────── */
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.lang-btn').forEach(function(b) {
+          b.classList.remove('active');
+        });
+        this.classList.add('active');
+        document.documentElement.lang = this.dataset.lang;
+        localStorage.setItem('sofone_lang', this.dataset.lang);
+      });
+    });
+    (function() {
+      var saved = localStorage.getItem('sofone_lang') || 'zh-TW';
+      var btn = document.querySelector('.lang-btn[data-lang="' + saved + '"]');
+      if (btn) {
+        document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        document.documentElement.lang = saved;
+      }
+    })();
+
+    /* ── Hide broken partner logos (preserve layout) ───────── */
+    document.querySelectorAll('.marquee-track img').forEach(function(img) {
+      img.addEventListener('error', function() { this.style.opacity = '0'; });
+    });
   </script>
 
 </body>
