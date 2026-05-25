@@ -389,83 +389,74 @@
 
       <div class="imsdom-layout reveal">
 
-        <!-- Left: image placeholder -->
-        <div class="imsdom-img-placeholder">
-          <div class="imsdom-img-inner">
-            <img src="assets/imsdom-logo.png" alt="IMSDOM"
-                 class="imsdom-logo"
-                 onerror="this.style.display='none'">
-            <p class="imsdom-img-label" data-i18n="imsdom.img.label">IMSDOM 連鎖營運管理平台</p>
+        <!-- Left: 3 features -->
+        <div class="imsdom-features-col">
+          <div class="imsdom-feature-item">
+            <div class="imsdom-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <div class="imsdom-feature-text">
+              <strong data-i18n="imsdom.f1.title">加盟簽約管理</strong>
+              <p data-i18n="imsdom.f1.desc">提供加盟規章、合同、加盟文件等有序整理</p>
+            </div>
+          </div>
+          <div class="imsdom-feature-item">
+            <div class="imsdom-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            </div>
+            <div class="imsdom-feature-text">
+              <strong data-i18n="imsdom.f2.title">開店流程管理</strong>
+              <p data-i18n="imsdom.f2.desc">藉由表單、任務、審批一體化支援，開店更簡單</p>
+            </div>
+          </div>
+          <div class="imsdom-feature-item">
+            <div class="imsdom-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div class="imsdom-feature-text">
+              <strong data-i18n="imsdom.f3.title">門店 SOP 管理</strong>
+              <p data-i18n="imsdom.f3.desc">無論身在何處，都能降低人為錯誤，優化管理效能</p>
+            </div>
           </div>
         </div>
 
-        <!-- Right: accordion -->
-        <div class="accordion" id="imsdom-accordion">
-
-          <div class="accordion-item is-open">
-            <button class="accordion-header" aria-expanded="true">
-              <span class="accordion-num">01</span>
-              <span class="accordion-title" data-i18n="imsdom.acc1.title">巡店稽核無紙化</span>
-              <span class="accordion-chevron" aria-hidden="true">
-                <svg width="15" height="9" viewBox="0 0 15 9" fill="none">
-                  <polyline points="1,1 7.5,8 14,1" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </button>
-            <div class="accordion-body">
-              <p data-i18n="imsdom.acc1.desc">督導用手機 App 逐項檢查，異常項目強制拍照上傳，總部即時追蹤改善進度，杜絕食安死角。</p>
-              <div class="accordion-tags">
-                <span class="tag" data-i18n="imsdom.acc1.tag1">食安稽核</span>
-                <span class="tag" data-i18n="imsdom.acc1.tag2">照片存證</span>
-                <span class="tag" data-i18n="imsdom.acc1.tag3">即時追蹤</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header" aria-expanded="false">
-              <span class="accordion-num">02</span>
-              <span class="accordion-title" data-i18n="imsdom.acc2.title">數位化線上培訓</span>
-              <span class="accordion-chevron" aria-hidden="true">
-                <svg width="15" height="9" viewBox="0 0 15 9" fill="none">
-                  <polyline points="1,1 7.5,8 14,1" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </button>
-            <div class="accordion-body">
-              <p data-i18n="imsdom.acc2.desc">將厚重的紙本 SOP 化為線上微課程與測驗，新進員工透過手機隨時學習，大幅降低 HR 培訓成本。</p>
-              <div class="accordion-tags">
-                <span class="tag" data-i18n="imsdom.acc2.tag1">線上測驗</span>
-                <span class="tag" data-i18n="imsdom.acc2.tag2">微課程</span>
-                <span class="tag" data-i18n="imsdom.acc2.tag3">行動學習</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <button class="accordion-header" aria-expanded="false">
-              <span class="accordion-num">03</span>
-              <span class="accordion-title" data-i18n="imsdom.acc3.title">開店籌建追蹤</span>
-              <span class="accordion-chevron" aria-hidden="true">
-                <svg width="15" height="9" viewBox="0 0 15 9" fill="none">
-                  <polyline points="1,1 7.5,8 14,1" stroke="currentColor" stroke-width="1.8"
-                            stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </button>
-            <div class="accordion-body">
-              <p data-i18n="imsdom.acc3.desc">將工班、設備進場進度任務化，確保每一家新店準時、合規地開幕。</p>
-              <div class="accordion-tags">
-                <span class="tag" data-i18n="imsdom.acc3.tag1">進度追蹤</span>
-                <span class="tag" data-i18n="imsdom.acc3.tag2">任務管理</span>
-                <span class="tag" data-i18n="imsdom.acc3.tag3">合規開店</span>
-              </div>
-            </div>
-          </div>
-
+        <!-- Center: IMSDOM screenshot -->
+        <div class="imsdom-img-wrap">
+          <img src="assets/IMSDOM.png" alt="IMSDOM 連鎖營運管理平台" class="imsdom-phone-img"
+               onerror="this.style.opacity='0'">
         </div>
+
+        <!-- Right: 3 features -->
+        <div class="imsdom-features-col imsdom-features-col--right">
+          <div class="imsdom-feature-item">
+            <div class="imsdom-feature-text">
+              <strong data-i18n="imsdom.f4.title">培訓考試管理</strong>
+              <p data-i18n="imsdom.f4.desc">線上課程與考核，隨時掌握門店人員素質</p>
+            </div>
+            <div class="imsdom-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+          </div>
+          <div class="imsdom-feature-item">
+            <div class="imsdom-feature-text">
+              <strong data-i18n="imsdom.f5.title">門店稽核管理</strong>
+              <p data-i18n="imsdom.f5.desc">支持督導巡檢與日常自檢，門店 SQC 有保障</p>
+            </div>
+            <div class="imsdom-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M9 16l2 2 4-4"/></svg>
+            </div>
+          </div>
+          <div class="imsdom-feature-item">
+            <div class="imsdom-feature-text">
+              <strong data-i18n="imsdom.f6.title">食安巡檢管理</strong>
+              <p data-i18n="imsdom.f6.desc">食安稽核，降低風險、鞏固品牌價值</p>
+            </div>
+            <div class="imsdom-feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="section-cta reveal">
@@ -698,21 +689,18 @@
         'imsdom.eyebrow': 'IMSDOM · 連鎖營運生命週期管理',
         'imsdom.h2': '別讓加盟擴張，成為品牌崩壞的開始。<br>用數據重塑 QSC。',
         'imsdom.img.label': 'IMSDOM 連鎖營運管理平台',
-        'imsdom.acc1.title': '巡店稽核無紙化',
-        'imsdom.acc1.desc': '督導用手機 App 逐項檢查，異常項目強制拍照上傳，總部即時追蹤改善進度，杜絕食安死角。',
-        'imsdom.acc1.tag1': '食安稽核',
-        'imsdom.acc1.tag2': '照片存證',
-        'imsdom.acc1.tag3': '即時追蹤',
-        'imsdom.acc2.title': '數位化線上培訓',
-        'imsdom.acc2.desc': '將厚重的紙本 SOP 化為線上微課程與測驗，新進員工透過手機隨時學習，大幅降低 HR 培訓成本。',
-        'imsdom.acc2.tag1': '線上測驗',
-        'imsdom.acc2.tag2': '微課程',
-        'imsdom.acc2.tag3': '行動學習',
-        'imsdom.acc3.title': '開店籌建追蹤',
-        'imsdom.acc3.desc': '將工班、設備進場進度任務化，確保每一家新店準時、合規地開幕。',
-        'imsdom.acc3.tag1': '進度追蹤',
-        'imsdom.acc3.tag2': '任務管理',
-        'imsdom.acc3.tag3': '合規開店',
+        'imsdom.f1.title': '加盟簽約管理',
+        'imsdom.f1.desc': '提供加盟規章、合同、加盟文件等有序整理',
+        'imsdom.f2.title': '開店流程管理',
+        'imsdom.f2.desc': '藉由表單、任務、審批一體化支援，開店更簡單',
+        'imsdom.f3.title': '門店 SOP 管理',
+        'imsdom.f3.desc': '無論身在何處，都能降低人為錯誤，優化管理效能',
+        'imsdom.f4.title': '培訓考試管理',
+        'imsdom.f4.desc': '線上課程與考核，隨時掌握門店人員素質',
+        'imsdom.f5.title': '門店稽核管理',
+        'imsdom.f5.desc': '支持督導巡檢與日常自檢，門店 SQC 有保障',
+        'imsdom.f6.title': '食安巡檢管理',
+        'imsdom.f6.desc': '食安稽核，降低風險、鞏固品牌價值',
         'imsdom.cta': '了解 IMSDOM →',
         'partners.heading': '合作夥伴',
         'contact.title': 'Sales Manager'
@@ -796,21 +784,18 @@
         'imsdom.eyebrow': 'IMSDOM · Chain Operations Lifecycle Management',
         'imsdom.h2': 'Don\'t let franchise expansion become the beginning of brand collapse.<br>Reshape QSC with data.',
         'imsdom.img.label': 'IMSDOM Chain Operations Management Platform',
-        'imsdom.acc1.title': 'Paperless Store Auditing',
-        'imsdom.acc1.desc': 'Supervisors check items via mobile app — anomalies require mandatory photo upload; HQ tracks remediation in real time, closing every food-safety blind spot.',
-        'imsdom.acc1.tag1': 'Food Safety',
-        'imsdom.acc1.tag2': 'Photo Evidence',
-        'imsdom.acc1.tag3': 'Real-Time Tracking',
-        'imsdom.acc2.title': 'Digital Online Training',
-        'imsdom.acc2.desc': 'Convert thick paper SOPs into online micro-courses and quizzes. New employees learn anytime via phone — dramatically lowering HR training costs.',
-        'imsdom.acc2.tag1': 'Online Quizzes',
-        'imsdom.acc2.tag2': 'Micro-courses',
-        'imsdom.acc2.tag3': 'Mobile Learning',
-        'imsdom.acc3.title': 'New Store Opening Tracker',
-        'imsdom.acc3.desc': 'Turn construction and equipment installation into trackable tasks — ensuring every new store opens on time and in compliance.',
-        'imsdom.acc3.tag1': 'Progress Tracking',
-        'imsdom.acc3.tag2': 'Task Management',
-        'imsdom.acc3.tag3': 'Compliant Opening',
+        'imsdom.f1.title': 'Franchise Contract Management',
+        'imsdom.f1.desc': 'Organize franchise regulations, contracts, and documents systematically',
+        'imsdom.f2.title': 'Store Opening Process',
+        'imsdom.f2.desc': 'Streamline forms, tasks, and approvals in one platform — opening made simple',
+        'imsdom.f3.title': 'Store SOP Management',
+        'imsdom.f3.desc': 'Reduce human error from anywhere, optimizing operational efficiency',
+        'imsdom.f4.title': 'Training & Exam Management',
+        'imsdom.f4.desc': 'Online courses and assessments to monitor store staff quality at any time',
+        'imsdom.f5.title': 'Store Audit Management',
+        'imsdom.f5.desc': 'Supports supervisor inspections and daily self-checks — SQC guaranteed',
+        'imsdom.f6.title': 'Food Safety Inspection',
+        'imsdom.f6.desc': 'Food safety auditing to reduce risk and reinforce brand value',
         'imsdom.cta': 'Learn More: IMSDOM →',
         'partners.heading': 'Our Partners',
         'contact.title': 'Sales Manager'
@@ -894,21 +879,18 @@
         'imsdom.eyebrow': 'IMSDOM · チェーン運営ライフサイクル管理',
         'imsdom.h2': 'フランチャイズ拡大がブランド崩壊の始まりにならないように。<br>データでQSCを再構築。',
         'imsdom.img.label': 'IMSDOM チェーン運営管理プラットフォーム',
-        'imsdom.acc1.title': '店舗監査のペーパーレス化',
-        'imsdom.acc1.desc': 'スーパーバイザーがアプリで項目ごとに確認、異常は強制写真アップロード。本部がリアルタイムで改善状況を追跡し、食品安全の盲点を排除。',
-        'imsdom.acc1.tag1': '食品安全監査',
-        'imsdom.acc1.tag2': '写真証拠',
-        'imsdom.acc1.tag3': 'リアルタイム追跡',
-        'imsdom.acc2.title': 'デジタルオンライン研修',
-        'imsdom.acc2.desc': '紙のSOPをオンラインマイクロコースとテストに変換。新入社員がいつでもスマホで学習でき、HR研修コストを大幅削減。',
-        'imsdom.acc2.tag1': 'オンラインテスト',
-        'imsdom.acc2.tag2': 'マイクロコース',
-        'imsdom.acc2.tag3': 'モバイル学習',
-        'imsdom.acc3.title': '新店舗開業トラッキング',
-        'imsdom.acc3.desc': '工事班や設備設置の進捗をタスク化し、すべての新店舗が期限内にコンプライアンス準拠で開業できることを確保。',
-        'imsdom.acc3.tag1': '進捗トラッキング',
-        'imsdom.acc3.tag2': 'タスク管理',
-        'imsdom.acc3.tag3': 'コンプライアンス開業',
+        'imsdom.f1.title': '加盟契約管理',
+        'imsdom.f1.desc': '加盟規定・契約書・加盟文書を整然と管理',
+        'imsdom.f2.title': '出店プロセス管理',
+        'imsdom.f2.desc': 'フォーム・タスク・承認を一体化し、出店をシンプルに',
+        'imsdom.f3.title': '店舗SOP管理',
+        'imsdom.f3.desc': 'どこにいても人的ミスを削減し、管理効率を最適化',
+        'imsdom.f4.title': '研修・試験管理',
+        'imsdom.f4.desc': 'オンラインコースと評価で、店舗スタッフの質をいつでも把握',
+        'imsdom.f5.title': '店舗監査管理',
+        'imsdom.f5.desc': 'スーパーバイザー巡検と日次自己点検をサポート、SQCを保証',
+        'imsdom.f6.title': '食品安全巡検管理',
+        'imsdom.f6.desc': '食品安全監査でリスクを低減し、ブランド価値を強化',
         'imsdom.cta': 'IMSDOMについて →',
         'partners.heading': 'パートナー企業',
         'contact.title': 'Sales Manager'
@@ -992,21 +974,18 @@
         'imsdom.eyebrow': 'IMSDOM · Quản lý vòng đời vận hành chuỗi',
         'imsdom.h2': 'Đừng để mở rộng nhượng quyền trở thành khởi đầu của sự sụp đổ thương hiệu.<br>Định hình lại QSC bằng dữ liệu.',
         'imsdom.img.label': 'Nền tảng quản lý vận hành chuỗi IMSDOM',
-        'imsdom.acc1.title': 'Kiểm toán cửa hàng không giấy tờ',
-        'imsdom.acc1.desc': 'Giám sát viên kiểm tra từng hạng mục qua ứng dụng di động — bất thường phải chụp ảnh bắt buộc; HQ theo dõi tiến độ khắc phục thời gian thực.',
-        'imsdom.acc1.tag1': 'An toàn thực phẩm',
-        'imsdom.acc1.tag2': 'Bằng chứng ảnh',
-        'imsdom.acc1.tag3': 'Theo dõi thời gian thực',
-        'imsdom.acc2.title': 'Đào tạo trực tuyến kỹ thuật số',
-        'imsdom.acc2.desc': 'Chuyển đổi SOP giấy dày thành khóa học vi mô và bài kiểm tra trực tuyến. Nhân viên mới học bất cứ lúc nào qua điện thoại — giảm đáng kể chi phí đào tạo HR.',
-        'imsdom.acc2.tag1': 'Bài kiểm tra trực tuyến',
-        'imsdom.acc2.tag2': 'Khóa học vi mô',
-        'imsdom.acc2.tag3': 'Học trên di động',
-        'imsdom.acc3.title': 'Theo dõi mở cửa hàng mới',
-        'imsdom.acc3.desc': 'Biến tiến độ công trình và lắp đặt thiết bị thành các nhiệm vụ có thể theo dõi — đảm bảo mỗi cửa hàng mới khai trương đúng hạn và tuân thủ quy định.',
-        'imsdom.acc3.tag1': 'Theo dõi tiến độ',
-        'imsdom.acc3.tag2': 'Quản lý nhiệm vụ',
-        'imsdom.acc3.tag3': 'Khai trương tuân thủ',
+        'imsdom.f1.title': 'Quản lý hợp đồng nhượng quyền',
+        'imsdom.f1.desc': 'Tổ chức quy định, hợp đồng và tài liệu nhượng quyền một cách có hệ thống',
+        'imsdom.f2.title': 'Quản lý quy trình mở cửa hàng',
+        'imsdom.f2.desc': 'Tích hợp biểu mẫu, nhiệm vụ và phê duyệt — mở cửa hàng đơn giản hơn',
+        'imsdom.f3.title': 'Quản lý SOP cửa hàng',
+        'imsdom.f3.desc': 'Giảm lỗi do con người ở bất kỳ đâu, tối ưu hóa hiệu quả quản lý',
+        'imsdom.f4.title': 'Quản lý đào tạo & thi cử',
+        'imsdom.f4.desc': 'Khóa học và đánh giá trực tuyến để giám sát chất lượng nhân viên bất kỳ lúc nào',
+        'imsdom.f5.title': 'Quản lý kiểm toán cửa hàng',
+        'imsdom.f5.desc': 'Hỗ trợ kiểm tra giám sát và tự kiểm tra hàng ngày — đảm bảo SQC',
+        'imsdom.f6.title': 'Quản lý kiểm tra an toàn thực phẩm',
+        'imsdom.f6.desc': 'Kiểm toán an toàn thực phẩm để giảm rủi ro và củng cố giá trị thương hiệu',
         'imsdom.cta': 'Tìm hiểu IMSDOM →',
         'partners.heading': 'Đối tác của chúng tôi',
         'contact.title': 'Sales Manager'
@@ -1112,24 +1091,6 @@
         this.classList.add('active');
         this.setAttribute('aria-selected', 'true');
         document.getElementById('tab-' + tab).classList.add('active');
-      });
-    });
-
-    /* ── IMSDOM Accordion ──────────────────────────────────── */
-    document.querySelectorAll('#imsdom-accordion .accordion-header').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var item = this.closest('.accordion-item');
-        var isOpen = item.classList.contains('is-open');
-
-        document.querySelectorAll('#imsdom-accordion .accordion-item').forEach(function(i) {
-          i.classList.remove('is-open');
-          i.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
-        });
-
-        if (!isOpen) {
-          item.classList.add('is-open');
-          this.setAttribute('aria-expanded', 'true');
-        }
       });
     });
 
