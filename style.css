@@ -454,6 +454,9 @@ a { color: inherit; text-decoration: none; }
   .hero-content { max-width: 100%; margin-left: 0; }
   .hero-right {
     order: 2;
+    /* Give vertical room for scale(1.2) overflow — 10% of stage height ≈ 6.5vw */
+    padding-top: 7vw;
+    padding-bottom: 7vw;
   }
   .map-stage { width: 100%; }
   .scroll-hint { display: none; }

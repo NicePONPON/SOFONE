@@ -667,7 +667,7 @@
     function placeTip(device) {
       var r = device.getBoundingClientRect();
       var cx = r.left + r.width / 2;
-      var ty = r.top - GAP + window.scrollY;
+      var ty = r.top - GAP; /* fixed = viewport coords, no scrollY needed */
       tip.style.left = cx + 'px';
       tip.style.top  = ty + 'px';
     }
