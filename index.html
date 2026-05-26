@@ -10,6 +10,7 @@
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <title>碩豐 SOFONE | 串聯軟硬體，賦能數位轉型</title>
   <link rel="stylesheet" href="style.css">
+  <script>if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }</script>
 </head>
 <body>
 
@@ -1660,6 +1661,11 @@
     /* ── Hide broken partner logos (preserve layout) ───────── */
     document.querySelectorAll('.marquee-track img').forEach(function(img) {
       img.addEventListener('error', function() { this.style.opacity = '0'; });
+    });
+
+    /* ── Always start at top of page on arrival ─────────────── */
+    window.addEventListener('load', function() {
+      window.scrollTo({ top: 0, behavior: 'instant' });
     });
   </script>
 
