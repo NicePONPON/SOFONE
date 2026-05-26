@@ -2151,6 +2151,7 @@ td.col-autopos strong {
 .contact-link {
   display: flex;
   align-items: center;
+  gap: 0.6rem;
   padding: 0.625rem 0;
   min-height: 44px;
   color: #193548;
@@ -2160,6 +2161,14 @@ td.col-autopos strong {
   transition: opacity 0.2s;
 }
 .contact-link:last-of-type { border-bottom: none; }
+
+.contact-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: #6ACCAC;
+  stroke: #6ACCAC;
+}
 .contact-link:hover { opacity: 0.65; }
 .contact-link--address {
   font-size: 0.78rem;
