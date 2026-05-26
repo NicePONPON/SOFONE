@@ -664,6 +664,66 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ── CentrDX: Block 2 – Q&A ─────────────────────────────── */
+.cdx-services {
+  margin-bottom: 3.5rem;
+}
+
+.cdx-service-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.cdx-service-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.75rem 1.5rem;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cdx-service-card:hover {
+  border-color: rgba(106, 204, 172, 0.45);
+  box-shadow: 0 8px 32px rgba(106, 204, 172, 0.08);
+}
+
+.cdx-svc-icon-wrap {
+  width: 42px;
+  height: 42px;
+  background: rgba(106, 204, 172, 0.12);
+  border-radius: 10px;
+  border: 1px solid rgba(106, 204, 172, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cdx-svc-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+  color: var(--c-accent);
+  stroke: var(--c-accent);
+}
+
+.cdx-svc-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--c-white);
+  line-height: 1.3;
+}
+
+.cdx-svc-desc {
+  font-size: 0.875rem;
+  color: var(--c-muted);
+  line-height: 1.72;
+  flex: 1;
+  margin: 0;
+}
+
 .cdx-qa {
   margin-bottom: 3.5rem;
 }
@@ -825,6 +885,66 @@ a { color: inherit; text-decoration: none; }
   width: auto;
   object-fit: contain;
   display: block;
+}
+
+/* Autopos bilingual UI showcase */
+.ap-bilingual {
+  margin-bottom: 3.5rem;
+}
+
+.ap-bil-h3 {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 700;
+  color: var(--c-white);
+  margin: 0 0 0.65rem;
+  line-height: 1.35;
+}
+
+.ap-bil-desc {
+  font-size: 0.92rem;
+  color: var(--c-muted);
+  line-height: 1.72;
+  margin: 0 0 2rem;
+  max-width: 640px;
+}
+
+.ap-bil-screens {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 1rem;
+  align-items: end;
+}
+
+.ap-bil-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.ap-bil-img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--c-border);
+  display: block;
+  transition: box-shadow 0.25s ease;
+}
+
+.ap-bil-frame--center .ap-bil-img {
+  border-color: rgba(106, 204, 172, 0.45);
+  box-shadow: 0 6px 28px rgba(106, 204, 172, 0.16);
+}
+
+.ap-bil-label {
+  font-size: 0.76rem;
+  color: var(--c-muted);
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ap-bil-label--hl {
+  color: var(--c-accent);
+  font-weight: 600;
 }
 
 /* Autopos integration cards */
@@ -2224,6 +2344,7 @@ td.col-autopos strong {
   .imsdom-phone-img { max-width: 260px; }
   .hotspot-tooltip { width: 200px; font-size: 0.78rem; }
   .cdx-pain { grid-template-columns: 1fr; }
+  .cdx-service-cards { grid-template-columns: 1fr; }
   .cdx-qa-list { grid-template-columns: 1fr; }
   .cdx-growth { grid-template-columns: 1fr; padding: 1.75rem; gap: 2rem; }
   .cdx-upgrade-flow { flex-direction: column; }
@@ -2235,6 +2356,7 @@ td.col-autopos strong {
   .nubis-product-row { grid-template-columns: 1fr; gap: 2rem; }
   .nubis-product-row .nubis-img-wrap { order: -1; }
   .ap-pain { grid-template-columns: 1fr; }
+  .ap-bil-screens { grid-template-columns: 1fr; }
   .ap-integrations { grid-template-columns: 1fr; }
   .ap-strategy { grid-template-columns: 1fr; padding: 1.75rem; gap: 2rem; }
   .ap-globe { width: 220px; height: 220px; margin: 0 auto; }
