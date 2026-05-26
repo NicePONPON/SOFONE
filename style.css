@@ -2112,17 +2112,20 @@ td.col-autopos strong {
 }
 
 .contact-photo-wrap {
-  width: 160px;
-  flex-shrink: 0;
-  overflow: hidden;
+  flex: 0 0 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0.75rem;
+  background: #f4f6f8;
 }
 
 .contact-photo {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  height: auto;
+  object-fit: contain;
   display: block;
+  border-radius: 8px;
 }
 .contact-section.is-visible .contact-card { opacity: 1; transform: none; }
 
@@ -2225,7 +2228,7 @@ td.col-autopos strong {
   .btn { width: 100%; }
   .section-h2 { margin-bottom: 2rem; }
   .contact-card { flex-direction: column; }
-  .contact-photo-wrap { width: 100%; height: 220px; }
+  .contact-photo-wrap { flex: none; width: 100%; padding: 1.25rem; }
 }
 
 /* ── Reduced motion ──────────────────────────────────────── */
