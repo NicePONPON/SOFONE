@@ -899,7 +899,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .cdx-stat-num {
-  font-size: clamp(3.15rem, 6.3vw, 4.275rem);
+  font-size: clamp(2.52rem, 5.04vw, 3.42rem);
   font-weight: 800;
   color: var(--c-accent);
   letter-spacing: -0.03em;
@@ -913,7 +913,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .cdx-stat-label {
-  font-size: 1.08rem;
+  font-size: 0.86rem;
   color: var(--c-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
