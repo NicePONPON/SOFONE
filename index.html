@@ -10,7 +10,13 @@
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <title>碩豐 SOFONE | 串聯軟硬體，賦能數位轉型</title>
   <link rel="stylesheet" href="style.css">
-  <script>if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }</script>
+  <script>
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    /* Remove any hash from URL immediately so browser won't auto-scroll to anchor */
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  </script>
 </head>
 <body>
 
@@ -1664,8 +1670,16 @@
     });
 
     /* ── Always start at top of page on arrival ─────────────── */
+    document.addEventListener('DOMContentLoaded', function() {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+    });
     window.addEventListener('load', function() {
-      window.scrollTo({ top: 0, behavior: 'instant' });
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      /* Hold top for a few frames in case smooth-scroll tries to take over */
+      var n = 0;
+      (function tick() { window.scrollTo(0, 0); if (++n < 6) requestAnimationFrame(tick); })();
     });
   </script>
 
