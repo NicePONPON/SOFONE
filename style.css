@@ -2104,7 +2104,7 @@ td.col-autopos strong {
   .cdx-flowchart { flex-direction: column; gap: 0.75rem; }
   .cfc-conn svg { transform: rotate(90deg); }
   .cfc-panel--core { min-width: 0; width: 100%; }
-  .cdx-stats-row { gap: 1.25rem; }
+  .cdx-stats-row { gap: 1.25rem; justify-content: center; }
   .nubis-product-row { grid-template-columns: 1fr; gap: 2rem; }
   .nubis-product-row .nubis-img-wrap { order: -1; }
   .ap-pain { grid-template-columns: 1fr; }
