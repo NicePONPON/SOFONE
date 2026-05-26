@@ -195,6 +195,18 @@ a { color: inherit; text-decoration: none; }
   min-height: 100svh;
 }
 
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 240px;
+  background: linear-gradient(to bottom, transparent 0%, #122030 100%);
+  pointer-events: none;
+  z-index: 6;
+}
+
 /* ── Left Column ─────────────────────────────────────────── */
 .hero-left {
   display: flex;
