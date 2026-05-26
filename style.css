@@ -887,17 +887,19 @@ a { color: inherit; text-decoration: none; }
 /* ── CentrDX Stats Row ───────────────────────────────────── */
 .cdx-stats-row {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
+  justify-content: center;
 }
 
 .cdx-stat {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.25rem;
 }
 
 .cdx-stat-num {
-  font-size: clamp(2.1rem, 4.2vw, 2.85rem);
+  font-size: clamp(3.15rem, 6.3vw, 4.275rem);
   font-weight: 800;
   color: var(--c-accent);
   letter-spacing: -0.03em;
@@ -911,7 +913,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .cdx-stat-label {
-  font-size: 0.72rem;
+  font-size: 1.08rem;
   color: var(--c-muted);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -2110,9 +2112,9 @@ td.col-autopos strong {
 
 .contact-photo-wrap {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 110px;
+  top: 0.85rem;
+  right: 0.85rem;
+  width: 100px;
   pointer-events: none;
 }
 
@@ -2121,7 +2123,7 @@ td.col-autopos strong {
   height: auto;
   object-fit: contain;
   display: block;
-  border-radius: 0 16px 0 0;
+  border-radius: 8px;
 }
 
 .contact-name,
@@ -2179,6 +2181,13 @@ td.col-autopos strong {
   padding-top: 0.625rem;
   min-height: unset;
   border-bottom: none;
+  align-items: flex-start;
+}
+
+.contact-address-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .contact-link--address:hover {
   color: #193548;
