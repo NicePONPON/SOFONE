@@ -1664,6 +1664,40 @@
       applyTranslations(saved);
     })();
 
+    /* ── Bilingual screenshot lightbox ──────────────────────── */
+    (function() {
+      var lb    = document.getElementById('ap-lightbox');
+      var lbImg = document.getElementById('ap-lightbox-img');
+      var lbBtn = document.getElementById('ap-lightbox-close');
+
+      function openLb(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        lbBtn.focus();
+      }
+
+      function closeLb() {
+        lb.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.ap-bil-img').forEach(function(img) {
+        img.addEventListener('click', function() { openLb(this.src, this.alt); });
+      });
+
+      lb.addEventListener('click', function(e) {
+        if (e.target !== lbImg) closeLb();
+      });
+
+      lbBtn.addEventListener('click', closeLb);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLb();
+      });
+    })();
+
     /* ── Hide broken partner logos (preserve layout) ───────── */
     document.querySelectorAll('.marquee-track img').forEach(function(img) {
       img.addEventListener('error', function() { this.style.opacity = '0'; });
@@ -1683,6 +1717,12 @@
     });
   </script>
 
+
+  <!-- Lightbox overlay for bilingual UI screenshots -->
+  <div id="ap-lightbox" role="dialog" aria-modal="true" aria-label="截圖放大檢視">
+    <button id="ap-lightbox-close" aria-label="關閉">&#x2715;</button>
+    <img id="ap-lightbox-img" src="" alt="">
+  </div>
 
 </body>
 </html>
