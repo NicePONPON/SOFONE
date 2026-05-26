@@ -1697,6 +1697,8 @@
         if (e.target !== lbImg) closeLb();
       });
 
+      lbImg.addEventListener('click', closeLb);
+
       lbBtn.addEventListener('click', closeLb);
 
       document.addEventListener('keydown', function(e) {
