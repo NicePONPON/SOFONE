@@ -897,6 +897,12 @@
     <p class="tooltip-desc"  id="dtDesc"></p>
   </div>
 
+  <!-- Lightbox overlay for bilingual UI screenshots -->
+  <div id="ap-lightbox" role="dialog" aria-modal="true" aria-label="截圖放大檢視">
+    <button id="ap-lightbox-close" aria-label="關閉">&#x2715;</button>
+    <img id="ap-lightbox-img" src="" alt="">
+  </div>
+
   <script>
     /* ── Translations ──────────────────────────────────────── */
     var TRANSLATIONS = {
@@ -1716,13 +1722,6 @@
       (function tick() { window.scrollTo(0, 0); if (++n < 6) requestAnimationFrame(tick); })();
     });
   </script>
-
-
-  <!-- Lightbox overlay for bilingual UI screenshots -->
-  <div id="ap-lightbox" role="dialog" aria-modal="true" aria-label="截圖放大檢視">
-    <button id="ap-lightbox-close" aria-label="關閉">&#x2715;</button>
-    <img id="ap-lightbox-img" src="" alt="">
-  </div>
 
 </body>
 </html>
