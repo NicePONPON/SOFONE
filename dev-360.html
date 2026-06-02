@@ -106,18 +106,13 @@
     }
     .frame.active { opacity: 1; }
 
-    .crosshair {
+    #grid-overlay {
       position: absolute;
       inset: 0;
       pointer-events: none;
+      z-index: 5;
+      overflow: hidden;
     }
-    .crosshair::before, .crosshair::after {
-      content: '';
-      position: absolute;
-      background: rgba(106,204,172,0.13);
-    }
-    .crosshair::before { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
-    .crosshair::after  { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
 
     .viewer-hint {
       font-size: 11px;
@@ -307,7 +302,7 @@
     <!-- Viewer -->
     <div class="viewer-col">
       <div id="viewer">
-        <div class="crosshair"></div>
+        <div id="grid-overlay"></div>
       </div>
       <div class="viewer-hint">
         <kbd>← → ↑ ↓</kbd> nudge 0.2% &nbsp;·&nbsp;
@@ -367,6 +362,73 @@
       viewer.appendChild(img);
       frames.push(img);
     }
+
+    /* ── SVG grid overlay (above all frames) ── */
+    (function () {
+      var NS  = 'http://www.w3.org/2000/svg';
+      var svg = document.createElementNS(NS, 'svg');
+      svg.setAttribute('width', '100%');
+      svg.setAttribute('height', '100%');
+
+      function line(x1, y1, x2, y2, color, w) {
+        var el = document.createElementNS(NS, 'line');
+        el.setAttribute('x1', x1); el.setAttribute('y1', y1);
+        el.setAttribute('x2', x2); el.setAttribute('y2', y2);
+        el.setAttribute('stroke', color);
+        el.setAttribute('stroke-width', w || 1);
+        return el;
+      }
+
+      function label(x, y, txt, anchor, baseline) {
+        var el = document.createElementNS(NS, 'text');
+        el.setAttribute('x', x); el.setAttribute('y', y);
+        el.setAttribute('fill', 'rgba(106,204,172,0.55)');
+        el.setAttribute('font-size', '8');
+        el.setAttribute('font-family', 'monospace');
+        el.setAttribute('text-anchor', anchor || 'middle');
+        if (baseline) el.setAttribute('dominant-baseline', baseline);
+        el.textContent = txt;
+        return el;
+      }
+
+      /* Lines at every 10% — center line brighter */
+      for (var p = 10; p <= 90; p += 10) {
+        var pct    = p + '%';
+        var center = p === 50;
+        var color  = center ? 'rgba(106,204,172,0.35)' : 'rgba(106,204,172,0.11)';
+        var w      = center ? 1.5 : 1;
+        svg.appendChild(line(pct, '0',   pct,   '100%', color, w));  /* vertical   */
+        svg.appendChild(line('0',  pct,  '100%', pct,   color, w));  /* horizontal */
+        /* Axis labels along top and left edges */
+        svg.appendChild(label(pct,  '11',  p, 'middle'));
+        svg.appendChild(label('10', pct,   p, 'middle', 'middle'));
+      }
+
+      /* Dashed rectangle showing the 4% frame inset (where images live) */
+      var rect = document.createElementNS(NS, 'rect');
+      rect.setAttribute('x', '4%');      rect.setAttribute('y', '4%');
+      rect.setAttribute('width', '92%'); rect.setAttribute('height', '92%');
+      rect.setAttribute('fill', 'none');
+      rect.setAttribute('stroke', 'rgba(106,204,172,0.28)');
+      rect.setAttribute('stroke-width', '1');
+      rect.setAttribute('stroke-dasharray', '5,4');
+      svg.appendChild(rect);
+
+      /* Corner "4" labels to explain the dashed box */
+      var corners = [['4%','4%','start','auto'],['96%','4%','end','auto'],
+                     ['4%','96%','start','ideographic'],['96%','96%','end','ideographic']];
+      corners.forEach(function (c) {
+        var t = document.createElementNS(NS, 'text');
+        t.setAttribute('x', c[0]); t.setAttribute('y', c[1]);
+        t.setAttribute('fill', 'rgba(106,204,172,0.35)');
+        t.setAttribute('font-size', '7'); t.setAttribute('font-family', 'monospace');
+        t.setAttribute('text-anchor', c[2]); t.setAttribute('dominant-baseline', c[3]);
+        t.textContent = '4%';
+        svg.appendChild(t);
+      });
+
+      document.getElementById('grid-overlay').appendChild(svg);
+    }());
 
     /* ── Apply transform to one frame ── */
     function applyTransform(idx) {
