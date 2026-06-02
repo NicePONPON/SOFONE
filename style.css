@@ -2485,13 +2485,10 @@ td.col-autopos strong {
 
 .ap-one-viewer {
   position: absolute;
-  inset: 40px;
-  background: var(--c-surface);
-  border-radius: var(--r-lg);
+  inset: 44px;
   overflow: hidden;
   user-select: none;
   -webkit-user-select: none;
-  border: 1px solid var(--c-border);
 }
 
 .ap-one-frame {
@@ -2513,8 +2510,8 @@ td.col-autopos strong {
 
 .ap-one-nav {
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   background: none;
   border: none;
   display: flex;
@@ -2538,8 +2535,8 @@ td.col-autopos strong {
 
 @media (max-width: 767px) {
   .ap-one-viewer-ring { max-width: 100%; }
-  .ap-one-viewer { inset: 34px; border-radius: var(--r-md); }
-  .ap-one-nav { width: 28px; height: 28px; }
+  .ap-one-viewer { inset: 40px; }
+  .ap-one-nav { width: 36px; height: 36px; }
 }
 
 /* Feature Grid */
