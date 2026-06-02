@@ -2475,10 +2475,16 @@ td.col-autopos strong {
 }
 
 /* 360° Viewer */
-.ap-one-viewer {
+.ap-one-viewer-ring {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  max-width: 560px;
+  aspect-ratio: 1;
+}
+
+.ap-one-viewer {
+  position: absolute;
+  inset: 40px;
   background: var(--c-surface);
   border-radius: var(--r-lg);
   overflow: hidden;
@@ -2506,39 +2512,42 @@ td.col-autopos strong {
 
 .ap-one-nav {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: rgba(13,31,45,0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(13,31,45,0.70);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255,255,255,0.18);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 10;
+  z-index: 2;
   padding: 0;
-  opacity: 0;
-  transition: opacity .25s ease, background .2s ease, border-color .2s ease;
+  opacity: 0.42;
+  transition: opacity .2s, background .2s, border-color .2s;
   outline: none;
+  /* clock position set via --a custom property in HTML */
+  left: calc(50% + (50% - 22px) * sin(var(--a)));
+  top:  calc(50% - (50% - 22px) * cos(var(--a)));
+  transform: translate(-50%, -50%) rotate(calc(var(--a) + 180deg));
 }
-.ap-one-viewer:hover .ap-one-nav { opacity: 1; }
 .ap-one-nav:hover {
-  background: rgba(106,204,172,0.18);
-  border-color: rgba(106,204,172,0.6);
+  background: rgba(106,204,172,0.2);
+  border-color: rgba(106,204,172,0.55);
+  opacity: 1;
 }
-.ap-one-nav--prev { left: 14px; }
-.ap-one-nav--next { right: 14px; }
+.ap-one-nav.is-active {
+  background: rgba(106,204,172,0.22);
+  border-color: var(--c-accent);
+  opacity: 1;
+}
 
 @media (max-width: 767px) {
-  .ap-one-viewer {
-    aspect-ratio: 4 / 3;
-    border-radius: var(--r-md);
-  }
-  .ap-one-nav { opacity: 0.7; width: 36px; height: 36px; }
+  .ap-one-viewer-ring { max-width: 100%; }
+  .ap-one-viewer { inset: 34px; border-radius: var(--r-md); }
+  .ap-one-nav { width: 28px; height: 28px; opacity: 0.65; }
 }
 
 /* Feature Grid */
