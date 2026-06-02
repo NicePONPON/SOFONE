@@ -439,13 +439,16 @@
           <img class="ap-one-frame" src="assets/demo/autoposone_demo_10.png" alt="autopos ONE 視角 10" draggable="false">
           <img class="ap-one-frame" src="assets/demo/autoposone_demo_11.png" alt="autopos ONE 視角 11" draggable="false">
           <img class="ap-one-frame" src="assets/demo/autoposone_demo_12.png" alt="autopos ONE 視角 12" draggable="false">
-          <div class="ap-one-drag-hint" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/>
-              <line x1="12" y1="8" x2="12" y2="16"/><polyline points="9 11 12 8 15 11"/>
+          <button class="ap-one-nav ap-one-nav--prev" aria-label="上一視角">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8L10 13" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <span data-i18n="apone.viewer.hint">拖曳旋轉</span>
-          </div>
+          </button>
+          <button class="ap-one-nav ap-one-nav--next" aria-label="下一視角">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 3L11 8L6 13" stroke="rgba(255,255,255,0.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
         </div>
 
         <!-- Feature Grid -->
@@ -1789,13 +1792,10 @@
       var viewer = document.querySelector('.ap-one-viewer');
       if (!viewer) return;
 
-      var frames  = viewer.querySelectorAll('.ap-one-frame');
-      var hint    = viewer.querySelector('.ap-one-drag-hint');
-      var total   = frames.length; /* 12 */
-      var current = 0;
-      var dragging = false;
-      var startX   = 0;
-      var baseIdx  = 0;
+      var frames      = viewer.querySelectorAll('.ap-one-frame');
+      var total       = frames.length;
+      var current     = 0;
+      var touchStartX = 0;
 
       for (var i = 0; i < total; i++) {
         var c = AP_ONE_FRAME_CONFIG[i];
@@ -1809,31 +1809,19 @@
         frames[current].classList.add('is-active');
       }
 
-      function onStart(x) {
-        dragging = true;
-        startX   = x;
-        baseIdx  = current;
-      }
+      var prevBtn = viewer.querySelector('.ap-one-nav--prev');
+      var nextBtn = viewer.querySelector('.ap-one-nav--next');
+      if (prevBtn) prevBtn.addEventListener('click', function () { showFrame(current - 1); });
+      if (nextBtn) nextBtn.addEventListener('click', function () { showFrame(current + 1); });
 
-      function onMove(x) {
-        if (!dragging) return;
-        if (hint && !hint.classList.contains('is-hidden')) {
-          hint.classList.add('is-hidden');
-        }
-        var delta    = x - startX;
-        var newIdx   = baseIdx - Math.round(delta / 20);
-        showFrame(newIdx);
-      }
-
-      function onEnd() { dragging = false; }
-
-      viewer.addEventListener('mousedown',  function (e) { e.preventDefault(); onStart(e.clientX); });
-      document.addEventListener('mousemove', function (e) { if (dragging) onMove(e.clientX); });
-      document.addEventListener('mouseup',   onEnd);
-
-      viewer.addEventListener('touchstart', function (e) { onStart(e.touches[0].clientX); }, { passive: true });
-      viewer.addEventListener('touchmove',  function (e) { e.preventDefault(); onMove(e.touches[0].clientX); }, { passive: false });
-      viewer.addEventListener('touchend',   onEnd);
+      /* Swipe for mobile */
+      viewer.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+      }, { passive: true });
+      viewer.addEventListener('touchend', function (e) {
+        var delta = e.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(delta) > 30) showFrame(current + (delta < 0 ? 1 : -1));
+      }, { passive: true });
     }());
 
     /* ── Contact section reveal ────────────────────────────── */
