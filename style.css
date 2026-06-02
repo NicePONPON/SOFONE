@@ -2480,6 +2480,7 @@ td.col-autopos strong {
   width: 100%;
   max-width: 560px;
   aspect-ratio: 1;
+  margin: 0 auto;
 }
 
 .ap-one-viewer {
@@ -2514,40 +2515,31 @@ td.col-autopos strong {
   position: absolute;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
-  background: rgba(13,31,45,0.70);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.18);
+  background: none;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 2;
   padding: 0;
-  opacity: 0.42;
-  transition: opacity .2s, background .2s, border-color .2s;
+  opacity: 0.45;
+  transition: opacity .2s;
   outline: none;
-  /* clock position set via --a custom property in HTML */
+  /* clock position: 0° = 12 o'clock, clockwise */
   left: calc(50% + (50% - 22px) * sin(var(--a)));
   top:  calc(50% - (50% - 22px) * cos(var(--a)));
-  transform: translate(-50%, -50%) rotate(calc(var(--a) + 180deg));
+  /* arrows point outward (away from center) */
+  transform: translate(-50%, -50%) rotate(var(--a));
 }
-.ap-one-nav:hover {
-  background: rgba(106,204,172,0.2);
-  border-color: rgba(106,204,172,0.55);
-  opacity: 1;
-}
-.ap-one-nav.is-active {
-  background: rgba(106,204,172,0.22);
-  border-color: var(--c-accent);
-  opacity: 1;
-}
+.ap-one-nav:hover { opacity: 1; }
+.ap-one-nav.is-active { opacity: 1; }
+.ap-one-nav.is-active path { stroke: var(--c-accent); }
 
 @media (max-width: 767px) {
   .ap-one-viewer-ring { max-width: 100%; }
   .ap-one-viewer { inset: 34px; border-radius: var(--r-md); }
-  .ap-one-nav { width: 28px; height: 28px; opacity: 0.65; }
+  .ap-one-nav { width: 28px; height: 28px; }
 }
 
 /* Feature Grid */
