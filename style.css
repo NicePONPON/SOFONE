@@ -2494,16 +2494,19 @@ td.col-autopos strong {
 
 .ap-one-frame {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+  top: 4%;
+  left: 4%;
+  width: 92%;
+  height: 92%;
   object-fit: contain;
   object-position: center;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 90ms ease;
 }
 
-.ap-one-frame--hidden {
-  display: none;
+.ap-one-frame.is-active {
+  opacity: 1;
 }
 
 .ap-one-drag-hint {

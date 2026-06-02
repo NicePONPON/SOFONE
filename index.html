@@ -427,18 +427,18 @@
 
         <!-- 360° Viewer -->
         <div class="ap-one-viewer" role="img" aria-label="autopos ONE 360° 全視角展示">
-          <img class="ap-one-frame" src="assets/demo/autoposone_demo_01.png" alt="autopos ONE 視角 1" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_02.png" alt="autopos ONE 視角 2" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_03.png" alt="autopos ONE 視角 3" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_04.png" alt="autopos ONE 視角 4" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_05.png" alt="autopos ONE 視角 5" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_06.png" alt="autopos ONE 視角 6" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_07.png" alt="autopos ONE 視角 7" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_08.png" alt="autopos ONE 視角 8" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_09.png" alt="autopos ONE 視角 9" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_10.png" alt="autopos ONE 視角 10" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_11.png" alt="autopos ONE 視角 11" draggable="false">
-          <img class="ap-one-frame ap-one-frame--hidden" src="assets/demo/autoposone_demo_12.png" alt="autopos ONE 視角 12" draggable="false">
+          <img class="ap-one-frame is-active" src="assets/demo/autoposone_demo_01.png" alt="autopos ONE 視角 1" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_02.png" alt="autopos ONE 視角 2" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_03.png" alt="autopos ONE 視角 3" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_04.png" alt="autopos ONE 視角 4" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_05.png" alt="autopos ONE 視角 5" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_06.png" alt="autopos ONE 視角 6" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_07.png" alt="autopos ONE 視角 7" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_08.png" alt="autopos ONE 視角 8" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_09.png" alt="autopos ONE 視角 9" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_10.png" alt="autopos ONE 視角 10" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_11.png" alt="autopos ONE 視角 11" draggable="false">
+          <img class="ap-one-frame" src="assets/demo/autoposone_demo_12.png" alt="autopos ONE 視角 12" draggable="false">
           <div class="ap-one-drag-hint" aria-hidden="true">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
               <path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3"/><path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3"/>
@@ -1783,9 +1783,9 @@
       var baseIdx  = 0;
 
       function showFrame(idx) {
-        frames[current].classList.add('ap-one-frame--hidden');
+        frames[current].classList.remove('is-active');
         current = ((idx % total) + total) % total;
-        frames[current].classList.remove('ap-one-frame--hidden');
+        frames[current].classList.add('is-active');
       }
 
       function onStart(x) {
