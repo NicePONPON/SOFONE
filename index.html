@@ -1769,6 +1769,52 @@
       });
     });
 
+    /* ── autopos ONE 360° Viewer ──────────────────────────── */
+    (function () {
+      var viewer = document.querySelector('.ap-one-viewer');
+      if (!viewer) return;
+
+      var frames  = viewer.querySelectorAll('.ap-one-frame');
+      var hint    = viewer.querySelector('.ap-one-drag-hint');
+      var total   = frames.length; /* 12 */
+      var current = 0;
+      var dragging = false;
+      var startX   = 0;
+      var baseIdx  = 0;
+
+      function showFrame(idx) {
+        frames[current].classList.add('ap-one-frame--hidden');
+        current = ((idx % total) + total) % total;
+        frames[current].classList.remove('ap-one-frame--hidden');
+      }
+
+      function onStart(x) {
+        dragging = true;
+        startX   = x;
+        baseIdx  = current;
+      }
+
+      function onMove(x) {
+        if (!dragging) return;
+        if (hint && !hint.classList.contains('is-hidden')) {
+          hint.classList.add('is-hidden');
+        }
+        var delta    = x - startX;
+        var newIdx   = baseIdx - Math.round(delta / 20);
+        showFrame(newIdx);
+      }
+
+      function onEnd() { dragging = false; }
+
+      viewer.addEventListener('mousedown',  function (e) { e.preventDefault(); onStart(e.clientX); });
+      document.addEventListener('mousemove', function (e) { if (dragging) onMove(e.clientX); });
+      document.addEventListener('mouseup',   onEnd);
+
+      viewer.addEventListener('touchstart', function (e) { onStart(e.touches[0].clientX); }, { passive: true });
+      viewer.addEventListener('touchmove',  function (e) { e.preventDefault(); onMove(e.touches[0].clientX); }, { passive: false });
+      viewer.addEventListener('touchend',   onEnd);
+    }());
+
     /* ── Contact section reveal ────────────────────────────── */
     var contactSection = document.querySelector('.contact-section');
     new IntersectionObserver(
