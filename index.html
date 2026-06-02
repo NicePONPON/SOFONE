@@ -269,7 +269,7 @@
   <section class="autopos-section" id="autopos">
     <div class="section-inner">
       <div class="product-logo-wrap reveal">
-        <img src="assets/autopos-logo.png" alt="autopos" class="product-logo" id="autopos-logo">
+        <img src="assets/autopos-logo.png" alt="autopos" class="product-logo">
       </div>
       <p class="section-eyebrow reveal" data-i18n="autopos.eyebrow">Autopos · 全球雲端收銀生態系</p>
       <h2 class="section-h2 reveal" data-i18n="autopos.h2">跨國佈局，別讓系統成了你的絆腳石。</h2>
@@ -1833,29 +1833,6 @@
       }, { passive: true });
     }());
 
-    /* ── autopos logo: recolor pure-black text → white via canvas ── */
-    (function () {
-      var img = document.getElementById('autopos-logo');
-      if (!img) return;
-      function recolor() {
-        var cv  = document.createElement('canvas');
-        cv.width  = img.naturalWidth;
-        cv.height = img.naturalHeight;
-        var ctx = cv.getContext('2d');
-        ctx.drawImage(img, 0, 0);
-        var d  = ctx.getImageData(0, 0, cv.width, cv.height);
-        var px = d.data;
-        for (var i = 0; i < px.length; i += 4) {
-          if (px[i+3] > 8 && px[i] < 60 && px[i+1] < 60 && px[i+2] < 60) {
-            px[i] = px[i+1] = px[i+2] = 255;
-          }
-        }
-        ctx.putImageData(d, 0, 0);
-        img.src = cv.toDataURL('image/png');
-      }
-      if (img.complete && img.naturalWidth > 0) recolor();
-      else img.addEventListener('load', recolor);
-    }());
 
     /* ── Contact section reveal ────────────────────────────── */
     var contactSection = document.querySelector('.contact-section');
