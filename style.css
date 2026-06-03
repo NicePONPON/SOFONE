@@ -1043,6 +1043,7 @@ a { color: inherit; text-decoration: none; }
   grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
   margin-bottom: 3rem;
+  align-items: start;
 }
 
 .ap-integration-card {
