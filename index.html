@@ -1836,54 +1836,78 @@
       var scroll = document.querySelector('.ap-one-feat-scroll');
       if (!scroll) return;
       var cards = scroll.querySelectorAll('.ap-one-feat-card');
+      var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-      function setActive(el) {
-        var changed = false;
-        Array.prototype.forEach.call(cards, function (c) {
-          var want = c === el;
-          if (want !== c.classList.contains('is-active')) {
-            c.classList.toggle('is-active', want);
-            changed = true;
-          }
-        });
-        if (changed) scroll.classList.toggle('has-active', !!el);
+      if (!isTouch) {
+        /* Desktop: touchmove-over-card highlight (for touch-screen desktops) */
+        function setCardActive(el) {
+          Array.prototype.forEach.call(cards, function (c) { c.classList.toggle('is-active', c === el); });
+          scroll.classList.toggle('has-active', !!el);
+        }
+        scroll.addEventListener('touchmove', function (e) {
+          var t = e.touches[0];
+          setCardActive(document.elementFromPoint(t.clientX, t.clientY)?.closest('.ap-one-feat-card') || null);
+        }, { passive: true });
+        scroll.addEventListener('touchend',   function () { setCardActive(null); }, { passive: true });
+        scroll.addEventListener('touchcancel', function () { setCardActive(null); }, { passive: true });
       }
-
-      scroll.addEventListener('touchmove', function (e) {
-        var touch = e.touches[0];
-        var el = document.elementFromPoint(touch.clientX, touch.clientY);
-        var card = el && el.closest('.ap-one-feat-card');
-        setActive(card || null);
-      }, { passive: true });
-
-      scroll.addEventListener('touchend', function () { setActive(null); }, { passive: true });
-      scroll.addEventListener('touchcancel', function () { setActive(null); }, { passive: true });
     }());
 
-    /* ── Bilingual frames touch hover ──────────────────────── */
+    /* ── Scroll-center zoom: feature cards + bilingual (mobile) ─ */
     (function () {
+      var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+      if (!isTouch) return;
+
+      var raf = null;
+
+      function getAbsoluteCenter(el) {
+        var top = 0, node = el;
+        while (node) { top += node.offsetTop; node = node.offsetParent; }
+        return top + el.offsetHeight / 2;
+      }
+
+      function applyScrollZoom(items, scale0, scale1) {
+        var vh = window.innerHeight;
+        var viewCenter = (window.scrollY || window.pageYOffset) + vh / 2;
+        Array.prototype.forEach.call(items, function (item) {
+          var center = getAbsoluteCenter(item);
+          var dist   = Math.abs(center - viewCenter);
+          var t      = Math.max(0, 1 - dist / (vh * 0.55));
+          item.style.transform = 'scale(' + (scale0 + (scale1 - scale0) * t) + ')';
+        });
+      }
+
+      var featCards  = document.querySelectorAll('.ap-one-feat-card');
+      var bilFrames  = document.querySelectorAll('.ap-bil-frame');
+
+      function onScroll() {
+        if (raf) return;
+        raf = requestAnimationFrame(function () {
+          applyScrollZoom(featCards, 0.92, 1.06);
+          applyScrollZoom(bilFrames, 0.92, 1.06);
+          raf = null;
+        });
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }());
+
+    /* ── Bilingual frames — desktop touch hover ─────────────── */
+    (function () {
+      var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+      if (isTouch) return;
       var screens = document.querySelector('.ap-bil-screens');
       if (!screens) return;
       var frames = screens.querySelectorAll('.ap-bil-frame');
-
       function setActive(el) {
-        var changed = false;
-        Array.prototype.forEach.call(frames, function (f) {
-          var want = f === el;
-          if (want !== f.classList.contains('is-active')) {
-            f.classList.toggle('is-active', want);
-            changed = true;
-          }
-        });
-        if (changed) screens.classList.toggle('has-active', !!el);
+        Array.prototype.forEach.call(frames, function (f) { f.classList.toggle('is-active', f === el); });
+        screens.classList.toggle('has-active', !!el);
       }
-
       screens.addEventListener('touchmove', function (e) {
-        var touch = e.touches[0];
-        var el = document.elementFromPoint(touch.clientX, touch.clientY);
-        setActive(el && el.closest('.ap-bil-frame'));
+        var t = e.touches[0];
+        setActive(document.elementFromPoint(t.clientX, t.clientY)?.closest('.ap-bil-frame') || null);
       }, { passive: true });
-
       screens.addEventListener('touchend',   function () { setActive(null); }, { passive: true });
       screens.addEventListener('touchcancel', function () { setActive(null); }, { passive: true });
     }());
