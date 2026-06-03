@@ -17,6 +17,7 @@
       history.replaceState(null, '', window.location.pathname + window.location.search);
     }
   </script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@2/dist/lottie-player.js"></script>
 </head>
 <body>
 
@@ -103,7 +104,7 @@
 
         <!-- Waitress -->
         <div class="map-device" data-device="waitress">
-          <img src="assets/Waitress.gif" alt="IMSDOM 數位服務員" class="device-img" draggable="false">
+          <lottie-player src="assets/waitress.json" background="transparent" speed="1" loop autoplay class="device-img"></lottie-player>
           <div class="device-tooltip">
             <p class="tooltip-title" data-i18n="device.waitress.title">Nubis 與 IMSDOM 智慧管理</p>
             <p class="tooltip-desc" data-i18n="device.waitress.desc">透過 Nubis 遠端一鍵更新門市內容；運用 IMSDOM 自動化考核訓練，實現門市人才快速複製與品質標準化。</p>
@@ -344,21 +345,14 @@
               <img src="assets/demo/autoposone_demo_F3.png" alt="隱藏式喇叭" class="ap-one-feat-card-img">
               <div class="ap-one-feat-card-body">
                 <p class="ap-one-feat-card-title" data-i18n="apone.feat.f3.title">隱藏式喇叭</p>
-                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.f3.desc">音源內嵌螢幕背板，外觀零破綻。</p>
+                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.f3.desc">音源內嵌螢幕支架，外觀精簡幹練不卡灰塵。</p>
               </div>
             </div>
             <div class="ap-one-feat-card">
               <img src="assets/demo/autoposone_demo_F4.png" alt="主動導流散熱" class="ap-one-feat-card-img">
               <div class="ap-one-feat-card-body">
                 <p class="ap-one-feat-card-title" data-i18n="apone.feat.f4.title">主動導流散熱</p>
-                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.f4.desc">氣流通道設計，IP65 等級，抵禦餐飲高溫油煙環境。</p>
-              </div>
-            </div>
-            <div class="ap-one-feat-card">
-              <img src="assets/demo/autoposone_demo_F5.png" alt="散熱結構細節" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="apone.feat.f5.title">散熱結構細節</p>
-                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.f5.desc">精密鰭片排列，確保長時間穩定運行。</p>
+                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.f4.desc">主動式散熱設計，高溫環境不熱當。</p>
               </div>
             </div>
           </div>
@@ -1104,11 +1098,9 @@
         'apone.feat.f2.title': '精工電源鍵',
         'apone.feat.f2.desc': '仿精品設計語言，單鍵操作，質感升級。',
         'apone.feat.f3.title': '隱藏式喇叭',
-        'apone.feat.f3.desc': '音源內嵌螢幕背板，外觀零破綻。',
+        'apone.feat.f3.desc': '音源內嵌螢幕支架，外觀精簡幹練不卡灰塵。',
         'apone.feat.f4.title': '主動導流散熱',
-        'apone.feat.f4.desc': '氣流通道設計，IP65 等級，抵禦餐飲高溫油煙環境。',
-        'apone.feat.f5.title': '散熱結構細節',
-        'apone.feat.f5.desc': '精密鰭片排列，確保長時間穩定運行。',
+        'apone.feat.f4.desc': '主動式散熱設計，高溫環境不熱當。',
         'nubis.eyebrow': 'Nubis · IoT UEM 全球控制塔',
         'nubis.h2': '連鎖規模化，您的 IT 維護成本也跟著失控了嗎？',
         'nubis.vp.label': '一句話價值：',
@@ -1272,11 +1264,9 @@
         'apone.feat.f2.title': 'Precision Power Button',
         'apone.feat.f2.desc': 'Boutique-grade design language. One button, elevated feel.',
         'apone.feat.f3.title': 'Hidden Speaker',
-        'apone.feat.f3.desc': 'Speaker embedded behind the screen — seamless exterior.',
+        'apone.feat.f3.desc': 'Speaker integrated into the screen stand — clean lines, no dust traps.',
         'apone.feat.f4.title': 'Active Airflow Cooling',
-        'apone.feat.f4.desc': 'Engineered airflow channels, IP65-rated, built for F&B heat and grease.',
-        'apone.feat.f5.title': 'Thermal Structure Detail',
-        'apone.feat.f5.desc': 'Precision fin array for sustained stable operation under continuous load.',
+        'apone.feat.f4.desc': 'Active thermal design keeps the unit cool even in high-temperature environments.',
         'nubis.eyebrow': 'Nubis · IoT UEM Global Control Tower',
         'nubis.h2': 'As you scale, is your IT maintenance cost spiraling out of control?',
         'nubis.vp.label': 'The bottom line:',
@@ -1440,11 +1430,9 @@
         'apone.feat.f2.title': '精密電源ボタン',
         'apone.feat.f2.desc': 'プレミアムデザイン言語。ワンボタン操作で質感向上。',
         'apone.feat.f3.title': '隠しスピーカー',
-        'apone.feat.f3.desc': 'スクリーン背面に内蔵。外観に一切の突起なし。',
-        'apone.feat.f4.title': 'アクティブ導流冷却',
-        'apone.feat.f4.desc': '気流チャネル設計、IP65等級。飲食業の高熱・油煙環境に対応。',
-        'apone.feat.f5.title': '放熱構造の詳細',
-        'apone.feat.f5.desc': '精密フィン配列により、連続負荷下でも安定動作を維持。',
+        'apone.feat.f3.desc': 'スクリーンスタンドに内蔵。すっきりした外観でホコリも溜まらない。',
+        'apone.feat.f4.title': 'アクティブ冷却',
+        'apone.feat.f4.desc': 'アクティブ放熱設計により、高温環境でも熱暴走を防ぐ。',
         'nubis.eyebrow': 'Nubis · IoT UEM グローバルコントロールタワー',
         'nubis.h2': '規模拡大とともに、IT保守コストも制御不能になっていませんか？',
         'nubis.vp.label': '一言で言うと：',
@@ -1608,11 +1596,9 @@
         'apone.feat.f2.title': 'Nút nguồn tinh xảo',
         'apone.feat.f2.desc': 'Ngôn ngữ thiết kế cao cấp, một nút thao tác, nâng tầm cảm giác.',
         'apone.feat.f3.title': 'Loa ẩn',
-        'apone.feat.f3.desc': 'Loa tích hợp sau màn hình, ngoại quan không tì vết.',
-        'apone.feat.f4.title': 'Tản nhiệt luồng khí chủ động',
-        'apone.feat.f4.desc': 'Kênh dẫn khí thiết kế, chuẩn IP65, chống nhiệt và dầu mỡ nhà bếp.',
-        'apone.feat.f5.title': 'Chi tiết cấu trúc tản nhiệt',
-        'apone.feat.f5.desc': 'Cánh tản nhiệt chính xác, đảm bảo vận hành ổn định liên tục.',
+        'apone.feat.f3.desc': 'Loa tích hợp vào chân màn hình, ngoại quan gọn gàng, không bám bụi.',
+        'apone.feat.f4.title': 'Tản nhiệt chủ động',
+        'apone.feat.f4.desc': 'Thiết kế tản nhiệt chủ động, không lo quá nhiệt trong môi trường nóng.',
         'nubis.eyebrow': 'Nubis · Tháp kiểm soát IoT UEM toàn cầu',
         'nubis.h2': 'Khi mở rộng quy mô, chi phí bảo trì IT của bạn có mất kiểm soát không?',
         'nubis.vp.label': 'Tóm gọn:',
