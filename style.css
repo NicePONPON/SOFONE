@@ -2699,11 +2699,11 @@ td.col-autopos strong {
 /* left/top = power button center in the 4:3 cropped view of the portrait photo */
 .ap-power-glow {
   position: absolute;
-  width: 5%;
+  width: 6.3%;
   aspect-ratio: 1;
-  left: 27%;
-  top: 82%;
-  transform: translate(-50%, -50%);
+  left: 41.5%;
+  top: 62.3%;
+  transform: translate(-50%, -50%) rotate(178deg);
   pointer-events: none;
   overflow: visible;
   animation: ap-power-breathe 2.2s ease-in-out infinite;
