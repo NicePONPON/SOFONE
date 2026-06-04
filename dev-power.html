@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Power Glow Adjuster — autopos ONE F2</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-bg:      #0d1f2d;
+      --c-surface: #122030;
+      --c-border:  rgba(106,204,172,0.18);
+      --c-accent:  #6ACCAC;
+      --c-text:    rgba(255,255,255,0.88);
+      --c-muted:   rgba(255,255,255,0.52);
+    }
+
+    html, body { height: 100%; }
+
+    body {
+      background: var(--c-bg);
+      color: var(--c-text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', sans-serif;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ── Side Panel ── */
+    .panel {
+      width: 280px;
+      flex-shrink: 0;
+      background: var(--c-surface);
+      border-right: 1px solid var(--c-border);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      padding: 20px 16px;
+      gap: 20px;
+    }
+
+    .panel h1 { font-size: 13px; font-weight: 700; color: var(--c-accent); letter-spacing: .06em; }
+    .panel p.hint { font-size: 10px; color: var(--c-muted); line-height: 1.6; }
+
+    .group { display: flex; flex-direction: column; gap: 10px; }
+    .group-title {
+      font-size: 10px; font-weight: 700; color: var(--c-muted);
+      text-transform: uppercase; letter-spacing: .1em;
+      border-bottom: 1px solid var(--c-border); padding-bottom: 6px;
+    }
+
+    .row { display: flex; flex-direction: column; gap: 4px; }
+    .row label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 11px; color: var(--c-muted);
+    }
+    .row label span { color: var(--c-text); font-variant-numeric: tabular-nums; min-width: 48px; text-align: right; }
+    .row input[type=range] {
+      width: 100%; accent-color: var(--c-accent); height: 4px; cursor: pointer;
+    }
+
+    .copy-btn {
+      background: var(--c-accent); color: #0d1f2d;
+      border: none; border-radius: 8px; padding: 10px 14px;
+      font-size: 12px; font-weight: 700; cursor: pointer; width: 100%;
+      transition: opacity .15s;
+    }
+    .copy-btn:hover { opacity: .85; }
+    .copy-btn.copied { background: #3acc88; }
+
+    .code-out {
+      background: #0a1820; border: 1px solid var(--c-border);
+      border-radius: 8px; padding: 10px 12px;
+      font-family: 'SF Mono', 'Menlo', monospace; font-size: 10px;
+      color: var(--c-text); white-space: pre; overflow-x: auto;
+      line-height: 1.6;
+    }
+
+    /* ── Preview ── */
+    .preview {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* card matches site layout */
+    .card {
+      position: relative;
+      background: #122030;
+      border: 1px solid rgba(106,204,172,0.18);
+      border-radius: 20px;
+      overflow: hidden;
+      /* match site's aspect-ratio: 4/3 card image */
+    }
+
+    .card-img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    /* the draggable overlay SVG */
+    .ap-power-glow {
+      position: absolute;
+      aspect-ratio: 1;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      overflow: visible;
+      cursor: grab;
+    }
+
+    /* drag handle — invisible full-size hit area */
+    .drag-handle {
+      position: absolute;
+      aspect-ratio: 1;
+      transform: translate(-50%, -50%);
+      cursor: grab;
+      z-index: 10;
+    }
+    .drag-handle:active { cursor: grabbing; }
+
+    @keyframes ap-power-breathe {
+      0%, 100% {
+        filter: drop-shadow(0 0 1px rgba(77, 144, 255, 0.55));
+        opacity: 0.55;
+      }
+      50% {
+        filter: drop-shadow(0 0 3px rgba(77, 144, 255, 1)) drop-shadow(0 0 8px rgba(77, 144, 255, 0.5));
+        opacity: 1;
+      }
+    }
+
+    .ap-power-glow.animate {
+      animation: ap-power-breathe 2.2s ease-in-out infinite;
+    }
+
+    /* crosshair grid */
+    .crosshair {
+      position: absolute; pointer-events: none; opacity: .18;
+    }
+    .crosshair.h { left: 0; width: 100%; height: 1px; background: #6ACCAC; }
+    .crosshair.v { top: 0; height: 100%; width: 1px; background: #6ACCAC; }
+  </style>
+</head>
+<body>
+
+<!-- ── Side Panel ── -->
+<div class="panel">
+  <h1>Power Glow Adjuster</h1>
+  <p class="hint">Drag the icon on the photo, or use sliders. Copy CSS values when done.</p>
+
+  <div class="group">
+    <div class="group-title">Position</div>
+
+    <div class="row">
+      <label>Left <span id="lbl-left">27.0%</span></label>
+      <input type="range" id="sl-left" min="0" max="100" step="0.1" value="27">
+    </div>
+    <div class="row">
+      <label>Top <span id="lbl-top">82.0%</span></label>
+      <input type="range" id="sl-top" min="0" max="100" step="0.1" value="82">
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title">Size &amp; Shape</div>
+
+    <div class="row">
+      <label>Width <span id="lbl-size">5.0%</span></label>
+      <input type="range" id="sl-size" min="1" max="20" step="0.1" value="5">
+    </div>
+    <div class="row">
+      <label>Stroke <span id="lbl-stroke">1.5</span></label>
+      <input type="range" id="sl-stroke" min="0.5" max="4" step="0.1" value="1.5">
+    </div>
+    <div class="row">
+      <label>Rotate <span id="lbl-rotate">0°</span></label>
+      <input type="range" id="sl-rotate" min="-180" max="180" step="1" value="0">
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title">Animation</div>
+    <div class="row">
+      <label>
+        <span>Preview breathe</span>
+        <input type="checkbox" id="cb-animate" checked>
+      </label>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="group-title">Output</div>
+    <div class="code-out" id="code-out"></div>
+    <button class="copy-btn" id="copy-btn">Copy CSS values</button>
+  </div>
+</div>
+
+<!-- ── Preview ── -->
+<div class="preview" id="preview">
+  <div class="card" id="card">
+    <img src="assets/demo/webp/autoposone_demo_F2.webp?v=1780543381" class="card-img" draggable="false">
+
+    <!-- crosshairs follow the overlay position -->
+    <div class="crosshair h" id="xh"></div>
+    <div class="crosshair v" id="xv"></div>
+
+    <!-- SVG power icon overlay -->
+    <svg class="ap-power-glow animate" id="power-svg"
+         viewBox="-8 -8 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path id="svg-arc"
+            d="M 2.5 -4.33 A 5 5 0 1 0 -2.5 -4.33"
+            stroke="#4d90ff" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <line id="svg-line"
+            x1="0" y1="-2.6" x2="0" y2="-6.1"
+            stroke="#4d90ff" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+
+    <!-- invisible drag handle -->
+    <div class="drag-handle" id="drag-handle"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var state = {
+    left:   27.0,
+    top:    82.0,
+    size:   5.0,
+    stroke: 1.5,
+    rotate: 0
+  };
+
+  var card       = document.getElementById('card');
+  var svg        = document.getElementById('power-svg');
+  var handle     = document.getElementById('drag-handle');
+  var arcEl      = document.getElementById('svg-arc');
+  var lineEl     = document.getElementById('svg-line');
+  var xh         = document.getElementById('xh');
+  var xv         = document.getElementById('xv');
+  var codeOut    = document.getElementById('code-out');
+  var copyBtn    = document.getElementById('copy-btn');
+
+  var sliders = {
+    left:   { el: document.getElementById('sl-left'),   lbl: document.getElementById('lbl-left'),   fmt: function(v){ return v.toFixed(1)+'%'; } },
+    top:    { el: document.getElementById('sl-top'),    lbl: document.getElementById('lbl-top'),    fmt: function(v){ return v.toFixed(1)+'%'; } },
+    size:   { el: document.getElementById('sl-size'),   lbl: document.getElementById('lbl-size'),   fmt: function(v){ return v.toFixed(1)+'%'; } },
+    stroke: { el: document.getElementById('sl-stroke'), lbl: document.getElementById('lbl-stroke'), fmt: function(v){ return v.toFixed(1); } },
+    rotate: { el: document.getElementById('sl-rotate'), lbl: document.getElementById('lbl-rotate'), fmt: function(v){ return v+'°'; } }
+  };
+
+  function apply() {
+    var cardW = card.offsetWidth;
+    var imgEl = card.querySelector('.card-img');
+    var imgH  = imgEl.offsetHeight;
+
+    var px = state.left / 100 * cardW;
+    var py = state.top  / 100 * imgH;
+    var sz = state.size / 100 * cardW;
+
+    // position SVG
+    svg.style.left   = state.left + '%';
+    svg.style.top    = state.top  + '%';
+    svg.style.width  = state.size + '%';
+    svg.style.transform = 'translate(-50%,-50%) rotate(' + state.rotate + 'deg)';
+
+    // position drag handle (same spot, sized 2× for easier grabbing)
+    handle.style.left   = state.left + '%';
+    handle.style.top    = state.top  + '%';
+    handle.style.width  = Math.max(sz * 2, 32) + 'px';
+
+    // crosshairs
+    xh.style.top  = state.top  + '%';
+    xv.style.left = state.left + '%';
+
+    // stroke width
+    arcEl.setAttribute('stroke-width',  state.stroke);
+    lineEl.setAttribute('stroke-width', state.stroke);
+
+    // update sliders + labels
+    Object.keys(sliders).forEach(function(k) {
+      sliders[k].el.value = state[k];
+      sliders[k].lbl.textContent = sliders[k].fmt(state[k]);
+    });
+
+    updateCode();
+  }
+
+  function updateCode() {
+    var lines = [
+      '.ap-power-glow {',
+      '  left:   ' + state.left.toFixed(1) + '%;',
+      '  top:    ' + state.top.toFixed(1)  + '%;',
+      '  width:  ' + state.size.toFixed(1) + '%;',
+      (state.rotate !== 0
+        ? '  transform: translate(-50%,-50%) rotate(' + state.rotate + 'deg);'
+        : '  transform: translate(-50%,-50%);'),
+      '}',
+      '',
+      '/* stroke-width: ' + state.stroke.toFixed(1) + ' */'
+    ];
+    codeOut.textContent = lines.join('\n');
+  }
+
+  // Slider events
+  Object.keys(sliders).forEach(function(k) {
+    sliders[k].el.addEventListener('input', function() {
+      state[k] = parseFloat(this.value);
+      apply();
+    });
+  });
+
+  // Animate toggle
+  document.getElementById('cb-animate').addEventListener('change', function() {
+    svg.classList.toggle('animate', this.checked);
+  });
+
+  // Copy button
+  copyBtn.addEventListener('click', function() {
+    navigator.clipboard.writeText(codeOut.textContent).then(function() {
+      copyBtn.textContent = 'Copied!';
+      copyBtn.classList.add('copied');
+      setTimeout(function() {
+        copyBtn.textContent = 'Copy CSS values';
+        copyBtn.classList.remove('copied');
+      }, 1800);
+    });
+  });
+
+  // ── Drag to reposition ──
+  var dragging = false;
+  var dragStartX, dragStartY, startLeft, startTop;
+
+  handle.addEventListener('mousedown', function(e) {
+    dragging = true;
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+    startLeft  = state.left;
+    startTop   = state.top;
+    e.preventDefault();
+  });
+
+  window.addEventListener('mousemove', function(e) {
+    if (!dragging) return;
+    var cardW = card.offsetWidth;
+    var imgH  = card.querySelector('.card-img').offsetHeight;
+    var dx = (e.clientX - dragStartX) / cardW * 100;
+    var dy = (e.clientY - dragStartY) / imgH  * 100;
+    state.left = Math.max(0, Math.min(100, startLeft + dx));
+    state.top  = Math.max(0, Math.min(100, startTop  + dy));
+    apply();
+  });
+
+  window.addEventListener('mouseup', function() { dragging = false; });
+
+  // Touch drag
+  handle.addEventListener('touchstart', function(e) {
+    var t = e.touches[0];
+    dragging   = true;
+    dragStartX = t.clientX;
+    dragStartY = t.clientY;
+    startLeft  = state.left;
+    startTop   = state.top;
+    e.preventDefault();
+  }, { passive: false });
+
+  window.addEventListener('touchmove', function(e) {
+    if (!dragging) return;
+    var t = e.touches[0];
+    var cardW = card.offsetWidth;
+    var imgH  = card.querySelector('.card-img').offsetHeight;
+    var dx = (t.clientX - dragStartX) / cardW * 100;
+    var dy = (t.clientY - dragStartY) / imgH  * 100;
+    state.left = Math.max(0, Math.min(100, startLeft + dx));
+    state.top  = Math.max(0, Math.min(100, startTop  + dy));
+    apply();
+  }, { passive: false });
+
+  window.addEventListener('touchend', function() { dragging = false; });
+
+  // Resize
+  window.addEventListener('resize', apply);
+
+  // Card sizing: fill available preview space maintaining 4:3 image ratio
+  function sizeCard() {
+    var preview = document.getElementById('preview');
+    var pw = preview.offsetWidth  - 48;
+    var ph = preview.offsetHeight - 48;
+    // card image is 4:3, card has some body below — guess body ~60px
+    var bodyH = 60;
+    var maxW = Math.min(pw, (ph - bodyH) * 4 / 3);
+    card.style.width = maxW + 'px';
+  }
+
+  window.addEventListener('resize', sizeCard);
+  sizeCard();
+
+  // init
+  apply();
+})();
+</script>
+</body>
+</html>
