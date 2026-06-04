@@ -2691,6 +2691,34 @@ td.col-autopos strong {
   line-height: 1.6;
 }
 
+/* ── Power button breathing light (F2 card) ───────────── */
+.ap-f2-wrap {
+  position: relative;
+  display: block;
+}
+/* left/top = power button center in the 4:3 cropped view of the portrait photo */
+.ap-power-glow {
+  position: absolute;
+  width: 5%;
+  aspect-ratio: 1;
+  left: 27%;
+  top: 82%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: visible;
+  animation: ap-power-breathe 2.2s ease-in-out infinite;
+}
+@keyframes ap-power-breathe {
+  0%, 100% {
+    filter: drop-shadow(0 0 1px rgba(77, 144, 255, 0.55));
+    opacity: 0.55;
+  }
+  50% {
+    filter: drop-shadow(0 0 3px rgba(77, 144, 255, 1)) drop-shadow(0 0 8px rgba(77, 144, 255, 0.5));
+    opacity: 1;
+  }
+}
+
 @media (max-width: 767px) {
   .ap-one-feat-scroll {
     flex-direction: column;
