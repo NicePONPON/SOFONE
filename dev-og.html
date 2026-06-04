@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>OG Image Preview — 1200×630</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #e8e8e8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 32px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans TC', 'Noto Sans', sans-serif;
+      gap: 16px;
+    }
+
+    .meta {
+      color: rgba(0,0,0,0.4);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    /* ── The actual OG card — exactly 1200×630 ── */
+    .og-card {
+      width: 1200px;
+      height: 630px;
+      background: #fff;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+    }
+
+    /* ══ LEFT PANEL — 50% ══ */
+    .left {
+      width: 600px;
+      flex-shrink: 0;
+      padding: 52px 64px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* SOFONE logo — 3× larger, centered on left */
+    .logo-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .logo-wrap img { height: 144px; width: auto; }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9aacb8;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      align-self: center;
+    }
+
+    .divider {
+      width: 36px; height: 2px;
+      background: #6ACCAC;
+      border-radius: 2px;
+      margin: 0 auto 22px;
+    }
+
+    .headline {
+      font-size: 46px;
+      font-weight: 900;
+      color: #0d1f2d;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .sub {
+      font-size: 14px;
+      color: #7a95a8;
+      line-height: 1.85;
+      margin-bottom: 28px;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* service logos — no frames, just inline images */
+    .services {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+    .services img { height: 26px; width: auto; }
+    /* autopos: invert white→black, hue-rotate keeps purple roughly intact */
+    .autopos-img {
+      height: 26px;
+      filter: invert(1) hue-rotate(180deg);
+    }
+
+    /* bottom-left accent bar */
+    .accent-bar {
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 100%; height: 3px;
+      background: linear-gradient(to right, #6ACCAC, transparent);
+    }
+
+    /* ══ VERTICAL DIVIDER ══ */
+    .v-divider {
+      width: 1px;
+      background: linear-gradient(to bottom, transparent 8%, #e0e8ed 30%, #e0e8ed 70%, transparent 92%);
+      flex-shrink: 0;
+    }
+
+    /* ══ RIGHT PANEL — 50% ══ */
+    .right {
+      flex: 1;
+      padding: 44px 44px 0 44px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .partners-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #b0c0cc;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      flex-shrink: 0;
+    }
+
+    /* grid + fade mask */
+    .partners-grid-wrap {
+      flex: 1;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    /* no frames — just the logo image centered in its cell */
+    .partner-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 56px;
+    }
+    .partner-cell img {
+      max-width: 100%;
+      max-height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+<p class="meta">OG Image Preview — 1200 × 630 px</p>
+
+<div class="og-card">
+
+  <!-- ── Left 50%: branding ── -->
+  <div class="left">
+    <div class="logo-wrap">
+      <img src="assets/sofone-logo.png" alt="SOFONE">
+    </div>
+    <p class="eyebrow">碩豐 SOFONE</p>
+    <div class="divider"></div>
+    <h1 class="headline">串聯軟硬體<br>賦能數位轉型</h1>
+    <p class="sub">
+      以高彈性、低耦合的系統整合方案，<br>
+      為企業打造更強健的營運生態圈。<br>
+      無需更換核心 ERP，協助品牌快速落地展店。
+    </p>
+    <div class="services">
+      <img class="autopos-img" src="assets/autopos-logo.png" alt="autopos">
+      <img src="assets/centrdx-logo.png" alt="CentrDX">
+      <img src="assets/nubis-logo.png" alt="Nubis">
+      <img src="assets/imsdom-logo.png" alt="IMSDOM">
+    </div>
+    <div class="accent-bar"></div>
+  </div>
+
+  <div class="v-divider"></div>
+
+  <!-- ── Right 50%: all 40 partner logos with bottom fade ── -->
+  <div class="right">
+    <p class="partners-label">Global Partners</p>
+    <div class="partners-grid-wrap">
+      <div class="partners-grid">
+        <div class="partner-cell"><img src="assets/partners/Customer-1.png"  alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-2.png"  alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-3.png"  alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-4.png"  alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-5.png"  alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-6.png"  alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-7.png"  alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-8.png"  alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-9.png"  alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-10.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-11.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-12.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-13.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-14.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-15.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-16.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-17.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-18.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-19.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-20.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-21.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-22.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-23.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-24.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-25.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-26.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-27.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-28.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-29.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-30.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-31.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-32.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-33.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-34.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-35.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-36.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-37.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-38.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-39.png" alt=""></div>
+        <div class="partner-cell"><img src="assets/partners/Customer-40.png" alt=""></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<p class="meta">Cmd+Shift+4 → crop just the card → save as og-image.png → paste path here</p>
+
+</body>
+</html>
