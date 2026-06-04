@@ -2595,7 +2595,7 @@ td.col-autopos strong {
   cursor: pointer;
   z-index: 2;
   padding: 0;
-  opacity: 0.5;
+  opacity: 1;
   transition: opacity .2s;
   outline: none;
   /* clock position: 0° = 12 o'clock, clockwise */
@@ -2604,8 +2604,9 @@ td.col-autopos strong {
   /* arrows point outward (away from center) */
   transform: translate(-50%, -50%) rotate(var(--a));
 }
-.ap-one-nav:hover { opacity: 0.85; }
-.ap-one-nav.is-active { opacity: 0.85; }
+/* arrows blend with navy background at rest; brighten on interaction */
+.ap-one-nav path { stroke: rgba(255,255,255,0.18); transition: stroke .2s; }
+.ap-one-nav:hover path { stroke: rgba(255,255,255,0.45); }
 .ap-one-nav.is-active path { stroke: var(--c-accent); }
 
 @media (max-width: 767px) {
