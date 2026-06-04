@@ -1720,12 +1720,13 @@ td.col-autopos strong {
   animation: ap-dot-ping 2.8s ease-in-out infinite;
 }
 
-.ap-gd--tw { top:  75px; left:  36px; }
-.ap-gd--us { top: 152px; left:  18px; }
-.ap-gd--jp { top: 208px; left:  58px; }
-.ap-gd--eu { top:  60px; left: 218px; }
-.ap-gd--sg { top: 172px; left: 228px; }
-.ap-gd--au { top:  20px; left: 148px; }
+/* % values = px / 260 — SVG viewBox is 260×260, so dots scale with container at any size */
+.ap-gd--tw { top: 28.85%; left: 13.85%; }
+.ap-gd--us { top: 58.46%; left:  6.92%; }
+.ap-gd--jp { top: 80.00%; left: 22.31%; }
+.ap-gd--eu { top: 23.08%; left: 83.85%; }
+.ap-gd--sg { top: 66.15%; left: 87.69%; }
+.ap-gd--au { top:  7.69%; left: 56.92%; }
 
 .ap-gd--tw span { animation-delay: 0s; }
 .ap-gd--us span { animation-delay: 0.46s; }
