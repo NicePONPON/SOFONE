@@ -148,7 +148,7 @@ Replace with:
 
 - [ ] **Step 5: Verify translations load correctly**
 
-Start the dev server: `bash /Users/chi-yuliao/secpos-bd/serve.sh`
+Start the dev server: `bash /Users/chi-yuliao/SOFONE/serve.sh`
 
 Open http://localhost:8080, switch the language picker through all 4 languages. The page should not throw JS errors in the console. The new keys won't be visible yet (HTML not added), but no errors means the TRANSLATIONS object is valid JSON-like syntax.
 

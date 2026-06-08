@@ -5,7 +5,7 @@ B2B landing page for SOFONE (碩豐數位科技), a System Integration & POS com
 ## Project Structure
 
 ```
-secpos-bd/
+SOFONE/
 ├── index.html          # Main landing page
 ├── style.css           # All styles
 ├── dev.html            # Dev dashboard for adjusting device positions

@@ -114,7 +114,7 @@
 
         <!-- Waitress -->
         <div class="map-device" data-device="waitress">
-          <lottie-player src="assets/waitress.json" background="transparent" speed="1" loop autoplay class="device-img"></lottie-player>
+          <lottie-player src="assets/waitress-tw.json" background="transparent" speed="1" loop autoplay class="device-img"></lottie-player>
           <div class="device-tooltip">
             <p class="tooltip-title" data-i18n="device.waitress.title">Nubis 與 IMSDOM 智慧管理</p>
             <p class="tooltip-desc" data-i18n="device.waitress.desc">透過 Nubis 遠端一鍵更新門市內容；運用 IMSDOM 自動化考核訓練，實現門市人才快速複製與品質標準化。</p>
@@ -1667,6 +1667,13 @@
       }
     };
 
+    var WAITRESS_SRC = {
+      'zh-TW': 'assets/waitress-tw.json',
+      'en':    'assets/waitress-en-v3.json',
+      'ja':    'assets/waitress-ja.json',
+      'vi':    'assets/waitress-vi.json',
+    };
+
     function applyTranslations(lang) {
       var T = TRANSLATIONS[lang] || TRANSLATIONS['zh-TW'];
       document.querySelectorAll('[data-i18n]').forEach(function(el) {
@@ -1678,6 +1685,20 @@
         if (T[key] !== undefined) el.innerHTML = T[key];
       });
       if (T['meta.title']) document.title = T['meta.title'];
+      var waitressSrc = WAITRESS_SRC[lang];
+      if (waitressSrc) {
+        var player = document.querySelector('.map-device[data-device="waitress"] lottie-player');
+        if (player && player.getAttribute('src') !== waitressSrc) {
+          var next = document.createElement('lottie-player');
+          next.setAttribute('src', waitressSrc);
+          next.setAttribute('background', 'transparent');
+          next.setAttribute('speed', '1');
+          next.setAttribute('loop', '');
+          next.setAttribute('autoplay', '');
+          next.className = player.className;
+          player.parentNode.replaceChild(next, player);
+        }
+      }
     }
 
     /* ── Scroll Reveal ─────────────────────────────────────── */

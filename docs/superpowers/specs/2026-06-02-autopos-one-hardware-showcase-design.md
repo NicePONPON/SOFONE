@@ -1,7 +1,7 @@
 # autopos ONE Hardware Showcase — Design Spec
 
 **Date:** 2026-06-02  
-**Project:** secpos-bd landing page  
+**Project:** SOFONE landing page  
 **Section:** autopos ONE block (4th block inside `.autopos-section`)
 
 ---
