@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sofone-three.vercel.app/sitemap.xml
+Sitemap: https://sofone.vercel.app/sitemap.xml
