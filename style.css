@@ -12,25 +12,25 @@
      left = distance from left edge of map
      w    = device image width
      ════════════════════════════════════════════════════════ */
-  --dev-kiosk-top:     47%;
-  --dev-kiosk-left:    48.5%;
-  --dev-kiosk-w:       15%;
+  --dev-kiosk-top:     49.5%;
+  --dev-kiosk-left:    50%;
+  --dev-kiosk-w:       11.5%;
 
-  --dev-pos-top:       35%;
-  --dev-pos-left:      34.5%;
-  --dev-pos-w:         14.5%;
+  --dev-pos-top:       43%;
+  --dev-pos-left:      36.5%;
+  --dev-pos-w:         9.5%;
 
-  --dev-printer-top:   42%;
-  --dev-printer-left:  45%;
-  --dev-printer-w:     6.5%;
+  --dev-printer-top:   43%;
+  --dev-printer-left:  44.5%;
+  --dev-printer-w:     7.5%;
 
   --dev-qr-top:        48%;
   --dev-qr-left:       64%;
   --dev-qr-w:          9%;
 
-  --dev-waitress-top:  55.5%;
+  --dev-waitress-top:  56.5%;
   --dev-waitress-left: 39.5%;
-  --dev-waitress-w:    10.5%;
+  --dev-waitress-w:    9.5%;
 
   /* ════════════════════════════════════════════════════════ */
 
@@ -374,6 +374,7 @@ a { color: inherit; text-decoration: none; }
   top: var(--dev-pos-top);     left: var(--dev-pos-left);    width: var(--dev-pos-w);
   z-index: 5;
 }
+
 .map-device[data-device="printer"] {
   top: var(--dev-printer-top); left: var(--dev-printer-left); width: var(--dev-printer-w);
   z-index: 4;
