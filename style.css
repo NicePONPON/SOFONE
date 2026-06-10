@@ -2777,6 +2777,64 @@ td.col-autopos strong {
 
 .hw-cta { display: inline-flex; }
 
+/* ── XELF II assemble-on-scroll ─────────────────────────────
+   XELFII-10-1 is the static anchor (.hw-asm-main).
+   XELFII-10-2..5 are .hw-asm-part--N: each is a positioner <div>
+   (handles scatter→assemble via transform) wrapping an <img>
+   (handles the idle bob loop). TO ADJUST: edit each part's
+   assembled position (top/left/width) and scatter offset
+   (--sx/--sy/--ss) below. --bob = float speed. */
+.hw-assemble {
+  position: relative;
+  min-height: 360px;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  padding: 28px;
+  overflow: hidden;
+}
+.hw-asm-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 46%;            /* ADJUST: main image size */
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.hw-asm-part {
+  position: absolute;
+  z-index: 3;
+  /* default = scattered: offset from assembled spot */
+  transform: translate(var(--sx, 0), var(--sy, 0)) scale(var(--ss, 0.8));
+  transition: transform 1.1s cubic-bezier(.2, .7, .2, 1);
+}
+.hw-asm-part img {
+  display: block;
+  width: 100%;
+  animation: hw-asm-bob var(--bob, 4s) ease-in-out infinite;
+}
+/* assembled state: parts settle into place, bob stops */
+.hw-assemble.is-assembled .hw-asm-part { transform: translate(0, 0) scale(1); }
+.hw-assemble.is-assembled .hw-asm-part img { animation: none; }
+
+@keyframes hw-asm-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+
+/* Per-part assembled position + size, and scatter offset/scale + bob speed.
+   ADJUST these freely — top/left/width = where it ends up; --sx/--sy = how
+   far it starts away; --ss = start scale; --bob = float speed. */
+.hw-asm-part--2 { top: 6%;  left: 8%;  width: 30%; --sx: -70px; --sy: -50px; --ss: .75; --bob: 4.3s; }
+.hw-asm-part--3 { top: 8%;  left: 62%; width: 30%; --sx:  80px; --sy: -40px; --ss: .75; --bob: 3.7s; }
+.hw-asm-part--4 { top: 58%; left: 6%;  width: 30%; --sx: -80px; --sy:  55px; --ss: .75; --bob: 4.7s; }
+.hw-asm-part--5 { top: 56%; left: 64%; width: 30%; --sx:  70px; --sy:  55px; --ss: .75; --bob: 4.0s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hw-asm-part { transition: none; transform: translate(0, 0) scale(1); }
+  .hw-asm-part img { animation: none; }
+}
+
 /* Sidebar product switcher */
 .hw-thumbs {
   display: flex;

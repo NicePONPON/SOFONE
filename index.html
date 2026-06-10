@@ -494,16 +494,15 @@
 
           <!-- XELF II -->
           <div class="hw-panel" data-hw="xelf">
-            <div class="hw-gallery">
-              <div class="hw-hero">
-                <img src="assets/XELFII-3.png" alt="XELF II 自助點餐機" class="hw-hero-img" loading="lazy">
-              </div>
-              <div class="hw-thumbrow">
-                <button class="hw-gthumb is-active" type="button" data-img="assets/XELFII-3.png"><img src="assets/XELFII-3.png" alt="" loading="lazy"></button>
-                <button class="hw-gthumb" type="button" data-img="assets/XELFII-4.png"><img src="assets/XELFII-4.png" alt="" loading="lazy"></button>
-                <button class="hw-gthumb" type="button" data-img="assets/XELFII-5.png"><img src="assets/XELFII-5.png" alt="" loading="lazy"></button>
-                <button class="hw-gthumb" type="button" data-img="assets/XELFII-7.png"><img src="assets/XELFII-7.png" alt="" loading="lazy"></button>
-              </div>
+            <!-- Assemble-on-scroll: XELFII-10-1 is the static anchor; -2..-5 float in
+                 then assemble. Adjust each part's assembled position/size and scatter
+                 offset in style.css (.hw-asm-main / .hw-asm-part--2..--5). -->
+            <div class="hw-assemble" id="xelfAssemble">
+              <img src="assets/XELFII-10-1.png" alt="XELF II 自助點餐機" class="hw-asm-main" loading="lazy">
+              <div class="hw-asm-part hw-asm-part--2"><img src="assets/XELFII-10-2.png" alt="" loading="lazy"></div>
+              <div class="hw-asm-part hw-asm-part--3"><img src="assets/XELFII-10-3.png" alt="" loading="lazy"></div>
+              <div class="hw-asm-part hw-asm-part--4"><img src="assets/XELFII-10-4.png" alt="" loading="lazy"></div>
+              <div class="hw-asm-part hw-asm-part--5"><img src="assets/XELFII-10-5.png" alt="" loading="lazy"></div>
             </div>
             <div class="hw-info">
               <h3 class="hw-name" data-i18n="hardware.xelf.name">XELF II 自助點餐機（FEC）</h3>
@@ -528,7 +527,7 @@
             <span data-i18n="hardware.apone.name">autopos ONE 智慧收銀機</span>
           </button>
           <button class="hw-thumb" data-hw="xelf" type="button">
-            <img src="assets/XELFII-3.png" alt="" loading="lazy">
+            <img src="assets/XELFII-10-1.png" alt="" loading="lazy">
             <span data-i18n="hardware.xelf.name">XELF II 自助點餐機（FEC）</span>
           </button>
         </div>
@@ -2000,6 +1999,21 @@
           });
         });
       });
+
+      // XELF II assemble-on-scroll: parts float, then settle once in view.
+      var assemble = document.getElementById('xelfAssemble');
+      if (assemble && 'IntersectionObserver' in window) {
+        var asmObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              // brief delay so the floating parts are seen before they settle
+              setTimeout(function() { assemble.classList.add('is-assembled'); }, 650);
+              asmObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.45 });
+        asmObserver.observe(assemble);
+      }
     })();
 
     /* ── Scroll hint → CentrDX ────────────────────────────── */
