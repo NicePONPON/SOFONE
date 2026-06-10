@@ -2764,11 +2764,11 @@ td.col-autopos strong {
 /* Per-part assembled position + size, and scatter offset/scale + bob speed.
    ADJUST these freely — top/left/width = where it ends up; --sx/--sy = how
    far it starts away; --ss = start scale; --bob = float speed. */
-.hw-asm-part--2 { top: 1%;   left: 63%; width: 30%; --sx: -70px; --sy: -50px; --ss: 1; --bob: 4.3s; }
-.hw-asm-part--3 { top: 27%;  left: 46%; width: 22%; --sx:  80px; --sy: -40px; --ss: 1; --bob: 3.7s; }
-.hw-asm-part--4 { top: 23%;  left: 29%; width: 30%; --sx: -80px; --sy:  55px; --ss: 1; --bob: 4.7s; }
-.hw-asm-part--5 { top: 33%;  left: 25%; width: 53%; --sx:  70px; --sy:  55px; --ss: 1; --bob: 4s;   }
-.hw-asm-part--6 { top: -10%; left: 24%; width: 9%;  --sx:   0px; --sy:  70px; --ss: 1; --bob: 3.8s; }
+.hw-asm-part--2 { top: 9%;  left: 43%; width: 30%; --sx:  51px; --sy: -90px; --ss: 1; --bob: 4.3s; }
+.hw-asm-part--3 { top: 27%; left: 46%; width: 22%; --sx:  80px; --sy: -40px; --ss: 1; --bob: 3.7s; }
+.hw-asm-part--4 { top: 23%; left: 29%; width: 30%; --sx: -80px; --sy:  55px; --ss: 1; --bob: 4.7s; }
+.hw-asm-part--5 { top: 33%; left: 25%; width: 53%; --sx:  70px; --sy:  55px; --ss: 1; --bob: 4s;   }
+.hw-asm-part--6 { top: 5%;  left: 45%; width: 9%;  --sx: -126px; --sy:  -5px; --ss: 1; --bob: 3.8s; }
 
 @media (prefers-reduced-motion: reduce) {
   .hw-asm-part { transition: none; transform: translate(0, 0) scale(1); }
