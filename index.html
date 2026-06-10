@@ -391,19 +391,13 @@
             <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_11.webp" loading="lazy" alt="autopos ONE 視角 11" draggable="false">
             <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_12.webp" loading="lazy" alt="autopos ONE 視角 12" draggable="false">
           </div>
-          <!-- 12 clock-position direction buttons (0° = 12 o'clock, +30° clockwise each) -->
-          <button class="ap-one-nav is-active" style="--a:0deg"   data-idx="0"  aria-label="視角 1"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:30deg"  data-idx="1"  aria-label="視角 2"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:60deg"  data-idx="2"  aria-label="視角 3"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:90deg"  data-idx="3"  aria-label="視角 4"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:120deg" data-idx="4"  aria-label="視角 5"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:150deg" data-idx="5"  aria-label="視角 6"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:180deg" data-idx="6"  aria-label="視角 7"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:210deg" data-idx="7"  aria-label="視角 8"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:240deg" data-idx="8"  aria-label="視角 9"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:270deg" data-idx="9"  aria-label="視角 10"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:300deg" data-idx="10" aria-label="視角 11"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-          <button class="ap-one-nav"           style="--a:330deg" data-idx="11" aria-label="視角 12"><svg width="33" height="33" viewBox="0 0 12 12" fill="none"><path d="M2 9L6 3L10 9" stroke="rgba(255,255,255,0.88)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+
+        <!-- Scrub slider (replaces clock-position arrows) — drag to rotate -->
+        <div class="ap-one-scrub">
+          <input type="range" class="ap-one-slider" min="0" max="11" step="1" value="0"
+                 aria-label="拖曳旋轉檢視 autopos ONE 各視角">
+          <span class="ap-one-scrub-hint" data-i18n="apone.viewer.hint">拖曳旋轉 360°</span>
         </div>
 
         <!-- Feature Carousel -->
@@ -2204,7 +2198,7 @@
       if (!ring) return;
       var viewer      = ring.querySelector('.ap-one-viewer');
       var frames      = viewer.querySelectorAll('.ap-one-frame');
-      var navBtns     = ring.querySelectorAll('.ap-one-nav');
+      var slider      = document.querySelector('.ap-one-slider');
       var total       = frames.length;
       var current     = 0;
       var touchStartX = 0;
@@ -2225,36 +2219,28 @@
         });
       }
 
-      function showFrame(idx) {
+      function showFrame(idx, syncSlider) {
         loadAllFrames();
         frames[current].classList.remove('is-active');
-        navBtns[current].classList.remove('is-active');
         current = ((idx % total) + total) % total;
         frames[current].classList.add('is-active');
-        navBtns[current].classList.add('is-active');
+        if (syncSlider && slider) slider.value = current;
       }
 
-      Array.prototype.forEach.call(navBtns, function (btn) {
-        btn.addEventListener('mouseenter', function () {
-          showFrame(parseInt(btn.dataset.idx, 10));
+      /* Slider scrub: drag the bar to rotate */
+      if (slider) {
+        slider.addEventListener('input', function () {
+          showFrame(parseInt(slider.value, 10), false);
         });
-      });
+      }
 
-      /* Touch: move finger around the ring to change frame */
-      ring.addEventListener('touchmove', function (e) {
-        var touch = e.touches[0];
-        var el = document.elementFromPoint(touch.clientX, touch.clientY);
-        var btn = el && el.closest('.ap-one-nav');
-        if (btn) showFrame(parseInt(btn.dataset.idx, 10));
-      }, { passive: true });
-
-      /* Swipe on viewer image still works */
+      /* Swipe on the viewer image rotates and keeps the slider in sync */
       viewer.addEventListener('touchstart', function (e) {
         touchStartX = e.touches[0].clientX;
       }, { passive: true });
       viewer.addEventListener('touchend', function (e) {
         var delta = e.changedTouches[0].clientX - touchStartX;
-        if (Math.abs(delta) > 30) showFrame(current + (delta < 0 ? 1 : -1));
+        if (Math.abs(delta) > 30) showFrame(current + (delta < 0 ? 1 : -1), true);
       }, { passive: true });
 
       /* Preload all frames when viewer scrolls into view */
