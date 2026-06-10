@@ -2602,6 +2602,14 @@ td.col-autopos strong {
   display: block;
 }
 
+/* XELF II feature-card images are product renders with their own margins —
+   contain (not cover) so they aren't cropped, with padding for breathing room. */
+.hw-section .ap-one-feat-card-img {
+  object-fit: contain;
+  background: var(--c-bg);
+  padding: 12px;
+}
+
 .ap-one-feat-card-body {
   padding: 10px 12px 12px;
 }
