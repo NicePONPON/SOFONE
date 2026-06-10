@@ -1888,6 +1888,34 @@
       revealObserver.observe(el);
     });
 
+    /* ── Hardware Showcase ─────────────────────────────────── */
+    (function() {
+      var thumbs = document.querySelectorAll('.hw-thumb');
+      var panels = document.querySelectorAll('.hw-panel');
+      thumbs.forEach(function(thumb) {
+        thumb.addEventListener('click', function() {
+          var hw = thumb.getAttribute('data-hw');
+          thumbs.forEach(function(t) { t.classList.toggle('is-active', t === thumb); });
+          panels.forEach(function(p) {
+            p.classList.toggle('is-active', p.getAttribute('data-hw') === hw);
+          });
+        });
+      });
+
+      var fan = document.getElementById('xelfFan');
+      if (fan) {
+        fan.setAttribute('aria-expanded', 'false');
+        var toggleFan = function() {
+          var expanded = fan.classList.toggle('is-expanded');
+          fan.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        };
+        fan.addEventListener('click', toggleFan);
+        fan.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFan(); }
+        });
+      }
+    })();
+
     /* ── Scroll hint → CentrDX ────────────────────────────── */
     var scrollHint = document.querySelector('.scroll-hint');
     if (scrollHint) {
