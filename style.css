@@ -2787,8 +2787,8 @@ td.col-autopos strong {
   height: var(--h, 4px);
   transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
   border-radius: 999px;
-  background: #4d90ff;
-  box-shadow: 0 0 8px 2px rgba(77,144,255,.9), 0 0 20px 7px rgba(77,144,255,.45);
+  background: linear-gradient(90deg, #4d90ff, #6ACCAC);   /* ion blue → green */
+  box-shadow: 0 0 8px 2px rgba(77,144,255,.85), 0 0 20px 7px rgba(106,204,172,.5);
   opacity: 0;
   z-index: 5;
   pointer-events: none;
