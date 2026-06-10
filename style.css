@@ -2731,6 +2731,7 @@ td.col-autopos strong {
   border-radius: var(--r-lg);
   padding: 28px;
   overflow: hidden;
+  cursor: pointer;                /* click to replay the assemble */
 }
 .hw-asm-main {
   position: absolute;
