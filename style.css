@@ -2829,6 +2829,7 @@ td.col-autopos strong {
 .hw-asm-part--3 { top: 8%;  left: 62%; width: 30%; --sx:  80px; --sy: -40px; --ss: .75; --bob: 3.7s; }
 .hw-asm-part--4 { top: 58%; left: 6%;  width: 30%; --sx: -80px; --sy:  55px; --ss: .75; --bob: 4.7s; }
 .hw-asm-part--5 { top: 56%; left: 64%; width: 30%; --sx:  70px; --sy:  55px; --ss: .75; --bob: 4.0s; }
+.hw-asm-part--6 { top: 64%; left: 36%; width: 28%; --sx:   0px; --sy:  70px; --ss: .75; --bob: 3.8s; }
 
 @media (prefers-reduced-motion: reduce) {
   .hw-asm-part { transition: none; transform: translate(0, 0) scale(1); }
