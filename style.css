@@ -2726,7 +2726,7 @@ td.col-autopos strong {
   max-width: 620px;
   margin: 32px auto 0;
   min-height: 480px;
-  background: var(--c-surface);
+  background: #08131d;            /* darker than the section for a recessed frame */
   border: 1px solid var(--c-border);
   border-radius: var(--r-lg);
   padding: 28px;
