@@ -60,7 +60,7 @@
 <body>
   <div class="stage">
     <h1>XELF II Assemble — Dev Tuner</h1>
-    <p class="hint">Drag a piece in the box to set its <b>assembled</b> position · click to select · use the panel for size &amp; float</p>
+    <p class="hint">Switch <b>Assembled</b>/<b>Floating</b>, then drag a piece to set that spot — the two are independent · click to select · panel for size &amp; speed</p>
     <div class="hw-assemble is-assembled" id="box">
       <img class="hw-asm-main" data-k="main" src="assets/XELFII-10-1.png" alt="main">
       <div class="hw-asm-part" data-k="2"><img src="assets/XELFII-10-2.png" alt=""></div>
@@ -92,7 +92,7 @@
 
     <div class="grp"><h3>Global</h3>
       <div class="ctl"><label>Container max-width <b id="vMaxW">620px</b></label><input type="range" id="maxw" min="360" max="900" step="10" value="620"></div>
-      <div class="ctl"><label>Container min-height <b id="vMinH">380px</b></label><input type="range" id="minh" min="240" max="640" step="10" value="380"></div>
+      <div class="ctl"><label>Container min-height <b id="vMinH">480px</b></label><input type="range" id="minh" min="240" max="820" step="10" value="480"></div>
       <div class="ctl"><label>Bob distance <b id="vBobD">9px</b></label><input type="range" id="bobd" min="0" max="30" step="1" value="9"></div>
       <div class="ctl"><label>Fly-in duration <b id="vDur">1.1s</b></label><input type="range" id="dur" min="0.3" max="2.5" step="0.1" value="1.1"></div>
       <div class="ctl"><label>Trigger delay (index.html) <b id="vDelay">650ms</b></label><input type="range" id="delay" min="0" max="2000" step="50" value="650"></div>
@@ -112,14 +112,14 @@
 <script>
   // ── State (defaults match current style.css) ──
   const parts = {
-    2:{top:6, left:8,  width:30, sx:-70, sy:-50, ss:0.75, bob:4.3},
-    3:{top:8, left:62, width:30, sx:80,  sy:-40, ss:0.75, bob:3.7},
-    4:{top:58,left:6,  width:30, sx:-80, sy:55,  ss:0.75, bob:4.7},
-    5:{top:56,left:64, width:30, sx:70,  sy:55,  ss:0.75, bob:4.0},
-    6:{top:64,left:36, width:28, sx:0,   sy:70,  ss:0.75, bob:3.8},
+    2:{top:2, left:8,  width:30, sx:-70, sy:-50, ss:0.75, bob:4.3},
+    3:{top:3, left:62, width:30, sx:80,  sy:-40, ss:0.75, bob:3.7},
+    4:{top:46,left:6,  width:30, sx:-80, sy:55,  ss:0.75, bob:4.7},
+    5:{top:44,left:64, width:30, sx:70,  sy:55,  ss:0.75, bob:4.0},
+    6:{top:52,left:36, width:28, sx:0,   sy:70,  ss:0.75, bob:3.8},
   };
   const main = {top:30, width:46};
-  const glob = {maxw:620, minh:380, bobd:9, dur:1.1, delay:650};
+  const glob = {maxw:620, minh:480, bobd:9, dur:1.1, delay:650};
   const DEFAULTS = JSON.parse(JSON.stringify({parts,main,glob}));
 
   const box = document.getElementById('box');
@@ -173,8 +173,8 @@
       slider('top','Top (assembled)',p.top,-10,95,1,'%')+
       slider('left','Left (assembled)',p.left,-10,95,1,'%')+
       slider('w','Width',p.width,8,60,1,'%')+
-      slider('sx','Scatter X',p.sx,-200,200,5,'px')+
-      slider('sy','Scatter Y',p.sy,-200,200,5,'px')+
+      slider('sx','Scatter X',p.sx,-320,320,5,'px')+
+      slider('sy','Scatter Y',p.sy,-360,360,5,'px')+
       slider('ss','Start scale',p.ss,0.2,1.2,0.05,'')+
       slider('bob','Float speed',p.bob,1,8,0.1,'s');
     bind('s_top','v_top','%',v=>{p.top=v;applyAll();});
@@ -190,23 +190,37 @@
     s.addEventListener('input',()=>{const v=parseFloat(s.value);document.getElementById(vid).textContent=v+unit;fn(v);});
   }
 
-  // ── Drag to set assembled top/left ──
+  // ── Drag (delta-based, mode-aware so floating & assembled stay independent) ──
+  // Assembled-mode drag: move final spot, compensate scatter so the floating spot is unchanged.
+  // Floating-mode drag: move start spot only (scatter), final spot unchanged.
   let drag=null;
   box.addEventListener('pointerdown',e=>{
     const el=e.target.closest('[data-k]'); if(!el)return;
     selectPart(el.dataset.k);
-    if(el.dataset.k==='main')return; // main is centered, not draggable
-    if(!box.classList.contains('is-assembled')) setMode('asm'); // dragging works in assembled view
-    drag={k:el.dataset.k,el};
+    drag={k:el.dataset.k, x:e.clientX, y:e.clientY,
+          mode: box.classList.contains('is-assembled')?'asm':'float'};
     el.setPointerCapture(e.pointerId);
     e.preventDefault();
   });
   box.addEventListener('pointermove',e=>{
     if(!drag)return;
     const r=box.getBoundingClientRect();
+    const dPx=e.clientX-drag.x, dPy=e.clientY-drag.y;
+    drag.x=e.clientX; drag.y=e.clientY;
+    if(drag.k==='main'){               // main: vertical drag = Top (Y)
+      main.top=Math.round(main.top+dPy/r.height*100);
+      applyAll(); if(sel==='main') renderPanel(); return;
+    }
     const p=parts[drag.k];
-    p.left=Math.round(((e.clientX-r.left)/r.width)*100);
-    p.top=Math.round(((e.clientY-r.top)/r.height)*100);
+    if(drag.mode==='asm'){
+      p.left=Math.round(p.left+dPx/r.width*100);
+      p.top =Math.round(p.top +dPy/r.height*100);
+      p.sx  =Math.round(p.sx-dPx);     // keep floating spot fixed
+      p.sy  =Math.round(p.sy-dPy);
+    }else{
+      p.sx=Math.round(p.sx+dPx);       // move floating spot only
+      p.sy=Math.round(p.sy+dPy);
+    }
     applyAll(); if(sel===drag.k) renderPanel();
   });
   box.addEventListener('pointerup',()=>{drag=null;});
