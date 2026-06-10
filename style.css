@@ -2803,9 +2803,9 @@ td.col-autopos strong {
   50%      { opacity: 1; }
 }
 /* ADJUST: per-line size & position */
-.hw-led--1 { --top: 30%; --left: 50%; --w: 70px; --h: 4px; --rot: 0deg; }
-.hw-led--2 { --top: 40%; --left: 50%; --w: 70px; --h: 4px; --rot: 0deg; }
-.hw-led--3 { --top: 50%; --left: 50%; --w: 70px; --h: 4px; --rot: 0deg; }
+.hw-led--1 { --top: 9%;   --left: 49.5%; --w: 16px; --h: 2px; --rot: 0deg; }
+.hw-led--2 { --top: 41%;  --left: 49%;   --w: 24px; --h: 3px; --rot: 0deg; }
+.hw-led--3 { --top: 41.5%;--left: 55%;   --w: 24px; --h: 3px; --rot: 0deg; }
 
 @media (prefers-reduced-motion: reduce) {
   .hw-assemble.is-assembled .hw-led { animation: none; opacity: .9; }
