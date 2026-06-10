@@ -2734,7 +2734,7 @@ td.col-autopos strong {
 }
 .hw-asm-main {
   position: absolute;
-  top: 50%;
+  top: 30%;              /* ADJUST: main image Y position (top area) */
   left: 50%;
   width: 46%;            /* ADJUST: main image size */
   transform: translate(-50%, -50%);

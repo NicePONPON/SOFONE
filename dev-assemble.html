@@ -118,7 +118,7 @@
     5:{top:56,left:64, width:30, sx:70,  sy:55,  ss:0.75, bob:4.0},
     6:{top:64,left:36, width:28, sx:0,   sy:70,  ss:0.75, bob:3.8},
   };
-  const main = {width:46};
+  const main = {top:30, width:46};
   const glob = {maxw:620, minh:380, bobd:9, dur:1.1, delay:650};
   const DEFAULTS = JSON.parse(JSON.stringify({parts,main,glob}));
 
@@ -128,7 +128,9 @@
   function applyAll(){
     box.style.maxWidth = glob.maxw+'px';
     box.style.minHeight = glob.minh+'px';
-    document.querySelector('.hw-asm-main').style.width = main.width+'%';
+    const mainEl = document.querySelector('.hw-asm-main');
+    mainEl.style.top = main.top+'%';
+    mainEl.style.width = main.width+'%';
     for(const k in parts){
       const el = box.querySelector(`.hw-asm-part[data-k="${k}"]`);
       const p = parts[k];
@@ -159,7 +161,10 @@
   function renderPanel(){
     const body=document.getElementById('partBody');
     if(sel==='main'){
-      body.innerHTML = slider('mw','Main width',main.width,20,80,1,'%');
+      body.innerHTML =
+        slider('mtop','Top (Y)',main.top,0,95,1,'%')+
+        slider('mw','Main width',main.width,20,80,1,'%');
+      bind('s_mtop','v_mtop','%',v=>{main.top=v;applyAll();});
       bind('s_mw','v_mw','%',v=>{main.width=v;applyAll();});
       return;
     }
@@ -247,7 +252,7 @@
   function buildOutput(){
     let s='';
     s+=`.hw-assemble { max-width: ${glob.maxw}px; min-height: ${glob.minh}px; }\n`;
-    s+=`.hw-asm-main { width: ${main.width}%; }\n`;
+    s+=`.hw-asm-main { top: ${main.top}%; left: 50%; width: ${main.width}%; }\n`;
     s+=`.hw-asm-part { transition: transform ${glob.dur}s cubic-bezier(.2,.7,.2,1); }\n`;
     s+=`@keyframes hw-asm-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-${glob.bobd}px); } }\n`;
     for(const k of [2,3,4,5,6]){const p=parts[k];
