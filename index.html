@@ -481,7 +481,7 @@
         <!-- Main photo: assemble-on-scroll. XELFII-10-1 is the static anchor; -2..-6
              float in then assemble. Adjust positions/sizes in style.css
              (.hw-asm-main / .hw-asm-part--2..--6). -->
-        <div class="hw-assemble" id="xelfAssemble">
+        <div class="hw-assemble" id="xelfAssemble" role="button" tabindex="0" aria-label="重播 XELF II 組裝動畫">
           <img src="assets/XELFII-10-1.webp" alt="XELF II 自助點餐機" class="hw-asm-main" loading="lazy">
           <div class="hw-asm-part hw-asm-part--2"><img src="assets/XELFII-10-2.webp" alt="" loading="lazy"></div>
           <div class="hw-asm-part hw-asm-part--3"><img src="assets/XELFII-10-3.webp" alt="" loading="lazy"></div>
@@ -490,9 +490,9 @@
           <div class="hw-asm-part hw-asm-part--6"><img src="assets/XELFII-10-6.webp" alt="" loading="lazy"></div>
           <!-- Ion-blue LED lines — fade in + breathe once assembled. Adjust size/position
                in style.css (.hw-led--1/2/3). -->
-          <span class="hw-led hw-led--1"></span>
-          <span class="hw-led hw-led--2"></span>
-          <span class="hw-led hw-led--3"></span>
+          <span class="hw-led hw-led--1" aria-hidden="true"></span>
+          <span class="hw-led hw-led--2" aria-hidden="true"></span>
+          <span class="hw-led hw-led--3" aria-hidden="true"></span>
         </div>
 
         <!-- Feature cards -->
@@ -2075,9 +2075,9 @@
         assemble.classList.add('is-assembled');
       }
 
-      // Click to replay: fly apart, then re-assemble.
+      // Click (or Enter/Space) to replay: fly apart, then re-assemble.
       var replaying = false;
-      assemble.addEventListener('click', function() {
+      function replay() {
         if (replaying || !assemble.classList.contains('is-assembled')) return;
         replaying = true;
         assemble.classList.remove('is-assembled');      // de-assemble (parts float back out)
@@ -2085,6 +2085,10 @@
           assemble.classList.add('is-assembled');        // re-assemble
           replaying = false;
         }, 1400);
+      }
+      assemble.addEventListener('click', replay);
+      assemble.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); replay(); }
       });
     })();
 
