@@ -2265,16 +2265,14 @@
 
     /* ── Feature carousel center-zoom ─────────────────────── */
     (function () {
-      /* touch: highlight card under finger as it moves */
-      var scroll = document.querySelector('.ap-one-feat-scroll');
-      if (!scroll) return;
-      var cards = scroll.querySelectorAll('.ap-one-feat-card');
       var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-
-      if (!isTouch) {
-        /* Desktop: touchmove-over-card highlight (for touch-screen desktops) */
+      if (isTouch) return;
+      /* Desktop touch-screens: highlight card under finger — for EVERY feature row
+         (autopos ONE + XELF II), not just the first. */
+      document.querySelectorAll('.ap-one-feat-scroll').forEach(function (scroll) {
+        var cards = scroll.querySelectorAll('.ap-one-feat-card');
         function setCardActive(el) {
-          Array.prototype.forEach.call(cards, function (c) { c.classList.toggle('is-active', c === el); });
+          cards.forEach(function (c) { c.classList.toggle('is-active', c === el); });
           scroll.classList.toggle('has-active', !!el);
         }
         scroll.addEventListener('touchmove', function (e) {
@@ -2283,7 +2281,7 @@
         }, { passive: true });
         scroll.addEventListener('touchend',   function () { setCardActive(null); }, { passive: true });
         scroll.addEventListener('touchcancel', function () { setCardActive(null); }, { passive: true });
-      }
+      });
     }());
 
     /* ── Scroll-center zoom: feature cards + bilingual (mobile) ─ */
