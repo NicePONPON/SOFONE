@@ -588,78 +588,6 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.65;
 }
 
-/* Hardware Grid */
-.hw-grid-label {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--c-muted);
-  text-align: center;
-  margin-bottom: 1.25rem;
-}
-.hw-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-}
-.hw-card {
-  background: var(--c-surface-2);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-md);
-  overflow: hidden;
-  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-  cursor: default;
-}
-.hw-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(106, 204, 172, 0.5);
-  box-shadow: 0 14px 44px rgba(106, 204, 172, 0.1);
-}
-.hw-card--featured { border-color: rgba(106, 204, 172, 0.45); }
-
-.hw-img-placeholder {
-  height: 136px;
-  background: linear-gradient(140deg, #1a3248 0%, #0f2030 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
-.hw-size-badge {
-  font-size: 2.2rem;
-  font-weight: 900;
-  color: rgba(255, 255, 255, 0.1);
-  letter-spacing: -0.06em;
-  line-height: 1;
-}
-.hw-badge-best {
-  position: absolute;
-  top: 0.55rem;
-  right: 0.55rem;
-  background: var(--c-accent);
-  color: #0d1f2d;
-  font-size: 0.58rem;
-  font-weight: 800;
-  padding: 0.22rem 0.52rem;
-  border-radius: 999px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.hw-name {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--c-white);
-  padding: 0.9rem 1rem 0.3rem;
-}
-.hw-desc {
-  font-size: 0.78rem;
-  color: var(--c-muted);
-  padding: 0 1rem 1rem;
-  line-height: 1.6;
-}
-
 /* ── CentrDX: Shared block heading ──────────────────────── */
 .cdx-block-h3 {
   font-size: clamp(1.15rem, 2.5vw, 1.55rem);
@@ -2480,7 +2408,6 @@ td.col-autopos strong {
     padding: 0.6rem;
   }
   .ba-divider svg { transform: rotate(90deg); }
-  .hw-grid { grid-template-columns: repeat(2, 1fr); }
   .imsdom-layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .imsdom-img-wrap { order: -1; }
   .imsdom-phone-img { max-width: 260px; }
