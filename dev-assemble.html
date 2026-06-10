@@ -33,6 +33,12 @@
   .hw-assemble.is-assembled .hw-asm-part img{animation:none}
   .sel{outline-color:var(--c-accent)!important;outline-width:2px}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  /* ion-blue LED lines (always visible in tuner so they can be positioned) */
+  .hw-led{position:absolute;top:var(--top,50%);left:var(--left,50%);width:var(--w,70px);height:var(--h,4px);
+    transform:translate(-50%,-50%) rotate(var(--rot,0deg));border-radius:999px;background:#4d90ff;
+    box-shadow:0 0 8px 2px rgba(77,144,255,.9),0 0 20px 7px rgba(77,144,255,.45);
+    z-index:5;cursor:grab;animation:ledpulse 2.2s ease-in-out infinite;outline:1px dashed transparent;outline-offset:3px}
+  @keyframes ledpulse{0%,100%{opacity:.5}50%{opacity:1}}
 
   /* ── Panel ── */
   .panel{background:var(--c-surface);border-left:1px solid var(--c-border);padding:18px 16px;overflow-y:auto;height:100vh;position:sticky;top:0}
@@ -68,6 +74,9 @@
       <div class="hw-asm-part" data-k="4"><img src="assets/XELFII-10-4.png" alt=""></div>
       <div class="hw-asm-part" data-k="5"><img src="assets/XELFII-10-5.png" alt=""></div>
       <div class="hw-asm-part" data-k="6"><img src="assets/XELFII-10-6.png" alt=""></div>
+      <span class="hw-led" data-k="L1"></span>
+      <span class="hw-led" data-k="L2"></span>
+      <span class="hw-led" data-k="L3"></span>
     </div>
   </div>
 
@@ -86,6 +95,9 @@
       <button data-t="4">4</button>
       <button data-t="5">5</button>
       <button data-t="6">6</button>
+      <button data-t="L1">L1</button>
+      <button data-t="L2">L2</button>
+      <button data-t="L3">L3</button>
     </div>
 
     <div class="grp" id="partCtls"><h3>Selected piece</h3><div id="partBody"></div></div>
@@ -120,12 +132,17 @@
   };
   const main = {top:30, width:39};
   const glob = {maxw:620, minh:480, bobd:9, dur:1.1, delay:650};
-  const DEFAULTS = JSON.parse(JSON.stringify({parts,main,glob}));
+  const leds = {
+    1:{top:30, left:50, w:70, h:4, rot:0},
+    2:{top:40, left:50, w:70, h:4, rot:0},
+    3:{top:50, left:50, w:70, h:4, rot:0},
+  };
+  const DEFAULTS = JSON.parse(JSON.stringify({parts,main,glob,leds}));
 
   // Persist tuning across reloads so pushes/refreshes don't wipe your work.
   const LS='sofone_assemble';
-  function save(){ try{localStorage.setItem(LS,JSON.stringify({parts,main,glob}));}catch(e){} }
-  function load(){ try{const d=JSON.parse(localStorage.getItem(LS)); if(d){Object.assign(parts,d.parts);Object.assign(main,d.main);Object.assign(glob,d.glob);}}catch(e){} }
+  function save(){ try{localStorage.setItem(LS,JSON.stringify({parts,main,glob,leds}));}catch(e){} }
+  function load(){ try{const d=JSON.parse(localStorage.getItem(LS)); if(d){Object.assign(parts,d.parts);Object.assign(main,d.main);Object.assign(glob,d.glob);if(d.leds)Object.assign(leds,d.leds);}}catch(e){} }
 
   const box = document.getElementById('box');
   let sel = 'main';
@@ -145,6 +162,15 @@
       el.style.setProperty('--ss', p.ss);
       el.style.setProperty('--bob', p.bob+'s');
       el.style.transition = `transform ${glob.dur}s cubic-bezier(.2,.7,.2,1)`;
+    }
+    for(const n in leds){
+      const el = box.querySelector(`.hw-led[data-k="L${n}"]`);
+      const L = leds[n];
+      el.style.setProperty('--top', L.top+'%');
+      el.style.setProperty('--left', L.left+'%');
+      el.style.setProperty('--w', L.w+'px');
+      el.style.setProperty('--h', L.h+'px');
+      el.style.setProperty('--rot', L.rot+'deg');
     }
     // bob keyframe (rewrite)
     let kf = document.getElementById('kf'); if(!kf){kf=document.createElement('style');kf.id='kf';document.head.appendChild(kf);}
@@ -166,6 +192,21 @@
   }
   function renderPanel(){
     const body=document.getElementById('partBody');
+    if(sel[0]==='L'){
+      const L=leds[sel[1]];
+      body.innerHTML =
+        slider('ltop','Top',L.top,-10,100,1,'%')+
+        slider('lleft','Left',L.left,-10,100,1,'%')+
+        slider('lw','Length',L.w,4,420,2,'px')+
+        slider('lh','Thickness',L.h,1,30,1,'px')+
+        slider('lrot','Rotation',L.rot,-90,90,1,'°');
+      bind('s_ltop','v_ltop','%',v=>{L.top=v;applyAll();});
+      bind('s_lleft','v_lleft','%',v=>{L.left=v;applyAll();});
+      bind('s_lw','v_lw','px',v=>{L.w=v;applyAll();});
+      bind('s_lh','v_lh','px',v=>{L.h=v;applyAll();});
+      bind('s_lrot','v_lrot','°',v=>{L.rot=v;applyAll();});
+      return;
+    }
     if(sel==='main'){
       body.innerHTML =
         slider('mtop','Top (Y)',main.top,0,95,1,'%')+
@@ -231,6 +272,12 @@
       main.top=Math.round(main.top+dPy/r.height*100);
       applyAll(); if(sel==='main') renderPanel(); return;
     }
+    if(drag.k[0]==='L'){               // LED line: drag sets top/left
+      const L=leds[drag.k[1]];
+      L.left=Math.round(L.left+dPx/r.width*100);
+      L.top =Math.round(L.top +dPy/r.height*100);
+      applyAll(); if(sel===drag.k) renderPanel(); return;
+    }
     const p=parts[drag.k];
     if(drag.mode==='asm'){
       p.left=Math.round(p.left+dPx/r.width*100);
@@ -262,6 +309,7 @@
     try{localStorage.removeItem(LS);}catch(e){}
     Object.assign(parts,JSON.parse(JSON.stringify(DEFAULTS.parts)));
     Object.assign(main,DEFAULTS.main); Object.assign(glob,DEFAULTS.glob);
+    Object.assign(leds,JSON.parse(JSON.stringify(DEFAULTS.leds)));
     syncGlobals(); applyAll(); renderPanel();
   };
 
@@ -292,6 +340,9 @@
     s+=`@keyframes hw-asm-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-${glob.bobd}px); } }\n`;
     for(const k of [2,3,4,5,6]){const p=parts[k];
       s+=`.hw-asm-part--${k} { top: ${p.top}%; left: ${p.left}%; width: ${p.width}%; --sx: ${p.sx}px; --sy: ${p.sy}px; --ss: ${p.ss}; --bob: ${p.bob}s; }\n`;
+    }
+    for(const n of [1,2,3]){const L=leds[n];
+      s+=`.hw-led--${n} { --top: ${L.top}%; --left: ${L.left}%; --w: ${L.w}px; --h: ${L.h}px; --rot: ${L.rot}deg; }\n`;
     }
     document.getElementById('out').value=s;
   }
