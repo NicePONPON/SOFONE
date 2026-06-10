@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XELF II Assemble — Dev Tuner</title>
+<style>
+  :root{
+    --c-bg:#0d1f2d; --c-surface:#122030; --c-surface-2:#192e40;
+    --c-border:rgba(106,204,172,0.18); --c-accent:#6ACCAC; --c-accent-bg:rgba(106,204,172,0.08);
+    --c-muted:rgba(255,255,255,0.70); --c-text:rgba(255,255,255,0.88);
+    --r-md:12px; --r-lg:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--c-bg);color:var(--c-text);font-family:-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;
+       display:grid;grid-template-columns:1fr 360px;min-height:100vh}
+  /* ── Preview ── */
+  .stage{padding:32px;display:flex;flex-direction:column;align-items:center;gap:18px;position:sticky;top:0;align-self:start}
+  .stage h1{font-size:15px;font-weight:700;color:var(--c-accent);letter-spacing:.04em}
+  .stage .hint{font-size:12px;color:var(--c-muted)}
+  .hw-assemble{
+    position:relative;max-width:620px;width:100%;min-height:380px;
+    background:var(--c-surface);border:1px solid var(--c-border);border-radius:var(--r-lg);
+    padding:28px;overflow:hidden;margin:0 auto;
+  }
+  .hw-asm-main{position:absolute;top:50%;left:50%;width:46%;transform:translate(-50%,-50%);z-index:2;outline:1px dashed transparent}
+  .hw-asm-part{position:absolute;z-index:3;
+    transform:translate(var(--sx,0),var(--sy,0)) scale(var(--ss,.8));
+    transition:transform 1.1s cubic-bezier(.2,.7,.2,1);cursor:grab;outline:1px dashed transparent}
+  .hw-asm-part img,.hw-asm-main img{display:block;width:100%;pointer-events:none;user-select:none}
+  .hw-asm-part img{animation:bob var(--bob,4s) ease-in-out infinite}
+  .hw-assemble.is-assembled .hw-asm-part{transform:translate(0,0) scale(1)}
+  .hw-assemble.is-assembled .hw-asm-part img{animation:none}
+  .sel{outline-color:var(--c-accent)!important;outline-width:2px}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+
+  /* ── Panel ── */
+  .panel{background:var(--c-surface);border-left:1px solid var(--c-border);padding:18px 16px;overflow-y:auto;height:100vh;position:sticky;top:0}
+  .row-btns{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+  button{font:inherit;font-size:12px;font-weight:600;color:var(--c-text);background:var(--c-surface-2);
+    border:1px solid var(--c-border);border-radius:8px;padding:7px 11px;cursor:pointer;transition:.15s}
+  button:hover{border-color:var(--c-accent)}
+  button.on{background:var(--c-accent);color:#0d1f2d;border-color:var(--c-accent)}
+  .tabs{display:flex;gap:5px;margin:6px 0 14px}
+  .tabs button{flex:1;padding:8px 0}
+  .grp{margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--c-border)}
+  .grp h3{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--c-accent);margin-bottom:10px}
+  .ctl{margin-bottom:9px}
+  .ctl label{display:flex;justify-content:space-between;font-size:11.5px;color:var(--c-muted);margin-bottom:3px}
+  .ctl label b{color:var(--c-text);font-variant-numeric:tabular-nums}
+  input[type=range]{width:100%;accent-color:var(--c-accent)}
+  textarea{width:100%;height:200px;background:#0a1722;color:#bfe6d6;border:1px solid var(--c-border);
+    border-radius:8px;padding:10px;font-family:ui-monospace,Menlo,monospace;font-size:11px;line-height:1.5;resize:vertical}
+  .copy-row{display:flex;gap:8px;margin-top:8px}
+  .copy-row button{flex:1}
+  .note{font-size:11px;color:var(--c-muted);line-height:1.5;margin-top:8px}
+  .note code{color:var(--c-accent)}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <h1>XELF II Assemble — Dev Tuner</h1>
+    <p class="hint">Drag a piece in the box to set its <b>assembled</b> position · click to select · use the panel for size &amp; float</p>
+    <div class="hw-assemble is-assembled" id="box">
+      <img class="hw-asm-main" data-k="main" src="assets/XELFII-10-1.png" alt="main">
+      <div class="hw-asm-part" data-k="2"><img src="assets/XELFII-10-2.png" alt=""></div>
+      <div class="hw-asm-part" data-k="3"><img src="assets/XELFII-10-3.png" alt=""></div>
+      <div class="hw-asm-part" data-k="4"><img src="assets/XELFII-10-4.png" alt=""></div>
+      <div class="hw-asm-part" data-k="5"><img src="assets/XELFII-10-5.png" alt=""></div>
+      <div class="hw-asm-part" data-k="6"><img src="assets/XELFII-10-6.png" alt=""></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="row-btns">
+      <button id="mFloat">Floating</button>
+      <button id="mAsm" class="on">Assembled</button>
+      <button id="mPlay">▶ Play</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <div class="tabs" id="tabs">
+      <button data-t="main" class="on">Main</button>
+      <button data-t="2">2</button>
+      <button data-t="3">3</button>
+      <button data-t="4">4</button>
+      <button data-t="5">5</button>
+      <button data-t="6">6</button>
+    </div>
+
+    <div class="grp" id="partCtls"><h3>Selected piece</h3><div id="partBody"></div></div>
+
+    <div class="grp"><h3>Global</h3>
+      <div class="ctl"><label>Container max-width <b id="vMaxW">620px</b></label><input type="range" id="maxw" min="360" max="900" step="10" value="620"></div>
+      <div class="ctl"><label>Container min-height <b id="vMinH">380px</b></label><input type="range" id="minh" min="240" max="640" step="10" value="380"></div>
+      <div class="ctl"><label>Bob distance <b id="vBobD">9px</b></label><input type="range" id="bobd" min="0" max="30" step="1" value="9"></div>
+      <div class="ctl"><label>Fly-in duration <b id="vDur">1.1s</b></label><input type="range" id="dur" min="0.3" max="2.5" step="0.1" value="1.1"></div>
+      <div class="ctl"><label>Trigger delay (index.html) <b id="vDelay">650ms</b></label><input type="range" id="delay" min="0" max="2000" step="50" value="650"></div>
+    </div>
+
+    <div class="grp" style="border:none">
+      <h3>Output → paste into style.css</h3>
+      <textarea id="out" readonly></textarea>
+      <div class="copy-row">
+        <button id="copyCss">Copy CSS</button>
+        <button id="copyDelay">Copy delay note</button>
+      </div>
+      <p class="note">CSS replaces the <code>.hw-assemble</code> / <code>.hw-asm-main</code> / <code>.hw-asm-part--N</code> / <code>@keyframes hw-asm-bob</code> rules. The trigger delay goes in <code>index.html</code> (<code>setTimeout(..., N)</code>).</p>
+    </div>
+  </div>
+
+<script>
+  // ── State (defaults match current style.css) ──
+  const parts = {
+    2:{top:6, left:8,  width:30, sx:-70, sy:-50, ss:0.75, bob:4.3},
+    3:{top:8, left:62, width:30, sx:80,  sy:-40, ss:0.75, bob:3.7},
+    4:{top:58,left:6,  width:30, sx:-80, sy:55,  ss:0.75, bob:4.7},
+    5:{top:56,left:64, width:30, sx:70,  sy:55,  ss:0.75, bob:4.0},
+    6:{top:64,left:36, width:28, sx:0,   sy:70,  ss:0.75, bob:3.8},
+  };
+  const main = {width:46};
+  const glob = {maxw:620, minh:380, bobd:9, dur:1.1, delay:650};
+  const DEFAULTS = JSON.parse(JSON.stringify({parts,main,glob}));
+
+  const box = document.getElementById('box');
+  let sel = 'main';
+
+  function applyAll(){
+    box.style.maxWidth = glob.maxw+'px';
+    box.style.minHeight = glob.minh+'px';
+    document.querySelector('.hw-asm-main').style.width = main.width+'%';
+    for(const k in parts){
+      const el = box.querySelector(`.hw-asm-part[data-k="${k}"]`);
+      const p = parts[k];
+      el.style.top = p.top+'%'; el.style.left = p.left+'%'; el.style.width = p.width+'%';
+      el.style.setProperty('--sx', p.sx+'px');
+      el.style.setProperty('--sy', p.sy+'px');
+      el.style.setProperty('--ss', p.ss);
+      el.style.setProperty('--bob', p.bob+'s');
+      el.style.transition = `transform ${glob.dur}s cubic-bezier(.2,.7,.2,1)`;
+    }
+    // bob keyframe (rewrite)
+    let kf = document.getElementById('kf'); if(!kf){kf=document.createElement('style');kf.id='kf';document.head.appendChild(kf);}
+    kf.textContent = `@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-${glob.bobd}px)}}`;
+    buildOutput();
+  }
+
+  // ── Selection + panel ──
+  function selectPart(k){
+    sel=k;
+    document.querySelectorAll('#tabs button').forEach(b=>b.classList.toggle('on',b.dataset.t===k));
+    box.querySelectorAll('[data-k]').forEach(e=>e.classList.toggle('sel',e.dataset.k===k));
+    renderPanel();
+  }
+  function slider(id,label,val,min,max,step,unit){
+    return `<div class="ctl"><label>${label} <b id="v_${id}">${val}${unit}</b></label>
+      <input type="range" id="s_${id}" min="${min}" max="${max}" step="${step}" value="${val}"></div>`;
+  }
+  function renderPanel(){
+    const body=document.getElementById('partBody');
+    if(sel==='main'){
+      body.innerHTML = slider('mw','Main width',main.width,20,80,1,'%');
+      bind('s_mw','v_mw','%',v=>{main.width=v;applyAll();});
+      return;
+    }
+    const p=parts[sel];
+    body.innerHTML =
+      slider('top','Top (assembled)',p.top,-10,95,1,'%')+
+      slider('left','Left (assembled)',p.left,-10,95,1,'%')+
+      slider('w','Width',p.width,8,60,1,'%')+
+      slider('sx','Scatter X',p.sx,-200,200,5,'px')+
+      slider('sy','Scatter Y',p.sy,-200,200,5,'px')+
+      slider('ss','Start scale',p.ss,0.2,1.2,0.05,'')+
+      slider('bob','Float speed',p.bob,1,8,0.1,'s');
+    bind('s_top','v_top','%',v=>{p.top=v;applyAll();});
+    bind('s_left','v_left','%',v=>{p.left=v;applyAll();});
+    bind('s_w','v_w','%',v=>{p.width=v;applyAll();});
+    bind('s_sx','v_sx','px',v=>{p.sx=v;applyAll();});
+    bind('s_sy','v_sy','px',v=>{p.sy=v;applyAll();});
+    bind('s_ss','v_ss','',v=>{p.ss=v;applyAll();});
+    bind('s_bob','v_bob','s',v=>{p.bob=v;applyAll();});
+  }
+  function bind(sid,vid,unit,fn){
+    const s=document.getElementById(sid);
+    s.addEventListener('input',()=>{const v=parseFloat(s.value);document.getElementById(vid).textContent=v+unit;fn(v);});
+  }
+
+  // ── Drag to set assembled top/left ──
+  let drag=null;
+  box.addEventListener('pointerdown',e=>{
+    const el=e.target.closest('[data-k]'); if(!el)return;
+    selectPart(el.dataset.k);
+    if(el.dataset.k==='main')return; // main is centered, not draggable
+    if(!box.classList.contains('is-assembled')) setMode('asm'); // dragging works in assembled view
+    drag={k:el.dataset.k,el};
+    el.setPointerCapture(e.pointerId);
+    e.preventDefault();
+  });
+  box.addEventListener('pointermove',e=>{
+    if(!drag)return;
+    const r=box.getBoundingClientRect();
+    const p=parts[drag.k];
+    p.left=Math.round(((e.clientX-r.left)/r.width)*100);
+    p.top=Math.round(((e.clientY-r.top)/r.height)*100);
+    applyAll(); if(sel===drag.k) renderPanel();
+  });
+  box.addEventListener('pointerup',()=>{drag=null;});
+
+  // ── Modes ──
+  function setMode(m){
+    document.getElementById('mFloat').classList.toggle('on',m==='float');
+    document.getElementById('mAsm').classList.toggle('on',m==='asm');
+    if(m==='float') box.classList.remove('is-assembled');
+    else box.classList.add('is-assembled');
+  }
+  document.getElementById('mFloat').onclick=()=>setMode('float');
+  document.getElementById('mAsm').onclick=()=>setMode('asm');
+  document.getElementById('mPlay').onclick=()=>{
+    setMode('float');
+    setTimeout(()=>box.classList.add('is-assembled'), glob.delay);
+  };
+  document.getElementById('reset').onclick=()=>{
+    Object.assign(parts,JSON.parse(JSON.stringify(DEFAULTS.parts)));
+    Object.assign(main,DEFAULTS.main); Object.assign(glob,DEFAULTS.glob);
+    syncGlobals(); applyAll(); renderPanel();
+  };
+
+  // ── Global sliders ──
+  function gb(id,key,unit){
+    const s=document.getElementById(id);
+    s.addEventListener('input',()=>{glob[key]=parseFloat(s.value);
+      document.getElementById('v'+id.charAt(0).toUpperCase()+id.slice(1)).textContent=s.value+unit;applyAll();});
+  }
+  gb('maxw','maxw','px'); gb('minh','minh','px'); gb('bobd','bobd','px'); gb('dur','dur','s'); gb('delay','delay','ms');
+  function syncGlobals(){
+    maxw.value=glob.maxw; vMaxW.textContent=glob.maxw+'px';
+    minh.value=glob.minh; vMinH.textContent=glob.minh+'px';
+    bobd.value=glob.bobd; vBobD.textContent=glob.bobd+'px';
+    dur.value=glob.dur;  vDur.textContent=glob.dur+'s';
+    delay.value=glob.delay; vDelay.textContent=glob.delay+'ms';
+  }
+
+  // ── Tabs ──
+  document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>selectPart(b.dataset.t));
+
+  // ── Output ──
+  function buildOutput(){
+    let s='';
+    s+=`.hw-assemble { max-width: ${glob.maxw}px; min-height: ${glob.minh}px; }\n`;
+    s+=`.hw-asm-main { width: ${main.width}%; }\n`;
+    s+=`.hw-asm-part { transition: transform ${glob.dur}s cubic-bezier(.2,.7,.2,1); }\n`;
+    s+=`@keyframes hw-asm-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-${glob.bobd}px); } }\n`;
+    for(const k of [2,3,4,5,6]){const p=parts[k];
+      s+=`.hw-asm-part--${k} { top: ${p.top}%; left: ${p.left}%; width: ${p.width}%; --sx: ${p.sx}px; --sy: ${p.sy}px; --ss: ${p.ss}; --bob: ${p.bob}s; }\n`;
+    }
+    document.getElementById('out').value=s;
+  }
+  document.getElementById('copyCss').onclick=()=>{navigator.clipboard.writeText(document.getElementById('out').value);
+    const b=document.getElementById('copyCss');b.textContent='Copied ✓';setTimeout(()=>b.textContent='Copy CSS',1200);};
+  document.getElementById('copyDelay').onclick=()=>{navigator.clipboard.writeText(`setTimeout(function() { assemble.classList.add('is-assembled'); }, ${glob.delay});`);
+    const b=document.getElementById('copyDelay');b.textContent='Copied ✓';setTimeout(()=>b.textContent='Copy delay note',1200);};
+
+  // init
+  syncGlobals(); selectPart('main'); applyAll();
+</script>
+</body>
+</html>
