@@ -112,15 +112,20 @@
 <script>
   // ── State (defaults match current style.css) ──
   const parts = {
-    2:{top:2, left:8,  width:30, sx:-70, sy:-50, ss:0.75, bob:4.3},
-    3:{top:3, left:62, width:30, sx:80,  sy:-40, ss:0.75, bob:3.7},
-    4:{top:46,left:6,  width:30, sx:-80, sy:55,  ss:0.75, bob:4.7},
-    5:{top:44,left:64, width:30, sx:70,  sy:55,  ss:0.75, bob:4.0},
-    6:{top:52,left:36, width:28, sx:0,   sy:70,  ss:0.75, bob:3.8},
+    2:{top:1, left:63, width:30, sx:-70, sy:-50, ss:1, bob:4.3},
+    3:{top:27,left:46, width:22, sx:80,  sy:-40, ss:1, bob:3.7},
+    4:{top:23,left:29, width:30, sx:-80, sy:55,  ss:1, bob:4.7},
+    5:{top:33,left:25, width:53, sx:70,  sy:55,  ss:1, bob:4.0},
+    6:{top:-10,left:24,width:9,  sx:0,   sy:70,  ss:1, bob:3.8},
   };
-  const main = {top:30, width:46};
+  const main = {top:30, width:39};
   const glob = {maxw:620, minh:480, bobd:9, dur:1.1, delay:650};
   const DEFAULTS = JSON.parse(JSON.stringify({parts,main,glob}));
+
+  // Persist tuning across reloads so pushes/refreshes don't wipe your work.
+  const LS='sofone_assemble';
+  function save(){ try{localStorage.setItem(LS,JSON.stringify({parts,main,glob}));}catch(e){} }
+  function load(){ try{const d=JSON.parse(localStorage.getItem(LS)); if(d){Object.assign(parts,d.parts);Object.assign(main,d.main);Object.assign(glob,d.glob);}}catch(e){} }
 
   const box = document.getElementById('box');
   let sel = 'main';
@@ -145,6 +150,7 @@
     let kf = document.getElementById('kf'); if(!kf){kf=document.createElement('style');kf.id='kf';document.head.appendChild(kf);}
     kf.textContent = `@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-${glob.bobd}px)}}`;
     buildOutput();
+    save();
   }
 
   // ── Selection + panel ──
@@ -177,8 +183,8 @@
       slider('sy','Scatter Y',p.sy,-360,360,5,'px')+
       slider('ss','Start scale',p.ss,0.2,1.2,0.05,'')+
       slider('bob','Float speed',p.bob,1,8,0.1,'s');
-    bind('s_top','v_top','%',v=>{p.top=v;applyAll();});
-    bind('s_left','v_left','%',v=>{p.left=v;applyAll();});
+    bindPos('s_top','v_top','y',p);   // assembled Top — compensates scatter so floating spot stays fixed
+    bindPos('s_left','v_left','x',p); // assembled Left — same
     bind('s_w','v_w','%',v=>{p.width=v;applyAll();});
     bind('s_sx','v_sx','px',v=>{p.sx=v;applyAll();});
     bind('s_sy','v_sy','px',v=>{p.sy=v;applyAll();});
@@ -188,6 +194,20 @@
   function bind(sid,vid,unit,fn){
     const s=document.getElementById(sid);
     s.addEventListener('input',()=>{const v=parseFloat(s.value);document.getElementById(vid).textContent=v+unit;fn(v);});
+  }
+  // Assembled position slider that keeps the floating spot fixed (compensates scatter px).
+  function bindPos(sid,vid,axis,p){
+    const s=document.getElementById(sid);
+    s.addEventListener('input',()=>{
+      const v=parseFloat(s.value), r=box.getBoundingClientRect();
+      if(axis==='y'){ p.sy=Math.round(p.sy-(v-p.top)/100*r.height); p.top=v; }
+      else          { p.sx=Math.round(p.sx-(v-p.left)/100*r.width); p.left=v; }
+      document.getElementById(vid).textContent=v+'%';
+      applyAll();
+      // keep scatter readouts/sliders in sync after compensation
+      const m={sx:['s_sx','v_sx','px'],sy:['s_sy','v_sy','px']};
+      for(const key in m){const[si,vi,u]=m[key];const se=document.getElementById(si);if(se){se.value=p[key];document.getElementById(vi).textContent=p[key]+u;}}
+    });
   }
 
   // ── Drag (delta-based, mode-aware so floating & assembled stay independent) ──
@@ -239,6 +259,7 @@
     setTimeout(()=>box.classList.add('is-assembled'), glob.delay);
   };
   document.getElementById('reset').onclick=()=>{
+    try{localStorage.removeItem(LS);}catch(e){}
     Object.assign(parts,JSON.parse(JSON.stringify(DEFAULTS.parts)));
     Object.assign(main,DEFAULTS.main); Object.assign(glob,DEFAULTS.glob);
     syncGlobals(); applyAll(); renderPanel();
@@ -280,7 +301,7 @@
     const b=document.getElementById('copyDelay');b.textContent='Copied ✓';setTimeout(()=>b.textContent='Copy delay note',1200);};
 
   // init
-  syncGlobals(); selectPart('main'); applyAll();
+  load(); syncGlobals(); selectPart('main'); applyAll();
 </script>
 </body>
 </html>
