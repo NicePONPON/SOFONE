@@ -2628,8 +2628,11 @@ td.col-autopos strong {
 .hw-section .ap-one-feat-card-img {
   object-fit: contain;
   background: var(--c-bg);
-  padding: 12px;
+  padding: 4px;
+  aspect-ratio: 1 / 1;            /* taller box → product shows larger (like autopos ONE) */
 }
+/* hover-zoom on XELF II cards grows downward so it never covers the assemble above */
+.hw-section .ap-one-feat-card { transform-origin: top center; }
 
 .ap-one-feat-card-body {
   padding: 10px 12px 12px;
