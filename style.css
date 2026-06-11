@@ -2474,10 +2474,12 @@ td.col-autopos strong {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: .1em;
-  text-transform: uppercase;
+  text-transform: none;          /* keep the autopos brand lowercase */
   color: var(--c-accent);
   margin-bottom: 10px;
 }
+/* keep the autopos brand lowercase in the section eyebrows too (Chinese unaffected) */
+.autopos-section .section-eyebrow { text-transform: none; }
 
 .ap-one-h3 {
   font-size: clamp(1.15rem, 2.2vw, 1.55rem);
