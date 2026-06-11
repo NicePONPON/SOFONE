@@ -368,7 +368,15 @@
 
       <!-- Software → hardware transition: flowing connector + bridge line -->
       <div class="sw-hw-bridge reveal">
-        <div class="sw-hw-track" aria-hidden="true"><span class="sw-hw-drop"></span></div>
+        <div class="sw-hw-track" aria-hidden="true">
+          <svg class="sw-hw-droplet" viewBox="0 0 20 76" preserveAspectRatio="xMidYMid meet">
+            <defs><linearGradient id="swHwDrop" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#6ACCAC" stop-opacity=".12"/>
+              <stop offset="1" stop-color="#6ACCAC" stop-opacity="1"/>
+            </linearGradient></defs>
+            <path d="M10 2 C 12 26, 18 50, 18 60 A 8 8 0 1 1 2 60 C 2 50, 8 26, 10 2 Z" fill="url(#swHwDrop)"/>
+          </svg>
+        </div>
         <p class="sw-hw-bridge-text" data-i18n="hardware.bridge">從 autopos 軟體，到為現場而生的硬體。</p>
       </div>
 
