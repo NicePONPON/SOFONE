@@ -2698,6 +2698,55 @@ td.col-autopos strong {
   }
 }
 
+/* ── Software → hardware transition (flow connector) ─────── */
+.sw-hw-bridge {
+  text-align: center;
+  margin: 84px auto 8px;          /* the "special space" between software & hardware */
+  max-width: 520px;
+}
+.sw-hw-track {
+  position: relative;
+  width: 2px;
+  height: 64px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, transparent, var(--c-accent));
+  opacity: 0.5;
+}
+.sw-hw-track--down {                /* mirror below the text so flow continues downward */
+  background: linear-gradient(to bottom, var(--c-accent), transparent);
+}
+.sw-hw-dot {
+  position: absolute;
+  left: 50%;
+  width: 9px; height: 9px;
+  margin-left: -4.5px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  box-shadow: 0 0 10px 3px rgba(106, 204, 172, 0.6);
+  animation: sw-hw-flow 2.4s ease-in-out infinite;
+}
+@keyframes sw-hw-flow {
+  0%   { top: -6px;  opacity: 0; }
+  15%  { opacity: 1; }
+  85%  { opacity: 1; }
+  100% { top: 62px;  opacity: 0; }
+}
+.sw-hw-bridge-text {
+  color: var(--c-accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 0.98rem;
+  margin: 16px auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sw-hw-dot { animation: none; top: 28px; }
+}
+@media (max-width: 767px) {
+  .sw-hw-bridge { margin-top: 56px; }
+  .sw-hw-track { height: 48px; }
+  @keyframes sw-hw-flow { 0%{top:-6px;opacity:0} 15%{opacity:1} 85%{opacity:1} 100%{top:46px;opacity:0} }
+}
+
 /* ── Hardware Showcase Section ──────────────────────────── */
 .hw-section { background: var(--c-bg); }
 
