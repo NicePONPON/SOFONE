@@ -2812,7 +2812,7 @@ td.col-autopos strong {
   container-type: inline-size;    /* enables cqw units so parts/LEDs scale on mobile */
   max-width: 620px;
   margin: 32px auto 0;
-  min-height: 480px;
+  aspect-ratio: 31 / 24;          /* fixed ratio (620:480) so % positions scale uniformly on every screen */
   background: #08131d;            /* darker than the section for a recessed frame */
   border: 1px solid var(--c-border);
   border-radius: var(--r-lg);
@@ -2899,7 +2899,4 @@ td.col-autopos strong {
   .hw-assemble.is-assembled .hw-led { animation: none; opacity: .9; }
 }
 
-/* Responsive */
-@media (max-width: 860px) {
-  .hw-assemble { min-height: 320px; }
-}
+/* Responsive — aspect-ratio keeps the assemble a uniform scaled copy on mobile */
