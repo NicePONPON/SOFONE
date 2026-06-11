@@ -2706,26 +2706,49 @@ td.col-autopos strong {
 }
 .sw-hw-track {
   position: relative;
-  width: 20px;
-  height: 72px;
+  width: 44px;
+  height: 78px;
   margin: 0 auto;
 }
-/* the droplet shape itself does the job: thin tapered top → round bulb head,
-   falling + fading like dripping water */
+/* small droplet (thin top → round head) falls smoothly and merges into the pool */
 .sw-hw-droplet {
-  display: block;
-  width: 18px;
-  height: 72px;
-  margin: 0 auto;
-  filter: drop-shadow(0 0 5px rgba(106, 204, 172, 0.5));
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 12px;
+  height: 18px;
+  margin-left: -6px;
+  filter: drop-shadow(0 0 4px rgba(106, 204, 172, 0.5));
   transform-origin: center top;
-  animation: sw-hw-drip 2.6s cubic-bezier(.5, 0, .9, .4) infinite;
+  animation: sw-hw-fall 2.8s cubic-bezier(.4, 0, .6, 1) infinite;
 }
-@keyframes sw-hw-drip {
-  0%   { transform: translateY(-12px) scaleY(.78); opacity: 0; }
-  25%  { transform: translateY(0)     scaleY(1);   opacity: 1; }
-  70%  { transform: translateY(8px)   scaleY(1.08); opacity: 1; }
-  100% { transform: translateY(18px)  scaleY(1.16); opacity: 0; }
+@keyframes sw-hw-fall {
+  0%   { transform: translateY(-2px) scaleY(.8);             opacity: 0; }
+  12%  { transform: translateY(2px)  scaleY(1);              opacity: 1; }
+  44%  { transform: translateY(46px) scaleY(1.25);           opacity: 1; }
+  52%  { transform: translateY(56px) scaleX(1.5) scaleY(.4); opacity: 0; }  /* hits the pool */
+  100% { transform: translateY(56px) scaleY(.4);             opacity: 0; }
+}
+/* concentric ripples spreading across the pool surface on impact */
+.sw-hw-splash {
+  position: absolute;
+  left: 50%;
+  bottom: 2px;
+  width: 10px;
+  height: 10px;
+  margin-left: -5px;
+  border: 1.5px solid var(--c-accent);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(.2, .12);
+  animation: sw-hw-ripple 2.8s ease-out infinite;
+}
+.sw-hw-splash--2 { animation-delay: .18s; }
+@keyframes sw-hw-ripple {
+  0%, 50% { opacity: 0;  transform: scale(.2, .12); }
+  57%     { opacity: .7; transform: scale(.7, .4); }
+  85%     { opacity: 0;  transform: scale(2.6, 1); }
+  100%    { opacity: 0;  transform: scale(2.6, 1); }
 }
 .sw-hw-bridge-text {
   color: var(--c-accent);
@@ -2735,11 +2758,11 @@ td.col-autopos strong {
   margin: 16px auto;
 }
 @media (prefers-reduced-motion: reduce) {
-  .sw-hw-droplet { animation: none; }
+  .sw-hw-droplet { animation: none; transform: translateY(24px); }
+  .sw-hw-splash { display: none; }
 }
 @media (max-width: 767px) {
   .sw-hw-bridge { margin-top: 56px; }
-  .sw-hw-track, .sw-hw-droplet { height: 60px; }
 }
 
 /* ── Hardware Showcase Section ──────────────────────────── */
