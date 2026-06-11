@@ -2096,6 +2096,25 @@
       });
     })();
 
+    /* ── Quote CTA: mailto on mobile/configured clients, Gmail web compose on desktop ── */
+    (function () {
+      var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+      document.querySelectorAll('[data-mailcta]').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          var href = a.getAttribute('href') || '';
+          if (isTouch || href.indexOf('mailto:') !== 0) return;   // mobile → native mail app
+          // Desktop: avoid the "nothing happens" mailto case — open Gmail compose in a new tab.
+          e.preventDefault();
+          var to = href.slice(7).split('?')[0];
+          var q  = href.indexOf('?') >= 0 ? new URLSearchParams(href.slice(href.indexOf('?') + 1)) : new URLSearchParams();
+          var g  = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(to) +
+                   '&su=' + encodeURIComponent(q.get('subject') || '') +
+                   '&body=' + encodeURIComponent(q.get('body') || '');
+          window.open(g, '_blank', 'noopener');
+        });
+      });
+    })();
+
     /* ── Scroll hint → CentrDX ────────────────────────────── */
     var scrollHint = document.querySelector('.scroll-hint');
     if (scrollHint) {
