@@ -2633,6 +2633,13 @@ td.col-autopos strong {
 }
 /* hover-zoom on XELF II cards grows downward so it never covers the assemble above */
 .hw-section .ap-one-feat-card { transform-origin: top center; }
+/* 5th card (XELFII-8): fill the frame edge-to-edge (left/top/right); card's
+   rounded corners + overflow:hidden clip the top corners */
+.hw-section .ap-one-feat-scroll .ap-one-feat-card:nth-child(5) .ap-one-feat-card-img {
+  aspect-ratio: 760 / 630;
+  padding: 0;
+  object-fit: cover;
+}
 
 .ap-one-feat-card-body {
   padding: 10px 12px 12px;
