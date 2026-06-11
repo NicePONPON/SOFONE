@@ -2633,10 +2633,6 @@ td.col-autopos strong {
 }
 /* hover-zoom on XELF II cards grows downward so it never covers the assemble above */
 .hw-section .ap-one-feat-card { transform-origin: top center; }
-/* 5th card (XELFII-8) reads small — enlarge its product 20% */
-.hw-section .ap-one-feat-scroll .ap-one-feat-card:nth-child(5) .ap-one-feat-card-img {
-  transform: scale(1.2);
-}
 
 .ap-one-feat-card-body {
   padding: 10px 12px 12px;
