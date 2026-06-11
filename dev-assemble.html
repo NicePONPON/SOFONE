@@ -35,8 +35,8 @@
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
   /* ion-blue LED lines (always visible in tuner so they can be positioned) */
   .hw-led{position:absolute;top:var(--top,50%);left:var(--left,50%);width:var(--w,70px);height:var(--h,4px);
-    transform:translate(-50%,-50%) rotate(var(--rot,0deg));border-radius:999px;background:linear-gradient(90deg,#4d90ff,#6ACCAC);
-    box-shadow:0 0 8px 2px rgba(77,144,255,.85),0 0 20px 7px rgba(106,204,172,.5);
+    transform:translate(-50%,-50%) rotate(var(--rot,0deg));border-radius:999px;background:#5caed6;
+    box-shadow:0 0 8px 2px rgba(92,174,214,.85),0 0 20px 7px rgba(92,174,214,.5);
     z-index:5;cursor:grab;animation:ledpulse 2.2s ease-in-out infinite;outline:1px dashed transparent;outline-offset:3px}
   @keyframes ledpulse{0%,100%{opacity:.5}50%{opacity:1}}
 
@@ -338,11 +338,12 @@
     s+=`.hw-asm-main { top: ${main.top}%; left: 50%; width: ${main.width}%; }\n`;
     s+=`.hw-asm-part { transition: transform ${glob.dur}s cubic-bezier(.2,.7,.2,1); }\n`;
     s+=`@keyframes hw-asm-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-${glob.bobd}px); } }\n`;
+    var cq=v=>(v/5.6).toFixed(1);   // px → cqw (container width units) so it scales on mobile
     for(const k of [2,3,4,5,6]){const p=parts[k];
-      s+=`.hw-asm-part--${k} { top: ${p.top}%; left: ${p.left}%; width: ${p.width}%; --sx: ${p.sx}px; --sy: ${p.sy}px; --ss: ${p.ss}; --bob: ${p.bob}s; }\n`;
+      s+=`.hw-asm-part--${k} { top: ${p.top}%; left: ${p.left}%; width: ${p.width}%; --sx: ${cq(p.sx)}cqw; --sy: ${cq(p.sy)}cqw; --ss: ${p.ss}; --bob: ${p.bob}s; }\n`;
     }
     for(const n of [1,2,3]){const L=leds[n];
-      s+=`.hw-led--${n} { --top: ${L.top}%; --left: ${L.left}%; --w: ${L.w}px; --h: ${L.h}px; --rot: ${L.rot}deg; }\n`;
+      s+=`.hw-led--${n} { --top: ${L.top}%; --left: ${L.left}%; --w: ${cq(L.w)}cqw; --h: ${cq(L.h)}cqw; --rot: ${L.rot}deg; }\n`;
     }
     document.getElementById('out').value=s;
   }

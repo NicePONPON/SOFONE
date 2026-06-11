@@ -2742,6 +2742,7 @@ td.col-autopos strong {
    (--sx/--sy/--ss) below. --bob = float speed. */
 .hw-assemble {
   position: relative;
+  container-type: inline-size;    /* enables cqw units so parts/LEDs scale on mobile */
   max-width: 620px;
   margin: 32px auto 0;
   min-height: 480px;
@@ -2784,11 +2785,11 @@ td.col-autopos strong {
 /* Per-part assembled position + size, and scatter offset/scale + bob speed.
    ADJUST these freely — top/left/width = where it ends up; --sx/--sy = how
    far it starts away; --ss = start scale; --bob = float speed. */
-.hw-asm-part--2 { top: 9%;  left: 43%; width: 30%; --sx:  51px; --sy: -90px; --ss: 1; --bob: 4.3s; }
-.hw-asm-part--3 { top: 27%; left: 46%; width: 22%; --sx:  80px; --sy: -40px; --ss: 1; --bob: 3.7s; }
-.hw-asm-part--4 { top: 23%; left: 29%; width: 30%; --sx: -80px; --sy:  55px; --ss: 1; --bob: 4.7s; }
-.hw-asm-part--5 { top: 47%; left: 37%; width: 34%; --sx:  -2px; --sy: -15px; --ss: 1; --bob: 4s;   }
-.hw-asm-part--6 { top: 5%;  left: 45%; width: 9%;  --sx: -126px; --sy:  -5px; --ss: 1; --bob: 3.8s; }
+.hw-asm-part--2 { top: 9%;  left: 43%; width: 30%; --sx:   9.1cqw; --sy: -16.1cqw; --ss: 1; --bob: 4.3s; }
+.hw-asm-part--3 { top: 27%; left: 46%; width: 22%; --sx:  14.3cqw; --sy:  -7.1cqw; --ss: 1; --bob: 3.7s; }
+.hw-asm-part--4 { top: 23%; left: 29%; width: 30%; --sx: -14.3cqw; --sy:   9.8cqw; --ss: 1; --bob: 4.7s; }
+.hw-asm-part--5 { top: 47%; left: 37%; width: 34%; --sx:  -0.4cqw; --sy:  -2.7cqw; --ss: 1; --bob: 4s;   }
+.hw-asm-part--6 { top: 5%;  left: 45%; width: 9%;  --sx: -22.5cqw; --sy:  -0.9cqw; --ss: 1; --bob: 3.8s; }
 
 @media (prefers-reduced-motion: reduce) {
   .hw-asm-part { transition: none; transform: translate(0, 0) scale(1); }
@@ -2806,8 +2807,8 @@ td.col-autopos strong {
   height: var(--h, 4px);
   transform: translate(-50%, -50%) rotate(var(--rot, 0deg));
   border-radius: 999px;
-  background: linear-gradient(90deg, #4d90ff, #6ACCAC);   /* ion blue → green */
-  box-shadow: 0 0 8px 2px rgba(77,144,255,.85), 0 0 20px 7px rgba(106,204,172,.5);
+  background: #5caed6;            /* ion blue + green, combined into one solid colour */
+  box-shadow: 0 0 1.4cqw 0.4cqw rgba(92,174,214,.85), 0 0 3.6cqw 1.25cqw rgba(92,174,214,.5);
   opacity: 0;
   z-index: 5;
   pointer-events: none;
@@ -2823,9 +2824,9 @@ td.col-autopos strong {
   50%      { opacity: 1; }
 }
 /* ADJUST: per-line size & position */
-.hw-led--1 { --top: 9%;   --left: 49.5%; --w: 16px; --h: 2px; --rot: 0deg; }
-.hw-led--2 { --top: 41%;  --left: 49%;   --w: 24px; --h: 3px; --rot: 0deg; }
-.hw-led--3 { --top: 41.5%;--left: 55%;   --w: 24px; --h: 3px; --rot: 0deg; }
+.hw-led--1 { --top: 9%;   --left: 49.5%; --w: 2.9cqw; --h: 0.4cqw; --rot: 0deg; }
+.hw-led--2 { --top: 41%;  --left: 49%;   --w: 4.3cqw; --h: 0.5cqw; --rot: 0deg; }
+.hw-led--3 { --top: 41.5%;--left: 55%;   --w: 4.3cqw; --h: 0.5cqw; --rot: 0deg; }
 
 @media (prefers-reduced-motion: reduce) {
   .hw-assemble.is-assembled .hw-led { animation: none; opacity: .9; }
