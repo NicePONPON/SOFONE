@@ -28,12 +28,12 @@ All four languages are complete and consistent.
 - Selected language persists in `localStorage` (`sofone_lang`). Keys are lowercase except `zh-TW`.
 - Apply guard is `if (T[key] !== undefined)`, so a missing key falls back to the inline (zh-TW) markup default rather than breaking.
 
-## Keys by section (260 total)
+## Keys by section (198 total)
 
 | Prefix | Count | Area |
 |--------|-------|------|
 | `meta` | 3 | page title + descriptions |
-| `nav` | 6 | nav links (incl. `nav.hardware`) |
+| `nav` | 5 | nav links (incl. `nav.hardware`) |
 | `hero` | 5 | hero eyebrow / headline / sub / CTAs |
 | `device` | 10 | hero floor-map device tooltips |
 | `autopos` | 51 | Autopos software section (pain / solution table / bilingual / strategy) |
@@ -41,7 +41,6 @@ All four languages are complete and consistent.
 | `hardware` | 20 | hardware section header, bridge line, autopos ONE & XELF II specs, quote CTA + mail subject/body |
 | `xelf` | 13 | XELF II block eyebrow/h3/features + 5 feature cards |
 | `centrdx` | 59 | CentrDX section |
-| `nubis` | 61 | Nubis section |
 | `imsdom` | 16 | IMSDOM section |
 | `partners` | 1 | partners heading |
 | `contact` | 1 | contact heading |
