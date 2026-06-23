@@ -548,6 +548,123 @@
           <a href="mailto:chris.chen@sofone.ai" data-mailcta class="btn btn--primary" data-i18n="hardware.cta">報價諮詢</a>
         </div>
       </div>
+
+      <!-- KS-1000 showcase — second hardware block, mirrors the autopos ONE / XELF II .ap-one style.
+           繁中-only (intentionally no data-i18n) to preserve the 4-language key-parity invariant;
+           wire i18n keys in later when EN/JA/VI copy is ready. -->
+      <div class="ap-one reveal">
+        <p class="ap-one-eyebrow">KS-1000 · 整合式自助服務機</p>
+        <h3 class="ap-one-h3">全場域整合智助機 — 極簡空間，全場域自助服務。</h3>
+        <p class="ks-status">即將上市 · 開放預約導入（預計 2026 年 12 月量產）</p>
+
+        <!-- Main visual — scrub viewer (drag the bar through the views, autopos ONE style).
+             Frames 1,2,3,5,6,7,8 (KS-1000-4 is the comparison image, used in 空間效益 below).
+             Deferred loading: frame 1 loads eagerly; the rest swap in when the viewer scrolls into view. -->
+        <div class="ap-one-viewer-ring">
+          <div class="ap-one-viewer" role="img" aria-label="KS-1000 多視角展示">
+            <img class="ap-one-frame is-active" src="assets/KS-1000-1.png" alt="KS-1000 視角 1" draggable="false">
+            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-2.png" loading="lazy" alt="KS-1000 視角 2" draggable="false">
+            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-3.png" loading="lazy" alt="KS-1000 視角 3" draggable="false">
+            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-5.png" loading="lazy" alt="KS-1000 視角 4" draggable="false">
+            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-6.png" loading="lazy" alt="KS-1000 視角 5" draggable="false">
+            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-7.png" loading="lazy" alt="KS-1000 實際場域 1" draggable="false">
+            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-8.png" loading="lazy" alt="KS-1000 實際場域 2" draggable="false">
+          </div>
+        </div>
+        <div class="ap-one-scrub">
+          <input type="range" class="ap-one-slider" min="0" max="6" step="1" value="0" aria-label="KS-1000 視角切換">
+          <span class="ap-one-scrub-hint">拖曳切換視角</span>
+        </div>
+
+        <!-- 性能參數 — icon grid -->
+        <div class="ks-specs-grid">
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+            <p class="ks-spec-label">作業系統</p>
+            <p class="ks-spec-val">Windows 11 / Ubuntu 22.04 / Android 15</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+            <p class="ks-spec-label">螢幕顯示</p>
+            <p class="ks-spec-val">15.6" / 22"（1920×1080）</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
+            <p class="ks-spec-label">處理器</p>
+            <p class="ks-spec-val">ARM／Intel N150／14 代 i3–i7（三階可選）</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 0 1 4 0v5"/><path d="M13 11V8.5a2 2 0 0 1 4 0V12"/><path d="M17 11.5a2 2 0 0 1 4 0V15a6 6 0 0 1-6 6h-1.5a6 6 0 0 1-4.6-2.1L5 14.5a2 2 0 0 1 3-2.6l1 1"/></svg></span>
+            <p class="ks-spec-label">觸控</p>
+            <p class="ks-spec-val">多點觸控電容螢幕</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
+            <p class="ks-spec-label">支付</p>
+            <p class="ks-spec-val">入鈔／入幣／找零 ＋ 多元電子支付</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+            <p class="ks-spec-label">尺寸</p>
+            <p class="ks-spec-val">337×380×630mm(15.6") / 731mm(22")</p>
+          </div>
+        </div>
+
+        <!-- 詳細規格表 -->
+        <div class="ks-block">
+          <p class="ks-block-title">詳細規格</p>
+          <div class="ap-sol-table-wrap">
+            <table class="ap-sol-table ks-spec-table">
+              <tbody>
+                <tr><td class="ap-sol-dim">型號</td><td>KS-1000</td></tr>
+                <tr><td class="ap-sol-dim">主螢幕</td><td>15.6" / 22"（1920×1080），多點觸控電容</td></tr>
+                <tr><td class="ap-sol-dim">處理器（三階）</td><td>初階 ARM MTK／中階 Intel N150・i3 N355／高階 14 代 i3・i5・i7</td></tr>
+                <tr><td class="ap-sol-dim">記憶體</td><td>DDR4 8 / 16 / 32GB</td></tr>
+                <tr><td class="ap-sol-dim">儲存</td><td>SSD 128 / 256 / 512GB（X86）或 eMMC 64GB（ARM）</td></tr>
+                <tr><td class="ap-sol-dim">現金收付</td><td>入鈔（100/500/1000）・入幣（1/5/10/50）・找鈔・找幣</td></tr>
+                <tr><td class="ap-sol-dim">電子支付</td><td>信用卡（VISA/Master/JCB/Apple Pay/Google Pay）・悠遊卡/一卡通・行動支付（Line Pay/街口/全支付）</td></tr>
+                <tr><td class="ap-sol-dim">列印</td><td>58 / 80mm 熱感印表機</td></tr>
+                <tr><td class="ap-sol-dim">掃描</td><td>1D / 2D 條碼</td></tr>
+                <tr><td class="ap-sol-dim">其他</td><td>健保卡讀卡機・狀態指示燈</td></tr>
+                <tr><td class="ap-sol-dim">作業系統</td><td>Windows 11 / Ubuntu 22.04 / Android 15</td></tr>
+                <tr><td class="ap-sol-dim">尺寸</td><td>15.6"：337×380×630mm｜22"：337×380×731mm</td></tr>
+                <tr><td class="ap-sol-dim">工作環境</td><td>溫度 0–40°C、濕度 5–90%RH（無凝結）</td></tr>
+                <tr><td class="ap-sol-dim">產品週期</td><td>5 年，可升級沿用舊機體</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 搭配 autopos -->
+        <div class="ks-block ks-autopos">
+          <p class="ks-block-title">搭配 autopos</p>
+          <p class="ks-lead">KS-1000 內建 autopos 雲端餐飲系統，硬體＋軟體單一窗口。</p>
+          <ul class="hw-specs">
+            <li>大螢幕自助點餐（Kiosk）</li>
+            <li>多元支付，一站完成結帳</li>
+            <li>會員與行銷整合</li>
+            <li>交易即時同步 POS 雲端後台</li>
+            <li>遠端設備維運：開關機、版本、狀態監控</li>
+          </ul>
+          <div class="ks-metrics">
+            <div class="ks-metric"><p class="ks-metric-num">−30%</p><p class="ks-metric-cap">高峰櫃檯排隊</p></div>
+            <div class="ks-metric"><p class="ks-metric-num">+10–15%</p><p class="ks-metric-cap">客單價</p></div>
+            <div class="ks-metric"><p class="ks-metric-num">1–1.5 人</p><p class="ks-metric-cap">每台可取代櫃檯人力</p></div>
+          </div>
+        </div>
+
+        <!-- 空間效益 -->
+        <div class="ks-block ks-space">
+          <p class="ks-block-title">一台整合機，桌面省下約 78%</p>
+          <p class="ks-space-desc">傳統做法多台設備橫向約 1,350mm；KS-1000 整合成單機，寬度約 310mm。線材更簡潔、安裝維護更省。</p>
+          <img src="assets/KS-1000-4.png" alt="KS-1000 空間效益比較" class="ks-space-img" loading="lazy">
+        </div>
+
+        <!-- CTA -->
+        <div class="ap-one-desc">
+          <a href="#contact" class="btn btn--primary">預約 Demo</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1843,20 +1960,23 @@
       { scale: 0.984, x:  -0.5, y:  -3.4 }   // 12
     ];
 
-    (function () {
-      var ring = document.querySelector('.ap-one-viewer-ring');
-      if (!ring) return;
+    /* Drives every .ap-one-viewer-ring: drag the scrub bar (or swipe) to switch frames.
+       The calibrated per-frame transforms apply only to the 12-frame autopos ONE viewer;
+       other viewers (e.g. KS-1000, 3 frames) simply cross-fade. */
+    function initApOneViewer(ring) {
       var viewer      = ring.querySelector('.ap-one-viewer');
       var frames      = viewer.querySelectorAll('.ap-one-frame');
-      var slider      = document.querySelector('.ap-one-slider');
+      var slider      = (ring.closest('.ap-one') || document).querySelector('.ap-one-slider');
       var total       = frames.length;
       var current     = 0;
       var touchStartX = 0;
 
-      for (var i = 0; i < total; i++) {
-        var c = AP_ONE_FRAME_CONFIG[i];
-        frames[i].style.transformOrigin = 'center center';
-        frames[i].style.transform = 'translate(' + c.x + '%, ' + c.y + '%) scale(' + c.scale + ')';
+      if (total === AP_ONE_FRAME_CONFIG.length) {
+        for (var i = 0; i < total; i++) {
+          var c = AP_ONE_FRAME_CONFIG[i];
+          frames[i].style.transformOrigin = 'center center';
+          frames[i].style.transform = 'translate(' + c.x + '%, ' + c.y + '%) scale(' + c.scale + ')';
+        }
       }
 
       /* Load deferred frames on first interaction */
@@ -1897,7 +2017,8 @@
       new IntersectionObserver(function (entries) {
         if (entries[0].isIntersecting) { loadAllFrames(); }
       }, { threshold: 0.1 }).observe(ring);
-    }());
+    }
+    document.querySelectorAll('.ap-one-viewer-ring').forEach(initApOneViewer);
 
     /* ── Feature carousel center-zoom ─────────────────────── */
     (function () {
