@@ -1946,6 +1946,20 @@
         var key = el.getAttribute('data-i18n-html');
         if (T[key] !== undefined) el.innerHTML = T[key];
       });
+      // Spec tiles: drop any "(...)"/"（...）" qualifier onto its own line so the
+      // grid stays clean (esp. on mobile). Runs after the textContent pass above
+      // and re-runs on every language switch.
+      document.querySelectorAll('.ks-spec-val, .ks-spec-label').forEach(function(el) {
+        var t = el.textContent;
+        var i = t.search(/[(（]/);
+        if (i > 0) {
+          el.textContent = t.slice(0, i).replace(/\s+$/, '');
+          var span = document.createElement('span');
+          span.className = 'spec-paren';
+          span.textContent = t.slice(i);
+          el.appendChild(span);
+        }
+      });
       // Quote-request CTA → open email with a pre-filled subject/body for the current language
       if (T['hardware.mail.subject']) {
         var mhref = 'mailto:chris.chen@sofone.ai?subject=' + encodeURIComponent(T['hardware.mail.subject']) +
