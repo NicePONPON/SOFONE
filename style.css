@@ -110,7 +110,10 @@ body {
                'PingFang TC', sans-serif;
   background: var(--c-bg);
   color: var(--c-text);
-  overflow-x: hidden;
+  /* clip (not hidden): prevents horizontal scroll without making <body> a
+     scroll container, which on mobile breaks position:fixed (the bottom nav
+     would detach from the viewport and drift to mid-screen on scroll). */
+  overflow-x: clip;
   line-height: 1.6;
 }
 
