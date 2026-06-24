@@ -28,7 +28,7 @@ All four languages are complete and consistent.
 - Selected language persists in `localStorage` (`sofone_lang`). Keys are lowercase except `zh-TW`.
 - Apply guard is `if (T[key] !== undefined)`, so a missing key falls back to the inline (zh-TW) markup default rather than breaking.
 
-## Keys by section (198 total)
+## Keys by section (259 total)
 
 | Prefix | Count | Area |
 |--------|-------|------|
@@ -40,6 +40,7 @@ All four languages are complete and consistent.
 | `apone` | 14 | autopos ONE 360° viewer + feature cards |
 | `hardware` | 20 | hardware section header, bridge line, autopos ONE & XELF II specs, quote CTA + mail subject/body |
 | `xelf` | 13 | XELF II block eyebrow/h3/features + 5 feature cards |
+| `ks` | 61 | KS-1000 block: header/status, viewer hint, 6-item spec grid, 14-row spec table, autopos pairing + metrics, space efficiency, CTA |
 | `centrdx` | 59 | CentrDX section |
 | `imsdom` | 16 | IMSDOM section |
 | `partners` | 1 | partners heading |
