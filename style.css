@@ -2605,9 +2605,9 @@ td.col-autopos strong {
 }
 
 @media (max-width: 767px) {
-  /* Single column on phones: full-width cards hug their content (override the
-     desktop equal-height rows) so there's no side-by-side height mismatch and
-     no empty space. Full width also means the longer values stop wrapping hard. */
-  .ks-specs-grid { grid-template-columns: 1fr; grid-auto-rows: auto; }
+  /* Two tiles per row on phones. Values are terse (1–2 lines) so equal-height
+     rows (inherited grid-auto-rows: 1fr) keep the tiles uniform with little
+     empty space. */
+  .ks-specs-grid { grid-template-columns: 1fr 1fr; }
   .ks-metrics { grid-template-columns: 1fr; }
 }
