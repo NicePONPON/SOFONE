@@ -455,15 +455,63 @@
         </div>
 
         <!-- Description under the feature cards -->
-        <div class="ap-one-desc">
-          <ul class="hw-specs">
-            <li data-i18n-html="hardware.apone.spec1"><b>主流 x86 效能 × Windows 系統</b> — Intel N95 處理器搭配 8G 記憶體 + 128G SSD、Win 10/11，軟體相容性高，收銀、會員、線上單多視窗同時跑也不卡頓，不必擔心未來的擴充與相容性限制。</li>
-            <li data-i18n-html="hardware.apone.spec2"><b>15.6 吋 Full HD IPS 多點觸控</b> — 1920×1080 IPS 面板 G+G 多點觸控電容螢幕，字大清晰、廣視角、觸控靈敏，店員零學習門檻、尖峰時段無障礙。</li>
-            <li data-i18n-html="hardware.apone.spec3"><b>雙頻 WiFi + Gigabit + 藍牙 5.3 完整連網</b> — 2.4G/5G 雙頻 WiFi、10/100/1000M 有線網路、BT5.3 三路齊備，連線穩定、可有線無線互備，藍牙周邊一次配對到位。</li>
-            <li data-i18n-html="hardware.apone.spec4"><b>豐富外接介面，一台串起全部周邊</b> — HDMI×1、COM×2、USB2.0×2、USB3.0×2、RJ45、音源孔，客顯、出單機、錢箱、掃碼槍、刷卡機一次接齊，不必外掛轉接器。</li>
-            <li data-i18n-html="hardware.apone.spec5"><b>商用級耐用機構</b> — 金屬＋塑鋼機身、3W 喇叭、12V/4A 供電、工作溫度 −10~45℃、通過 CCC 認證，耐得住餐飲油煙與長時間營業；機身僅 363×321×191mm，占桌面小。</li>
-            <li data-i18n-html="hardware.apone.spec6"><b>第二螢幕（選配）</b> — 可加配 10 吋 1280×800 非觸控客顯副螢幕，向顧客同步顯示品項與金額；需於採購時指定，出貨後無法自行加裝。</li>
-          </ul>
+        <!-- 規格 — icon grid (unified with XELF II / KS-1000) -->
+        <div class="ks-specs-grid">
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.os.label">作業系統</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.os.val">Windows 10 / 11</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.screen.label">螢幕</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.screen.val">15.6" 1920×1080</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 0 1 4 0v5"/><path d="M13 11V8.5a2 2 0 0 1 4 0V12"/><path d="M17 11.5a2 2 0 0 1 4 0V15a6 6 0 0 1-6 6h-1.5a6 6 0 0 1-4.6-2.1L5 14.5a2 2 0 0 1 3-2.6l1 1"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.touch.label">觸控</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.touch.val">全平面多點觸控</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.cpu.label">處理器</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.cpu.val">Intel N95</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="1"/><line x1="6" y1="17" x2="6" y2="20"/><line x1="10" y1="17" x2="10" y2="20"/><line x1="14" y1="17" x2="14" y2="20"/><line x1="18" y1="17" x2="18" y2="20"/><line x1="7" y1="11" x2="7" y2="13"/><line x1="11" y1="11" x2="11" y2="13"/><line x1="15" y1="11" x2="15" y2="13"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.ram.label">記憶體</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.ram.val">DDR4 8G（最大 16G）</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 5v6c0 1.66-4 3-9 3s-9-1.34-9-3V5"/><path d="M21 11v6c0 1.66-4 3-9 3s-9-1.34-9-3v-6"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.storage.label">儲存</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.storage.val">SSD M.2 128G（最大 1T）</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.net.label">連網</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.net.val">雙頻 WiFi・Gigabit・BT 5.0</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"/><path d="M15 2v6"/><path d="M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v5"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.io.label">I/O</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.io.val">HDMI・COM×2・USB×4・RJ45</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.temp.label">工作溫度</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.temp.val">−10~45°C</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.size.label">尺寸</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.size.val">363×321×191mm</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="12" height="8" rx="1"/><rect x="9" y="11" width="13" height="8" rx="1"/></svg></span>
+            <p class="ks-spec-label" data-i18n="apone.spec.disp2.label">第二螢幕（選配）</p>
+            <p class="ks-spec-val" data-i18n="apone.spec.disp2.val">10" 1280×800 非觸控</p>
+          </div>
         </div>
       </div>
 
@@ -538,14 +586,45 @@
         </div>
 
         <!-- Description under the feature cards -->
+        <!-- 規格 — icon grid (unified with autopos ONE / KS-1000) -->
+        <div class="ks-specs-grid">
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
+            <p class="ks-spec-label" data-i18n="xelf.spec.screen.label">螢幕</p>
+            <p class="ks-spec-val" data-i18n="xelf.spec.screen.val">15.6" / 22" 多點觸控</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></span>
+            <p class="ks-spec-label" data-i18n="xelf.spec.layout.label">配置</p>
+            <p class="ks-spec-val" data-i18n="xelf.spec.layout.val">橫向・直向</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
+            <p class="ks-spec-label" data-i18n="xelf.spec.integ.label">整合</p>
+            <p class="ks-spec-val" data-i18n="xelf.spec.integ.val">掃碼＋出單＋金流模組</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <p class="ks-spec-label" data-i18n="xelf.spec.body.label">機身</p>
+            <p class="ks-spec-val" data-i18n="xelf.spec.body.val">壓鑄鋁＋塑鋼</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>
+            <p class="ks-spec-label" data-i18n="xelf.spec.expand.label">擴充</p>
+            <p class="ks-spec-val" data-i18n="xelf.spec.expand.val">MSR・指紋・NFC（選配）</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
+            <p class="ks-spec-label" data-i18n="xelf.spec.form.label">形態</p>
+            <p class="ks-spec-val" data-i18n="xelf.spec.form.val">落地・桌上・壁掛</p>
+          </div>
+          <div class="ks-spec">
+            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+            <p class="ks-spec-label" data-i18n="xelf.spec.cert.label">認證</p>
+            <p class="ks-spec-val" data-i18n="xelf.spec.cert.val">FCC・CE Class B</p>
+          </div>
+        </div>
         <div class="ap-one-desc">
-          <ul class="hw-specs">
-            <li data-i18n-html="hardware.xelf.spec1"><b>15.6" / 22" 雙尺寸 + 橫直向自由配置</b> — 同一產品線同時支援 15.6 吋與 22 吋面板，可橫向或直向安裝，小店到大店、窄入口到寬廳都能對應。</li>
-            <li data-i18n-html="hardware.xelf.spec2"><b>掃碼 + 出單 + 金流模組整合一機</b> — 內建條碼掃描（Henex H22／Newland FM6080），支援主流出單機（EPSON M30 II/III、Seiko RP-D10）與刷卡金流端（Verifone、PAX、Ingenico），點餐到付款一機完成，刷卡模組現成可接。</li>
-            <li data-i18n-html="hardware.xelf.spec3"><b>壓鑄鋁機身 + 商用耐用設計</b> — 鋁壓鑄＋塑鋼結構、2×2W 喇叭，通過 FCC／CE Class B 認證，適合公共場域高頻率、高強度的操作環境。</li>
-            <li data-i18n-html="hardware.xelf.spec4"><b>選配擴充彈性極大</b> — MSR／指紋／NFC、LED 燈條＋鏡頭二合一、發票印表機、載具/護照掃描、取票/發卡、紙鈔辨識、ADA 無障礙鍵盤等，可從餐飲自助點餐延伸到零售、報到、旅宿。</li>
-            <li data-i18n-html="hardware.xelf.spec5"><b>桌上型 / 落地型雙形態</b> — 落地型 1550×500×500mm（43kg）入口吸睛、桌上型 792×378×364mm（29kg）省櫃檯空間，依場域選型，單機即可獨立運作。</li>
-          </ul>
           <a href="mailto:chris.chen@sofone.ai" data-mailcta class="btn btn--primary" data-i18n="hardware.cta">報價諮詢</a>
         </div>
       </div>
@@ -608,31 +687,6 @@
             <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
             <p class="ks-spec-label" data-i18n="ks.spec.size.label">尺寸</p>
             <p class="ks-spec-val" data-i18n="ks.spec.size.val">337×380×630mm(15.6") / 731mm(22")</p>
-          </div>
-        </div>
-
-        <!-- 詳細規格表 -->
-        <div class="ks-block">
-          <p class="ks-block-title" data-i18n="ks.table.title">詳細規格</p>
-          <div class="ap-sol-table-wrap">
-            <table class="ap-sol-table ks-spec-table">
-              <tbody>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.model.label">型號</td><td data-i18n="ks.row.model.val">KS-1000</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.screen.label">主螢幕</td><td data-i18n="ks.row.screen.val">15.6" / 22"（1920×1080），多點觸控電容</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.cpu.label">處理器（三階）</td><td data-i18n="ks.row.cpu.val">初階 ARM MTK／中階 Intel N150・i3 N355／高階 14 代 i3・i5・i7</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.ram.label">記憶體</td><td data-i18n="ks.row.ram.val">DDR4 8 / 16 / 32GB</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.storage.label">儲存</td><td data-i18n="ks.row.storage.val">SSD 128 / 256 / 512GB（X86）或 eMMC 64GB（ARM）</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.cash.label">現金收付</td><td data-i18n="ks.row.cash.val">入鈔（100/500/1000）・入幣（1/5/10/50）・找鈔・找幣</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.epay.label">電子支付</td><td data-i18n="ks.row.epay.val">信用卡（VISA/Master/JCB/Apple Pay/Google Pay）・悠遊卡/一卡通・行動支付（Line Pay/街口/全支付）</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.print.label">列印</td><td data-i18n="ks.row.print.val">58 / 80mm 熱感印表機</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.scan.label">掃描</td><td data-i18n="ks.row.scan.val">1D / 2D 條碼</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.other.label">其他</td><td data-i18n="ks.row.other.val">健保卡讀卡機・狀態指示燈</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.os.label">作業系統</td><td data-i18n="ks.row.os.val">Windows 11 / Ubuntu 22.04 / Android 15</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.size.label">尺寸</td><td data-i18n="ks.row.size.val">15.6"：337×380×630mm｜22"：337×380×731mm</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.env.label">工作環境</td><td data-i18n="ks.row.env.val">溫度 0–40°C、濕度 5–90%RH（無凝結）</td></tr>
-                <tr><td class="ap-sol-dim" data-i18n="ks.row.life.label">產品週期</td><td data-i18n="ks.row.life.val">5 年，可升級沿用舊機體</td></tr>
-              </tbody>
-            </table>
           </div>
         </div>
 
@@ -1177,19 +1231,8 @@
         'hardware.mail.body': '您好，\n\n我對 autopos 的軟硬體一體化配套方案很感興趣，希望進一步了解產品功能與報價資訊。\n\n公司／店名：\n聯絡人：\n聯絡電話：\n門市數量：\n需求說明：\n\n謝謝！',
         'hardware.apone.name': 'autopos ONE 智慧收銀機',
         'hardware.apone.tagline': '主流 x86 效能，餐飲現場耐用之選',
-        'hardware.apone.spec1': '<b>主流 x86 效能 × Windows 系統</b> — Intel N95 處理器搭配 8G 記憶體 + 128G SSD、Win 10/11，軟體相容性高，收銀、會員、線上單多視窗同時跑也不卡頓，不必擔心未來的擴充與相容性限制。',
-        'hardware.apone.spec2': '<b>15.6 吋 Full HD IPS 多點觸控</b> — 1920×1080 IPS 面板 G+G 多點觸控電容螢幕，字大清晰、廣視角、觸控靈敏，店員零學習門檻、尖峰時段無障礙。',
-        'hardware.apone.spec3': '<b>雙頻 WiFi + Gigabit + 藍牙 5.3 完整連網</b> — 2.4G/5G 雙頻 WiFi、10/100/1000M 有線網路、BT5.3 三路齊備，連線穩定、可有線無線互備，藍牙周邊一次配對到位。',
-        'hardware.apone.spec4': '<b>豐富外接介面，一台串起全部周邊</b> — HDMI×1、COM×2、USB2.0×2、USB3.0×2、RJ45、音源孔，客顯、出單機、錢箱、掃碼槍、刷卡機一次接齊，不必外掛轉接器。',
-        'hardware.apone.spec5': '<b>商用級耐用機構</b> — 金屬＋塑鋼機身、3W 喇叭、12V/4A 供電、工作溫度 −10~45℃、通過 CCC 認證，耐得住餐飲油煙與長時間營業；機身僅 363×321×191mm，占桌面小。',
-        'hardware.apone.spec6': '<b>第二螢幕（選配）</b> — 可加配 10 吋 1280×800 非觸控客顯副螢幕，向顧客同步顯示品項與金額；需於採購時指定，出貨後無法自行加裝。',
         'hardware.xelf.name': 'XELF II 自助點餐機（FEC）',
         'hardware.xelf.tagline': '模組化自助點餐，小店到大廳全對應',
-        'hardware.xelf.spec1': '<b>15.6" / 22" 雙尺寸 + 橫直向自由配置</b> — 同一產品線同時支援 15.6 吋與 22 吋面板，可橫向或直向安裝，小店到大店、窄入口到寬廳都能對應。',
-        'hardware.xelf.spec2': '<b>掃碼 + 出單 + 金流模組整合一機</b> — 內建條碼掃描（Henex H22／Newland FM6080），支援主流出單機（EPSON M30 II/III、Seiko RP-D10）與刷卡金流端（Verifone、PAX、Ingenico），點餐到付款一機完成，刷卡模組現成可接。',
-        'hardware.xelf.spec3': '<b>壓鑄鋁機身 + 商用耐用設計</b> — 鋁壓鑄＋塑鋼結構、2×2W 喇叭，通過 FCC／CE Class B 認證，適合公共場域高頻率、高強度的操作環境。',
-        'hardware.xelf.spec4': '<b>選配擴充彈性極大</b> — MSR／指紋／NFC、LED 燈條＋鏡頭二合一、發票印表機、載具/護照掃描、取票/發卡、紙鈔辨識、ADA 無障礙鍵盤等，可從餐飲自助點餐延伸到零售、報到、旅宿。',
-        'hardware.xelf.spec5': '<b>桌上型 / 落地型雙形態</b> — 落地型 1550×500×500mm（43kg）入口吸睛、桌上型 792×378×364mm（29kg）省櫃檯空間，依場域選型，單機即可獨立運作。',
         'xelf.eyebrow': 'XELF II · 自助點餐終端',
         'xelf.h3': '模組化自助點餐，靈活適配每種場域。',
         'xelf.features.label': '靈活模組，滿足每種營運場景。',
@@ -1203,6 +1246,24 @@
         'xelf.feat.4.desc': '精巧桌上型模組，空間有限也能優雅入店。',
         'xelf.feat.5.title': '彈性安裝',
         'xelf.feat.5.desc': '支援落地式、桌上式、壁掛式固定，輕鬆適配各種場合。',
+        'apone.spec.os.label': '作業系統', 'apone.spec.os.val': 'Windows 10 / 11',
+        'apone.spec.screen.label': '螢幕', 'apone.spec.screen.val': '15.6" 1920×1080',
+        'apone.spec.touch.label': '觸控', 'apone.spec.touch.val': '全平面多點觸控',
+        'apone.spec.cpu.label': '處理器', 'apone.spec.cpu.val': 'Intel N95',
+        'apone.spec.ram.label': '記憶體', 'apone.spec.ram.val': 'DDR4 8G（最大 16G）',
+        'apone.spec.storage.label': '儲存', 'apone.spec.storage.val': 'SSD M.2 128G（最大 1T）',
+        'apone.spec.net.label': '連網', 'apone.spec.net.val': '雙頻 WiFi・Gigabit・BT 5.0',
+        'apone.spec.io.label': 'I/O', 'apone.spec.io.val': 'HDMI・COM×2・USB×4・RJ45',
+        'apone.spec.temp.label': '工作溫度', 'apone.spec.temp.val': '−10~45°C',
+        'apone.spec.size.label': '尺寸', 'apone.spec.size.val': '363×321×191mm',
+        'apone.spec.disp2.label': '第二螢幕（選配）', 'apone.spec.disp2.val': '10" 1280×800 非觸控',
+        'xelf.spec.screen.label': '螢幕', 'xelf.spec.screen.val': '15.6" / 22" 多點觸控',
+        'xelf.spec.layout.label': '配置', 'xelf.spec.layout.val': '橫向・直向',
+        'xelf.spec.integ.label': '整合', 'xelf.spec.integ.val': '掃碼＋出單＋金流模組',
+        'xelf.spec.body.label': '機身', 'xelf.spec.body.val': '壓鑄鋁＋塑鋼',
+        'xelf.spec.expand.label': '擴充', 'xelf.spec.expand.val': 'MSR・指紋・NFC（選配）',
+        'xelf.spec.form.label': '形態', 'xelf.spec.form.val': '落地・桌上・壁掛',
+        'xelf.spec.cert.label': '認證', 'xelf.spec.cert.val': 'FCC・CE Class B',
         'ks.eyebrow': 'KS-1000 · 整合式自助服務機',
         'ks.h3': '全場域整合智助機 — 極簡空間，全場域自助服務。',
         'ks.status': '即將上市 · 開放預約導入（預計 2026 年 12 月量產）',
@@ -1213,21 +1274,6 @@
         'ks.spec.touch.label': '觸控', 'ks.spec.touch.val': '多點觸控電容螢幕',
         'ks.spec.pay.label': '支付', 'ks.spec.pay.val': '入鈔／入幣／找零 ＋ 多元電子支付',
         'ks.spec.size.label': '尺寸', 'ks.spec.size.val': '337×380×630mm(15.6") / 731mm(22")',
-        'ks.table.title': '詳細規格',
-        'ks.row.model.label': '型號', 'ks.row.model.val': 'KS-1000',
-        'ks.row.screen.label': '主螢幕', 'ks.row.screen.val': '15.6" / 22"（1920×1080），多點觸控電容',
-        'ks.row.cpu.label': '處理器（三階）', 'ks.row.cpu.val': '初階 ARM MTK／中階 Intel N150・i3 N355／高階 14 代 i3・i5・i7',
-        'ks.row.ram.label': '記憶體', 'ks.row.ram.val': 'DDR4 8 / 16 / 32GB',
-        'ks.row.storage.label': '儲存', 'ks.row.storage.val': 'SSD 128 / 256 / 512GB（X86）或 eMMC 64GB（ARM）',
-        'ks.row.cash.label': '現金收付', 'ks.row.cash.val': '入鈔（100/500/1000）・入幣（1/5/10/50）・找鈔・找幣',
-        'ks.row.epay.label': '電子支付', 'ks.row.epay.val': '信用卡（VISA/Master/JCB/Apple Pay/Google Pay）・悠遊卡/一卡通・行動支付（Line Pay/街口/全支付）',
-        'ks.row.print.label': '列印', 'ks.row.print.val': '58 / 80mm 熱感印表機',
-        'ks.row.scan.label': '掃描', 'ks.row.scan.val': '1D / 2D 條碼',
-        'ks.row.other.label': '其他', 'ks.row.other.val': '健保卡讀卡機・狀態指示燈',
-        'ks.row.os.label': '作業系統', 'ks.row.os.val': 'Windows 11 / Ubuntu 22.04 / Android 15',
-        'ks.row.size.label': '尺寸', 'ks.row.size.val': '15.6"：337×380×630mm｜22"：337×380×731mm',
-        'ks.row.env.label': '工作環境', 'ks.row.env.val': '溫度 0–40°C、濕度 5–90%RH（無凝結）',
-        'ks.row.life.label': '產品週期', 'ks.row.life.val': '5 年，可升級沿用舊機體',
         'ks.autopos.title': '搭配 autopos',
         'ks.autopos.lead': 'KS-1000 內建 autopos 雲端餐飲系統，硬體＋軟體單一窗口。',
         'ks.autopos.b1': '大螢幕自助點餐（Kiosk）',
@@ -1386,19 +1432,8 @@
         'hardware.mail.body': 'Hello,\n\nI\'m interested in autopos\'s integrated hardware + software solution and would like more information on features and pricing.\n\nCompany / Store:\nContact name:\nPhone:\nNumber of locations:\nRequirements:\n\nThank you!',
         'hardware.apone.name': 'autopos ONE Smart POS',
         'hardware.apone.tagline': 'Mainstream x86 power, built to last on the floor',
-        'hardware.apone.spec1': '<b>Mainstream x86 power × Windows</b> — Intel N95 with 8GB RAM + 128GB SSD on Win 10/11. High software compatibility; run POS, membership and online orders in multiple windows without lag — no worries about future expansion or compatibility limits.',
-        'hardware.apone.spec2': '<b>15.6" Full HD IPS multi-touch</b> — 1920×1080 IPS panel with G+G capacitive multi-touch: large, crisp text, wide viewing angle and responsive touch. Zero learning curve for staff, frictionless ordering even at peak hours.',
-        'hardware.apone.spec3': '<b>Dual-band WiFi + Gigabit + Bluetooth 5.3</b> — 2.4G/5G dual-band WiFi, 10/100/1000M wired LAN and BT5.3 all included. Stable connectivity with wired/wireless failover, and one-pass pairing for Bluetooth peripherals.',
-        'hardware.apone.spec4': '<b>Rich I/O — one unit links every peripheral</b> — HDMI×1, COM×2, USB2.0×2, USB3.0×2, RJ45 and audio jack connect customer display, printer, cash drawer, scanner and card reader at once, with no add-on adapters.',
-        'hardware.apone.spec5': '<b>Commercial-grade durability</b> — metal + PC-ABS chassis, 3W speaker, 12V/4A power, −10~45℃ operating range and CCC certified — built for kitchen grease and long trading hours. Compact 363×321×191mm footprint.',
-        'hardware.apone.spec6': '<b>Second display (optional)</b> — add a 10" 1280×800 non-touch customer-facing display to mirror items and totals to the customer; must be specified at purchase and cannot be added later.',
         'hardware.xelf.name': 'XELF II Self-Order Kiosk (FEC)',
         'hardware.xelf.tagline': 'Modular self-ordering — from small shops to large halls',
-        'hardware.xelf.spec1': '<b>15.6" / 22" sizes + free portrait/landscape mount</b> — One product line supports both 15.6" and 22" panels, mounted landscape or portrait — fitting everything from small shops to large venues, narrow entries to wide halls.',
-        'hardware.xelf.spec2': '<b>Scanning + printing + payment in one unit</b> — Built-in barcode scanning (Henex H22 / Newland FM6080), with support for mainstream printers (EPSON M30 II/III, Seiko RP-D10) and card-payment terminals (Verifone, PAX, Ingenico). Order to payment on one device; the card module is ready to connect.',
-        'hardware.xelf.spec3': '<b>Die-cast aluminum body + commercial durability</b> — Die-cast aluminum + PC-ABS structure, 2×2W speakers, FCC / CE Class B certified — built for high-frequency, high-intensity use in public spaces.',
-        'hardware.xelf.spec4': '<b>Huge optional expansion</b> — MSR / fingerprint / NFC, LED light bar + camera combo, invoice printer, carrier/passport scanning, ticket/card dispensing, banknote recognition, ADA accessible keypad and more — extending from F&B self-order to retail, check-in and hospitality.',
-        'hardware.xelf.spec5': '<b>Floor-standing / countertop dual form</b> — Floor model 1550×500×500mm (43kg) draws attention at the entrance; countertop model 792×378×364mm (29kg) saves counter space. Choose by venue; each runs standalone.',
         'xelf.eyebrow': 'XELF II · Self-Order Terminal',
         'xelf.h3': 'Modular self-ordering that adapts to every venue.',
         'xelf.features.label': 'Flexible modules for every operation.',
@@ -1412,6 +1447,24 @@
         'xelf.feat.4.desc': 'A compact countertop module that fits elegantly even where space is tight.',
         'xelf.feat.5.title': 'Flexible mounting',
         'xelf.feat.5.desc': 'Floor-standing, countertop or wall-mounted to suit any setting.',
+        'apone.spec.os.label': 'Operating System', 'apone.spec.os.val': 'Windows 10 / 11',
+        'apone.spec.screen.label': 'Display', 'apone.spec.screen.val': '15.6" 1920×1080',
+        'apone.spec.touch.label': 'Touch', 'apone.spec.touch.val': 'Flat multi-touch',
+        'apone.spec.cpu.label': 'Processor', 'apone.spec.cpu.val': 'Intel N95',
+        'apone.spec.ram.label': 'Memory', 'apone.spec.ram.val': 'DDR4 8G (max 16G)',
+        'apone.spec.storage.label': 'Storage', 'apone.spec.storage.val': 'SSD M.2 128G (max 1T)',
+        'apone.spec.net.label': 'Connectivity', 'apone.spec.net.val': 'Dual-band WiFi · Gigabit · BT 5.0',
+        'apone.spec.io.label': 'I/O', 'apone.spec.io.val': 'HDMI · COM×2 · USB×4 · RJ45',
+        'apone.spec.temp.label': 'Operating Temp', 'apone.spec.temp.val': '−10~45°C',
+        'apone.spec.size.label': 'Dimensions', 'apone.spec.size.val': '363×321×191mm',
+        'apone.spec.disp2.label': 'Second display (opt.)', 'apone.spec.disp2.val': '10" 1280×800 non-touch',
+        'xelf.spec.screen.label': 'Display', 'xelf.spec.screen.val': '15.6" / 22" multi-touch',
+        'xelf.spec.layout.label': 'Layout', 'xelf.spec.layout.val': 'Landscape · Portrait',
+        'xelf.spec.integ.label': 'Integrated', 'xelf.spec.integ.val': 'Scan + print + payment module',
+        'xelf.spec.body.label': 'Body', 'xelf.spec.body.val': 'Die-cast aluminum + steel',
+        'xelf.spec.expand.label': 'Expansion', 'xelf.spec.expand.val': 'MSR · Fingerprint · NFC (opt.)',
+        'xelf.spec.form.label': 'Form factor', 'xelf.spec.form.val': 'Floor · Desktop · Wall',
+        'xelf.spec.cert.label': 'Certification', 'xelf.spec.cert.val': 'FCC · CE Class B',
         'ks.eyebrow': 'KS-1000 · Integrated Self-Service Kiosk',
         'ks.h3': 'All-in-one self-service kiosk — minimal footprint, self-service for every space.',
         'ks.status': 'Coming soon · Now taking pre-orders (mass production expected Dec 2026)',
@@ -1422,21 +1475,6 @@
         'ks.spec.touch.label': 'Touch', 'ks.spec.touch.val': 'Capacitive multi-touch',
         'ks.spec.pay.label': 'Payment', 'ks.spec.pay.val': 'Cash/coin in, change + multiple e-payments',
         'ks.spec.size.label': 'Dimensions', 'ks.spec.size.val': '337×380×630mm (15.6") / 731mm (22")',
-        'ks.table.title': 'Full Specifications',
-        'ks.row.model.label': 'Model', 'ks.row.model.val': 'KS-1000',
-        'ks.row.screen.label': 'Main Display', 'ks.row.screen.val': '15.6" / 22" (1920×1080), capacitive multi-touch',
-        'ks.row.cpu.label': 'Processor (3 tiers)', 'ks.row.cpu.val': 'Entry ARM MTK / Mid Intel N150 · i3 N355 / High 14th-gen i3 · i5 · i7',
-        'ks.row.ram.label': 'Memory', 'ks.row.ram.val': 'DDR4 8 / 16 / 32GB',
-        'ks.row.storage.label': 'Storage', 'ks.row.storage.val': 'SSD 128 / 256 / 512GB (X86) or eMMC 64GB (ARM)',
-        'ks.row.cash.label': 'Cash Handling', 'ks.row.cash.val': 'Note-in (100/500/1000) · Coin-in (1/5/10/50) · Note & coin change',
-        'ks.row.epay.label': 'E-Payment', 'ks.row.epay.val': 'Credit cards (VISA/Master/JCB/Apple Pay/Google Pay) · EasyCard/iPASS · Mobile pay (Line Pay/JKOPAY/PXPay)',
-        'ks.row.print.label': 'Printing', 'ks.row.print.val': '58 / 80mm thermal printer',
-        'ks.row.scan.label': 'Scanning', 'ks.row.scan.val': '1D / 2D barcodes',
-        'ks.row.other.label': 'Other', 'ks.row.other.val': 'NHI card reader · Status indicator light',
-        'ks.row.os.label': 'Operating System', 'ks.row.os.val': 'Windows 11 / Ubuntu 22.04 / Android 15',
-        'ks.row.size.label': 'Dimensions', 'ks.row.size.val': '15.6": 337×380×630mm | 22": 337×380×731mm',
-        'ks.row.env.label': 'Operating Environment', 'ks.row.env.val': 'Temp 0–40°C, humidity 5–90%RH (non-condensing)',
-        'ks.row.life.label': 'Product Lifecycle', 'ks.row.life.val': '5 years; upgradeable, reuses existing chassis',
         'ks.autopos.title': 'With autopos',
         'ks.autopos.lead': 'KS-1000 ships with the autopos cloud F&B system built in — hardware and software from a single source.',
         'ks.autopos.b1': 'Large-screen self-order kiosk',
@@ -1595,19 +1633,8 @@
         'hardware.mail.body': 'ご担当者様\n\nautopos のソフト＆ハード統合ソリューションに興味があり、製品の機能とお見積もりについて詳しく知りたいです。\n\n会社／店舗名：\nご担当者：\n電話番号：\n店舗数：\nご要望：\n\nよろしくお願いいたします。',
         'hardware.apone.name': 'autopos ONE スマートPOS',
         'hardware.apone.tagline': '主流 x86 性能、現場で長く使える一台',
-        'hardware.apone.spec1': '<b>主流 x86 性能 × Windows</b> — Intel N95 に 8GB メモリ + 128GB SSD、Win 10/11。ソフト互換性が高く、会計・会員・オンライン注文を複数ウィンドウで同時に動かしても重くならず、将来の拡張や互換性の制約も心配いりません。',
-        'hardware.apone.spec2': '<b>15.6 インチ Full HD IPS マルチタッチ</b> — 1920×1080 IPS パネル G+G 静電容量マルチタッチ。文字が大きく鮮明、広視野角でタッチも軽快。スタッフは学習不要、ピーク時もスムーズに操作できます。',
-        'hardware.apone.spec3': '<b>デュアルバンド WiFi + Gigabit + Bluetooth 5.3</b> — 2.4G/5G デュアルバンド WiFi、10/100/1000M 有線 LAN、BT5.3 を完備。接続は安定し、有線・無線の相互バックアップが可能。Bluetooth 周辺機器も一度でペアリングできます。',
-        'hardware.apone.spec4': '<b>豊富な外部端子、一台で全周辺機器を接続</b> — HDMI×1、COM×2、USB2.0×2、USB3.0×2、RJ45、音声端子を搭載。カスタマーディスプレイ、プリンター、キャッシュドロア、スキャナー、カードリーダーを変換アダプタなしで一括接続。',
-        'hardware.apone.spec5': '<b>商用グレードの堅牢設計</b> — 金属＋PC-ABS 筐体、3W スピーカー、12V/4A 電源、動作温度 −10~45℃、CCC 認証取得。油煙や長時間営業にも耐え、筐体は 363×321×191mm とコンパクト。',
-        'hardware.apone.spec6': '<b>セカンドディスプレイ（オプション）</b> — 10インチ 1280×800 非タッチのカスタマーディスプレイを追加でき、商品と金額をお客様側に表示。購入時に指定が必要で、後からの追加はできません。',
         'hardware.xelf.name': 'XELF II セルフオーダー端末（FEC）',
         'hardware.xelf.tagline': 'モジュール式セルフオーダー、小店から大ホールまで',
-        'hardware.xelf.spec1': '<b>15.6" / 22" の2サイズ + 縦横自由設置</b> — 同一製品ラインで 15.6 インチと 22 インチに対応し、横・縦どちらでも設置可能。小型店から大型店、狭い入口から広いホールまで対応します。',
-        'hardware.xelf.spec2': '<b>スキャン + 印刷 + 決済モジュールを一台に統合</b> — バーコードスキャン（Henex H22／Newland FM6080）を内蔵し、主流プリンター（EPSON M30 II/III、Seiko RP-D10）とカード決済端末（Verifone、PAX、Ingenico）に対応。注文から支払いまで一台で完結、決済モジュールもすぐ接続できます。',
-        'hardware.xelf.spec3': '<b>ダイカストアルミ筐体 + 商用耐久設計</b> — アルミダイカスト＋PC-ABS 構造、2×2W スピーカー、FCC／CE Class B 認証。高頻度・高負荷で操作される公共空間に適しています。',
-        'hardware.xelf.spec4': '<b>豊富な拡張オプション</b> — MSR／指紋／NFC、LED ライトバー＋カメラ一体型、レシートプリンター、キャリア/パスポート読取、発券/カード発行、紙幣識別、ADA バリアフリーキーパッドなど。飲食のセルフオーダーから小売・受付・宿泊まで拡張できます。',
-        'hardware.xelf.spec5': '<b>卓上型 / 据置型の2形態</b> — 据置型 1550×500×500mm（43kg）は入口で目を引き、卓上型 792×378×364mm（29kg）はカウンターを節約。設置場所に合わせて選べ、一台で独立稼働します。',
         'xelf.eyebrow': 'XELF II · セルフオーダー端末',
         'xelf.h3': 'モジュール式セルフオーダーで、あらゆる場所に柔軟に対応。',
         'xelf.features.label': 'あらゆる運用シーンに応える、柔軟なモジュール。',
@@ -1621,6 +1648,24 @@
         'xelf.feat.4.desc': '省スペースでも上質に設置できる、コンパクトな卓上モジュール。',
         'xelf.feat.5.title': '柔軟な設置',
         'xelf.feat.5.desc': '据置・卓上・壁掛けに対応し、あらゆる場所に手軽にフィット。',
+        'apone.spec.os.label': 'OS', 'apone.spec.os.val': 'Windows 10 / 11',
+        'apone.spec.screen.label': 'ディスプレイ', 'apone.spec.screen.val': '15.6" 1920×1080',
+        'apone.spec.touch.label': 'タッチ', 'apone.spec.touch.val': '全面マルチタッチ',
+        'apone.spec.cpu.label': 'プロセッサー', 'apone.spec.cpu.val': 'Intel N95',
+        'apone.spec.ram.label': 'メモリ', 'apone.spec.ram.val': 'DDR4 8G（最大 16G）',
+        'apone.spec.storage.label': 'ストレージ', 'apone.spec.storage.val': 'SSD M.2 128G（最大 1T）',
+        'apone.spec.net.label': '通信', 'apone.spec.net.val': 'デュアルバンドWiFi・Gigabit・BT 5.0',
+        'apone.spec.io.label': 'I/O', 'apone.spec.io.val': 'HDMI・COM×2・USB×4・RJ45',
+        'apone.spec.temp.label': '動作温度', 'apone.spec.temp.val': '−10~45°C',
+        'apone.spec.size.label': '寸法', 'apone.spec.size.val': '363×321×191mm',
+        'apone.spec.disp2.label': 'セカンド画面（オプション）', 'apone.spec.disp2.val': '10" 1280×800 非タッチ',
+        'xelf.spec.screen.label': 'ディスプレイ', 'xelf.spec.screen.val': '15.6" / 22" マルチタッチ',
+        'xelf.spec.layout.label': '設置', 'xelf.spec.layout.val': '横・縦',
+        'xelf.spec.integ.label': '統合', 'xelf.spec.integ.val': 'スキャン＋印刷＋決済モジュール',
+        'xelf.spec.body.label': '筐体', 'xelf.spec.body.val': 'ダイカストアルミ＋鋼',
+        'xelf.spec.expand.label': '拡張', 'xelf.spec.expand.val': 'MSR・指紋・NFC（オプション）',
+        'xelf.spec.form.label': '形態', 'xelf.spec.form.val': '据置・卓上・壁掛',
+        'xelf.spec.cert.label': '認証', 'xelf.spec.cert.val': 'FCC・CE Class B',
         'ks.eyebrow': 'KS-1000 · 統合型セルフサービス機',
         'ks.h3': '全領域対応の統合セルフ機 — 最小スペースで、あらゆる場所をセルフサービスに。',
         'ks.status': '近日発売 · 先行予約受付中（量産は2026年12月予定）',
@@ -1631,21 +1676,6 @@
         'ks.spec.touch.label': 'タッチ', 'ks.spec.touch.val': '静電容量マルチタッチ',
         'ks.spec.pay.label': '決済', 'ks.spec.pay.val': '紙幣・硬貨投入／釣銭 ＋ 多様な電子決済',
         'ks.spec.size.label': '寸法', 'ks.spec.size.val': '337×380×630mm(15.6") / 731mm(22")',
-        'ks.table.title': '詳細スペック',
-        'ks.row.model.label': '型番', 'ks.row.model.val': 'KS-1000',
-        'ks.row.screen.label': 'メインディスプレイ', 'ks.row.screen.val': '15.6" / 22"（1920×1080）、静電容量マルチタッチ',
-        'ks.row.cpu.label': 'プロセッサー（3段階）', 'ks.row.cpu.val': 'エントリー ARM MTK／ミドル Intel N150・i3 N355／ハイ 第14世代 i3・i5・i7',
-        'ks.row.ram.label': 'メモリ', 'ks.row.ram.val': 'DDR4 8 / 16 / 32GB',
-        'ks.row.storage.label': 'ストレージ', 'ks.row.storage.val': 'SSD 128 / 256 / 512GB（X86）または eMMC 64GB（ARM）',
-        'ks.row.cash.label': '現金処理', 'ks.row.cash.val': '紙幣投入（100/500/1000）・硬貨投入（1/5/10/50）・紙幣/硬貨釣銭',
-        'ks.row.epay.label': '電子決済', 'ks.row.epay.val': 'クレジットカード（VISA/Master/JCB/Apple Pay/Google Pay）・悠遊カード/一カ通・モバイル決済（Line Pay/街口/全支付）',
-        'ks.row.print.label': '印刷', 'ks.row.print.val': '58 / 80mm サーマルプリンター',
-        'ks.row.scan.label': 'スキャン', 'ks.row.scan.val': '1D / 2D バーコード',
-        'ks.row.other.label': 'その他', 'ks.row.other.val': '健康保険証リーダー・ステータスインジケーター',
-        'ks.row.os.label': 'OS', 'ks.row.os.val': 'Windows 11 / Ubuntu 22.04 / Android 15',
-        'ks.row.size.label': '寸法', 'ks.row.size.val': '15.6"：337×380×630mm｜22"：337×380×731mm',
-        'ks.row.env.label': '動作環境', 'ks.row.env.val': '温度 0–40°C、湿度 5–90%RH（結露なし）',
-        'ks.row.life.label': '製品ライフサイクル', 'ks.row.life.val': '5年、アップグレード可・既存筐体を流用可能',
         'ks.autopos.title': 'autopos との連携',
         'ks.autopos.lead': 'KS-1000 は autopos クラウド飲食システムを内蔵。ハードとソフトを単一窓口で。',
         'ks.autopos.b1': '大画面セルフ注文（キオスク）',
@@ -1804,19 +1834,8 @@
         'hardware.mail.body': 'Xin chào,\n\nTôi quan tâm đến giải pháp tích hợp phần cứng & phần mềm của autopos và muốn biết thêm về tính năng và báo giá.\n\nCông ty/Cửa hàng:\nNgười liên hệ:\nĐiện thoại:\nSố lượng cửa hàng:\nNhu cầu:\n\nXin cảm ơn!',
         'hardware.apone.name': 'autopos ONE Máy POS thông minh',
         'hardware.apone.tagline': 'Sức mạnh x86 phổ thông, bền bỉ tại hiện trường',
-        'hardware.apone.spec1': '<b>Sức mạnh x86 phổ thông × Windows</b> — Intel N95 với 8GB RAM + 128GB SSD, Win 10/11. Tương thích phần mềm cao; chạy thu ngân, thành viên và đơn online nhiều cửa sổ cùng lúc không giật — không lo về giới hạn mở rộng và tương thích trong tương lai.',
-        'hardware.apone.spec2': '<b>Cảm ứng đa điểm IPS Full HD 15.6"</b> — Màn IPS 1920×1080 với cảm ứng điện dung đa điểm G+G: chữ to rõ, góc nhìn rộng, cảm ứng nhạy. Nhân viên không cần học, thao tác mượt mà giờ cao điểm.',
-        'hardware.apone.spec3': '<b>WiFi hai băng tần + Gigabit + Bluetooth 5.3</b> — WiFi hai băng tần 2.4G/5G, LAN có dây 10/100/1000M và BT5.3 đầy đủ. Kết nối ổn định, dự phòng có dây/không dây, ghép nối thiết bị Bluetooth trong một lần.',
-        'hardware.apone.spec4': '<b>Cổng kết nối phong phú, một máy nối mọi thiết bị</b> — HDMI×1, COM×2, USB2.0×2, USB3.0×2, RJ45 và cổng âm thanh kết nối màn hình khách, máy in, ngăn kéo tiền, máy quét và máy quẹt thẻ cùng lúc, không cần bộ chuyển.',
-        'hardware.apone.spec5': '<b>Kết cấu bền chuẩn thương mại</b> — Thân kim loại + PC-ABS, loa 3W, nguồn 12V/4A, nhiệt độ hoạt động −10~45℃, đạt chứng nhận CCC — chịu được dầu mỡ và kinh doanh dài giờ. Kích thước gọn 363×321×191mm.',
-        'hardware.apone.spec6': '<b>Màn hình phụ (tùy chọn)</b> — có thể thêm màn hình hướng khách 10" 1280×800 không cảm ứng để hiển thị món và tổng tiền cho khách; phải chỉ định khi mua, không thể tự lắp thêm sau.',
         'hardware.xelf.name': 'XELF II Kiosk tự gọi món (FEC)',
         'hardware.xelf.tagline': 'Tự gọi món dạng mô-đun — từ quán nhỏ đến sảnh lớn',
-        'hardware.xelf.spec1': '<b>Hai cỡ 15.6" / 22" + lắp dọc/ngang tự do</b> — Cùng một dòng sản phẩm hỗ trợ cả màn 15.6" và 22", lắp ngang hoặc dọc — phù hợp từ quán nhỏ đến cửa hàng lớn, lối vào hẹp đến sảnh rộng.',
-        'hardware.xelf.spec2': '<b>Quét mã + in + thanh toán tích hợp một máy</b> — Tích hợp quét mã vạch (Henex H22 / Newland FM6080), hỗ trợ máy in phổ biến (EPSON M30 II/III, Seiko RP-D10) và thiết bị thanh toán thẻ (Verifone, PAX, Ingenico). Từ gọi món đến thanh toán trên một máy; mô-đun thẻ sẵn sàng kết nối.',
-        'hardware.xelf.spec3': '<b>Thân nhôm đúc + thiết kế bền thương mại</b> — Kết cấu nhôm đúc + PC-ABS, loa 2×2W, đạt chứng nhận FCC / CE Class B — phù hợp môi trường vận hành tần suất cao, cường độ cao tại nơi công cộng.',
-        'hardware.xelf.spec4': '<b>Khả năng mở rộng tùy chọn cực lớn</b> — MSR / vân tay / NFC, thanh LED + camera hai trong một, máy in hóa đơn, quét thẻ/hộ chiếu, phát vé/thẻ, nhận diện tiền giấy, bàn phím tiếp cận ADA… mở rộng từ tự gọi món F&B sang bán lẻ, check-in và lưu trú.',
-        'hardware.xelf.spec5': '<b>Hai dạng đứng sàn / để bàn</b> — Bản đứng sàn 1550×500×500mm (43kg) hút mắt ở lối vào; bản để bàn 792×378×364mm (29kg) tiết kiệm quầy. Chọn theo không gian; mỗi máy chạy độc lập.',
         'xelf.eyebrow': 'XELF II · Thiết bị tự gọi món',
         'xelf.h3': 'Tự gọi món mô-đun, thích ứng với mọi không gian.',
         'xelf.features.label': 'Mô-đun linh hoạt cho mọi mô hình vận hành.',
@@ -1830,6 +1849,24 @@
         'xelf.feat.4.desc': 'Mô-đun để bàn nhỏ gọn, lắp đặt tinh tế ngay cả khi không gian hạn chế.',
         'xelf.feat.5.title': 'Lắp đặt linh hoạt',
         'xelf.feat.5.desc': 'Hỗ trợ đứng sàn, để bàn hoặc gắn tường, phù hợp mọi không gian.',
+        'apone.spec.os.label': 'Hệ điều hành', 'apone.spec.os.val': 'Windows 10 / 11',
+        'apone.spec.screen.label': 'Màn hình', 'apone.spec.screen.val': '15.6" 1920×1080',
+        'apone.spec.touch.label': 'Cảm ứng', 'apone.spec.touch.val': 'Cảm ứng đa điểm phẳng',
+        'apone.spec.cpu.label': 'Bộ xử lý', 'apone.spec.cpu.val': 'Intel N95',
+        'apone.spec.ram.label': 'Bộ nhớ', 'apone.spec.ram.val': 'DDR4 8G (tối đa 16G)',
+        'apone.spec.storage.label': 'Lưu trữ', 'apone.spec.storage.val': 'SSD M.2 128G (tối đa 1T)',
+        'apone.spec.net.label': 'Kết nối', 'apone.spec.net.val': 'WiFi 2 băng tần · Gigabit · BT 5.0',
+        'apone.spec.io.label': 'I/O', 'apone.spec.io.val': 'HDMI · COM×2 · USB×4 · RJ45',
+        'apone.spec.temp.label': 'Nhiệt độ hoạt động', 'apone.spec.temp.val': '−10~45°C',
+        'apone.spec.size.label': 'Kích thước', 'apone.spec.size.val': '363×321×191mm',
+        'apone.spec.disp2.label': 'Màn hình phụ (tùy chọn)', 'apone.spec.disp2.val': '10" 1280×800 không cảm ứng',
+        'xelf.spec.screen.label': 'Màn hình', 'xelf.spec.screen.val': '15.6" / 22" cảm ứng đa điểm',
+        'xelf.spec.layout.label': 'Bố trí', 'xelf.spec.layout.val': 'Ngang · Dọc',
+        'xelf.spec.integ.label': 'Tích hợp', 'xelf.spec.integ.val': 'Quét + in + module thanh toán',
+        'xelf.spec.body.label': 'Thân máy', 'xelf.spec.body.val': 'Nhôm đúc + thép',
+        'xelf.spec.expand.label': 'Mở rộng', 'xelf.spec.expand.val': 'MSR · Vân tay · NFC (tùy chọn)',
+        'xelf.spec.form.label': 'Kiểu dáng', 'xelf.spec.form.val': 'Sàn · Bàn · Tường',
+        'xelf.spec.cert.label': 'Chứng nhận', 'xelf.spec.cert.val': 'FCC · CE Class B',
         'ks.eyebrow': 'KS-1000 · Máy tự phục vụ tích hợp',
         'ks.h3': 'Máy tự phục vụ tích hợp toàn diện — tối giản không gian, tự phục vụ cho mọi địa điểm.',
         'ks.status': 'Sắp ra mắt · Đang nhận đặt trước (dự kiến sản xuất hàng loạt tháng 12/2026)',
@@ -1840,21 +1877,6 @@
         'ks.spec.touch.label': 'Cảm ứng', 'ks.spec.touch.val': 'Cảm ứng điện dung đa điểm',
         'ks.spec.pay.label': 'Thanh toán', 'ks.spec.pay.val': 'Nhận tiền giấy/xu, trả lại + nhiều thanh toán điện tử',
         'ks.spec.size.label': 'Kích thước', 'ks.spec.size.val': '337×380×630mm (15.6") / 731mm (22")',
-        'ks.table.title': 'Thông số chi tiết',
-        'ks.row.model.label': 'Model', 'ks.row.model.val': 'KS-1000',
-        'ks.row.screen.label': 'Màn hình chính', 'ks.row.screen.val': '15.6" / 22" (1920×1080), cảm ứng điện dung đa điểm',
-        'ks.row.cpu.label': 'Bộ xử lý (3 cấp)', 'ks.row.cpu.val': 'Cơ bản ARM MTK / Trung Intel N150 · i3 N355 / Cao i3 · i5 · i7 thế hệ 14',
-        'ks.row.ram.label': 'Bộ nhớ', 'ks.row.ram.val': 'DDR4 8 / 16 / 32GB',
-        'ks.row.storage.label': 'Lưu trữ', 'ks.row.storage.val': 'SSD 128 / 256 / 512GB (X86) hoặc eMMC 64GB (ARM)',
-        'ks.row.cash.label': 'Xử lý tiền mặt', 'ks.row.cash.val': 'Nhận tiền giấy (100/500/1000) · Nhận xu (1/5/10/50) · Trả lại tiền giấy & xu',
-        'ks.row.epay.label': 'Thanh toán điện tử', 'ks.row.epay.val': 'Thẻ tín dụng (VISA/Master/JCB/Apple Pay/Google Pay) · EasyCard/iPASS · Thanh toán di động (Line Pay/JKOPAY/PXPay)',
-        'ks.row.print.label': 'In ấn', 'ks.row.print.val': 'Máy in nhiệt 58 / 80mm',
-        'ks.row.scan.label': 'Quét mã', 'ks.row.scan.val': 'Mã vạch 1D / 2D',
-        'ks.row.other.label': 'Khác', 'ks.row.other.val': 'Đầu đọc thẻ BHYT · Đèn báo trạng thái',
-        'ks.row.os.label': 'Hệ điều hành', 'ks.row.os.val': 'Windows 11 / Ubuntu 22.04 / Android 15',
-        'ks.row.size.label': 'Kích thước', 'ks.row.size.val': '15.6": 337×380×630mm | 22": 337×380×731mm',
-        'ks.row.env.label': 'Môi trường hoạt động', 'ks.row.env.val': 'Nhiệt độ 0–40°C, độ ẩm 5–90%RH (không ngưng tụ)',
-        'ks.row.life.label': 'Vòng đời sản phẩm', 'ks.row.life.val': '5 năm; có thể nâng cấp, tái sử dụng thân máy cũ',
         'ks.autopos.title': 'Kết hợp autopos',
         'ks.autopos.lead': 'KS-1000 tích hợp sẵn hệ thống F&B đám mây autopos — phần cứng và phần mềm từ một đầu mối.',
         'ks.autopos.b1': 'Tự đặt món màn hình lớn (Kiosk)',

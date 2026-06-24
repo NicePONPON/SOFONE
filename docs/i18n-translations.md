@@ -28,7 +28,9 @@ All four languages are complete and consistent.
 - Selected language persists in `localStorage` (`sofone_lang`). Keys are lowercase except `zh-TW`.
 - Apply guard is `if (T[key] !== undefined)`, so a missing key falls back to the inline (zh-TW) markup default rather than breaking.
 
-## Keys by section (260 total)
+## Keys by section (256 total)
+
+> Hardware spec presentation unified (2026-06-24): autopos ONE, XELF II and KS-1000 all use the icon-grid format (`.ks-specs-grid` / `.ks-spec*`). The old paragraph bullets (`hardware.apone.spec*`, `hardware.xelf.spec*`) and the KS-1000 detail table (`ks.table.title`, `ks.row.*`) were removed in favor of `apone.spec.*` / `xelf.spec.*` tile keys.
 
 | Prefix | Count | Area |
 |--------|-------|------|
@@ -37,10 +39,10 @@ All four languages are complete and consistent.
 | `hero` | 5 | hero eyebrow / headline / sub / CTAs |
 | `device` | 10 | hero floor-map device tooltips |
 | `autopos` | 51 | Autopos software section (pain / solution table / bilingual / strategy) |
-| `apone` | 14 | autopos ONE 360° viewer + feature cards |
-| `hardware` | 21 | hardware section header, bridge line, autopos ONE (incl. 2nd-display) & XELF II specs, quote CTA + mail subject/body |
-| `xelf` | 13 | XELF II block eyebrow/h3/features + 5 feature cards |
-| `ks` | 61 | KS-1000 block: header/status, viewer hint, 6-item spec grid, 14-row spec table, autopos pairing + metrics, space efficiency, CTA |
+| `apone` | 36 | autopos ONE 360° viewer + feature cards + 11-tile spec grid |
+| `hardware` | 10 | hardware section header, bridge line, quote CTA + mail subject/body |
+| `xelf` | 27 | XELF II eyebrow/h3/features + 5 feature cards + 7-tile spec grid |
+| `ks` | 32 | KS-1000 block: header/status, viewer hint, 6-tile spec grid, autopos pairing + metrics, space efficiency, CTA |
 | `centrdx` | 59 | CentrDX section |
 | `imsdom` | 16 | IMSDOM section |
 | `partners` | 1 | partners heading |
