@@ -337,26 +337,6 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ── Right Column: Interactive Map ───────────────────────── */
-/* ── Click-logo colour reverse ("trick") ─────────────────────────
-   #invert-wrap holds all scrollable content. The 3 fixed elements
-   (nav, shared tooltip, lightbox) are filtered directly — never via an
-   ancestor — so their position:fixed isn't broken. */
-html.inverted #invert-wrap,
-html.inverted .mobile-nav,
-html.inverted .device-tooltip-shared,
-html.inverted #ap-lightbox {
-  filter: invert(1) hue-rotate(180deg);
-}
-/* Counter-invert raster media so photos / logos / Lottie keep their real
-   colours (inline SVG icons are left to invert so they adapt to the scheme). */
-html.inverted #invert-wrap img,
-html.inverted #invert-wrap video,
-html.inverted #invert-wrap lottie-player,
-html.inverted #ap-lightbox img {
-  filter: invert(1) hue-rotate(180deg);
-}
-.hero-logo { cursor: pointer; }
-
 /* Hint pill telling users the floating devices are clickable.
    Absolute overlay so it never shifts the map/3D scene. */
 .map-hint {

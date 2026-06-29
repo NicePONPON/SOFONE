@@ -84,10 +84,6 @@
   <link rel="stylesheet" href="style.css">
   <script>
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-    /* Apply saved colour-reverse state before first paint (no flash) */
-    if (localStorage.getItem('sofone_invert') === '1') {
-      document.documentElement.classList.add('inverted');
-    }
     /* Remove any hash from URL immediately so browser won't auto-scroll to anchor */
     if (window.location.hash) {
       history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -106,11 +102,6 @@
     <a href="#imsdom"   class="mobile-nav-item" data-i18n="nav.imsdom">IMSDOM</a>
     <a href="#contact"  class="mobile-nav-item" data-i18n="nav.contact">聯絡我們</a>
   </nav>
-
-  <!-- #invert-wrap: everything that the click-logo colour reverse filters.
-       Fixed elements (nav, shared tooltip, lightbox) stay OUTSIDE this wrapper
-       so the filter doesn't break their position:fixed. -->
-  <div id="invert-wrap">
 
   <!-- ── 1. Hero ──────────────────────────────────────────── -->
   <section class="hero-section" id="hero">
@@ -150,7 +141,7 @@
     <div class="hero-right" id="hero-interactive-map">
 
       <!-- Hint: the floating devices are clickable (overlay, doesn't move the scene) -->
-      <p class="map-hint" data-i18n="hero.maphint">👆 點擊互動元件，了解各項功能</p>
+      <p class="map-hint" data-i18n="hero.maphint">點擊互動元件，了解各項功能</p>
 
       <div class="map-stage">
 
@@ -742,7 +733,7 @@
   <section class="centrdx-section" id="centrdx">
     <div class="section-inner">
       <div class="product-logo-wrap reveal">
-        <img src="assets/webp/centrdx-logo.webp" alt="CentrDX" class="product-logo">
+        <img src="assets/webp/centrdx-logo.webp" alt="CentrDX" class="product-logo" id="cdxLogo">
       </div>
       <p class="section-eyebrow reveal" data-i18n="centrdx.eyebrow">閃電下單⚡ · 餐飲數位化三合一</p>
       <h2 class="section-h2 reveal" data-i18n="centrdx.h2">外送整合、會員管理、極簡出餐——三件事，從此一個後台搞定。</h2>
@@ -1120,7 +1111,6 @@
       </div>
     </div>
   </section>
-  </div><!-- /#invert-wrap -->
 
   <!-- Shared device tooltip — lives at body level to escape overflow:hidden -->
   <div id="deviceTooltip" class="device-tooltip-shared" role="tooltip" aria-live="polite">
@@ -1143,7 +1133,7 @@
         'meta.ogdesc': '您的 ERP，我的系統整合。專注全球展店，技術瑣事交給碩豐。',
         'hero.eyebrow': '碩豐 SOFONE',
         'hero.h1': '串聯軟硬體<br>賦能數位轉型',
-        'hero.maphint': '👆 點擊互動元件，了解各項功能',
+        'hero.maphint': '點擊互動元件，了解各項功能',
         'hero.sub': '以高彈性、低耦合的系統整合方案，<br>為企業打造更強健的營運生態圈。<br>無需更換核心 ERP，協助品牌快速落地展店。',
         'nav.autopos':'autopos','nav.centrdx':'閃電下單⚡','nav.imsdom':'IMSDOM','nav.contact':'聯絡我們',
         'hero.cta1': '了解更多',
@@ -1346,7 +1336,7 @@
         'meta.ogdesc': 'Your ERP, our integration. Built for global expansion — leave the tech complexity to SOFONE.',
         'hero.eyebrow': '碩豐 SOFONE',
         'hero.h1': 'Bridging Hardware & Software<br>Empowering Digital Transformation',
-        'hero.maphint': '👆 Tap the interactive parts to see what they do',
+        'hero.maphint': 'Tap the interactive parts to see what they do',
         'hero.sub': 'Flexible, loosely-coupled system integration<br>builds a resilient operational ecosystem for your business.<br>No ERP replacement needed — go global, faster.',
         'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'Contact',
         'hero.cta1': 'Learn More',
@@ -1549,7 +1539,7 @@
         'meta.ogdesc': 'あなたのERPに、私たちのシステム統合。グローバル展開に集中。技術的な複雑さはSOFONEへ。',
         'hero.eyebrow': '碩豐 SOFONE',
         'hero.h1': 'ハードとソフトを繋ぎ<br>デジタル変革を加速する',
-        'hero.maphint': '👆 各パーツをタップして機能をチェック',
+        'hero.maphint': '各パーツをタップして機能をチェック',
         'hero.sub': '柔軟で疎結合なシステムインテグレーションで、<br>企業の強固な運営エコシステムを構築。<br>コアERPを変えずに、グローバル展開をサポート。',
         'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'お問い合わせ',
         'hero.cta1': '詳しく見る',
@@ -1752,7 +1742,7 @@
         'meta.ogdesc': 'ERP của bạn, tích hợp của chúng tôi. Tập trung mở rộng toàn cầu — để sự phức tạp kỹ thuật cho SOFONE.',
         'hero.eyebrow': '碩豐 SOFONE',
         'hero.h1': 'Kết nối phần cứng & phần mềm<br>Thúc đẩy chuyển đổi số',
-        'hero.maphint': '👆 Chạm vào các bộ phận để xem chức năng',
+        'hero.maphint': 'Chạm vào các bộ phận để xem chức năng',
         'hero.sub': 'Giải pháp tích hợp hệ thống linh hoạt, kết nối lỏng lẻo<br>giúp doanh nghiệp xây dựng hệ sinh thái vận hành bền vững.<br>Không cần thay thế ERP lõi — hỗ trợ thương hiệu mở rộng nhanh chóng.',
         'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'Liên hệ',
         'hero.cta1': 'Tìm hiểu thêm',
@@ -2013,6 +2003,11 @@
           next.className = player.className;
           player.parentNode.replaceChild(next, player);
         }
+      }
+      var cdxLogo = document.getElementById('cdxLogo');
+      if (cdxLogo) {
+        cdxLogo.src = (lang === 'zh-TW') ? 'assets/閃電下單-logo.png' : 'assets/webp/centrdx-logo.webp';
+        cdxLogo.alt = (lang === 'zh-TW') ? '閃電下單' : 'CentrDX';
       }
     }
 
@@ -2369,26 +2364,6 @@
         document.documentElement.lang = saved;
       }
       applyTranslations(saved);
-    })();
-
-    /* ── Click-logo colour reverse ("trick") ────────────────── */
-    (function() {
-      var KEY = 'sofone_invert';
-      var logo = document.querySelector('.hero-logo');
-      if (!logo) return;
-      logo.setAttribute('role', 'button');
-      logo.setAttribute('tabindex', '0');
-      logo.setAttribute('title', '點一下 SOFONE 標誌，切換配色 · Click to flip colours');
-      logo.setAttribute('aria-label', 'Toggle colour scheme');
-      function toggle() {
-        var on = !document.documentElement.classList.contains('inverted');
-        document.documentElement.classList.toggle('inverted', on);
-        try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
-      }
-      logo.addEventListener('click', toggle);
-      logo.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
-      });
     })();
 
     /* ── Bilingual screenshot lightbox ──────────────────────── */
