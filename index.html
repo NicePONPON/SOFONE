@@ -84,6 +84,10 @@
   <link rel="stylesheet" href="style.css">
   <script>
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    /* Apply saved colour-reverse state before first paint (no flash) */
+    if (localStorage.getItem('sofone_invert') === '1') {
+      document.documentElement.classList.add('inverted');
+    }
     /* Remove any hash from URL immediately so browser won't auto-scroll to anchor */
     if (window.location.hash) {
       history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -98,10 +102,15 @@
   <nav class="mobile-nav" aria-label="頁面導覽">
     <a href="#autopos"  class="mobile-nav-item" data-i18n="nav.autopos">autopos</a>
     <a href="#apone" class="mobile-nav-item" data-i18n="nav.hardware">硬體設備</a>
-    <a href="#centrdx"  class="mobile-nav-item" data-i18n="nav.centrdx">CentrDX</a>
+    <a href="#centrdx"  class="mobile-nav-item" data-i18n="nav.centrdx">閃電下單⚡</a>
     <a href="#imsdom"   class="mobile-nav-item" data-i18n="nav.imsdom">IMSDOM</a>
     <a href="#contact"  class="mobile-nav-item" data-i18n="nav.contact">聯絡我們</a>
   </nav>
+
+  <!-- #invert-wrap: everything that the click-logo colour reverse filters.
+       Fixed elements (nav, shared tooltip, lightbox) stay OUTSIDE this wrapper
+       so the filter doesn't break their position:fixed. -->
+  <div id="invert-wrap">
 
   <!-- ── 1. Hero ──────────────────────────────────────────── -->
   <section class="hero-section" id="hero">
@@ -140,6 +149,9 @@
     <!-- Right Column: Interactive 2.5D Restaurant Map -->
     <div class="hero-right" id="hero-interactive-map">
 
+      <!-- Hint: the floating devices are clickable (overlay, doesn't move the scene) -->
+      <p class="map-hint" data-i18n="hero.maphint">👆 點擊互動元件，了解各項功能</p>
+
       <div class="map-stage">
 
         <!-- Base isometric background -->
@@ -171,7 +183,7 @@
           <img src="assets/TP-100.webp" alt="出單列印機" class="device-img" draggable="false">
           <div class="device-tooltip">
             <p class="tooltip-title" data-i18n="device.printer.title">熱感出單機</p>
-            <p class="tooltip-desc" data-i18n="device.printer.desc">整合 autopos POS、CentrDX 外送平台與 Kiosk 自助點餐，多來源訂單即時出單，零漏單。</p>
+            <p class="tooltip-desc" data-i18n="device.printer.desc">整合 autopos POS、閃電下單⚡ 外送平台與 Kiosk 自助點餐，多來源訂單即時出單，零漏單。</p>
           </div>
         </div>
 
@@ -179,7 +191,7 @@
         <div class="map-device" data-device="qr">
           <img src="assets/webp/QR-Code.webp" alt="QR Code 掃碼點餐" class="device-img" draggable="false">
           <div class="device-tooltip">
-            <p class="tooltip-title" data-i18n="device.qr.title">CentrDX 掃碼點餐</p>
+            <p class="tooltip-title" data-i18n="device.qr.title">閃電下單⚡ 掃碼點餐</p>
             <p class="tooltip-desc" data-i18n="device.qr.desc">掃碼即可自助下單，無需下載 APP，有效降低高峰期服務壓力，提升點餐效率。</p>
           </div>
         </div>
@@ -732,14 +744,14 @@
       <div class="product-logo-wrap reveal">
         <img src="assets/webp/centrdx-logo.webp" alt="CentrDX" class="product-logo">
       </div>
-      <p class="section-eyebrow reveal" data-i18n="centrdx.eyebrow">CentrDX · 餐飲數位化三合一</p>
+      <p class="section-eyebrow reveal" data-i18n="centrdx.eyebrow">閃電下單⚡ · 餐飲數位化三合一</p>
       <h2 class="section-h2 reveal" data-i18n="centrdx.h2">外送整合、會員管理、極簡出餐——三件事，從此一個後台搞定。</h2>
 
       <!-- ── Block 1: Pain Point ──────────────────────────── -->
       <div class="cdx-pain reveal">
         <div class="cdx-pain-copy">
           <h3 class="cdx-block-h3" data-i18n="centrdx.pain.h3">三個核心場景，一個平台全覆蓋。</h3>
-          <p class="cdx-pain-desc" data-i18n="centrdx.pain.desc">CentrDX 把餐飲營運最核心的三件事統一在同一後台：串接所有外送平台的訂單與菜單、管理會員點數與回訪，以及掃碼點餐直連出餐機。全線上支付模式下，一台出餐機即可獨立開店，極簡化作業流程。</p>
+          <p class="cdx-pain-desc" data-i18n="centrdx.pain.desc">閃電下單⚡ 把餐飲營運最核心的三件事統一在同一後台：串接所有外送平台的訂單與菜單、管理會員點數與回訪，以及掃碼點餐直連出餐機。全線上支付模式下，一台出餐機即可獨立開店，極簡化作業流程。</p>
           <div class="cdx-stats-row">
             <div class="cdx-stat">
               <span class="cdx-stat-num">1~1.5<span class="cdx-stat-unit" data-i18n="centrdx.stat.unit1">人</span></span>
@@ -771,7 +783,7 @@
             <svg width="18" height="12" viewBox="0 0 18 12" fill="none"><line x1="0" y1="6" x2="12" y2="6" stroke="var(--c-accent)" stroke-width="1.5"/><polyline points="7,1 12,6 7,11" stroke="var(--c-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
           </div>
           <div class="cfc-panel cfc-panel--core">
-            <p class="cfc-core-brand">CentrDX</p>
+            <p class="cfc-core-brand" data-i18n="centrdx.brand">閃電下單⚡</p>
             <div class="cfc-mod-block">
               <span class="cfc-mod-title">OMS</span>
               <span class="cfc-mod-sub" data-i18n="centrdx.fc.oms">訂單 · 支付 · 配送</span>
@@ -809,7 +821,7 @@
               </svg>
             </div>
             <strong class="cdx-svc-title" data-i18n="centrdx.s1.title">一站串接所有外送平台</strong>
-            <p class="cdx-svc-desc" data-i18n="centrdx.s1.desc">訂單自動匯入、菜單集中修改，Foodpanda、Uber Eats、GrabFood 統一在 CentrDX 後台管理，不再多螢幕切換。</p>
+            <p class="cdx-svc-desc" data-i18n="centrdx.s1.desc">訂單自動匯入、菜單集中修改，Foodpanda、Uber Eats、GrabFood 統一在 閃電下單⚡ 後台管理，不再多螢幕切換。</p>
           </div>
           <div class="cdx-service-card">
             <div class="cdx-svc-icon-wrap" aria-hidden="true">
@@ -836,13 +848,13 @@
       <div class="cdx-growth reveal">
         <div class="cdx-growth-copy">
           <h3 class="cdx-block-h3" data-i18n="centrdx.growth.h3">現在的精簡，是未來的強大基礎。</h3>
-          <p class="cdx-growth-desc" data-i18n="centrdx.growth.desc">CentrDX 不只解決眼前的忙碌，更是您的成長夥伴。當您的事業擴張，需要更進階的集團管理時，CentrDX 支援無縫升級串接至 autopos 企業級生態系統。無需推倒重來，現有的數據與營運習慣自動平滑遷移，陪您穩健邁向連鎖餐飲版圖。</p>
+          <p class="cdx-growth-desc" data-i18n="centrdx.growth.desc">閃電下單⚡ 不只解決眼前的忙碌，更是您的成長夥伴。當您的事業擴張，需要更進階的集團管理時，閃電下單⚡ 支援無縫升級串接至 autopos 企業級生態系統。無需推倒重來，現有的數據與營運習慣自動平滑遷移，陪您穩健邁向連鎖餐飲版圖。</p>
         </div>
         <!-- Placeholder: 建議放置「CentrDX → autopos 升級路徑示意圖」 -->
         <div class="cdx-upgrade-flow">
           <div class="cdx-upgrade-step">
             <span class="cup-tag" data-i18n="centrdx.growth.now">現在</span>
-            <p class="cup-name">CentrDX</p>
+            <p class="cup-name" data-i18n="centrdx.brand">閃電下單⚡</p>
             <p class="cup-desc" data-i18n="centrdx.growth.step1">單店 · 輕量化 · 快速上線</p>
           </div>
           <div class="cup-arrow" aria-hidden="true">
@@ -862,7 +874,7 @@
 
       <div class="section-cta reveal">
         <a href="https://centrdx.shop/" target="_blank" rel="noopener noreferrer" class="btn btn--primary" data-i18n="centrdx.cta">
-          了解 CentrDX →
+          了解 閃電下單⚡ →
         </a>
       </div>
     </div>
@@ -1108,6 +1120,7 @@
       </div>
     </div>
   </section>
+  </div><!-- /#invert-wrap -->
 
   <!-- Shared device tooltip — lives at body level to escape overflow:hidden -->
   <div id="deviceTooltip" class="device-tooltip-shared" role="tooltip" aria-live="polite">
@@ -1130,8 +1143,9 @@
         'meta.ogdesc': '您的 ERP，我的系統整合。專注全球展店，技術瑣事交給碩豐。',
         'hero.eyebrow': '碩豐 SOFONE',
         'hero.h1': '串聯軟硬體<br>賦能數位轉型',
+        'hero.maphint': '👆 點擊互動元件，了解各項功能',
         'hero.sub': '以高彈性、低耦合的系統整合方案，<br>為企業打造更強健的營運生態圈。<br>無需更換核心 ERP，協助品牌快速落地展店。',
-        'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'聯絡我們',
+        'nav.autopos':'autopos','nav.centrdx':'閃電下單⚡','nav.imsdom':'IMSDOM','nav.contact':'聯絡我們',
         'hero.cta1': '了解更多',
         'hero.cta2': '預約顧問諮詢',
         'device.kiosk.title': 'autopos 自助點餐機',
@@ -1139,12 +1153,13 @@
         'device.pos.title': 'autopos 全球收銀引擎',
         'device.pos.desc': '專為連鎖打造的高穩定收銀核心，即使網路斷線也能正常結帳，總部數據即時透明，跨國稅務合規無憂。',
         'device.printer.title': '熱感出單機',
-        'device.printer.desc': '整合 autopos POS、CentrDX 外送平台與 Kiosk 自助點餐，多來源訂單即時出單，零漏單。',
-        'device.qr.title': 'CentrDX 掃碼點餐',
+        'device.printer.desc': '整合 autopos POS、閃電下單⚡ 外送平台與 Kiosk 自助點餐，多來源訂單即時出單，零漏單。',
+        'device.qr.title': '閃電下單⚡ 掃碼點餐',
         'device.qr.desc': '掃碼即可自助下單，無需下載 APP，有效降低高峰期服務壓力，提升點餐效率。',
         'device.waitress.title': 'IMSDOM 智慧管理',
         'device.waitress.desc': '運用 IMSDOM 自動化考核訓練，實現門市人才快速複製與品質標準化。',
-        'centrdx.eyebrow': 'CentrDX · 餐飲數位化三合一',
+        'centrdx.eyebrow': '閃電下單⚡ · 餐飲數位化三合一',
+        'centrdx.brand': '閃電下單⚡',
         'centrdx.h2': '外送整合、會員管理、極簡出餐——三件事，從此一個後台搞定。',
         'centrdx.before.label': '❌ BEFORE &nbsp;問題痛點',
         'centrdx.before.p1.strong': '缺工招不到人？',
@@ -1153,7 +1168,7 @@
         'centrdx.before.p2.desc': '人工點餐、手寫傳票，錯漏單導致廚房混亂，顧客抱怨層出不窮。',
         'centrdx.before.p3.strong': '點餐效率低？',
         'centrdx.before.p3.desc': '尖峰排隊超過 5 分鐘，顧客默默離開，業績在隊伍中悄悄流失。',
-        'centrdx.after.label': '✅ AFTER &nbsp;CentrDX 方案',
+        'centrdx.after.label': '✅ AFTER &nbsp;閃電下單⚡ 方案',
         'centrdx.after.s1.strong': '把每支手機變成您的收銀機',
         'centrdx.after.s1.desc': '顧客掃碼即點即付，廚房 KDS 秒速接單，零人工轉達。',
         'centrdx.after.s2.strong': '釋放 1~1.5 個人力',
@@ -1170,16 +1185,16 @@
         'centrdx.hw.27.desc': '大螢幕廣角視覺，提升點餐轉換率，適合大型餐廳。',
         'centrdx.hw.32.name': '32 吋',
         'centrdx.hw.32.desc': '旗艦尺寸，沉浸式點餐體驗，適合高流量旗艦門市。',
-        'centrdx.cta': '了解 CentrDX →',
+        'centrdx.cta': '了解 閃電下單⚡ →',
         'centrdx.ph.label': '接單整合示意圖',
         'centrdx.pain.h3': '三個核心場景，一個平台全覆蓋。',
-        'centrdx.pain.desc': 'CentrDX 把餐飲營運最核心的三件事統一在同一後台：串接所有外送平台的訂單與菜單、管理會員點數與回訪，以及掃碼點餐直連出餐機。全線上支付模式下，一台出餐機即可獨立開店，極簡化作業流程。',
+        'centrdx.pain.desc': '閃電下單⚡ 把餐飲營運最核心的三件事統一在同一後台：串接所有外送平台的訂單與菜單、管理會員點數與回訪，以及掃碼點餐直連出餐機。全線上支付模式下，一台出餐機即可獨立開店，極簡化作業流程。',
         'centrdx.pain.cta': '立即預約系統健檢',
-        'centrdx.s1.title': '一站串接所有外送平台', 'centrdx.s1.desc': '訂單自動匯入、菜單集中修改，Foodpanda、Uber Eats、GrabFood 統一在 CentrDX 後台管理，不再多螢幕切換。',
+        'centrdx.s1.title': '一站串接所有外送平台', 'centrdx.s1.desc': '訂單自動匯入、菜單集中修改，Foodpanda、Uber Eats、GrabFood 統一在 閃電下單⚡ 後台管理，不再多螢幕切換。',
         'centrdx.s2.title': '內建會員管理系統', 'centrdx.s2.desc': '點數累積、消費紀錄與活動優惠一站掌握，讓每一位回頭客都成為品牌的長期資產。',
         'centrdx.s3.title': '掃碼點餐，直連出餐機', 'centrdx.s3.desc': '顧客掃碼下單後直達後廚出餐機，全線上支付模式下，僅需一台出餐機即可獨立營業，極簡化作業流程與前場人力。',
         'centrdx.growth.h3': '現在的精簡，是未來的強大基礎。',
-        'centrdx.growth.desc': 'CentrDX 不只解決眼前的忙碌，更是您的成長夥伴。當您的事業擴張，需要更進階的集團管理時，CentrDX 支援無縫升級串接至 autopos 企業級生態系統。無需推倒重來，現有的數據與營運習慣自動平滑遷移，陪您穩健邁向連鎖餐飲版圖。',
+        'centrdx.growth.desc': '閃電下單⚡ 不只解決眼前的忙碌，更是您的成長夥伴。當您的事業擴張，需要更進階的集團管理時，閃電下單⚡ 支援無縫升級串接至 autopos 企業級生態系統。無需推倒重來，現有的數據與營運習慣自動平滑遷移，陪您穩健邁向連鎖餐飲版圖。',
         'centrdx.growth.now': '現在', 'centrdx.growth.future': '未來',
         'centrdx.growth.step1': '單店 · 輕量化 · 快速上線',
         'centrdx.growth.step2': '連鎖 · 企業級 · 跨國管理',
@@ -1331,6 +1346,7 @@
         'meta.ogdesc': 'Your ERP, our integration. Built for global expansion — leave the tech complexity to SOFONE.',
         'hero.eyebrow': '碩豐 SOFONE',
         'hero.h1': 'Bridging Hardware & Software<br>Empowering Digital Transformation',
+        'hero.maphint': '👆 Tap the interactive parts to see what they do',
         'hero.sub': 'Flexible, loosely-coupled system integration<br>builds a resilient operational ecosystem for your business.<br>No ERP replacement needed — go global, faster.',
         'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'Contact',
         'hero.cta1': 'Learn More',
@@ -1346,6 +1362,7 @@
         'device.waitress.title': 'IMSDOM Smart Ops',
         'device.waitress.desc': 'Use IMSDOM\'s automated training to replicate talent and standardize quality at scale.',
         'centrdx.eyebrow': 'CentrDX · All-in-One F&B Digital Platform',
+        'centrdx.brand': 'CentrDX',
         'centrdx.h2': 'Delivery Integration, Loyalty Management, Simplified Ordering — Three Problems, One Platform.',
         'centrdx.before.label': '❌ BEFORE &nbsp;Pain Points',
         'centrdx.before.p1.strong': 'Can\'t find enough staff?',
@@ -1532,6 +1549,7 @@
         'meta.ogdesc': 'あなたのERPに、私たちのシステム統合。グローバル展開に集中。技術的な複雑さはSOFONEへ。',
         'hero.eyebrow': '碩豐 SOFONE',
         'hero.h1': 'ハードとソフトを繋ぎ<br>デジタル変革を加速する',
+        'hero.maphint': '👆 各パーツをタップして機能をチェック',
         'hero.sub': '柔軟で疎結合なシステムインテグレーションで、<br>企業の強固な運営エコシステムを構築。<br>コアERPを変えずに、グローバル展開をサポート。',
         'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'お問い合わせ',
         'hero.cta1': '詳しく見る',
@@ -1547,6 +1565,7 @@
         'device.waitress.title': 'IMSDOM スマート運営',
         'device.waitress.desc': 'IMSDOMで自動研修・評価を実現し、人材の迅速な複製と品質標準化を達成。',
         'centrdx.eyebrow': 'CentrDX · 飲食業デジタル化オールインワン',
+        'centrdx.brand': 'CentrDX',
         'centrdx.h2': 'デリバリー統合・会員管理・簡素化された注文——3つの課題を1つのプラットフォームで。',
         'centrdx.before.label': '❌ BEFORE &nbsp;課題・痛点',
         'centrdx.before.p1.strong': '人材確保が困難？',
@@ -1733,6 +1752,7 @@
         'meta.ogdesc': 'ERP của bạn, tích hợp của chúng tôi. Tập trung mở rộng toàn cầu — để sự phức tạp kỹ thuật cho SOFONE.',
         'hero.eyebrow': '碩豐 SOFONE',
         'hero.h1': 'Kết nối phần cứng & phần mềm<br>Thúc đẩy chuyển đổi số',
+        'hero.maphint': '👆 Chạm vào các bộ phận để xem chức năng',
         'hero.sub': 'Giải pháp tích hợp hệ thống linh hoạt, kết nối lỏng lẻo<br>giúp doanh nghiệp xây dựng hệ sinh thái vận hành bền vững.<br>Không cần thay thế ERP lõi — hỗ trợ thương hiệu mở rộng nhanh chóng.',
         'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'Liên hệ',
         'hero.cta1': 'Tìm hiểu thêm',
@@ -1748,6 +1768,7 @@
         'device.waitress.title': 'IMSDOM Vận hành thông minh',
         'device.waitress.desc': 'Dùng IMSDOM để đào tạo và đánh giá tự động, nhân rộng nhân tài và chuẩn hóa chất lượng.',
         'centrdx.eyebrow': 'CentrDX · Nền tảng số hóa F&B toàn diện',
+        'centrdx.brand': 'CentrDX',
         'centrdx.h2': 'Tích hợp giao hàng, quản lý thành viên, đặt hàng tối giản — ba bài toán, một nền tảng giải quyết.',
         'centrdx.before.label': '❌ BEFORE &nbsp;Điểm đau',
         'centrdx.before.p1.strong': 'Không tuyển được đủ nhân viên?',
@@ -2348,6 +2369,26 @@
         document.documentElement.lang = saved;
       }
       applyTranslations(saved);
+    })();
+
+    /* ── Click-logo colour reverse ("trick") ────────────────── */
+    (function() {
+      var KEY = 'sofone_invert';
+      var logo = document.querySelector('.hero-logo');
+      if (!logo) return;
+      logo.setAttribute('role', 'button');
+      logo.setAttribute('tabindex', '0');
+      logo.setAttribute('title', '點一下 SOFONE 標誌，切換配色 · Click to flip colours');
+      logo.setAttribute('aria-label', 'Toggle colour scheme');
+      function toggle() {
+        var on = !document.documentElement.classList.contains('inverted');
+        document.documentElement.classList.toggle('inverted', on);
+        try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+      }
+      logo.addEventListener('click', toggle);
+      logo.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      });
     })();
 
     /* ── Bilingual screenshot lightbox ──────────────────────── */
