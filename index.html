@@ -258,41 +258,50 @@
         </div>
       </div>
 
-      <!-- Block 2: Solution Table -->
-      <div class="ap-solution reveal">
-        <h3 class="ap-sol-h3" data-i18n="autopos.sol.h3">賦能連鎖品牌，實現全球一致化運作。</h3>
-        <div class="ap-sol-table-wrap">
-          <table class="ap-sol-table">
-            <thead>
-              <tr>
-                <th data-i18n="autopos.sol.col1">核心維度</th>
-                <th data-i18n="autopos.sol.col2">autopos 解決方案</th>
-                <th data-i18n="autopos.sol.col3">對應營運價值</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="ap-sol-dim"><span class="ap-sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="22" x2="12" y2="11"/><path d="M6 22V11m-3 4 3-8 3 8a6 6 0 0 1-6 0z"/><path d="M18 22V11m-3 4 3-8 3 8a6 6 0 0 1-6 0z"/></svg></span><span data-i18n="autopos.sol.r1.dim">稅務與合規</span></td>
-                <td class="ap-sol-desc" data-i18n="autopos.sol.r1.sol">內建全球多國稅制與財稅合規引擎</td>
-                <td class="ap-sol-val" data-i18n="autopos.sol.r1.val">降低法規風險，展店速度快 2 倍</td>
-              </tr>
-              <tr>
-                <td class="ap-sol-dim"><span class="ap-sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span data-i18n="autopos.sol.r2.dim">系統穩定性</span></td>
-                <td class="ap-sol-desc" data-i18n="autopos.sol.r2.sol">IP54 工業級防護，斷網不斷帳</td>
-                <td class="ap-sol-val" data-i18n="autopos.sol.r2.val">零停機 · 抗油煙 · 延長設備壽命</td>
-              </tr>
-              <tr>
-                <td class="ap-sol-dim"><span class="ap-sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></span><span data-i18n="autopos.sol.r3.dim">數據透明度</span></td>
-                <td class="ap-sol-desc" data-i18n="autopos.sol.r3.sol">全球營運儀表板，AI Insight 即時分析</td>
-                <td class="ap-sol-val" data-i18n="autopos.sol.r3.val">總部秒級掌握各國門店獲利狀態</td>
-              </tr>
-              <tr>
-                <td class="ap-sol-dim"><span class="ap-sol-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span><span data-i18n="autopos.sol.r4.dim">模組化 SI 服務</span></td>
-                <td class="ap-sol-desc" data-i18n="autopos.sol.r4.sol">立式/桌式 KIOSK 彈性配置，一站式軟硬交付</td>
-                <td class="ap-sol-val" data-i18n="autopos.sol.r4.val">終結軟硬廠商互踢問題，縮短導入週期</td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- Block 2: Interactive Solution Map (全場景解決方案) -->
+      <div class="solmap reveal" id="solmap">
+        <div class="solmap-head">
+          <p class="solmap-eyebrow">SOLUTION · 全場景解決方案</p>
+          <h3 class="solmap-h3">一套系統 <em>串起餐飲全場景營運</em></h3>
+          <p class="solmap-lede">前台門市、中台總部、雲端一線貫穿。點任一模組，展開它的重點、數據與畫面。</p>
+        </div>
+
+        <div class="solmap-band">
+          <div class="solmap-map">
+            <div class="solmap-col solmap-col--front">
+              <div class="solmap-col-title"><b>前台管理</b><span class="solmap-brand">autopos</span><span class="solmap-sub">門市</span></div>
+              <div class="solmap-grid" id="solmap-front"></div>
+            </div>
+
+            <div class="solmap-conn" aria-hidden="true">
+              <div class="solmap-chev"><div class="solmap-chev-lbl">一鍵派發設定</div><div class="solmap-bar"></div></div>
+              <div class="solmap-chev solmap-chev--rev"><div class="solmap-bar"></div><div class="solmap-chev-lbl">資料自動上傳</div></div>
+            </div>
+
+            <div class="solmap-col solmap-col--cloud">
+              <div class="solmap-col-title"><b>中台管理</b><span class="solmap-brand">autopos Cloud</span><span class="solmap-sub">資訊總部指揮中心</span></div>
+              <div class="solmap-grid" id="solmap-mid"></div>
+              <div class="solmap-ims">
+                <div class="solmap-col-title"><b>IMSDOM</b><span class="solmap-brand">人員總部指揮中心</span><span class="solmap-tag">增值方案</span></div>
+                <div class="solmap-grid" id="solmap-ims"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="solmap-panel" id="solmap-panel" role="region" aria-live="polite">
+            <button class="solmap-close" id="solmap-close" type="button" aria-label="關閉">×</button>
+            <div class="solmap-panel-inner">
+              <div class="solmap-visual" id="solmap-visual"></div>
+              <div class="solmap-body">
+                <p class="solmap-peyebrow" id="solmap-peyebrow"></p>
+                <h4 class="solmap-ptitle" id="solmap-ptitle"></h4>
+                <p class="solmap-psub" id="solmap-psub"></p>
+                <div id="solmap-pstat"></div>
+                <ul class="solmap-bullets" id="solmap-pbullets"></ul>
+              </div>
+            </div>
+          </div>
+          <p class="solmap-hint" id="solmap-hint">▸ 點任一模組展開細節</p>
         </div>
       </div>
 
@@ -2419,6 +2428,125 @@
       var n = 0;
       (function tick() { window.scrollTo(0, 0); if (++n < 6) requestAnimationFrame(tick); })();
     });
+  </script>
+
+  <!-- Interactive Solution Map (autopos 全場景解決方案) -->
+  <script>
+  (function(){
+    var I = {
+      cash:'<path d="M3 8h18v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M6 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/><path d="M9 13h6"/>',
+      kiosk:'<rect x="6" y="3" width="12" height="14" rx="1"/><path d="M9 20h6"/><path d="M12 17v3"/>',
+      phone:'<rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/>',
+      gift:'<path d="M20 12v8H4v-8"/><path d="M2 8h20v4H2z"/><path d="M12 8v12"/><path d="M12 8S10 4 8 4a2 2 0 0 0 0 4zM12 8s2-4 4-4a2 2 0 0 1 0 4z"/>',
+      bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 21a2 2 0 0 0 4 0"/>',
+      chart:'<path d="M3 3v18h18"/><path d="M7 14l3-3 3 2 4-5"/>',
+      tv:'<rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/>',
+      scooter:'<circle cx="6" cy="17" r="2.5"/><circle cx="18" cy="17" r="2.5"/><path d="M8 17h8l-2-8h-3M6 9h4"/>',
+      receipt:'<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/>',
+      card:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>',
+      store:'<path d="M4 9v11h16V9"/><path d="M3 4h18l1 5a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/>',
+      box:'<path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/>',
+      id:'<rect x="2" y="5" width="20" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M14 10h4M14 14h4M5 16h6"/>',
+      clip:'<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path d="M9 12h6M9 16h4"/>',
+      mega:'<path d="M3 11v2l14 5V6z"/><path d="M17 8a4 4 0 0 1 0 8"/>',
+      lock:'<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+      hand:'<path d="M4 12l4-4 4 4 4-4 4 4"/><path d="M4 12l4 4 4-4 4 4 4-4"/>',
+      build:'<path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16"/><path d="M15 9h4a1 1 0 0 1 1 1v11"/><path d="M8 8h3M8 12h3M8 16h3"/>',
+      cap:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1 3 2 6 2s6-1 6-2v-5"/>',
+      route:'<circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 6h6a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h6"/>'
+    };
+    function svg(k){return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">'+(I[k]||I.box)+'</svg>';}
+    var CHK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg>';
+
+    var M = {
+      front:[
+        {id:'pos',ic:'cash',t:'收銀點餐',cat:'前台管理 · 收銀點餐',h:'樂高式收銀介面 <em>上手快 好維護</em>',s:'積木式版型自由切換，正餐桌後結、輕快台前結；同一套系統降低替換與維護成本。',stat:['80%','教育訓練成本降低'],im:1,
+          b:[['積木式版型','單列／雙列／圖片／圖文，依場景切換'],['多型態收銀','正餐桌台後結帳；輕快餐台前結帳'],['彈性票據','票面格式自由定義，含品牌 LOGO'],['廚房票據多語','同店多地區員工，出單雙語顯示']]},
+        {id:'kiosk',ic:'kiosk',t:'自助點餐',cat:'前台管理 · 自助點餐',h:'Kiosk 自助點餐 <em>分流尖峰 解放人力</em>',s:'顧客自助下單付款、店員不碰錢，尖峰也順暢。',stat:['30%','尖峰排隊縮短'],
+          b:[['自助下單付款','整合優惠券、特價與會員積分'],['多元收款方式','現金、信用卡、行動支付皆可'],['自動送單廚房','訂單直送廚房印單機／螢幕'],['客單價提升','引導加購，客單價 +10–15%']]},
+        {id:'mobile',ic:'phone',t:'手機點餐',cat:'前台管理 · 手機點餐',h:'掃碼即點 <em>免下載 免等待</em>',s:'免下載、即掃即點；內用、外帶、外送一套搞定。',
+          b:[['即掃即點','無須下載 App，掃碼直接下單'],['與現場一致','甜度、冰塊、加料、套餐完全相同'],['綁定會員閉環','下單即綁會員，串接集點與行銷']]},
+        {id:'crm',ic:'gift',t:'會員行銷',cat:'前台管理 · 會員行銷',h:'把會員 <em>變成回購與口碑</em>',s:'以優惠券、活動與集點經營忠誠客，提升回購與客單價。',
+          b:[['開發新客','新人券、朋友分享券帶動首購'],['提高客單價','滿額折扣、加購優惠拉高單筆'],['老客回購','消費集點、生日禮養熟客']]},
+        {id:'call',ic:'bell',t:'取餐叫號',cat:'前台管理 · 取餐叫號',h:'取餐叫號 <em>尖峰也井然有序</em>',s:'備餐、待取狀態即時同步，顧客一目了然。',
+          b:[['自動叫號通知','號碼一鍵更新，顧客即時得知'],['廚房串接','點餐自動送廚房印表機／螢幕'],['看板同步','與電視菜單屏連動同步呈現']]},
+        {id:'report',ic:'chart',t:'行動報表',cat:'前台管理 · 行動報表',h:'隨時隨地 <em>掌握營運數據</em>',s:'手機即時查看數據、系統主動推送營運警示。',
+          b:[['即時掌握','手機查看全店即時營收與來客'],['主動預警','智慧演算法推送異常警示'],['多維報表','各店匯總、時段分析、商品排行']]},
+        {id:'tv',ic:'tv',t:'電視菜單',cat:'前台管理 · 電視菜單',h:'顧客第二屏 <em>選單金額看得清</em>',s:'可選配 10 吋非觸控客顯，或輸出至店內電視輪播。',im:1,
+          b:[['10 吋客顯','掛載主機後方，面向顧客'],['金額同步','點餐與結帳金額即時呈現'],['電視輪播','輸出店家電視，輪播菜單活動'],['待機不浪費','閒置顯示品牌形象或優惠']]},
+        {id:'delivery',ic:'scooter',t:'外送整合',cat:'前台管理 · 外送整合',h:'外送訂單 <em>自動進單免轉單</em>',s:'各平台訂單自動進入 autopos，免人工轉單、帳務一致。',
+          b:[['自動進單','UberEats／foodpanda 直接落地'],['免人工轉單','減少漏單與人力'],['同步廚房','直送廚房、同步製作'],['數據回歸總部','外送業績併入總部報表']]},
+        {id:'invoice',ic:'receipt',t:'電子發票',cat:'前台管理 · 電子發票',h:'結帳即開 <em>電子發票零負擔</em>',s:'結帳同時開立電子發票，支援載具與雲端管理，合規省心。',im:1,
+          b:[['結帳即開立','收款同時產生發票，免二次作業'],['載具與歸戶','支援手機條碼，自動歸戶'],['雲端管理','發票雲端保存，對帳方便']]},
+        {id:'pay',ic:'card',t:'多元支付',cat:'前台管理 · 多元支付',h:'現金到行動支付 <em>一機收好收滿</em>',s:'現金、信用卡、行動支付與電子票證一機受理。',
+          b:[['一機收款','多元支付整合於同一收銀台'],['多元票證','悠遊卡／一卡通／TWQR 掃碼'],['對帳準確','結帳快、對帳準，串接電子發票']]}
+      ],
+      mid:[
+        {id:'shopctr',ic:'store',t:'門店中心',cat:'中台管理 · 門店中心',h:'連鎖總部 <em>集團化統一管理</em>',s:'多品牌、總部與加盟一體管理，全球數據一手掌握。',
+          b:[['集團化管理','總部、加盟、跨國架構一站管理'],['權限分層','加盟商／直營權限清楚切分'],['全球數據接管','支援總部 BI 數據對接']]},
+        {id:'goods',ic:'box',t:'商品中心',cat:'中台管理 · 商品中心',h:'商品更動一次設定 <em>全通路同步</em>',s:'口味、加料、規格集中維護，改一次所有通路一起更新。',
+          b:[['屬性彈性組合','口味、加料、規格對應各式餐飲'],['全通路同步','店內、線上、外送一次更新'],['批次匯入匯出','商品與價格快速建置維護']]},
+        {id:'member',ic:'id',t:'會員管理',cat:'中台管理 · 會員管理',h:'任意組合 <em>精準分眾行銷</em>',s:'依會員多維度資料自由篩選，行銷打得更準。',stat:['20/80','高價值會員創造 8 成利潤'],
+          b:[['多維度輪廓','基本 9 項＋資產 7 項＋消費 13 項'],['全通路推送','優惠券、活動、權益一次設定'],['分眾精準','依會員輪廓推送專屬內容'],['經營可預期','把 20% 熟客變回購引擎']]},
+        {id:'order',ic:'clip',t:'訂單中心',cat:'中台管理 · 訂單中心',h:'全通路訂單 <em>一個後台管理</em>',s:'店內、線上、外送訂單集中管理，查詢與異常一目了然。',
+          b:[['全通路接單','店內／線上／外送集中落地'],['查詢再利用','歷史訂單快速查找再利用'],['異常監控','退單、異常訂單主動提示']]},
+        {id:'promo',ic:'mega',t:'行銷中心',cat:'中台管理 · 行銷中心',h:'結帳當下 <em>順手再多賣一筆</em>',s:'POS 端內建多種即時促銷，結帳自動套用，不靠店員記優惠。',
+          b:[['自動套用','結帳當下判斷，活動不漏算'],['疊加可設限','多重優惠疊加，可設上限'],['即時折抵','會員價、優惠券當下折抵'],['自動上下架','檔期一到生效，到期下架']]},
+        {id:'role',ic:'lock',t:'權限管理',cat:'中台管理 · 權限管理',h:'角色分層 <em>加盟直營各司其職</em>',s:'依角色與門店分權限，總部放心授權、資料更安全。',
+          b:[['角色權限分層','依職務精細控管可用功能'],['加盟／直營區隔','資料與操作範圍清楚切分'],['資料更安全','最小權限原則，降低誤操作']]}
+      ],
+      ims:[
+        {id:'recruit',ic:'hand',t:'招商簽約',cat:'IMSDOM · 招商簽約',h:'招商加盟 <em>標準化簽約</em>',s:'從招商到簽約流程標準化，加盟拓展有依據。',
+          b:[['招商流程','意向、審核、簽約線上化'],['合約管理','加盟條件與文件集中留存'],['快速複製','標準流程加速拓點']]},
+        {id:'open',ic:'build',t:'開店籌建',cat:'IMSDOM · 開店籌建',h:'開店籌建 <em>展店流程有 SOP</em>',s:'新店籌備任務化，進度可追蹤、品質可控。',
+          b:[['籌建任務','裝修、設備、證照任務清單'],['進度追蹤','各店開店進度一目了然'],['經驗沉澱','把展店經驗變成制度']]},
+        {id:'train',ic:'cap',t:'培訓考核',cat:'IMSDOM · 培訓考核',h:'培訓考核 <em>品質一致可複製</em>',s:'把展店經驗沉澱成制度，新店快速複製、品質一致。',
+          b:[['線上培訓','課程與教材統一發放'],['考核認證','人員能力量化把關'],['品質一致','各店服務標準對齊']]},
+        {id:'audit',ic:'route',t:'巡店稽核',cat:'IMSDOM · 巡店稽核',h:'巡店稽核 <em>展店標準不走樣</em>',s:'巡店表單化、稽核數據化，總部掌握現場品質。',
+          b:[['巡店表單','稽核項目標準化'],['問題追蹤','缺失整改閉環管理'],['數據回報','稽核結果回總部分析']]}
+      ]
+    };
+
+    var byId={};
+    function build(groupKey, hostId){
+      var host=document.getElementById(hostId); if(!host) return;
+      M[groupKey].forEach(function(m){
+        byId[m.id]=m;
+        var b=document.createElement('button');
+        b.className='solmap-node'; b.type='button'; b.setAttribute('data-id',m.id);
+        b.innerHTML=svg(m.ic)+'<span>'+m.t+'</span>';
+        b.addEventListener('click',function(){open(m,b);});
+        host.appendChild(b);
+      });
+    }
+    build('front','solmap-front'); build('mid','solmap-mid'); build('ims','solmap-ims');
+
+    var panel=document.getElementById('solmap-panel'), hint=document.getElementById('solmap-hint');
+    function open(m,btn){
+      var nodes=document.querySelectorAll('.solmap-node.active');
+      for(var i=0;i<nodes.length;i++) nodes[i].classList.remove('active');
+      btn.classList.add('active');
+      document.getElementById('solmap-peyebrow').textContent=m.cat;
+      document.getElementById('solmap-ptitle').innerHTML=m.h;
+      document.getElementById('solmap-psub').textContent=m.s;
+      var pv=document.getElementById('solmap-visual');
+      if(m.im){ pv.className='solmap-visual'; pv.innerHTML='<img alt="'+m.t+' 畫面" loading="lazy" src="assets/sol/webp/'+m.id+'.webp">'; }
+      else { pv.className='solmap-visual solmap-visual--ph'; pv.innerHTML=svg(m.ic)+'<span>產品畫面</span>'; }
+      document.getElementById('solmap-pstat').innerHTML = m.stat ? '<div class="solmap-stat"><b>'+m.stat[0]+'</b><span>'+m.stat[1]+'</span></div>' : '';
+      var ul=document.getElementById('solmap-pbullets'); ul.innerHTML='';
+      m.b.forEach(function(x){ var li=document.createElement('li');
+        li.innerHTML='<span class="solmap-dot">'+CHK+'</span><div><b>'+x[0]+'</b><p>'+x[1]+'</p></div>'; ul.appendChild(li); });
+      panel.classList.add('open'); if(hint) hint.style.display='none';
+      panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+    }
+    var closeBtn=document.getElementById('solmap-close');
+    if(closeBtn) closeBtn.addEventListener('click',function(){
+      panel.classList.remove('open'); if(hint) hint.style.display='';
+      var nodes=document.querySelectorAll('.solmap-node.active');
+      for(var i=0;i<nodes.length;i++) nodes[i].classList.remove('active');
+    });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&panel.classList.contains('open')) closeBtn.click(); });
+  })();
   </script>
 
 </body>
