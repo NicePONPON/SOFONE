@@ -108,10 +108,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(13, 31, 45, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid var(--c-border);
+    background: #2d2d2d;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 8px 4px calc(8px + env(safe-area-inset-bottom));
     justify-content: space-around;
   }
@@ -120,7 +118,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     text-align: center;
     font-size: 10px;
     font-weight: 600;
-    color: var(--c-muted);
+    color: #ffffff;
     text-decoration: none;
     padding: 4px 2px;
     letter-spacing: 0.03em;
@@ -128,7 +126,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
   }
   .mobile-nav-item:hover,
   .mobile-nav-item.is-active {
-    color: var(--c-accent);
+    color: #a99bf7;
   }
   /* Push page content above the nav bar */
   body { padding-bottom: calc(52px + env(safe-area-inset-bottom)); }
