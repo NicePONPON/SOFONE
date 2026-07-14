@@ -124,7 +124,7 @@
         </div>
         <p class="hero-eyebrow" data-i18n="hero.eyebrow">碩豐 SOFONE</p>
         <hr class="hero-divider">
-        <h1 class="hero-h1" data-i18n-html="hero.h1">串聯軟硬體<br>賦能數位轉型</h1>
+        <h1 class="hero-h1" data-i18n-html="hero.h1">串聯軟硬體<br><span class="hl">賦能數位轉型</span></h1>
         <p class="hero-sub" data-i18n-html="hero.sub">
           以高彈性、低耦合的系統整合方案，<br>
           為企業打造更強健的營運生態圈。<br>
@@ -210,14 +210,40 @@
   </section>
 
 
+    <!-- ── Credibility Strip ──────────────────────────────────── -->
+  <section class="proof-band theme-light" id="proof">
+    <div class="section-inner">
+      <div class="proof-stats">
+        <div class="proof-stat reveal">
+          <span class="proof-num" data-i18n="proof.stat1num">20+</span>
+          <span class="proof-label" data-i18n="proof.stat1label">年餐飲科技經驗</span>
+        </div>
+        <div class="proof-stat reveal">
+          <span class="proof-num" data-i18n="proof.stat2num">20+</span>
+          <span class="proof-label" data-i18n="proof.stat2label">國家佈局</span>
+        </div>
+        <div class="proof-stat reveal">
+          <span class="proof-num" data-i18n="proof.stat3num">數千萬</span>
+          <span class="proof-label" data-i18n="proof.stat3label">單日訂單處理量</span>
+        </div>
+        <div class="proof-stat reveal">
+          <span class="proof-num" data-i18n="proof.stat4num">百強</span>
+          <span class="proof-label" data-i18n="proof.stat4label">核心團隊來自全球</span>
+        </div>
+      </div>
+      <p class="proof-clients reveal" data-i18n="proof.clients">已服務 CoCo都可、50嵐、奈雪的茶、蜜雪冰城、幸運咖 等國際連鎖品牌</p>
+    </div>
+  </section>
+
+
     <!-- ── 2. autopos Section ─────────────────────────────────── -->
-  <section class="autopos-section" id="autopos">
+  <section class="autopos-section theme-light" id="autopos">
     <div class="section-inner">
       <div class="product-logo-wrap reveal">
-        <img src="assets/webp/autopos-logo.webp" alt="autopos" class="product-logo">
+        <img src="assets/autopos-logo.png" alt="autopos" class="product-logo">
       </div>
       <p class="section-eyebrow reveal" data-i18n="autopos.eyebrow">autopos · 全球雲端收銀生態系</p>
-      <h2 class="section-h2 reveal" data-i18n="autopos.h2">跨國佈局，別讓系統成了你的絆腳石。</h2>
+      <h2 class="section-h2 reveal" data-i18n-html="autopos.h2">跨國佈局，<span class="hl">別讓系統成了你的絆腳石</span>。</h2>
 
       <!-- Block 1: Pain Point + Chaos vs Unified Animation -->
       <div class="ap-pain reveal">
@@ -239,7 +265,7 @@
           </div>
           <div class="ap-cvs-arrow" aria-hidden="true">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="15" stroke="rgba(106,204,172,0.25)" stroke-width="1"/>
+              <circle cx="16" cy="16" r="15" stroke="rgba(86,70,201,0.25)" stroke-width="1"/>
               <path d="M11 16h10M17 12l4 4-4 4" stroke="var(--c-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
@@ -269,7 +295,7 @@
         <div class="solmap-band">
           <div class="solmap-map">
             <div class="solmap-col solmap-col--front">
-              <div class="solmap-col-title"><b>前台管理</b><span class="solmap-brand">autopos</span><span class="solmap-sub">門市</span></div>
+              <div class="solmap-col-title"><b>前台管理</b><span class="solmap-brand"><img src="assets/autopos-logo.png" alt="autopos" class="solmap-brand-logo"></span><span class="solmap-sub">門市</span></div>
               <div class="solmap-grid" id="solmap-front"></div>
             </div>
 
@@ -279,7 +305,7 @@
             </div>
 
             <div class="solmap-col solmap-col--cloud">
-              <div class="solmap-col-title"><b>中台管理</b><span class="solmap-brand">autopos Cloud</span><span class="solmap-sub">資訊總部指揮中心</span></div>
+              <div class="solmap-col-title"><b>中台管理</b><span class="solmap-brand"><img src="assets/autopos-logo.png" alt="autopos" class="solmap-brand-logo"> Cloud</span><span class="solmap-sub">資訊總部指揮中心</span></div>
               <div class="solmap-grid" id="solmap-mid"></div>
               <div class="solmap-ims">
                 <div class="solmap-col-title"><b>IMSDOM</b><span class="solmap-brand">人員總部指揮中心</span><span class="solmap-tag">增值方案</span></div>
@@ -305,42 +331,80 @@
         </div>
       </div>
 
-      <!-- Block 2.5: Bilingual UI Showcase -->
-      <div class="ap-bilingual reveal">
-        <h3 class="ap-bil-h3" data-i18n="autopos.bil.h3">系統介面原生支援多語系，雙語無痛切換。</h3>
-        <p class="ap-bil-desc" data-i18n="autopos.bil.desc">無論面對英語或日語市場，autopos 後台介面均可一鍵切換語系，操作習慣零重學。這是市面上多數 POS 系統尚未具備的核心競爭力，讓您的跨國擴張從第一天就無摩擦落地。</p>
-        <div class="ap-bil-screens">
-          <div class="ap-bil-frame">
-            <img src="assets/autopos-en.webp" alt="autopos English Interface" loading="lazy" class="ap-bil-img">
-            <span class="ap-bil-label" data-i18n="autopos.bil.en">English 介面</span>
-          </div>
-          <div class="ap-bil-frame ap-bil-frame--center">
-            <img src="assets/autopos-jp_en.webp" alt="autopos Bilingual Interface" loading="lazy" class="ap-bil-img">
-            <span class="ap-bil-label ap-bil-label--hl" data-i18n="autopos.bil.dual">雙語切換示意</span>
-          </div>
-          <div class="ap-bil-frame">
-            <img src="assets/autopos-jp.webp" alt="autopos Japanese Interface" loading="lazy" class="ap-bil-img">
-            <span class="ap-bil-label" data-i18n="autopos.bil.jp">日本語 介面</span>
-          </div>
+      <!-- GLOBAL 全球化支援 — multilingual + compliance + delivery/payment combined -->
+      <div class="ap-global">
+        <div class="ap-global-head reveal">
+          <p class="ap-global-eyebrow" data-i18n="autopos.global.eyebrow">GLOBAL · 全球化支援</p>
+          <h3 class="ap-global-h3" data-i18n-html="autopos.global.htitle">跨國開店，<span class="hl">語言、合規、金流全到位</span>。</h3>
         </div>
-      </div>
 
-      <!-- Integration images: delivery + payment -->
-      <div class="ap-integrations reveal">
-        <div class="ap-integration-card">
-          <p class="ap-int-label" data-i18n="autopos.int.delivery">合作外送平台</p>
-          <img src="assets/webp/autopos-delivery.webp" alt="合作外送平台" loading="lazy" class="ap-int-img">
+        <!-- 多語言介面 -->
+        <div class="ap-bilingual reveal">
+          <h4 class="ap-bil-h3" data-i18n-html="autopos.bil.h3">系統介面原生支援多語系，<span class="hl">雙語無痛切換</span>。</h4>
+          <p class="ap-bil-desc" data-i18n="autopos.bil.desc">無論面對英語或日語市場，autopos 後台介面均可一鍵切換語系，操作習慣零重學。這是市面上多數 POS 系統尚未具備的核心競爭力，讓您的跨國擴張從第一天就無摩擦落地。</p>
+          <div class="ap-bil-screens">
+            <div class="ap-bil-frame">
+              <img src="assets/autopos-en.webp" alt="autopos English Interface" loading="lazy" class="ap-bil-img">
+              <span class="ap-bil-label" data-i18n="autopos.bil.en">English 介面</span>
+            </div>
+            <div class="ap-bil-frame ap-bil-frame--center">
+              <img src="assets/autopos-jp_en.webp" alt="autopos Bilingual Interface" loading="lazy" class="ap-bil-img">
+              <span class="ap-bil-label ap-bil-label--hl" data-i18n="autopos.bil.dual">雙語切換示意</span>
+            </div>
+            <div class="ap-bil-frame">
+              <img src="assets/autopos-jp.webp" alt="autopos Japanese Interface" loading="lazy" class="ap-bil-img">
+              <span class="ap-bil-label" data-i18n="autopos.bil.jp">日本語 介面</span>
+            </div>
+          </div>
         </div>
-        <div class="ap-integration-card">
-          <p class="ap-int-label" data-i18n="autopos.int.payment">支援支付方式</p>
-          <img src="assets/webp/autopos-payment.webp" alt="支援支付方式" loading="lazy" class="ap-int-img">
+
+        <!-- 在地合規 -->
+        <div class="solmap-global reveal">
+          <div class="solmap-global-head">
+            <h4 class="solmap-gtitle" data-i18n-html="autopos.global.title">全球開店，<span class="hl">遵循在地合規要求</span></h4>
+          </div>
+          <div class="solmap-global-grid">
+            <div class="solmap-gcard">
+              <span class="solmap-gicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M7 4v3m10-3v3M5 11h14a1 1 0 0 1 1 1v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6a1 1 0 0 1 1-1Z"/><path d="M9 15h6"/></svg></span>
+              <b data-i18n="autopos.global.c1.t">彈性稅率設定</b>
+              <span data-i18n="autopos.global.c1.d">各國稅制與稅率一鍵切換，含稅／未稅、多稅別自由配置。</span>
+            </div>
+            <div class="solmap-gcard">
+              <span class="solmap-gicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h9l4 4v14a0 0 0 0 1 0 0H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h4"/></svg></span>
+              <b data-i18n="autopos.global.c2.t">海外電子發票</b>
+              <span data-i18n="autopos.global.c2.d">串接各國電子發票平台，開立、上傳、對帳一站到位。</span>
+            </div>
+            <div class="solmap-gcard">
+              <span class="solmap-gicon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8a1 1 0 0 1 1 1v16l-2.5-1.6L12 20l-2.5-1.6L7 20V4a1 1 0 0 1 1-1Z"/><path d="M10 8h4M10 12h4"/></svg></span>
+              <b data-i18n="autopos.global.c3.t">小票稅率明細</b>
+              <span data-i18n="autopos.global.c3.d">收據自動印出各稅別金額明細，符合當地開店稽核規範。</span>
+            </div>
+          </div>
+          <div class="solmap-global-live">
+            <span class="solmap-glive-lbl" data-i18n="autopos.global.live">各國電子發票上線</span>
+            <span class="solmap-gpill"><span data-i18n="autopos.global.vn">越南</span> <i data-i18n="autopos.global.on">已上線</i></span>
+            <span class="solmap-gpill"><span data-i18n="autopos.global.my">馬來西亞</span> <i data-i18n="autopos.global.on">已上線</i></span>
+            <span class="solmap-gpill"><span data-i18n="autopos.global.sg">新加坡</span> <i data-i18n="autopos.global.on">已上線</i></span>
+          </div>
+        </div>
+
+        <!-- 全球外送與支付整合 -->
+        <div class="ap-integrations reveal">
+          <div class="ap-integration-card">
+            <p class="ap-int-label" data-i18n="autopos.int.delivery">合作外送平台</p>
+            <img src="assets/webp/autopos-delivery.webp" alt="合作外送平台" loading="lazy" class="ap-int-img">
+          </div>
+          <div class="ap-integration-card">
+            <p class="ap-int-label" data-i18n="autopos.int.payment">支援支付方式</p>
+            <img src="assets/webp/autopos-payment.webp" alt="支援支付方式" loading="lazy" class="ap-int-img">
+          </div>
         </div>
       </div>
 
       <!-- Block 3: Strategic Value + Globe Animation -->
       <div class="ap-strategy reveal">
         <div class="ap-strategy-copy">
-          <h3 class="ap-strat-h3" data-i18n="autopos.strat.h3">不只是 POS，更是您的一站式軟硬整合夥伴。</h3>
+          <h3 class="ap-strat-h3" data-i18n-html="autopos.strat.h3">不只是 POS，<span class="hl">更是您的一站式軟硬整合夥伴</span>。</h3>
           <p class="ap-strat-desc" data-i18n="autopos.strat.desc">autopos 以深度 SI 整合，終結軟體商與硬體商互踢問題的困境。從 IP54 工業級終端到雲端管理後台，由同一團隊統一交付、統一負責，讓品牌專注於成長，而非設備糾紛。</p>
           <a href="https://autopos.tw/" target="_blank" rel="noopener noreferrer" class="btn btn--primary" data-i18n="autopos.cta">
             了解 autopos →
@@ -348,14 +412,14 @@
         </div>
         <div class="ap-globe" aria-hidden="true">
           <svg class="ap-globe-svg" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="130" cy="130" r="52" stroke="rgba(106,204,172,0.12)" stroke-width="1" fill="none"/>
-            <circle cx="130" cy="130" r="100" stroke="rgba(106,204,172,0.06)" stroke-width="1" fill="none"/>
-            <line class="ap-fl ap-fl--1" x1="36"  y1="75"  x2="130" y2="130" stroke="rgba(106,204,172,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
-            <line class="ap-fl ap-fl--2" x1="18"  y1="152" x2="130" y2="130" stroke="rgba(106,204,172,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
-            <line class="ap-fl ap-fl--3" x1="58"  y1="208" x2="130" y2="130" stroke="rgba(106,204,172,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
-            <line class="ap-fl ap-fl--4" x1="218" y1="60"  x2="130" y2="130" stroke="rgba(106,204,172,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
-            <line class="ap-fl ap-fl--5" x1="228" y1="172" x2="130" y2="130" stroke="rgba(106,204,172,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
-            <line class="ap-fl ap-fl--6" x1="148" y1="20"  x2="130" y2="130" stroke="rgba(106,204,172,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
+            <circle cx="130" cy="130" r="52" stroke="rgba(86,70,201,0.12)" stroke-width="1" fill="none"/>
+            <circle cx="130" cy="130" r="100" stroke="rgba(86,70,201,0.06)" stroke-width="1" fill="none"/>
+            <line class="ap-fl ap-fl--1" x1="36"  y1="75"  x2="130" y2="130" stroke="rgba(86,70,201,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
+            <line class="ap-fl ap-fl--2" x1="18"  y1="152" x2="130" y2="130" stroke="rgba(86,70,201,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
+            <line class="ap-fl ap-fl--3" x1="58"  y1="208" x2="130" y2="130" stroke="rgba(86,70,201,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
+            <line class="ap-fl ap-fl--4" x1="218" y1="60"  x2="130" y2="130" stroke="rgba(86,70,201,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
+            <line class="ap-fl ap-fl--5" x1="228" y1="172" x2="130" y2="130" stroke="rgba(86,70,201,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
+            <line class="ap-fl ap-fl--6" x1="148" y1="20"  x2="130" y2="130" stroke="rgba(86,70,201,0.55)" stroke-width="1.2" stroke-dasharray="5 5"/>
           </svg>
           <div class="ap-globe-hq">HQ</div>
           <div class="ap-globe-dot ap-gd--tw"><span>TW</span></div>
@@ -372,8 +436,8 @@
         <div class="sw-hw-track" aria-hidden="true">
           <svg class="sw-hw-droplet" viewBox="0 0 20 76" preserveAspectRatio="xMidYMid meet">
             <defs><linearGradient id="swHwDrop" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#6ACCAC" stop-opacity=".12"/>
-              <stop offset="1" stop-color="#6ACCAC" stop-opacity="1"/>
+              <stop offset="0" stop-color="#5646c9" stop-opacity=".12"/>
+              <stop offset="1" stop-color="#5646c9" stop-opacity="1"/>
             </linearGradient></defs>
             <path d="M10 2 C 12 26, 18 50, 18 60 A 8 8 0 1 1 2 60 C 2 50, 8 26, 10 2 Z" fill="url(#swHwDrop)"/>
           </svg>
@@ -385,372 +449,122 @@
 
       <!-- Hardware showcase heading (moved above autopos ONE) -->
       <p class="section-eyebrow reveal" data-i18n="hardware.eyebrow">硬體設備 · 軟硬整合一站交付</p>
-      <h2 class="section-h2 reveal" data-i18n="hardware.h2">為餐飲現場而生的耐用終端。</h2>
+      <h2 class="section-h2 reveal" data-i18n-html="hardware.h2">為餐飲現場而生的<span class="hl">耐用終端</span>。</h2>
 
-      <!-- Block 4: autopos ONE Hardware Showcase -->
-      <div class="ap-one reveal" id="apone">
-        <p class="ap-one-eyebrow" data-i18n="apone.eyebrow">autopos ONE · 專業級 POS 終端</p>
-        <h3 class="ap-one-h3" data-i18n="apone.h3">旗艦工業設計，與 autopos 雲端完美整合。</h3>
-
-        <!-- 360° Viewer -->
-        <div class="ap-one-viewer-ring">
-          <div class="ap-one-viewer" role="img" aria-label="autopos ONE 360° 全視角展示">
-            <img class="ap-one-frame is-active" src="assets/demo/webp/autoposone_demo_01.webp" alt="autopos ONE 視角 1" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_02.webp" loading="lazy" alt="autopos ONE 視角 2" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_03.webp" loading="lazy" alt="autopos ONE 視角 3" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_04.webp" loading="lazy" alt="autopos ONE 視角 4" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_05.webp" loading="lazy" alt="autopos ONE 視角 5" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_06.webp" loading="lazy" alt="autopos ONE 視角 6" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_07.webp" loading="lazy" alt="autopos ONE 視角 7" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_08.webp" loading="lazy" alt="autopos ONE 視角 8" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_09.webp" loading="lazy" alt="autopos ONE 視角 9" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_10.webp" loading="lazy" alt="autopos ONE 視角 10" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_11.webp" loading="lazy" alt="autopos ONE 視角 11" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_12.webp" loading="lazy" alt="autopos ONE 視角 12" draggable="false">
-          </div>
+      <!-- Hardware catalogue — click a machine to expand its info (dashboard-style) -->
+      <div class="hw-catalogue" id="apone">
+        <div class="hw-lineup reveal">
+          <button type="button" class="hw-lc" data-machine="apone">
+            <span class="hw-lc-img"><img src="assets/demo/webp/autoposone_demo_01.webp" alt="autopos ONE" loading="lazy"></span>
+            <span class="hw-lc-name">autopos ONE</span>
+            <span class="hw-lc-desc" data-i18n="hw.lineup.one.d">專業級 POS 終端</span>
+            <span class="hw-lc-more" data-i18n="hw.lineup.more">查看詳情 →</span>
+          </button>
+          <button type="button" class="hw-lc" data-machine="xelf">
+            <span class="hw-lc-img"><img src="assets/XELFII-2.webp" alt="XELF II" loading="lazy"></span>
+            <span class="hw-lc-name">XELF II</span>
+            <span class="hw-lc-desc" data-i18n="hw.lineup.xelf.d">模組化自助點餐終端</span>
+            <span class="hw-lc-more" data-i18n="hw.lineup.more">查看詳情 →</span>
+          </button>
+          <button type="button" class="hw-lc" data-machine="ks1000">
+            <span class="hw-lc-img"><img src="assets/KS-1000-1.png" alt="KS-1000" loading="lazy"></span>
+            <span class="hw-lc-name">KS-1000</span>
+            <span class="hw-lc-desc" data-i18n="hw.lineup.ks.d">整合式自助服務機</span>
+            <span class="hw-lc-more" data-i18n="hw.lineup.more">查看詳情 →</span>
+          </button>
         </div>
 
-        <!-- Scrub slider (replaces clock-position arrows) — drag to rotate -->
-        <div class="ap-one-scrub">
-          <input type="range" class="ap-one-slider" min="0" max="12" step="1" value="0"
-                 aria-label="拖曳旋轉檢視 autopos ONE 各視角">
-          <span class="ap-one-scrub-hint" data-i18n="apone.viewer.hint">拖曳旋轉 360°</span>
-        </div>
-
-        <!-- Feature Carousel -->
-        <div class="ap-one-features">
-          <p class="ap-one-features-label" data-i18n="apone.features.label">每一處細節，都是工程師的堅持。</p>
-          <div class="ap-one-feat-scroll">
-            <div class="ap-one-feat-card">
-              <img src="assets/demo/webp/autoposone_demo_A1.webp" alt="無段式角度調整" loading="lazy" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="apone.feat.a1.title">無段式角度調整</p>
-                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.a1.desc">螢幕最大仰角 45°，無段微調，適應每種收銀場景。</p>
+        <div class="solmap-panel hwc-panel" id="hwc-panel" role="region" aria-live="polite">
+          <button class="solmap-close" id="hwc-close" type="button" aria-label="關閉">×</button>
+          <div class="solmap-panel-inner">
+            <div class="hwc-visual" id="hwc-visual">
+              <!-- autopos ONE — 360° rolling frames -->
+              <div class="hwc-vis" data-vis="apone">
+                <div class="ap-one hwc-ap">
+                  <div class="ap-one-viewer-ring">
+                    <div class="ap-one-viewer" role="img" aria-label="autopos ONE 360° 全視角展示">
+                      <img class="ap-one-frame is-active" src="assets/demo/webp/autoposone_demo_01.webp" alt="autopos ONE 視角 1" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_02.webp" loading="lazy" alt="autopos ONE 視角 2" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_03.webp" loading="lazy" alt="autopos ONE 視角 3" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_04.webp" loading="lazy" alt="autopos ONE 視角 4" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_05.webp" loading="lazy" alt="autopos ONE 視角 5" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_06.webp" loading="lazy" alt="autopos ONE 視角 6" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_07.webp" loading="lazy" alt="autopos ONE 視角 7" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_08.webp" loading="lazy" alt="autopos ONE 視角 8" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_09.webp" loading="lazy" alt="autopos ONE 視角 9" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_10.webp" loading="lazy" alt="autopos ONE 視角 10" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_11.webp" loading="lazy" alt="autopos ONE 視角 11" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_12.webp" loading="lazy" alt="autopos ONE 視角 12" draggable="false">
+                    </div>
+                  </div>
+                  <div class="ap-one-scrub">
+                    <input type="range" class="ap-one-slider" min="0" max="12" step="1" value="0" aria-label="拖曳旋轉檢視 autopos ONE 各視角">
+                    <span class="ap-one-scrub-hint" data-i18n="apone.viewer.hint">拖曳旋轉 360°</span>
+                  </div>
+                </div>
+              </div>
+              <!-- XELF II — assemble animation -->
+              <div class="hwc-vis" data-vis="xelf">
+                <div class="hw-assemble" id="xelfAssemble" role="button" tabindex="0" aria-label="重播 XELF II 組裝動畫">
+                  <img src="assets/XELFII-10-1.webp" alt="XELF II 自助點餐機" class="hw-asm-main" loading="lazy">
+                  <div class="hw-asm-part hw-asm-part--2"><img src="assets/XELFII-10-2.webp" alt="" loading="lazy"></div>
+                  <div class="hw-asm-part hw-asm-part--3"><img src="assets/XELFII-10-3.webp" alt="" loading="lazy"></div>
+                  <div class="hw-asm-part hw-asm-part--4"><img src="assets/XELFII-10-4.webp" alt="" loading="lazy"></div>
+                  <div class="hw-asm-part hw-asm-part--5"><img src="assets/XELFII-10-5.webp" alt="" loading="lazy"></div>
+                  <div class="hw-asm-part hw-asm-part--6"><img src="assets/XELFII-10-6.webp" alt="" loading="lazy"></div>
+                  <span class="hw-led hw-led--1" aria-hidden="true"></span>
+                  <span class="hw-led hw-led--2" aria-hidden="true"></span>
+                  <span class="hw-led hw-led--3" aria-hidden="true"></span>
+                </div>
+              </div>
+              <!-- KS-1000 — rolling frames -->
+              <div class="hwc-vis" data-vis="ks1000">
+                <div class="ap-one hwc-ap">
+                  <div class="ap-one-viewer-ring">
+                    <div class="ap-one-viewer" role="img" aria-label="KS-1000 多視角展示">
+                      <img class="ap-one-frame is-active" src="assets/KS-1000-1.png" alt="KS-1000 視角 1" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-2.png" loading="lazy" alt="KS-1000 視角 2" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-3.png" loading="lazy" alt="KS-1000 視角 3" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-5.png" loading="lazy" alt="KS-1000 視角 4" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-6.png" loading="lazy" alt="KS-1000 視角 5" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-7.png" loading="lazy" alt="KS-1000 實際場域 1" draggable="false">
+                      <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-8.png" loading="lazy" alt="KS-1000 實際場域 2" draggable="false">
+                    </div>
+                  </div>
+                  <div class="ap-one-scrub">
+                    <input type="range" class="ap-one-slider" min="0" max="6" step="1" value="0" aria-label="KS-1000 視角切換">
+                    <span class="ap-one-scrub-hint" data-i18n="ks.viewer.hint">拖曳切換視角</span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="ap-one-feat-card">
-              <img src="assets/demo/webp/autoposone_demo_F1.webp" alt="全接口底座" loading="lazy" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="apone.feat.f1.title">全接口底座</p>
-                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.f1.desc">底座整合所有連接埠，保持桌面整潔，快速部署。</p>
-              </div>
+            <div class="solmap-body">
+              <p class="solmap-peyebrow" id="hwc-eyebrow"></p>
+              <h4 class="solmap-ptitle" id="hwc-title"></h4>
+              <ul class="hwc-specs" id="hwc-specs"></ul>
+              <div class="hwc-cta" id="hwc-cta"></div>
             </div>
-            <div class="ap-one-feat-card">
-              <div class="ap-f2-wrap">
-                <img src="assets/demo/webp/autoposone_demo_F2.webp" alt="精工電源鍵" loading="lazy" class="ap-one-feat-card-img">
-                <!-- power icon breathing-light overlay — traced to match the button in the photo -->
-                <svg class="ap-power-glow" viewBox="-8 -8 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M 2.5 -4.33 A 5 5 0 1 0 -2.5 -4.33" stroke="#4d90ff" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-                  <line x1="0" y1="-2.6" x2="0" y2="-6.1" stroke="#4d90ff" stroke-width="1.2" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="apone.feat.f2.title">精工電源鍵</p>
-                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.f2.desc">仿精品設計語言，單鍵操作，質感升級。</p>
-              </div>
-            </div>
-            <div class="ap-one-feat-card">
-              <img src="assets/demo/webp/autoposone_demo_F3.webp" alt="隱藏式喇叭" loading="lazy" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="apone.feat.f3.title">隱藏式喇叭</p>
-                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.f3.desc">音源內嵌螢幕支架，外觀精簡幹練不卡灰塵。</p>
-              </div>
-            </div>
-            <div class="ap-one-feat-card">
-              <img src="assets/demo/webp/autoposone_demo_F4.webp" alt="主動導流散熱" loading="lazy" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="apone.feat.f4.title">主動導流散熱</p>
-                <p class="ap-one-feat-card-desc" data-i18n="apone.feat.f4.desc">主動式散熱設計，高溫環境不熱當。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Description under the feature cards -->
-        <!-- 規格 — icon grid (unified with XELF II / KS-1000) -->
-        <div class="ks-specs-grid">
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.os.label">作業系統</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.os.val">Windows 10 / 11</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.screen.label">螢幕</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.screen.val">15.6" 1920×1080</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 0 1 4 0v5"/><path d="M13 11V8.5a2 2 0 0 1 4 0V12"/><path d="M17 11.5a2 2 0 0 1 4 0V15a6 6 0 0 1-6 6h-1.5a6 6 0 0 1-4.6-2.1L5 14.5a2 2 0 0 1 3-2.6l1 1"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.touch.label">觸控</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.touch.val">全平面多點觸控</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.cpu.label">處理器</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.cpu.val">Intel N95</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="1"/><line x1="6" y1="17" x2="6" y2="20"/><line x1="10" y1="17" x2="10" y2="20"/><line x1="14" y1="17" x2="14" y2="20"/><line x1="18" y1="17" x2="18" y2="20"/><line x1="7" y1="11" x2="7" y2="13"/><line x1="11" y1="11" x2="11" y2="13"/><line x1="15" y1="11" x2="15" y2="13"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.ram.label">記憶體</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.ram.val">DDR4 8G（最大 16G）</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 5v6c0 1.66-4 3-9 3s-9-1.34-9-3V5"/><path d="M21 11v6c0 1.66-4 3-9 3s-9-1.34-9-3v-6"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.storage.label">儲存</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.storage.val">SSD M.2 128G（最大 1T）</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.net.label">連網</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.net.val">雙頻 WiFi・Gigabit・BT 5.0</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6"/><path d="M15 2v6"/><path d="M6 8h12v3a6 6 0 0 1-12 0z"/><path d="M12 17v5"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.io.label">I/O</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.io.val">HDMI・COM×2・USB×4・RJ45</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.temp.label">工作溫度</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.temp.val">−10~45°C</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.size.label">尺寸</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.size.val">363×321×191mm</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="12" height="8" rx="1"/><rect x="9" y="11" width="13" height="8" rx="1"/></svg></span>
-            <p class="ks-spec-label" data-i18n="apone.spec.disp2.label">第二螢幕（選配）</p>
-            <p class="ks-spec-val" data-i18n="apone.spec.disp2.val">10" 1280×800 非觸控</p>
           </div>
         </div>
-        <div class="ap-one-desc">
-          <a href="#contact" class="btn btn--primary" data-i18n="ks.cta">預約 Demo</a>
-        </div>
+        <p class="solmap-hint hwc-hint" id="hwc-hint">▸ 點任一機型展開規格</p>
       </div>
 
-    </div>
-  </section>
-
-  <!-- ── Hardware Showcase Section ─────────────────────────── -->
-  <section class="hw-section" id="hardware">
-    <div class="section-inner">
-      <!-- XELF II showcase — mirrors the autopos ONE block style -->
-      <div class="ap-one reveal">
-        <p class="ap-one-eyebrow" data-i18n="xelf.eyebrow">XELF II · 自助點餐終端</p>
-        <h3 class="ap-one-h3" data-i18n="xelf.h3">模組化自助點餐，靈活適配每種場域。</h3>
-
-        <!-- Main photo: assemble-on-scroll. XELFII-10-1 is the static anchor; -2..-6
-             float in then assemble. Adjust positions/sizes in style.css
-             (.hw-asm-main / .hw-asm-part--2..--6). -->
-        <div class="hw-assemble" id="xelfAssemble" role="button" tabindex="0" aria-label="重播 XELF II 組裝動畫">
-          <img src="assets/XELFII-10-1.webp" alt="XELF II 自助點餐機" class="hw-asm-main" loading="lazy">
-          <div class="hw-asm-part hw-asm-part--2"><img src="assets/XELFII-10-2.webp" alt="" loading="lazy"></div>
-          <div class="hw-asm-part hw-asm-part--3"><img src="assets/XELFII-10-3.webp" alt="" loading="lazy"></div>
-          <div class="hw-asm-part hw-asm-part--4"><img src="assets/XELFII-10-4.webp" alt="" loading="lazy"></div>
-          <div class="hw-asm-part hw-asm-part--5"><img src="assets/XELFII-10-5.webp" alt="" loading="lazy"></div>
-          <div class="hw-asm-part hw-asm-part--6"><img src="assets/XELFII-10-6.webp" alt="" loading="lazy"></div>
-          <!-- Ion-blue LED lines — fade in + breathe once assembled. Adjust size/position
-               in style.css (.hw-led--1/2/3). -->
-          <span class="hw-led hw-led--1" aria-hidden="true"></span>
-          <span class="hw-led hw-led--2" aria-hidden="true"></span>
-          <span class="hw-led hw-led--3" aria-hidden="true"></span>
-        </div>
-
-        <!-- Feature cards -->
-        <div class="ap-one-features">
-          <p class="ap-one-features-label" data-i18n="xelf.features.label">靈活模組，滿足每種營運場景。</p>
-          <div class="ap-one-feat-scroll">
-            <div class="ap-one-feat-card">
-              <img src="assets/XELFII-4.webp" alt="模組化設計" loading="lazy" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="xelf.feat.1.title">模組化設計</p>
-                <p class="ap-one-feat-card-desc" data-i18n="xelf.feat.1.desc">彈性模組架構，依不同場域需求自由搭配功能。</p>
-              </div>
-            </div>
-            <div class="ap-one-feat-card">
-              <img src="assets/XELFII-5.webp" alt="客製化錢箱" loading="lazy" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="xelf.feat.2.title">客製化錢箱</p>
-                <p class="ap-one-feat-card-desc" data-i18n="xelf.feat.2.desc">可加裝客製化錢箱，提供額外的鈔票與零錢存放空間。</p>
-              </div>
-            </div>
-            <div class="ap-one-feat-card">
-              <img src="assets/XELFII-6.webp" alt="快速維護" loading="lazy" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="xelf.feat.3.title">快速維護</p>
-                <p class="ap-one-feat-card-desc" data-i18n="xelf.feat.3.desc">免工具快拆設計，維護保養快速省力。</p>
-              </div>
-            </div>
-            <div class="ap-one-feat-card">
-              <img src="assets/XELFII-7.webp" alt="桌上小型化" loading="lazy" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="xelf.feat.4.title">桌上小型化</p>
-                <p class="ap-one-feat-card-desc" data-i18n="xelf.feat.4.desc">精巧桌上型模組，空間有限也能優雅入店。</p>
-              </div>
-            </div>
-            <div class="ap-one-feat-card">
-              <img src="assets/XELFII-8.webp" alt="彈性安裝" loading="lazy" class="ap-one-feat-card-img">
-              <div class="ap-one-feat-card-body">
-                <p class="ap-one-feat-card-title" data-i18n="xelf.feat.5.title">彈性安裝</p>
-                <p class="ap-one-feat-card-desc" data-i18n="xelf.feat.5.desc">支援落地式、桌上式、壁掛式固定，輕鬆適配各種場合。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Description under the feature cards -->
-        <!-- 規格 — icon grid (unified with autopos ONE / KS-1000) -->
-        <div class="ks-specs-grid">
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
-            <p class="ks-spec-label" data-i18n="xelf.spec.screen.label">螢幕</p>
-            <p class="ks-spec-val" data-i18n="xelf.spec.screen.val">15.6" / 22" 多點觸控</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg></span>
-            <p class="ks-spec-label" data-i18n="xelf.spec.layout.label">配置</p>
-            <p class="ks-spec-val" data-i18n="xelf.spec.layout.val">橫向・直向</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></span>
-            <p class="ks-spec-label" data-i18n="xelf.spec.integ.label">整合</p>
-            <p class="ks-spec-val" data-i18n="xelf.spec.integ.val">掃碼＋出單＋金流模組</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-            <p class="ks-spec-label" data-i18n="xelf.spec.body.label">機身</p>
-            <p class="ks-spec-val" data-i18n="xelf.spec.body.val">壓鑄鋁＋塑鋼</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></span>
-            <p class="ks-spec-label" data-i18n="xelf.spec.expand.label">擴充</p>
-            <p class="ks-spec-val" data-i18n="xelf.spec.expand.val">MSR・指紋・NFC（選配）</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></span>
-            <p class="ks-spec-label" data-i18n="xelf.spec.form.label">形態</p>
-            <p class="ks-spec-val" data-i18n="xelf.spec.form.val">落地・桌上・壁掛</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
-            <p class="ks-spec-label" data-i18n="xelf.spec.cert.label">認證</p>
-            <p class="ks-spec-val" data-i18n="xelf.spec.cert.val">FCC・CE Class B</p>
-          </div>
-        </div>
-        <div class="ap-one-desc">
-          <a href="mailto:chris.chen@sofone.ai" data-mailcta class="btn btn--primary" data-i18n="hardware.cta">報價諮詢</a>
-        </div>
-      </div>
-
-      <!-- KS-1000 showcase — second hardware block, mirrors the autopos ONE / XELF II .ap-one style.
-           繁中-only (intentionally no data-i18n) to preserve the 4-language key-parity invariant;
-           wire i18n keys in later when EN/JA/VI copy is ready. -->
-      <div class="ap-one reveal">
-        <p class="ap-one-eyebrow" data-i18n="ks.eyebrow">KS-1000 · 整合式自助服務機</p>
-        <h3 class="ap-one-h3" data-i18n="ks.h3">全場域整合智助機 — 極簡空間，全場域自助服務。</h3>
-        <p class="ks-status" data-i18n="ks.status">即將上市 · 開放預約導入（預計 2026 年 12 月量產）</p>
-
-        <!-- Main visual — scrub viewer (drag the bar through the views, autopos ONE style).
-             Frames 1,2,3,5,6,7,8 (KS-1000-4 is the comparison image, used in 空間效益 below).
-             Deferred loading: frame 1 loads eagerly; the rest swap in when the viewer scrolls into view. -->
-        <div class="ap-one-viewer-ring">
-          <div class="ap-one-viewer" role="img" aria-label="KS-1000 多視角展示">
-            <img class="ap-one-frame is-active" src="assets/KS-1000-1.png" alt="KS-1000 視角 1" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-2.png" loading="lazy" alt="KS-1000 視角 2" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-3.png" loading="lazy" alt="KS-1000 視角 3" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-5.png" loading="lazy" alt="KS-1000 視角 4" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-6.png" loading="lazy" alt="KS-1000 視角 5" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-7.png" loading="lazy" alt="KS-1000 實際場域 1" draggable="false">
-            <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-8.png" loading="lazy" alt="KS-1000 實際場域 2" draggable="false">
-          </div>
-        </div>
-        <div class="ap-one-scrub">
-          <input type="range" class="ap-one-slider" min="0" max="6" step="1" value="0" aria-label="KS-1000 視角切換">
-          <span class="ap-one-scrub-hint" data-i18n="ks.viewer.hint">拖曳切換視角</span>
-        </div>
-
-        <!-- 性能參數 — icon grid -->
-        <div class="ks-specs-grid">
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
-            <p class="ks-spec-label" data-i18n="ks.spec.os.label">作業系統</p>
-            <p class="ks-spec-val" data-i18n="ks.spec.os.val">Windows · Ubuntu · Android</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
-            <p class="ks-spec-label" data-i18n="ks.spec.screen.label">螢幕顯示</p>
-            <p class="ks-spec-val" data-i18n="ks.spec.screen.val">15.6" / 22"（1920×1080）</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></span>
-            <p class="ks-spec-label" data-i18n="ks.spec.cpu.label">處理器</p>
-            <p class="ks-spec-val" data-i18n="ks.spec.cpu.val">ARM～14 代 i7（三階可選）</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V6a2 2 0 0 1 4 0v5"/><path d="M13 11V8.5a2 2 0 0 1 4 0V12"/><path d="M17 11.5a2 2 0 0 1 4 0V15a6 6 0 0 1-6 6h-1.5a6 6 0 0 1-4.6-2.1L5 14.5a2 2 0 0 1 3-2.6l1 1"/></svg></span>
-            <p class="ks-spec-label" data-i18n="ks.spec.touch.label">觸控</p>
-            <p class="ks-spec-val" data-i18n="ks.spec.touch.val">多點觸控電容</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></span>
-            <p class="ks-spec-label" data-i18n="ks.spec.pay.label">支付</p>
-            <p class="ks-spec-val" data-i18n="ks.spec.pay.val">現金收付＋多元電子支付</p>
-          </div>
-          <div class="ks-spec">
-            <span class="ks-spec-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg></span>
-            <p class="ks-spec-label" data-i18n="ks.spec.size.label">尺寸</p>
-            <p class="ks-spec-val" data-i18n="ks.spec.size.val">337×380×630 / 731mm</p>
-          </div>
-        </div>
-
-        <!-- 搭配 autopos -->
-        <div class="ks-block ks-autopos">
-          <p class="ks-block-title" data-i18n="ks.autopos.title">搭配 autopos</p>
-          <p class="ks-lead" data-i18n="ks.autopos.lead">KS-1000 內建 autopos 雲端餐飲系統，硬體＋軟體單一窗口。</p>
-          <ul class="hw-specs">
-            <li data-i18n="ks.autopos.b1">大螢幕自助點餐（Kiosk）</li>
-            <li data-i18n="ks.autopos.b2">多元支付，一站完成結帳</li>
-            <li data-i18n="ks.autopos.b3">會員與行銷整合</li>
-            <li data-i18n="ks.autopos.b4">交易即時同步 POS 雲端後台</li>
-            <li data-i18n="ks.autopos.b5">遠端設備維運：開關機、版本、狀態監控</li>
-          </ul>
-          <div class="ks-metrics">
-            <div class="ks-metric"><p class="ks-metric-num" data-i18n="ks.metric1.num">−30%</p><p class="ks-metric-cap" data-i18n="ks.metric1.cap">高峰櫃檯排隊</p></div>
-            <div class="ks-metric"><p class="ks-metric-num" data-i18n="ks.metric2.num">+10–15%</p><p class="ks-metric-cap" data-i18n="ks.metric2.cap">客單價</p></div>
-            <div class="ks-metric"><p class="ks-metric-num" data-i18n="ks.metric3.num">1–1.5 人</p><p class="ks-metric-cap" data-i18n="ks.metric3.cap">每台可取代櫃檯人力</p></div>
-          </div>
-        </div>
-
-        <!-- 空間效益 -->
-        <div class="ks-block ks-space">
-          <p class="ks-block-title" data-i18n="ks.space.title">一台整合機，桌面省下約 78%</p>
-          <p class="ks-space-desc" data-i18n="ks.space.desc">傳統做法多台設備橫向約 1,350mm；KS-1000 整合成單機，寬度約 310mm。線材更簡潔、安裝維護更省。</p>
-          <img src="assets/KS-1000-4.png" alt="KS-1000 空間效益比較" class="ks-space-img" loading="lazy">
-        </div>
-
-        <!-- CTA -->
-        <div class="ap-one-desc">
-          <a href="#contact" class="btn btn--primary" data-i18n="ks.cta">預約 Demo</a>
-        </div>
-      </div>
     </div>
   </section>
 
   <!-- ── 3. CentrDX Section ────────────────────────────────── -->
-  <section class="centrdx-section" id="centrdx">
+  <section class="centrdx-section theme-light" id="centrdx">
     <div class="section-inner">
       <div class="product-logo-wrap reveal">
-        <img src="assets/webp/centrdx-logo.webp" alt="CentrDX" class="product-logo" id="cdxLogo">
+        <img src="assets/centrdx-logo.png" alt="CentrDX" class="product-logo" id="cdxLogo">
       </div>
       <p class="section-eyebrow reveal" data-i18n="centrdx.eyebrow">閃電下單⚡ · 餐飲數位化三合一</p>
-      <h2 class="section-h2 reveal" data-i18n="centrdx.h2">外送整合、會員管理、極簡出餐——三件事，從此一個後台搞定。</h2>
+      <h2 class="section-h2 reveal" data-i18n="centrdx.h2">外送整合、會員管理、極簡出餐 - 三件事，從此一個後台搞定。</h2>
 
       <!-- ── Block 1: Pain Point ──────────────────────────── -->
       <div class="cdx-pain reveal">
         <div class="cdx-pain-copy">
-          <h3 class="cdx-block-h3" data-i18n="centrdx.pain.h3">三個核心場景，一個平台全覆蓋。</h3>
+          <h3 class="cdx-block-h3" data-i18n-html="centrdx.pain.h3">三個核心場景，<span class="hl">一個平台全覆蓋</span>。</h3>
           <p class="cdx-pain-desc" data-i18n="centrdx.pain.desc">閃電下單⚡ 把餐飲營運最核心的三件事統一在同一後台：串接所有外送平台的訂單與菜單、管理會員點數與回訪，以及掃碼點餐直連出餐機。全線上支付模式下，一台出餐機即可獨立開店，極簡化作業流程。</p>
           <div class="cdx-stats-row">
             <div class="cdx-stat">
@@ -882,13 +696,13 @@
 
 
   <!-- ── 5. IMSDOM Section ──────────────────────────────────── -->
-  <section class="imsdom-section" id="imsdom">
+  <section class="imsdom-section theme-light" id="imsdom">
     <div class="section-inner">
       <div class="product-logo-wrap reveal">
         <img src="assets/webp/imsdom-logo.webp" alt="IMSDOM" class="product-logo">
       </div>
       <p class="section-eyebrow reveal" data-i18n="imsdom.eyebrow">IMSDOM · 連鎖營運生命週期管理</p>
-      <h2 class="section-h2 reveal" data-i18n-html="imsdom.h2">別讓加盟擴張，成為品牌崩壞的開始。<br>用數據重塑 QSC。</h2>
+      <h2 class="section-h2 reveal" data-i18n-html="imsdom.h2">別讓加盟擴張，成為品牌崩壞的開始。<br><span class="hl">用數據重塑 QSC。</span></h2>
 
       <div class="imsdom-layout reveal">
 
@@ -971,7 +785,7 @@
   </section>
 
   <!-- ── 6. Partners ────────────────────────────────────────── -->
-  <section class="partners">
+  <section class="partners theme-light">
     <h2 class="partners-heading" data-i18n="partners.heading">合作夥伴</h2>
 
     <div class="marquee-rows">
@@ -1081,7 +895,7 @@
   </section>
 
   <!-- ── 7. Contact ─────────────────────────────────────────── -->
-  <section class="contact-section" id="contact">
+  <section class="contact-section theme-light" id="contact">
     <div class="contact-card">
       <div class="contact-info">
         <p class="contact-name">Chris Chen 陳泓宇</p>
@@ -1141,12 +955,21 @@
         'meta.desc': '碩豐 SOFONE — 串聯軟硬體，賦能數位轉型。全球展店 POS 生態、Kiosk、IoT 設備管理、連鎖營運系統。',
         'meta.ogdesc': '您的 ERP，我的系統整合。專注全球展店，技術瑣事交給碩豐。',
         'hero.eyebrow': '碩豐 SOFONE',
-        'hero.h1': '串聯軟硬體<br>賦能數位轉型',
+        'hero.h1': '串聯軟硬體<br><span class="hl">賦能數位轉型</span>',
         'hero.maphint': '點擊互動元件，了解各項功能',
         'hero.sub': '以高彈性、低耦合的系統整合方案，<br>為企業打造更強健的營運生態圈。<br>無需更換核心 ERP，協助品牌快速落地展店。',
         'nav.autopos':'autopos','nav.centrdx':'閃電下單⚡','nav.imsdom':'IMSDOM','nav.contact':'聯絡我們',
         'hero.cta1': '了解更多',
         'hero.cta2': '預約顧問諮詢',
+        'proof.stat1num': '20+',
+        'proof.stat1label': '年餐飲科技經驗',
+        'proof.stat2num': '20+',
+        'proof.stat2label': '國家佈局',
+        'proof.stat3num': '數千萬',
+        'proof.stat3label': '單日訂單處理量',
+        'proof.stat4num': '百強',
+        'proof.stat4label': '核心團隊來自全球',
+        'proof.clients': '已服務 CoCo都可、50嵐、奈雪的茶、蜜雪冰城、幸運咖 等國際連鎖品牌',
         'device.kiosk.title': 'autopos 自助點餐機',
         'device.kiosk.desc': '告別排隊！提供整合會員積分、特價活動與多支付渠道的自助服務，讓人力專注於核心服務。',
         'device.pos.title': 'autopos 全球收銀引擎',
@@ -1159,7 +982,7 @@
         'device.waitress.desc': '運用 IMSDOM 自動化考核訓練，實現門市人才快速複製與品質標準化。',
         'centrdx.eyebrow': '閃電下單⚡ · 餐飲數位化三合一',
         'centrdx.brand': '閃電下單⚡',
-        'centrdx.h2': '外送整合、會員管理、極簡出餐——三件事，從此一個後台搞定。',
+        'centrdx.h2': '外送整合、會員管理、極簡出餐 - 三件事，從此一個後台搞定。',
         'centrdx.before.label': '❌ BEFORE &nbsp;問題痛點',
         'centrdx.before.p1.strong': '缺工招不到人？',
         'centrdx.before.p1.desc': '傳統人工收銀高度依賴人力，排班難、流動率高，旺季更難找人。',
@@ -1186,7 +1009,7 @@
         'centrdx.hw.32.desc': '旗艦尺寸，沉浸式點餐體驗，適合高流量旗艦門市。',
         'centrdx.cta': '了解 閃電下單⚡ →',
         'centrdx.ph.label': '接單整合示意圖',
-        'centrdx.pain.h3': '三個核心場景，一個平台全覆蓋。',
+        'centrdx.pain.h3': '三個核心場景，<span class="hl">一個平台全覆蓋</span>。',
         'centrdx.pain.desc': '閃電下單⚡ 把餐飲營運最核心的三件事統一在同一後台：串接所有外送平台的訂單與菜單、管理會員點數與回訪，以及掃碼點餐直連出餐機。全線上支付模式下，一台出餐機即可獨立開店，極簡化作業流程。',
         'centrdx.pain.cta': '立即預約系統健檢',
         'centrdx.s1.title': '一站串接所有外送平台', 'centrdx.s1.desc': '訂單自動匯入、菜單集中修改，Foodpanda、Uber Eats、GrabFood 統一在 閃電下單⚡ 後台管理，不再多螢幕切換。',
@@ -1205,7 +1028,7 @@
         'centrdx.fc.o1': '聚合印表機', 'centrdx.fc.o2': 'POS 收銀', 'centrdx.fc.o3': 'KDS 後廚',
         'centrdx.fc.o4': 'CRM 會員', 'centrdx.fc.o5': '聚合支付',
         'autopos.eyebrow': 'autopos · 全球雲端收銀生態系',
-        'autopos.h2': '跨國佈局，別讓系統成了你的絆腳石。',
+        'autopos.h2': '跨國佈局，<span class="hl">別讓系統成了你的絆腳石</span>。',
         'autopos.pain.desc': '當分店橫跨多國，您不只面臨稅制混亂與數據破碎——更需對抗油煙潑灑等餐飲現場的硬體耗損。autopos 以 IP54 工業級軟硬整合生態，讓總部秒級掌控每一間分店的即時營運狀態，保護您的數位資產。',
         'autopos.pain.before': '現有架構', 'autopos.pain.after': 'autopos 統一中控',
         'autopos.pain.chaos_label': '各國系統各自為政', 'autopos.pain.unified_label': '單一平台，全球一致',
@@ -1215,7 +1038,7 @@
         'autopos.sol.r2.dim': '系統穩定性', 'autopos.sol.r2.sol': 'IP54 工業級防護，斷網不斷帳', 'autopos.sol.r2.val': '零停機 · 抗油煙 · 延長設備壽命',
         'autopos.sol.r3.dim': '數據透明度', 'autopos.sol.r3.sol': '全球營運儀表板，AI Insight 即時分析', 'autopos.sol.r3.val': '總部秒級掌握各國門店獲利狀態',
         'autopos.sol.r4.dim': '模組化 SI 服務', 'autopos.sol.r4.sol': '立式/桌式 KIOSK 彈性配置，一站式軟硬交付', 'autopos.sol.r4.val': '終結軟硬廠商互踢問題，縮短導入週期',
-        'autopos.strat.h3': '不只是 POS，更是您的一站式軟硬整合夥伴。',
+        'autopos.strat.h3': '不只是 POS，<span class="hl">更是您的一站式軟硬整合夥伴</span>。',
         'autopos.strat.desc': 'autopos 以深度 SI 整合，終結軟體商與硬體商互踢問題的困境。從 IP54 工業級終端到雲端管理後台，由同一團隊統一交付、統一負責，讓品牌專注於成長，而非設備糾紛。',
         'autopos.tabs.tw': '🇹🇼 台灣',
         'autopos.tabs.us': '🇺🇸 美國',
@@ -1236,13 +1059,20 @@
         'autopos.table.r3.legacy': '各國系統獨立，報表需人工匯總翻譯',
         'autopos.table.r3.autopos': '<strong>多語系與多國稅制</strong>總部一鍵切換語系，跨國報表無縫合併',
         'autopos.cta': '了解 autopos →',
-        'autopos.bil.h3': '系統介面原生支援多語系，雙語無痛切換。',
+        'autopos.bil.h3': '系統介面原生支援多語系，<span class="hl">雙語無痛切換</span>。',
         'autopos.bil.desc': '無論面對英語或日語市場，autopos 後台介面均可一鍵切換語系，操作習慣零重學。這是市面上多數 POS 系統尚未具備的核心競爭力，讓您的跨國擴張從第一天就無摩擦落地。',
         'autopos.bil.en': 'English 介面', 'autopos.bil.dual': '雙語切換示意', 'autopos.bil.jp': '日本語 介面',
+        'autopos.global.eyebrow': 'GLOBAL · 全球化支援', 'autopos.global.htitle': '跨國開店，<span class="hl">語言、合規、金流全到位</span>。', 'autopos.global.title': '全球開店，<span class="hl">遵循在地合規要求</span>',
+        'autopos.global.c1.t': '彈性稅率設定', 'autopos.global.c1.d': '各國稅制與稅率一鍵切換，含稅／未稅、多稅別自由配置。',
+        'autopos.global.c2.t': '海外電子發票', 'autopos.global.c2.d': '串接各國電子發票平台，開立、上傳、對帳一站到位。',
+        'autopos.global.c3.t': '小票稅率明細', 'autopos.global.c3.d': '收據自動印出各稅別金額明細，符合當地開店稽核規範。',
+        'autopos.global.live': '各國電子發票上線', 'autopos.global.on': '已上線',
+        'autopos.global.vn': '越南', 'autopos.global.my': '馬來西亞', 'autopos.global.sg': '新加坡',
         'nav.hardware': '硬體設備',
         'hardware.bridge': '從 autopos 軟體，到為現場而生的硬體。',
         'hardware.eyebrow': '硬體設備 · 軟硬整合一站交付',
-        'hardware.h2': '為餐飲現場而生的耐用終端。',
+        'hardware.h2': '為餐飲現場而生的<span class="hl">耐用終端</span>。',
+        'hw.lineup.one.d': '專業級 POS 終端', 'hw.lineup.xelf.d': '模組化自助點餐終端', 'hw.lineup.ks.d': '整合式自助服務機', 'hw.lineup.more': '查看詳情 →',
         'hardware.cta': '報價諮詢',
         'hardware.mail.subject': '報價諮詢 — autopos 軟硬體一體化方案',
         'hardware.mail.body': '您好，\n\n我對 autopos 的軟硬體一體化配套方案很感興趣，希望進一步了解產品功能與報價資訊。\n\n公司／店名：\n聯絡人：\n聯絡電話：\n門市數量：\n需求說明：\n\n謝謝！',
@@ -1251,7 +1081,7 @@
         'hardware.xelf.name': 'XELF II 自助點餐機（FEC）',
         'hardware.xelf.tagline': '模組化自助點餐，小店到大廳全對應',
         'xelf.eyebrow': 'XELF II · 自助點餐終端',
-        'xelf.h3': '模組化自助點餐，靈活適配每種場域。',
+        'xelf.h3': '模組化自助點餐，<span class="hl">靈活適配每種場域</span>。',
         'xelf.features.label': '靈活模組，滿足每種營運場景。',
         'xelf.feat.1.title': '模組化設計',
         'xelf.feat.1.desc': '彈性模組架構，依不同場域需求自由搭配功能。',
@@ -1306,7 +1136,7 @@
         'ks.cta': '預約 Demo',
         'autopos.int.delivery': '合作外送平台', 'autopos.int.payment': '支援支付方式',
         'apone.eyebrow': 'autopos ONE · 專業級 POS 終端',
-        'apone.h3': '旗艦工業設計，與 autopos 雲端完美整合。',
+        'apone.h3': '旗艦工業設計，<span class="hl">與 autopos 雲端完美整合</span>。',
         'apone.viewer.hint': '拖曳旋轉',
         'apone.features.label': '每一處細節，都是工程師的堅持。',
         'apone.feat.a1.title': '無段式角度調整',
@@ -1320,7 +1150,7 @@
         'apone.feat.f4.title': '主動導流散熱',
         'apone.feat.f4.desc': '主動式散熱設計，高溫環境不熱當。',
         'imsdom.eyebrow': 'IMSDOM · 連鎖營運生命週期管理',
-        'imsdom.h2': '別讓加盟擴張，成為品牌崩壞的開始。<br>用數據重塑 QSC。',
+        'imsdom.h2': '別讓加盟擴張，成為品牌崩壞的開始。<br><span class="hl">用數據重塑 QSC。</span>',
         'imsdom.img.label': 'IMSDOM 連鎖營運管理平台',
         'imsdom.f1.title': '加盟簽約管理',
         'imsdom.f1.desc': '提供加盟規章、合同、加盟文件等有序整理',
@@ -1344,12 +1174,21 @@
         'meta.desc': 'SOFONE — Bridging hardware & software for global F&B chains. POS ecosystem, Kiosk, IoT device management, and multi-chain operations. No ERP replacement needed.',
         'meta.ogdesc': 'Your ERP, our integration. Built for global expansion — leave the tech complexity to SOFONE.',
         'hero.eyebrow': '碩豐 SOFONE',
-        'hero.h1': 'Bridging Hardware & Software<br>Empowering Digital Transformation',
+        'hero.h1': 'Bridging Hardware & Software<br><span class="hl">Empowering Digital Transformation</span>',
         'hero.maphint': 'Tap the interactive parts to see what they do',
         'hero.sub': 'Flexible, loosely-coupled system integration<br>builds a resilient operational ecosystem for your business.<br>No ERP replacement needed — go global, faster.',
         'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'Contact',
         'hero.cta1': 'Learn More',
         'hero.cta2': 'Book a Consultation',
+        'proof.stat1num': '20+',
+        'proof.stat1label': 'Years in F&B tech',
+        'proof.stat2num': '20+',
+        'proof.stat2label': 'Countries served',
+        'proof.stat3num': 'Tens of millions',
+        'proof.stat3label': 'Orders processed daily',
+        'proof.stat4num': 'Global top-tier',
+        'proof.stat4label': 'Core team background',
+        'proof.clients': 'Trusted by CoCo, 50 Lan, Nayuki, Mixue, Lucky Cup and other international chains',
         'device.kiosk.title': 'autopos Self-Order Kiosk',
         'device.kiosk.desc': 'Say goodbye to queues! Integrates loyalty points, promotions, and multi-payment channels — freeing your staff for core service.',
         'device.pos.title': 'autopos Global POS Engine',
@@ -1389,7 +1228,7 @@
         'centrdx.hw.32.desc': 'Flagship size with an immersive ordering experience for high-traffic stores.',
         'centrdx.cta': 'Learn More: CentrDX →',
         'centrdx.ph.label': 'Order integration mockup',
-        'centrdx.pain.h3': 'Three core scenarios. One platform covers them all.',
+        'centrdx.pain.h3': 'Three core scenarios. <span class="hl">One platform covers them all.</span>',
         'centrdx.pain.desc': 'CentrDX unifies the three essentials of restaurant operations in a single dashboard: syncing all delivery platform orders and menus, managing loyalty points and repeat customers, and QR scan-to-order routed directly to the kitchen output machine. Go fully digital and a single output machine is all you need to open your store.',
         'centrdx.pain.cta': 'Book a System Check-up Now',
         'centrdx.s1.title': 'One-Stop Delivery Integration', 'centrdx.s1.desc': 'Orders auto-imported, menus centrally managed — Foodpanda, Uber Eats, GrabFood, all controlled from a single CentrDX dashboard. No more juggling multiple screens.',
@@ -1408,7 +1247,7 @@
         'centrdx.fc.o1': 'Aggregated Printer', 'centrdx.fc.o2': 'POS Cashier', 'centrdx.fc.o3': 'KDS Kitchen',
         'centrdx.fc.o4': 'CRM Members', 'centrdx.fc.o5': 'Aggregated Pay',
         'autopos.eyebrow': 'autopos · Global Cloud POS Ecosystem',
-        'autopos.h2': 'Global Expansion — Don\'t Let Your Systems Hold You Back.',
+        'autopos.h2': 'Global Expansion — <span class="hl">Don\'t Let Your Systems Hold You Back.</span>',
         'autopos.pain.desc': 'Branches spanning multiple countries — you face not only conflicting tax rules and fragmented data, but also hardware damage from the harsh F&B environment. autopos delivers an IP54 industrial-grade software-hardware ecosystem, giving HQ real-time control over every location and protecting your digital assets.',
         'autopos.pain.before': 'Legacy Setup', 'autopos.pain.after': 'autopos Unified',
         'autopos.pain.chaos_label': 'Each country, on its own', 'autopos.pain.unified_label': 'One platform, globally consistent',
@@ -1418,7 +1257,7 @@
         'autopos.sol.r2.dim': 'System Stability', 'autopos.sol.r2.sol': 'IP54 industrial protection + offline-capable architecture', 'autopos.sol.r2.val': 'Zero downtime · grease-resistant · extended device life',
         'autopos.sol.r3.dim': 'Data Visibility', 'autopos.sol.r3.sol': 'Global ops dashboard with AI Insight', 'autopos.sol.r3.val': 'HQ sees every store\'s profitability in seconds',
         'autopos.sol.r4.dim': 'Modular SI Service', 'autopos.sol.r4.sol': 'Flexible standing/tabletop KIOSK — one-stop hardware + software delivery', 'autopos.sol.r4.val': 'End the software-vs-hardware blame game; faster deployment',
-        'autopos.strat.h3': 'More than a POS — your one-stop hardware & software integration partner.',
+        'autopos.strat.h3': 'More than a POS — <span class="hl">your one-stop hardware & software integration partner.</span>',
         'autopos.strat.desc': 'autopos ends the endless blame game between software and hardware vendors. From IP54 industrial terminals to cloud management — delivered and supported by one team. Let your brand focus on growth, not equipment disputes.',
         'autopos.tabs.tw': '🇹🇼 Taiwan',
         'autopos.tabs.us': '🇺🇸 USA',
@@ -1439,13 +1278,20 @@
         'autopos.table.r3.legacy': 'Separate systems per country; reports require manual consolidation',
         'autopos.table.r3.autopos': '<strong>Multi-language & Multi-country Tax</strong> HQ switches locale in one click; cross-border reports merge seamlessly',
         'autopos.cta': 'Learn More: autopos →',
-        'autopos.bil.h3': 'Native multilingual UI — switch languages without missing a beat.',
+        'autopos.bil.h3': 'Native multilingual UI — <span class="hl">switch languages without missing a beat.</span>',
         'autopos.bil.desc': 'Whether operating in English or Japanese markets, autopos dashboard language switches in one click — no retraining, no friction. A core capability most POS vendors simply don\'t offer, making cross-border expansion painless from day one.',
         'autopos.bil.en': 'English UI', 'autopos.bil.dual': 'Bilingual Toggle', 'autopos.bil.jp': 'Japanese UI',
+        'autopos.global.eyebrow': 'GLOBAL · Worldwide Support', 'autopos.global.htitle': 'Open across borders — <span class="hl">language, compliance and payments, all covered</span>.', 'autopos.global.title': 'Open anywhere, <span class="hl">compliant with local regulations</span>',
+        'autopos.global.c1.t': 'Flexible Tax Rates', 'autopos.global.c1.d': 'Switch tax regimes and rates in one click — tax-inclusive/exclusive and multi-tax setups.',
+        'autopos.global.c2.t': 'Overseas e-Invoicing', 'autopos.global.c2.d': 'Integrated with each country’s e-invoice platform: issue, upload and reconcile in one place.',
+        'autopos.global.c3.t': 'Itemized Tax Receipts', 'autopos.global.c3.d': 'Receipts print a per-tax breakdown automatically, meeting local audit requirements.',
+        'autopos.global.live': 'e-Invoicing live in', 'autopos.global.on': 'Live',
+        'autopos.global.vn': 'Vietnam', 'autopos.global.my': 'Malaysia', 'autopos.global.sg': 'Singapore',
         'nav.hardware': 'Hardware',
         'hardware.bridge': 'From autopos software — to hardware built for the floor.',
         'hardware.eyebrow': 'Hardware · One-stop software + hardware delivery',
-        'hardware.h2': 'Durable terminals built for the F&B front line.',
+        'hardware.h2': '<span class="hl">Durable terminals</span> built for the F&B front line.',
+        'hw.lineup.one.d': 'Pro-grade POS terminal', 'hw.lineup.xelf.d': 'Modular self-order terminal', 'hw.lineup.ks.d': 'All-in-one self-service kiosk', 'hw.lineup.more': 'View details →',
         'hardware.cta': 'Request a quote',
         'hardware.mail.subject': 'Quote request — autopos integrated hardware + software',
         'hardware.mail.body': 'Hello,\n\nI\'m interested in autopos\'s integrated hardware + software solution and would like more information on features and pricing.\n\nCompany / Store:\nContact name:\nPhone:\nNumber of locations:\nRequirements:\n\nThank you!',
@@ -1454,7 +1300,7 @@
         'hardware.xelf.name': 'XELF II Self-Order Kiosk (FEC)',
         'hardware.xelf.tagline': 'Modular self-ordering — from small shops to large halls',
         'xelf.eyebrow': 'XELF II · Self-Order Terminal',
-        'xelf.h3': 'Modular self-ordering that adapts to every venue.',
+        'xelf.h3': 'Modular self-ordering <span class="hl">that adapts to every venue.</span>',
         'xelf.features.label': 'Flexible modules for every operation.',
         'xelf.feat.1.title': 'Modular design',
         'xelf.feat.1.desc': 'Flexible modular architecture — mix and match functions for each venue.',
@@ -1509,7 +1355,7 @@
         'ks.cta': 'Book a Demo',
         'autopos.int.delivery': 'Delivery Partners', 'autopos.int.payment': 'Supported Payment Methods',
         'apone.eyebrow': 'autopos ONE · Professional POS Terminal',
-        'apone.h3': 'Flagship industrial design, seamlessly integrated with autopos Cloud.',
+        'apone.h3': 'Flagship industrial design, <span class="hl">seamlessly integrated with autopos Cloud.</span>',
         'apone.viewer.hint': 'Drag to rotate',
         'apone.features.label': 'Every detail, engineered with purpose.',
         'apone.feat.a1.title': 'Stepless Angle Adjustment',
@@ -1523,7 +1369,7 @@
         'apone.feat.f4.title': 'Active Airflow Cooling',
         'apone.feat.f4.desc': 'Active thermal design keeps the unit cool even in high-temperature environments.',
         'imsdom.eyebrow': 'IMSDOM · Chain Operations Lifecycle Management',
-        'imsdom.h2': 'Don\'t let franchise expansion become the beginning of brand collapse.<br>Reshape QSC with data.',
+        'imsdom.h2': 'Don\'t let franchise expansion become the beginning of brand collapse.<br><span class="hl">Reshape QSC with data.</span>',
         'imsdom.img.label': 'IMSDOM Chain Operations Management Platform',
         'imsdom.f1.title': 'Franchise Contract Management',
         'imsdom.f1.desc': 'Organize franchise regulations, contracts, and documents systematically',
@@ -1547,12 +1393,21 @@
         'meta.desc': 'SOFONE — ハードとソフトを繋ぎ、グローバル展開するF&Bチェーンをサポート。POSエコシステム、Kiosk、IoTデバイス管理、多店舗運営システム。ERPの入替不要。',
         'meta.ogdesc': 'あなたのERPに、私たちのシステム統合。グローバル展開に集中。技術的な複雑さはSOFONEへ。',
         'hero.eyebrow': '碩豐 SOFONE',
-        'hero.h1': 'ハードとソフトを繋ぎ<br>デジタル変革を加速する',
+        'hero.h1': 'ハードとソフトを繋ぎ<br><span class="hl">デジタル変革を加速する</span>',
         'hero.maphint': '各パーツをタップして機能をチェック',
         'hero.sub': '柔軟で疎結合なシステムインテグレーションで、<br>企業の強固な運営エコシステムを構築。<br>コアERPを変えずに、グローバル展開をサポート。',
         'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'お問い合わせ',
         'hero.cta1': '詳しく見る',
         'hero.cta2': 'コンサルティングを予約',
+        'proof.stat1num': '20+',
+        'proof.stat1label': '年の飲食テック経験',
+        'proof.stat2num': '20+',
+        'proof.stat2label': 'カ国で展開',
+        'proof.stat3num': '数千万',
+        'proof.stat3label': '1日の注文処理数',
+        'proof.stat4num': 'グローバル一流',
+        'proof.stat4label': 'コア人材の出身',
+        'proof.clients': 'CoCo都可、50嵐、奈雪の茶、蜜雪氷城、幸運咖など国際チェーンに導入',
         'device.kiosk.title': 'autopos セルフオーダーキオスク',
         'device.kiosk.desc': '行列とおさらば！ポイント連携・キャンペーン・マルチ決済対応で、スタッフをコアサービスに集中させます。',
         'device.pos.title': 'autopos グローバルPOSエンジン',
@@ -1592,7 +1447,7 @@
         'centrdx.hw.32.desc': 'フラッグシップサイズ、没入型オーダー体験、高トラフィック旗艦店向け。',
         'centrdx.cta': 'CentrDXについて →',
         'centrdx.ph.label': '注文統合イメージ図',
-        'centrdx.pain.h3': '3つのコアシーン、1プラットフォームで完全カバー。',
+        'centrdx.pain.h3': '3つのコアシーン、<span class="hl">1プラットフォームで完全カバー。</span>',
         'centrdx.pain.desc': 'CentrDXは飲食店運営の核心3要素を1つのダッシュボードに統合します：全デリバリープラットフォームの注文とメニューの同期、会員ポイントとリピーターの管理、そしてQRオーダーからキッチン出力機への直接連携。完全キャッシュレス環境では、出力機1台だけで営業可能です。',
         'centrdx.pain.cta': '今すぐシステム診断を予約',
         'centrdx.s1.title': 'デリバリー一括連携', 'centrdx.s1.desc': '注文の自動取り込みと一括メニュー管理。Foodpanda・Uber Eats・GrabFoodをCentrDXダッシュボードで統合し、複数画面の切り替えが不要に。',
@@ -1611,7 +1466,7 @@
         'centrdx.fc.o1': '集約プリンター', 'centrdx.fc.o2': 'POSレジ', 'centrdx.fc.o3': 'KDSキッチン',
         'centrdx.fc.o4': 'CRM会員', 'centrdx.fc.o5': '集約決済',
         'autopos.eyebrow': 'autopos · グローバルクラウドPOSエコシステム',
-        'autopos.h2': 'グローバル展開で、システムの壁に阻まれていませんか？',
+        'autopos.h2': 'グローバル展開で、<span class="hl">システムの壁に阻まれていませんか？</span>',
         'autopos.pain.desc': '多国に店舗を展開する中で、税制の混乱やデータ分断だけでなく、油煙や過酷な環境によるハードウェア消耗にも直面していませんか？autopos は IP54 産業グレードの軟硬一体エコシステムで、本部がすべての店舗をリアルタイムで掌握し、デジタル資産を守ります。',
         'autopos.pain.before': '現状アーキテクチャ', 'autopos.pain.after': 'autopos 統合管理',
         'autopos.pain.chaos_label': '各国が独立した状態', 'autopos.pain.unified_label': '単一プラットフォーム・全球統一',
@@ -1621,7 +1476,7 @@
         'autopos.sol.r2.dim': 'システム安定性', 'autopos.sol.r2.sol': 'IP54 産業グレード防護＋オフライン対応アーキテクチャ', 'autopos.sol.r2.val': 'ゼロダウンタイム・耐油煙・デバイス寿命延長',
         'autopos.sol.r3.dim': 'データ透明性', 'autopos.sol.r3.sol': 'グローバル運営ダッシュボード・AI Insight', 'autopos.sol.r3.val': '本部が各国店舗の収益を即座に把握',
         'autopos.sol.r4.dim': 'モジュール型 SI サービス', 'autopos.sol.r4.sol': '立式/卓上 KIOSK の柔軟構成、一括ソフト・ハード納品', 'autopos.sol.r4.val': 'ソフト・ハード間の責任なすり付け問題を解消、導入期間短縮',
-        'autopos.strat.h3': 'POSを超えた、ソフト・ハード一体型の統合パートナー。',
+        'autopos.strat.h3': 'POSを超えた、<span class="hl">ソフト・ハード一体型の統合パートナー。</span>',
         'autopos.strat.desc': 'autopos はソフトウェアベンダーとハードウェアベンダーの「責任のなすり付け」という悪循環を終わらせます。IP54 産業グレード端末からクラウド管理バックエンドまで、同一チームが統一納品・統一サポート。ブランドは設備トラブルではなく、成長に集中できます。',
         'autopos.tabs.tw': '🇹🇼 台湾',
         'autopos.tabs.us': '🇺🇸 アメリカ',
@@ -1642,13 +1497,20 @@
         'autopos.table.r3.legacy': '各国システムが独立、レポートは手動で集計・翻訳',
         'autopos.table.r3.autopos': '<strong>多言語・多国籍税制</strong>本部でワンクリック切り替え、クロスボーダーレポートをシームレスに統合',
         'autopos.cta': 'autoposについて →',
-        'autopos.bil.h3': 'ネイティブ多言語対応 — ワンクリックで言語を切り替え。',
+        'autopos.bil.h3': 'ネイティブ多言語対応 — <span class="hl">ワンクリックで言語を切り替え。</span>',
         'autopos.bil.desc': '英語市場でも日本語市場でも、autoposのダッシュボードはワンクリックで言語切り替えが可能。再トレーニング不要、摩擦なし。これはほとんどのPOSベンダーが持ち合わせていない核心的な競争力で、初日からグローバル展開を摩擦なく実現します。',
         'autopos.bil.en': 'English 画面', 'autopos.bil.dual': '双言語切替デモ', 'autopos.bil.jp': '日本語 画面',
+        'autopos.global.eyebrow': 'GLOBAL · グローバル対応', 'autopos.global.htitle': '国境を越えて開店 — <span class="hl">言語・法令順守・決済まで完備</span>。', 'autopos.global.title': 'どこでも開店、<span class="hl">現地の法令に準拠</span>',
+        'autopos.global.c1.t': '柔軟な税率設定', 'autopos.global.c1.d': '各国の税制・税率をワンクリックで切替。内税／外税、複数税区分にも対応。',
+        'autopos.global.c2.t': '海外電子インボイス', 'autopos.global.c2.d': '各国の電子インボイス基盤と連携し、発行・アップロード・照合を一元化。',
+        'autopos.global.c3.t': 'レシート税額明細', 'autopos.global.c3.d': 'レシートに税区分ごとの金額を自動印字し、現地の監査要件に準拠。',
+        'autopos.global.live': '電子インボイス対応国', 'autopos.global.on': '稼働中',
+        'autopos.global.vn': 'ベトナム', 'autopos.global.my': 'マレーシア', 'autopos.global.sg': 'シンガポール',
         'nav.hardware': 'ハードウェア',
         'hardware.bridge': 'autopos のソフトウェアから、現場のために生まれたハードウェアへ。',
         'hardware.eyebrow': 'ハードウェア · ソフト＆ハード一括導入',
-        'hardware.h2': '飲食の現場のために作られた、堅牢な端末。',
+        'hardware.h2': '飲食の現場のために作られた、<span class="hl">堅牢な端末。</span>',
+        'hw.lineup.one.d': 'プロ仕様 POS 端末', 'hw.lineup.xelf.d': 'モジュール式セルフ注文端末', 'hw.lineup.ks.d': 'オールインワン セルフ端末', 'hw.lineup.more': '詳細を見る →',
         'hardware.cta': '見積もり依頼',
         'hardware.mail.subject': '見積もり依頼 — autopos ソフト＆ハード統合ソリューション',
         'hardware.mail.body': 'ご担当者様\n\nautopos のソフト＆ハード統合ソリューションに興味があり、製品の機能とお見積もりについて詳しく知りたいです。\n\n会社／店舗名：\nご担当者：\n電話番号：\n店舗数：\nご要望：\n\nよろしくお願いいたします。',
@@ -1657,7 +1519,7 @@
         'hardware.xelf.name': 'XELF II セルフオーダー端末（FEC）',
         'hardware.xelf.tagline': 'モジュール式セルフオーダー、小店から大ホールまで',
         'xelf.eyebrow': 'XELF II · セルフオーダー端末',
-        'xelf.h3': 'モジュール式セルフオーダーで、あらゆる場所に柔軟に対応。',
+        'xelf.h3': 'モジュール式セルフオーダーで、<span class="hl">あらゆる場所に柔軟に対応。</span>',
         'xelf.features.label': 'あらゆる運用シーンに応える、柔軟なモジュール。',
         'xelf.feat.1.title': 'モジュール設計',
         'xelf.feat.1.desc': '柔軟なモジュール構成で、場所ごとのニーズに合わせて機能を自由に組み合わせ。',
@@ -1712,7 +1574,7 @@
         'ks.cta': 'デモを予約',
         'autopos.int.delivery': '提携デリバリープラットフォーム', 'autopos.int.payment': '対応決済方法',
         'apone.eyebrow': 'autopos ONE · プロ仕様 POS 端末',
-        'apone.h3': 'フラッグシップの工業デザイン、autopos クラウドと完全統合。',
+        'apone.h3': 'フラッグシップの工業デザイン、<span class="hl">autopos クラウドと完全統合。</span>',
         'apone.viewer.hint': 'ドラッグで回転',
         'apone.features.label': 'すべての細部に、エンジニアのこだわりが宿る。',
         'apone.feat.a1.title': '無段階角度調整',
@@ -1726,7 +1588,7 @@
         'apone.feat.f4.title': 'アクティブ冷却',
         'apone.feat.f4.desc': 'アクティブ放熱設計により、高温環境でも熱暴走を防ぐ。',
         'imsdom.eyebrow': 'IMSDOM · チェーン運営ライフサイクル管理',
-        'imsdom.h2': 'フランチャイズ拡大がブランド崩壊の始まりにならないように。<br>データでQSCを再構築。',
+        'imsdom.h2': 'フランチャイズ拡大がブランド崩壊の始まりにならないように。<br><span class="hl">データでQSCを再構築。</span>',
         'imsdom.img.label': 'IMSDOM チェーン運営管理プラットフォーム',
         'imsdom.f1.title': '加盟契約管理',
         'imsdom.f1.desc': '加盟規定・契約書・加盟文書を整然と管理',
@@ -1750,12 +1612,21 @@
         'meta.desc': 'SOFONE — Kết nối phần cứng & phần mềm cho chuỗi F&B toàn cầu. Hệ sinh thái POS, Kiosk, quản lý thiết bị IoT và vận hành đa chi nhánh. Không cần thay ERP lõi.',
         'meta.ogdesc': 'ERP của bạn, tích hợp của chúng tôi. Tập trung mở rộng toàn cầu — để sự phức tạp kỹ thuật cho SOFONE.',
         'hero.eyebrow': '碩豐 SOFONE',
-        'hero.h1': 'Kết nối phần cứng & phần mềm<br>Thúc đẩy chuyển đổi số',
+        'hero.h1': 'Kết nối phần cứng & phần mềm<br><span class="hl">Thúc đẩy chuyển đổi số</span>',
         'hero.maphint': 'Chạm vào các bộ phận để xem chức năng',
         'hero.sub': 'Giải pháp tích hợp hệ thống linh hoạt, kết nối lỏng lẻo<br>giúp doanh nghiệp xây dựng hệ sinh thái vận hành bền vững.<br>Không cần thay thế ERP lõi — hỗ trợ thương hiệu mở rộng nhanh chóng.',
         'nav.autopos':'autopos','nav.centrdx':'CentrDX','nav.imsdom':'IMSDOM','nav.contact':'Liên hệ',
         'hero.cta1': 'Tìm hiểu thêm',
         'hero.cta2': 'Đặt lịch tư vấn',
+        'proof.stat1num': '20+',
+        'proof.stat1label': 'Năm kinh nghiệm công nghệ F&B',
+        'proof.stat2num': '20+',
+        'proof.stat2label': 'Quốc gia triển khai',
+        'proof.stat3num': 'Hàng chục triệu',
+        'proof.stat3label': 'Đơn hàng xử lý mỗi ngày',
+        'proof.stat4num': 'Hàng đầu toàn cầu',
+        'proof.stat4label': 'Xuất thân đội ngũ nòng cốt',
+        'proof.clients': 'Được tin dùng bởi CoCo, 50 Lan, Nayuki, Mixue, Lucky Cup và các chuỗi quốc tế',
         'device.kiosk.title': 'autopos Máy tự đặt hàng',
         'device.kiosk.desc': 'Nói không với xếp hàng! Tích hợp điểm thành viên, khuyến mãi và nhiều phương thức thanh toán — để nhân viên tập trung vào dịch vụ cốt lõi.',
         'device.pos.title': 'autopos Động cơ POS Toàn cầu',
@@ -1795,7 +1666,7 @@
         'centrdx.hw.32.desc': 'Kích thước flagship với trải nghiệm đặt hàng đắm chìm cho cửa hàng lưu lượng cao.',
         'centrdx.cta': 'Tìm hiểu CentrDX →',
         'centrdx.ph.label': 'Hình minh họa tích hợp đơn hàng',
-        'centrdx.pain.h3': 'Ba tình huống cốt lõi. Một nền tảng bao phủ tất cả.',
+        'centrdx.pain.h3': 'Ba tình huống cốt lõi. <span class="hl">Một nền tảng bao phủ tất cả.</span>',
         'centrdx.pain.desc': 'CentrDX hợp nhất ba yếu tố thiết yếu của vận hành nhà hàng vào một dashboard: đồng bộ đơn hàng và thực đơn từ mọi nền tảng giao đồ ăn, quản lý điểm thành viên và khách hàng quay lại, và đặt hàng QR kết nối trực tiếp đến máy xuất bếp. Chuyển sang hoàn toàn thanh toán số, chỉ cần một máy xuất là đủ để mở cửa hàng.',
         'centrdx.pain.cta': 'Đặt lịch kiểm tra hệ thống ngay',
         'centrdx.s1.title': 'Tích hợp toàn bộ nền tảng giao hàng', 'centrdx.s1.desc': 'Đơn hàng tự động nhập, thực đơn quản lý tập trung — Foodpanda, Uber Eats, GrabFood đều kiểm soát từ một dashboard CentrDX duy nhất, không cần chuyển đổi màn hình.',
@@ -1814,7 +1685,7 @@
         'centrdx.fc.o1': 'Máy in tổng hợp', 'centrdx.fc.o2': 'POS thu ngân', 'centrdx.fc.o3': 'KDS bếp',
         'centrdx.fc.o4': 'CRM thành viên', 'centrdx.fc.o5': 'Thanh toán tổng hợp',
         'autopos.eyebrow': 'autopos · Hệ sinh thái POS đám mây toàn cầu',
-        'autopos.h2': 'Mở rộng toàn cầu — đừng để hệ thống trở thành rào cản.',
+        'autopos.h2': 'Mở rộng toàn cầu — <span class="hl">đừng để hệ thống trở thành rào cản.</span>',
         'autopos.pain.desc': 'Khi chi nhánh trải rộng nhiều quốc gia, bạn không chỉ đối mặt với rắc rối thuế và dữ liệu phân mảnh — mà còn cả sự hao mòn phần cứng từ môi trường F&B khắc nghiệt. autopos cung cấp hệ sinh thái phần mềm-phần cứng tích hợp cấp công nghiệp IP54, giúp trụ sở kiểm soát mọi chi nhánh theo thời gian thực và bảo vệ tài sản kỹ thuật số của bạn.',
         'autopos.pain.before': 'Cấu trúc hiện tại', 'autopos.pain.after': 'autopos thống nhất',
         'autopos.pain.chaos_label': 'Mỗi nước tự vận hành', 'autopos.pain.unified_label': 'Một nền tảng, nhất quán toàn cầu',
@@ -1824,7 +1695,7 @@
         'autopos.sol.r2.dim': 'Ổn định hệ thống', 'autopos.sol.r2.sol': 'Bảo vệ cấp IP54 + kiến trúc hoạt động khi mất mạng', 'autopos.sol.r2.val': 'Không downtime · chống dầu mỡ · kéo dài tuổi thọ thiết bị',
         'autopos.sol.r3.dim': 'Minh bạch dữ liệu', 'autopos.sol.r3.sol': 'Dashboard vận hành toàn cầu, AI Insight thời gian thực', 'autopos.sol.r3.val': 'Trụ sở nắm lợi nhuận từng cửa hàng trong giây lát',
         'autopos.sol.r4.dim': 'Dịch vụ SI mô-đun', 'autopos.sol.r4.sol': 'KIOSK đứng/để bàn linh hoạt — giao hàng phần cứng + phần mềm trọn gói', 'autopos.sol.r4.val': 'Chấm dứt đổ lỗi giữa nhà cung cấp phần mềm và phần cứng, rút ngắn thời gian triển khai',
-        'autopos.strat.h3': 'Không chỉ là POS — đối tác tích hợp phần cứng & phần mềm trọn gói của bạn.',
+        'autopos.strat.h3': 'Không chỉ là POS — <span class="hl">đối tác tích hợp phần cứng & phần mềm trọn gói của bạn.</span>',
         'autopos.strat.desc': 'autopos chấm dứt vòng luẩn quẩn đổ lỗi giữa nhà cung cấp phần mềm và phần cứng. Từ thiết bị đầu cuối IP54 cấp công nghiệp đến hệ thống quản lý đám mây — được giao và hỗ trợ bởi một đội ngũ duy nhất. Để thương hiệu tập trung vào tăng trưởng, không phải tranh chấp thiết bị.',
         'autopos.tabs.tw': '🇹🇼 Đài Loan',
         'autopos.tabs.us': '🇺🇸 Mỹ',
@@ -1845,13 +1716,20 @@
         'autopos.table.r3.legacy': 'Hệ thống riêng biệt mỗi nước; báo cáo cần tổng hợp thủ công',
         'autopos.table.r3.autopos': '<strong>Đa ngôn ngữ & thuế đa quốc gia</strong> HQ chuyển đổi ngôn ngữ một cú click; báo cáo xuyên biên giới hợp nhất liền mạch',
         'autopos.cta': 'Tìm hiểu autopos →',
-        'autopos.bil.h3': 'Giao diện đa ngôn ngữ gốc — chuyển đổi ngôn ngữ tức thì.',
+        'autopos.bil.h3': 'Giao diện đa ngôn ngữ gốc — <span class="hl">chuyển đổi ngôn ngữ tức thì.</span>',
         'autopos.bil.desc': 'Dù vận hành ở thị trường tiếng Anh hay tiếng Nhật, dashboard autopos chuyển đổi ngôn ngữ chỉ bằng một cú nhấp — không cần đào tạo lại, không có ma sát. Đây là năng lực cốt lõi mà hầu hết nhà cung cấp POS chưa có, giúp mở rộng xuyên biên giới suôn sẻ từ ngày đầu tiên.',
         'autopos.bil.en': 'Giao diện Tiếng Anh', 'autopos.bil.dual': 'Chuyển đổi song ngữ', 'autopos.bil.jp': 'Giao diện Tiếng Nhật',
+        'autopos.global.eyebrow': 'GLOBAL · Hỗ trợ toàn cầu', 'autopos.global.htitle': 'Mở cửa hàng xuyên biên giới — <span class="hl">ngôn ngữ, tuân thủ, dòng tiền trọn gói</span>.', 'autopos.global.title': 'Mở cửa hàng ở mọi nơi, <span class="hl">tuân thủ quy định địa phương</span>',
+        'autopos.global.c1.t': 'Thuế suất linh hoạt', 'autopos.global.c1.d': 'Chuyển đổi chế độ và thuế suất từng quốc gia chỉ với một chạm, hỗ trợ đa loại thuế.',
+        'autopos.global.c2.t': 'Hóa đơn điện tử quốc tế', 'autopos.global.c2.d': 'Kết nối nền tảng hóa đơn điện tử từng nước: phát hành, tải lên, đối soát trong một nơi.',
+        'autopos.global.c3.t': 'Chi tiết thuế trên biên lai', 'autopos.global.c3.d': 'Biên lai tự động in chi tiết từng loại thuế, đáp ứng yêu cầu kiểm toán địa phương.',
+        'autopos.global.live': 'Hóa đơn điện tử đã có tại', 'autopos.global.on': 'Đã chạy',
+        'autopos.global.vn': 'Việt Nam', 'autopos.global.my': 'Malaysia', 'autopos.global.sg': 'Singapore',
         'nav.hardware': 'Phần cứng',
         'hardware.bridge': 'Từ phần mềm autopos — đến phần cứng sinh ra cho hiện trường.',
         'hardware.eyebrow': 'Phần cứng · Trọn gói phần mềm & phần cứng',
-        'hardware.h2': 'Thiết bị bền bỉ, sinh ra cho tuyến đầu ngành F&B.',
+        'hardware.h2': '<span class="hl">Thiết bị bền bỉ,</span> sinh ra cho tuyến đầu ngành F&B.',
+        'hw.lineup.one.d': 'Máy POS chuyên nghiệp', 'hw.lineup.xelf.d': 'Kiosk tự đặt món dạng mô-đun', 'hw.lineup.ks.d': 'Kiosk tự phục vụ tích hợp', 'hw.lineup.more': 'Xem chi tiết →',
         'hardware.cta': 'Yêu cầu báo giá',
         'hardware.mail.subject': 'Yêu cầu báo giá — Giải pháp tích hợp phần cứng & phần mềm autopos',
         'hardware.mail.body': 'Xin chào,\n\nTôi quan tâm đến giải pháp tích hợp phần cứng & phần mềm của autopos và muốn biết thêm về tính năng và báo giá.\n\nCông ty/Cửa hàng:\nNgười liên hệ:\nĐiện thoại:\nSố lượng cửa hàng:\nNhu cầu:\n\nXin cảm ơn!',
@@ -1860,7 +1738,7 @@
         'hardware.xelf.name': 'XELF II Kiosk tự gọi món (FEC)',
         'hardware.xelf.tagline': 'Tự gọi món dạng mô-đun — từ quán nhỏ đến sảnh lớn',
         'xelf.eyebrow': 'XELF II · Thiết bị tự gọi món',
-        'xelf.h3': 'Tự gọi món mô-đun, thích ứng với mọi không gian.',
+        'xelf.h3': 'Tự gọi món mô-đun, <span class="hl">thích ứng với mọi không gian.</span>',
         'xelf.features.label': 'Mô-đun linh hoạt cho mọi mô hình vận hành.',
         'xelf.feat.1.title': 'Thiết kế mô-đun',
         'xelf.feat.1.desc': 'Kiến trúc mô-đun linh hoạt — tùy biến chức năng theo nhu cầu từng địa điểm.',
@@ -1915,7 +1793,7 @@
         'ks.cta': 'Đặt lịch Demo',
         'autopos.int.delivery': 'Đối tác giao hàng', 'autopos.int.payment': 'Phương thức thanh toán hỗ trợ',
         'apone.eyebrow': 'autopos ONE · Thiết bị POS chuyên nghiệp',
-        'apone.h3': 'Thiết kế công nghiệp hàng đầu, tích hợp hoàn hảo với autopos Cloud.',
+        'apone.h3': 'Thiết kế công nghiệp hàng đầu, <span class="hl">tích hợp hoàn hảo với autopos Cloud.</span>',
         'apone.viewer.hint': 'Kéo để xoay',
         'apone.features.label': 'Từng chi tiết nhỏ, đều là sự kiên trì của kỹ sư.',
         'apone.feat.a1.title': 'Điều chỉnh góc vô cấp',
@@ -1929,7 +1807,7 @@
         'apone.feat.f4.title': 'Tản nhiệt chủ động',
         'apone.feat.f4.desc': 'Thiết kế tản nhiệt chủ động, không lo quá nhiệt trong môi trường nóng.',
         'imsdom.eyebrow': 'IMSDOM · Quản lý vòng đời vận hành chuỗi',
-        'imsdom.h2': 'Đừng để mở rộng nhượng quyền trở thành khởi đầu của sự sụp đổ thương hiệu.<br>Định hình lại QSC bằng dữ liệu.',
+        'imsdom.h2': 'Đừng để mở rộng nhượng quyền trở thành khởi đầu của sự sụp đổ thương hiệu.<br><span class="hl">Định hình lại QSC bằng dữ liệu.</span>',
         'imsdom.img.label': 'Nền tảng quản lý vận hành chuỗi IMSDOM',
         'imsdom.f1.title': 'Quản lý hợp đồng nhượng quyền',
         'imsdom.f1.desc': 'Tổ chức quy định, hợp đồng và tài liệu nhượng quyền một cách có hệ thống',
@@ -2015,7 +1893,7 @@
       }
       var cdxLogo = document.getElementById('cdxLogo');
       if (cdxLogo) {
-        cdxLogo.src = (lang === 'zh-TW') ? 'assets/閃電下單-logo.png' : 'assets/webp/centrdx-logo.webp';
+        cdxLogo.src = 'assets/centrdx-logo.png';
         cdxLogo.alt = (lang === 'zh-TW') ? '閃電下單' : 'CentrDX';
       }
     }
@@ -2529,13 +2407,24 @@
       document.getElementById('solmap-peyebrow').textContent=m.cat;
       document.getElementById('solmap-ptitle').innerHTML=m.h;
       document.getElementById('solmap-psub').textContent=m.s;
+      var inner=panel.querySelector('.solmap-panel-inner');
+      inner.className='solmap-panel-inner';
       var pv=document.getElementById('solmap-visual');
-      if(m.im){ pv.className='solmap-visual'; pv.innerHTML='<img alt="'+m.t+' 畫面" loading="lazy" src="assets/sol/webp/'+m.id+'.webp">'; }
-      else { pv.className='solmap-visual solmap-visual--ph'; pv.innerHTML=svg(m.ic)+'<span>產品畫面</span>'; }
-      document.getElementById('solmap-pstat').innerHTML = m.stat ? '<div class="solmap-stat"><b>'+m.stat[0]+'</b><span>'+m.stat[1]+'</span></div>' : '';
+      var DEMO={pos:'收銀點餐',kiosk:'自助點餐',mobile:'手機點餐',crm:'會員行銷',call:'取餐叫號',report:'行動報表',tv:'電視菜單',delivery:'外送整合',invoice:'電子發票',shopctr:'門店中心',goods:'商品中心',member:'會員管理',order:'訂單中心',promo:'行銷中心',role:'權限管理'};
+      var isWide=(m.id==='delivery');                 // 外送整合: title+sub + full-width photo, no points
+      var hasImg=!!(DEMO[m.id]||m.im);                // 多元支付 / IMSDOM 4: no photo → content full width
+      if(!hasImg){ inner.classList.add('solmap-panel-inner--nomedia'); pv.style.display='none'; pv.innerHTML=''; }
+      else {
+        pv.style.display='';
+        var src=DEMO[m.id]?('assets/demo_slide/'+encodeURIComponent(DEMO[m.id])+'.png'):('assets/sol/webp/'+m.id+'.webp');
+        pv.className='solmap-visual'+(isWide?' solmap-visual--wide':'');
+        pv.innerHTML='<img alt="'+m.t+' 畫面" loading="lazy" src="'+src+'">';
+        if(isWide) inner.classList.add('solmap-panel-inner--wide');
+      }
+      document.getElementById('solmap-pstat').innerHTML = (!isWide && m.stat) ? '<div class="solmap-stat"><b>'+m.stat[0]+'</b><span>'+m.stat[1]+'</span></div>' : '';
       var ul=document.getElementById('solmap-pbullets'); ul.innerHTML='';
-      m.b.forEach(function(x){ var li=document.createElement('li');
-        li.innerHTML='<span class="solmap-dot">'+CHK+'</span><div><b>'+x[0]+'</b><p>'+x[1]+'</p></div>'; ul.appendChild(li); });
+      if(!isWide){ m.b.forEach(function(x){ var li=document.createElement('li');
+        li.innerHTML='<span class="solmap-dot">'+CHK+'</span><div><b>'+x[0]+'</b><p>'+x[1]+'</p></div>'; ul.appendChild(li); }); }
       panel.classList.add('open'); if(hint) hint.style.display='none';
       panel.scrollIntoView({behavior:'smooth', block:'nearest'});
     }
@@ -2546,6 +2435,49 @@
       for(var i=0;i<nodes.length;i++) nodes[i].classList.remove('active');
     });
     document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&panel.classList.contains('open')) closeBtn.click(); });
+  })();
+
+  /* Hardware catalogue → dashboard-style info panel */
+  (function(){
+    var HW = {
+      apone: { img:'assets/demo/webp/autoposone_demo_01.webp', eyebrow:'apone.eyebrow', title:'apone.h3', titleHtml:true,
+        specs:[['apone.spec.os.label','apone.spec.os.val'],['apone.spec.screen.label','apone.spec.screen.val'],['apone.spec.cpu.label','apone.spec.cpu.val'],['apone.spec.touch.label','apone.spec.touch.val'],['apone.spec.storage.label','apone.spec.storage.val'],['apone.spec.net.label','apone.spec.net.val']],
+        cta:'hardware.cta', href:'mailto:chris.chen@sofone.ai', mail:true },
+      xelf: { img:'assets/XELFII-10-1.webp', eyebrow:'xelf.eyebrow', title:'xelf.h3', titleHtml:true,
+        specs:[['xelf.spec.screen.label','xelf.spec.screen.val'],['xelf.spec.layout.label','xelf.spec.layout.val'],['xelf.spec.integ.label','xelf.spec.integ.val'],['xelf.spec.body.label','xelf.spec.body.val'],['xelf.spec.form.label','xelf.spec.form.val'],['xelf.spec.cert.label','xelf.spec.cert.val']],
+        cta:'hardware.cta', href:'mailto:chris.chen@sofone.ai', mail:true },
+      ks1000: { img:'assets/KS-1000-1.png', eyebrow:'ks.eyebrow', title:'ks.h3', titleHtml:false,
+        specs:[['ks.spec.os.label','ks.spec.os.val'],['ks.spec.screen.label','ks.spec.screen.val'],['ks.spec.cpu.label','ks.spec.cpu.val'],['ks.spec.touch.label','ks.spec.touch.val'],['ks.spec.pay.label','ks.spec.pay.val'],['ks.spec.size.label','ks.spec.size.val']],
+        cta:'ks.cta', href:'#contact', mail:false }
+    };
+    var panel=document.getElementById('hwc-panel'), hint=document.getElementById('hwc-hint');
+    if(!panel) return;
+    var cards=document.querySelectorAll('.hw-lc[data-machine]');
+    function t(k){ try{ return (TRANSLATIONS['zh-TW']&&TRANSLATIONS['zh-TW'][k])||''; }catch(e){ return ''; } }
+    function esc(s){ return String(s).replace(/"/g,'&quot;'); }
+    function openHW(id, card){
+      var m=HW[id]; if(!m) return;
+      for(var i=0;i<cards.length;i++) cards[i].classList.remove('active');
+      card.classList.add('active');
+      var viss=document.querySelectorAll('#hwc-visual .hwc-vis');
+      for(var v=0;v<viss.length;v++){ viss[v].classList.toggle('show', viss[v].getAttribute('data-vis')===id); }
+      if(id==='xelf'){ var asm=document.getElementById('xelfAssemble'); if(asm){ asm.classList.remove('is-assembled'); void asm.offsetWidth; setTimeout(function(){ asm.classList.add('is-assembled'); }, 450); } }
+      var eb=document.getElementById('hwc-eyebrow'); eb.setAttribute('data-i18n',m.eyebrow); eb.textContent=t(m.eyebrow);
+      var ti=document.getElementById('hwc-title');
+      ti.removeAttribute('data-i18n'); ti.removeAttribute('data-i18n-html');
+      ti.setAttribute(m.titleHtml?'data-i18n-html':'data-i18n', m.title);
+      ti.innerHTML=t(m.title);
+      var sp=''; for(var j=0;j<m.specs.length;j++){ var s=m.specs[j]; sp+='<li><b data-i18n="'+s[0]+'">'+t(s[0])+'</b><span data-i18n="'+s[1]+'">'+t(s[1])+'</span></li>'; }
+      document.getElementById('hwc-specs').innerHTML=sp;
+      document.getElementById('hwc-cta').innerHTML='<a class="btn btn--primary"'+(m.mail?' data-mailcta':'')+' href="'+m.href+'" data-i18n="'+m.cta+'">'+t(m.cta)+'</a>';
+      panel.classList.add('open'); if(hint) hint.style.display='none';
+      try{ applyTranslations(localStorage.getItem('sofone_lang')||'zh-TW'); }catch(e){}
+      panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+    }
+    for(var i=0;i<cards.length;i++){ (function(c){ c.addEventListener('click',function(){ openHW(c.getAttribute('data-machine'), c); }); })(cards[i]); }
+    var cb=document.getElementById('hwc-close');
+    if(cb) cb.addEventListener('click',function(){ panel.classList.remove('open'); if(hint) hint.style.display=''; for(var i=0;i<cards.length;i++) cards[i].classList.remove('active'); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&panel.classList.contains('open')&&cb) cb.click(); });
   })();
   </script>
 
