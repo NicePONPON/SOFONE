@@ -989,6 +989,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.02em;
   margin: 0;
 }
+.cup-logo { height: 22px; width: auto; display: inline-block; vertical-align: middle; }
 
 .cup-desc {
   font-size: 0.73rem;
@@ -2922,6 +2923,8 @@ td.col-autopos strong {
   clip-path: polygon(100% 34%, 32% 34%, 32% 12%, 0% 50%, 32% 88%, 32% 66%, 100% 66%);
 }
 @keyframes solmapFlowRev { 0% { background-position: 145% 0, 0 0; } 100% { background-position: -45% 0, 0 0; } }
+@keyframes solmapFlowV { 0% { background-position: 0 -45%, 0 0; } 100% { background-position: 0 145%, 0 0; } }
+@keyframes solmapFlowVRev { 0% { background-position: 0 145%, 0 0; } 100% { background-position: 0 -45%, 0 0; } }
 
 /* detail panel (docked in band) */
 .solmap-panel { position: relative; margin-top: 22px; border-top: 1px dashed var(--ap-border); padding-top: 22px; display: none; }
@@ -3000,8 +3003,29 @@ td.col-autopos strong {
 @media (max-width: 820px) {
   .solmap-global-grid { grid-template-columns: 1fr; }
   .solmap-map { grid-template-columns: 1fr; }
-  .solmap-conn { flex-direction: row; justify-content: center; min-width: 0; gap: 24px; padding: 6px 0; }
-  .solmap-bar { width: 60px; }
+  /* columns stack vertically on mobile → arrows point vertically (down: dispatch, up: upload) */
+  .solmap-conn { flex-direction: row; justify-content: center; align-items: stretch; min-width: 0; gap: 44px; padding: 10px 0; }
+  .solmap-conn .solmap-chev { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .solmap-chev-lbl { white-space: nowrap; }
+  .solmap-bar {
+    width: 18px; height: 54px; margin: 0 auto;
+    clip-path: polygon(34% 0%, 66% 0%, 66% 66%, 88% 66%, 50% 100%, 12% 66%, 34% 66%);   /* down */
+    background:
+      linear-gradient(180deg, rgba(160,146,245,0) 0%, rgba(168,155,247,.92) 50%, rgba(160,146,245,0) 100%),
+      linear-gradient(180deg, rgba(70,50,198,0.04) 0%, rgba(70,50,198,0.5) 52%, var(--ap-ink) 100%);
+    background-size: 100% 45%, 100% 100%;
+    background-position: 0 -45%, 0 0;
+    animation: solmapFlowV 1.8s linear infinite;
+  }
+  .solmap-chev--rev .solmap-bar {
+    clip-path: polygon(34% 100%, 66% 100%, 66% 34%, 88% 34%, 50% 0%, 12% 34%, 34% 34%);  /* up */
+    background:
+      linear-gradient(180deg, rgba(160,146,245,0) 0%, rgba(168,155,247,.92) 50%, rgba(160,146,245,0) 100%),
+      linear-gradient(0deg, rgba(70,50,198,0.04) 0%, rgba(70,50,198,0.5) 52%, var(--ap-ink) 100%);
+    background-size: 100% 45%, 100% 100%;
+    background-position: 0 145%, 0 0;
+    animation: solmapFlowVRev 1.8s linear infinite;
+  }
   .solmap-col--cloud .solmap-grid { grid-template-columns: 1fr 1fr; }
   .solmap-panel-inner { grid-template-columns: 1fr; }
   .solmap-visual { width: 100%; min-height: 0; }

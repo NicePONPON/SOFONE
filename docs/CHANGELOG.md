@@ -4,6 +4,34 @@ Session work on the SOFONE landing page (sofone.vercel.app). All changes are liv
 
 ---
 
+## 2026-07-14 — autopos section redesign (deck theme)
+
+Full redesign of the autopos section + hardware presentation to match the `2026 autopos 門店數位化解決方案簡報` deck.
+
+### Design system
+- Light theme: `#FFFFFC` background across all sections (no gradients); indigo `#4632C6` structural accent, teal `#2BB89A` positive stats, normal text `#5E5E5E`.
+- Two-tone headings (dark body + `.hl` indigo emphasis); **Taipei Sans TC Beta** font (subset woff2 in `assets/fonts/`).
+
+### Content
+- **Credibility proof strip** under the hero (stats + named clients).
+- **現有架構 → AUTOPOS 統一中控** comparison: country tags filled solid + white text for visibility.
+- **GLOBAL 全球化支援** umbrella section (below the dashboard) combining multilingual UI (雙語無痛切換), in-country compliance (彈性稅率/海外電子發票/小票稅率明細 + 越南·馬來西亞·新加坡 已上線 in purple), and delivery+payment integrations. i18n in all 4 languages.
+
+### Solution dashboard (solmap)
+- `assets/demo_slide/` module screenshots in the expand panel.
+- Panel layouts: 50/50 photo-left + one-line points; 外送整合 = wide full-width photo (no points); 多元支付 + IMSDOM 4 = no photo, points in one row; frames hug each image's true aspect ratio.
+- Column titles use the autopos logo. Connector arrows = single `clip-path` shape with travelling-pulse flow animation; **vertical (down/up) on mobile** where columns stack.
+
+### Hardware catalogue
+- The 3 machines (autopos ONE / XELF II / KS-1000) folded into a click-to-expand catalogue with dashboard-style panels; panels keep the original interactive viewers (autopos ONE 360° spin, XELF II frameless assemble, KS-1000 drag-scrub) + key specs + CTA. XELF II card uses `XELFII-2.webp`.
+
+### Logos & mobile
+- `autopos-logo.png` (black wordmark) for section header, dashboard titles, CentrDX growth 未來 cup; CentrDX product logo → `centrdx-logo.png` (hexagon), all langs.
+- Mobile bottom nav: dark-grey `#2d2d2d` bar, pure-white labels (active = light indigo); removed ⚡ from 閃電下單 nav label.
+- CentrDX headline uses spaced hyphen (`極簡出餐 - 三件事`).
+
+---
+
 ## 2026-06-24 — Hardware spec unification, mobile polish & fixes
 
 ### Unified spec format across all hardware blocks
