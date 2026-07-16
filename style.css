@@ -103,7 +103,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     z-index: 1000;
     background: #2d2d2d;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 10px 4px calc(16px + env(safe-area-inset-bottom));
+    padding: 9px 4px calc(11px + env(safe-area-inset-bottom));
     justify-content: space-around;
   }
   .mobile-nav-item {
@@ -122,7 +122,7 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
     color: #a99bf7;
   }
   /* Push page content above the nav bar */
-  body { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
+  body { padding-bottom: calc(56px + env(safe-area-inset-bottom)); }
 }
 
 body {
