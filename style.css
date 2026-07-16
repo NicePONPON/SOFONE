@@ -1851,7 +1851,8 @@ td.col-autopos strong {
 
 @media (max-width: 760px) {
   .proc-flow { flex-direction: column; gap: 4px; }
-  .proc-step { width: 100%; flex-direction: row; justify-content: flex-start; gap: 16px; padding: 15px 18px; text-align: left; }
+  .proc-step { width: 100%; flex: none; align-self: stretch; flex-direction: row; justify-content: flex-start; gap: 16px; padding: 15px 18px; text-align: left; }
+  .proc-step-ic { width: 46px; height: 46px; }
   .proc-chev { transform: rotate(90deg); padding: 3px 0; }
   .proc-band--service { grid-template-columns: 1fr; gap: 18px; }
   .proc-band { padding: 24px 22px; }
