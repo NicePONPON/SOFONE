@@ -1,13 +1,6 @@
 /* ── Fonts: Taipei Sans TC Beta (deck typeface, subset to used glyphs) ── */
 @font-face {
   font-family: 'Taipei Sans TC Beta';
-  src: url('assets/fonts/TaipeiSansTCBeta-Light.woff2') format('woff2');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Taipei Sans TC Beta';
   src: url('assets/fonts/TaipeiSansTCBeta-Regular.woff2') format('woff2');
   font-weight: 400 500;
   font-style: normal;

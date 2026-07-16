@@ -4,6 +4,31 @@ Session work on the SOFONE landing page (sofone.vercel.app). All changes are liv
 
 ---
 
+## 2026-07-16 — SERVICE + IMSDOM lifecycle, logos, performance
+
+### New content (deck p29/p30)
+- **SERVICE 服務保障 section** (before IMSDOM): 5-step onboarding flow (需求訪談 → 方案規劃 → 系統設定/硬體配置 → 教育訓練 → 上線輔導) + indigo guarantee band (安裝僅需1小時 / 業培一體SOP / 上線後不斷線).
+- **IMSDOM franchise lifecycle flow** added above the existing feature grid: 招商加盟 → 開店流程 → 營運SOP → 培訓考核 → 巡店稽核 + IMSDOM band with 4 pills.
+- Shared `.proc-flow` component (teal steps + chevrons, indigo band); responsive (stacks with down-chevrons on mobile); i18n × 4.
+
+### Logos & graphics
+- CentrDX growth cups now show both logos (現在 = CentrDX hexagon + 閃電下單; 未來 = autopos logo); CentrDX product logo → `centrdx-logo.png` (all langs); favicon → `autopos Logo Icon.png` (+ apple-touch-icon).
+- Architecture comparison (現有架構 → 統一中控): country tags filled solid + white text.
+- Dashboard connector arrows rebuilt as single `clip-path` shapes with flow-pulse animation; **vertical (down/up) on mobile**.
+- 已上線 pills fixed to purple (redeclared `--ap` tokens on `.ap-global`).
+
+### Mobile
+- Bottom nav: dark-grey `#2d2d2d` bar, pure-white labels; removed ⚡ from 閃電下單.
+
+### Performance (lighter, faster load)
+- Loaded PNG screenshots → **resized WebP** (demo_slide + KS-1000 viewer): ~11.6MB → ~628KB (~18×).
+- Removed ~**221MB** of unused original images (`assets/demo/*.png` sources, `KS-1000-4.png`, superseded PNGs); working `assets/` folder ~227MB → 5.8MB.
+- **Deferred the lottie-player CDN script** (was render-blocking in `<head>`).
+- **Lazy-loaded** all below-the-fold images (only 4 hero images stay eager).
+- Dropped the unused **Light (300) font weight** + file.
+
+---
+
 ## 2026-07-14 — autopos section redesign (deck theme)
 
 Full redesign of the autopos section + hardware presentation to match the `2026 autopos 門店數位化解決方案簡報` deck.

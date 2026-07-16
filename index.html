@@ -90,7 +90,7 @@
       history.replaceState(null, '', window.location.pathname + window.location.search);
     }
   </script>
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@2/dist/lottie-player.js"></script>
+  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@2/dist/lottie-player.js"></script>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
@@ -154,7 +154,7 @@
 
         <!-- KIOSK -->
         <div class="map-device" data-device="kiosk">
-          <img src="assets/XELFII-2.webp" alt="CentrDX Kiosk" class="device-img" draggable="false">
+          <img loading="lazy" src="assets/XELFII-2.webp" alt="CentrDX Kiosk" class="device-img" draggable="false">
           <div class="device-tooltip">
             <p class="tooltip-title" data-i18n="device.kiosk.title">autopos 自助點餐機</p>
             <p class="tooltip-desc" data-i18n="device.kiosk.desc">告別排隊！提供整合會員積分、特價活動與多支付渠道的自助服務，讓人力專注於核心服務。</p>
@@ -163,7 +163,7 @@
 
         <!-- POS -->
         <div class="map-device" data-device="pos">
-          <img src="assets/demo/webp/autoposone_demo_01.webp" alt="autopos POS" class="device-img" draggable="false">
+          <img loading="lazy" src="assets/demo/webp/autoposone_demo_01.webp" alt="autopos POS" class="device-img" draggable="false">
           <div class="device-tooltip">
             <p class="tooltip-title" data-i18n="device.pos.title">autopos 全球收銀引擎</p>
             <p class="tooltip-desc" data-i18n="device.pos.desc">專為連鎖打造的高穩定收銀核心，即使網路斷線也能正常結帳，總部數據即時透明，跨國稅務合規無憂。</p>
@@ -241,7 +241,7 @@
   <section class="autopos-section theme-light" id="autopos">
     <div class="section-inner">
       <div class="product-logo-wrap reveal">
-        <img src="assets/autopos-logo.png" alt="autopos" class="product-logo">
+        <img loading="lazy" src="assets/autopos-logo.png" alt="autopos" class="product-logo">
       </div>
       <p class="section-eyebrow reveal" data-i18n="autopos.eyebrow">autopos · 全球雲端收銀生態系</p>
       <h2 class="section-h2 reveal" data-i18n-html="autopos.h2">跨國佈局，<span class="hl">別讓系統成了你的絆腳石</span>。</h2>
@@ -296,7 +296,7 @@
         <div class="solmap-band">
           <div class="solmap-map">
             <div class="solmap-col solmap-col--front">
-              <div class="solmap-col-title"><b>前台管理</b><span class="solmap-brand"><img src="assets/autopos-logo.png" alt="autopos" class="solmap-brand-logo"></span><span class="solmap-sub">門市</span></div>
+              <div class="solmap-col-title"><b>前台管理</b><span class="solmap-brand"><img loading="lazy" src="assets/autopos-logo.png" alt="autopos" class="solmap-brand-logo"></span><span class="solmap-sub">門市</span></div>
               <div class="solmap-grid" id="solmap-front"></div>
             </div>
 
@@ -306,7 +306,7 @@
             </div>
 
             <div class="solmap-col solmap-col--cloud">
-              <div class="solmap-col-title"><b>中台管理</b><span class="solmap-brand"><img src="assets/autopos-logo.png" alt="autopos" class="solmap-brand-logo"> Cloud</span><span class="solmap-sub">資訊總部指揮中心</span></div>
+              <div class="solmap-col-title"><b>中台管理</b><span class="solmap-brand"><img loading="lazy" src="assets/autopos-logo.png" alt="autopos" class="solmap-brand-logo"> Cloud</span><span class="solmap-sub">資訊總部指揮中心</span></div>
               <div class="solmap-grid" id="solmap-mid"></div>
               <div class="solmap-ims">
                 <div class="solmap-col-title"><b>IMSDOM</b><span class="solmap-brand">人員總部指揮中心</span><span class="solmap-tag">增值方案</span></div>
@@ -484,7 +484,7 @@
                 <div class="ap-one hwc-ap">
                   <div class="ap-one-viewer-ring">
                     <div class="ap-one-viewer" role="img" aria-label="autopos ONE 360° 全視角展示">
-                      <img class="ap-one-frame is-active" src="assets/demo/webp/autoposone_demo_01.webp" alt="autopos ONE 視角 1" draggable="false">
+                      <img loading="lazy" class="ap-one-frame is-active" src="assets/demo/webp/autoposone_demo_01.webp" alt="autopos ONE 視角 1" draggable="false">
                       <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_02.webp" loading="lazy" alt="autopos ONE 視角 2" draggable="false">
                       <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_03.webp" loading="lazy" alt="autopos ONE 視角 3" draggable="false">
                       <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/demo/webp/autoposone_demo_04.webp" loading="lazy" alt="autopos ONE 視角 4" draggable="false">
@@ -523,7 +523,7 @@
                 <div class="ap-one hwc-ap">
                   <div class="ap-one-viewer-ring">
                     <div class="ap-one-viewer" role="img" aria-label="KS-1000 多視角展示">
-                      <img class="ap-one-frame is-active" src="assets/KS-1000-1.webp" alt="KS-1000 視角 1" draggable="false">
+                      <img loading="lazy" class="ap-one-frame is-active" src="assets/KS-1000-1.webp" alt="KS-1000 視角 1" draggable="false">
                       <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-2.webp" loading="lazy" alt="KS-1000 視角 2" draggable="false">
                       <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-3.webp" loading="lazy" alt="KS-1000 視角 3" draggable="false">
                       <img class="ap-one-frame" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-src="assets/KS-1000-5.webp" loading="lazy" alt="KS-1000 視角 4" draggable="false">
@@ -557,7 +557,7 @@
   <section class="centrdx-section theme-light" id="centrdx">
     <div class="section-inner">
       <div class="product-logo-wrap reveal">
-        <img src="assets/centrdx-logo.png" alt="CentrDX" class="product-logo" id="cdxLogo">
+        <img loading="lazy" src="assets/centrdx-logo.png" alt="CentrDX" class="product-logo" id="cdxLogo">
       </div>
       <p class="section-eyebrow reveal" data-i18n="centrdx.eyebrow">閃電下單⚡ · 餐飲數位化三合一</p>
       <h2 class="section-h2 reveal" data-i18n="centrdx.h2">外送整合、會員管理、極簡出餐 - 三件事，從此一個後台搞定。</h2>
@@ -669,7 +669,7 @@
         <div class="cdx-upgrade-flow">
           <div class="cdx-upgrade-step">
             <span class="cup-tag" data-i18n="centrdx.growth.now">現在</span>
-            <p class="cup-name"><img src="assets/centrdx-logo.png" alt="" class="cup-logo"><span data-i18n="centrdx.brand">閃電下單⚡</span></p>
+            <p class="cup-name"><img loading="lazy" src="assets/centrdx-logo.png" alt="" class="cup-logo"><span data-i18n="centrdx.brand">閃電下單⚡</span></p>
             <p class="cup-desc" data-i18n="centrdx.growth.step1">單店 · 輕量化 · 快速上線</p>
           </div>
           <div class="cup-arrow" aria-hidden="true">
@@ -681,7 +681,7 @@
           </div>
           <div class="cdx-upgrade-step cdx-upgrade-step--future">
             <span class="cup-tag cup-tag--future" data-i18n="centrdx.growth.future">未來</span>
-            <p class="cup-name"><img src="assets/autopos-logo.png" alt="autopos" class="cup-logo"></p>
+            <p class="cup-name"><img loading="lazy" src="assets/autopos-logo.png" alt="autopos" class="cup-logo"></p>
             <p class="cup-desc" data-i18n="centrdx.growth.step2">連鎖 · 企業級 · 跨國管理</p>
           </div>
         </div>
@@ -726,7 +726,7 @@
   <section class="imsdom-section theme-light" id="imsdom">
     <div class="section-inner">
       <div class="product-logo-wrap reveal">
-        <img src="assets/webp/imsdom-logo.webp" alt="IMSDOM" class="product-logo">
+        <img loading="lazy" src="assets/webp/imsdom-logo.webp" alt="IMSDOM" class="product-logo">
       </div>
       <p class="section-eyebrow reveal" data-i18n="imsdom.eyebrow">IMSDOM · 連鎖營運生命週期管理</p>
       <h2 class="section-h2 reveal" data-i18n-html="imsdom.h2">別讓加盟擴張，成為品牌崩壞的開始。<br><span class="hl">用數據重塑 QSC。</span></h2>
