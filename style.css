@@ -2528,6 +2528,7 @@ td.col-autopos strong {
   text-align: center;
   margin: 84px auto 8px;          /* the "special space" between software & hardware */
   max-width: 520px;
+  scroll-margin-top: 24px;        /* breathing room when the 硬體設備 nav jumps here */
 }
 .sw-hw-track {
   position: relative;
