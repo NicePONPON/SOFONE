@@ -35,8 +35,12 @@ describe autopos ONE (Intel N95, −10~45°C, 363×321×191mm) and must all be r
 | `index.html:2516-2518` | `HW.apone` entry: img, eyebrow, title, spec list |
 | i18n ×4 langs | Rename `apone.*` → `pp97.*`, delete 21 dead keys, rewrite all values |
 
-`id="apone"` on `.hw-catalogue` is retained — it is not user-visible and may be
-targeted by external or printed links.
+`id="apone"` on `.hw-catalogue` is **renamed to `id="hardware-catalogue"`**, along
+with the matching `data-machine` / `data-vis` attribute values (`apone` → `pp97`).
+Verified that nothing in the repo links to `#apone`. This was originally spec'd as
+"retain", changed on the user's instruction to clean out all autopos ONE traces.
+Low residual risk: an external or printed link targeting `#apone` would no longer
+scroll to the section (the page still loads normally).
 
 ## Visual: 5-angle drag-through
 
