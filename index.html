@@ -2109,25 +2109,8 @@
       });
     });
 
-    /* ── autopos ONE 360° Viewer ──────────────────────────── */
-    var AP_ONE_FRAME_CONFIG = [
-      { scale: 1.013, x:   0.7, y:   0.8 },  // 01
-      { scale: 0.997, x:  -2.5, y:  -1.6 },  // 02
-      { scale: 0.990, x:   1.4, y:  -6.5 },  // 03
-      { scale: 1.061, x:  -0.8, y:  -0.4 },  // 04
-      { scale: 1.107, x:  -4.0, y:  -1.1 },  // 05
-      { scale: 1.371, x:  -1.0, y:   4.5 },  // 06
-      { scale: 1.400, x:   0.7, y:  -4.9 },  // 07
-      { scale: 1.346, x:   7.4, y:  -0.8 },  // 08
-      { scale: 1.167, x:   0.4, y:  -6.8 },  // 09
-      { scale: 1.218, x:  -1.3, y:   1.7 },  // 10
-      { scale: 1.000, x:   0.3, y:  -2.7 },  // 11
-      { scale: 0.984, x:  -0.5, y:  -3.4 }   // 12
-    ];
-
     /* Drives every .ap-one-viewer-ring: drag the scrub bar (or swipe) to switch frames.
-       The calibrated per-frame transforms apply only to the 12-frame autopos ONE viewer;
-       other viewers (e.g. KS-1000, 3 frames) simply cross-fade. */
+       All viewers (PP-9735WL 5 frames, KS-1000 7 frames) simply cross-fade. */
     function initApOneViewer(ring) {
       var viewer      = ring.querySelector('.ap-one-viewer');
       var frames      = viewer.querySelectorAll('.ap-one-frame');
@@ -2135,14 +2118,6 @@
       var total       = frames.length;
       var current     = 0;
       var touchStartX = 0;
-
-      if (total === AP_ONE_FRAME_CONFIG.length) {
-        for (var i = 0; i < total; i++) {
-          var c = AP_ONE_FRAME_CONFIG[i];
-          frames[i].style.transformOrigin = 'center center';
-          frames[i].style.transform = 'translate(' + c.x + '%, ' + c.y + '%) scale(' + c.scale + ')';
-        }
-      }
 
       /* Load deferred frames on first interaction */
       var framesLoaded = false;
@@ -2190,7 +2165,7 @@
       var isTouch = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
       if (isTouch) return;
       /* Desktop touch-screens: highlight card under finger — for EVERY feature row
-         (autopos ONE + XELF II), not just the first. */
+         (PP-9735WL + XELF II), not just the first. */
       document.querySelectorAll('.ap-one-feat-scroll').forEach(function (scroll) {
         var cards = scroll.querySelectorAll('.ap-one-feat-card');
         function setCardActive(el) {
@@ -2506,8 +2481,8 @@
   /* Hardware catalogue → dashboard-style info panel */
   (function(){
     var HW = {
-      apone: { img:'assets/demo/webp/autoposone_demo_01.webp', eyebrow:'apone.eyebrow', title:'apone.h3', titleHtml:true,
-        specs:[['apone.spec.os.label','apone.spec.os.val'],['apone.spec.screen.label','apone.spec.screen.val'],['apone.spec.cpu.label','apone.spec.cpu.val'],['apone.spec.touch.label','apone.spec.touch.val'],['apone.spec.storage.label','apone.spec.storage.val'],['apone.spec.net.label','apone.spec.net.val']],
+      pp97: { img:'assets/pp9735/pp9735-1.webp', eyebrow:'pp97.eyebrow', title:'pp97.h3', titleHtml:true,
+        specs:[['pp97.spec.os.label','pp97.spec.os.val'],['pp97.spec.screen.label','pp97.spec.screen.val'],['pp97.spec.cpu.label','pp97.spec.cpu.val'],['pp97.spec.ram.label','pp97.spec.ram.val'],['pp97.spec.storage.label','pp97.spec.storage.val'],['pp97.spec.net.label','pp97.spec.net.val'],['pp97.spec.disp2.label','pp97.spec.disp2.val']],
         cta:'hardware.cta', href:'mailto:chris.chen@sofone.ai', mail:true },
       xelf: { img:'assets/XELFII-10-1.webp', eyebrow:'xelf.eyebrow', title:'xelf.h3', titleHtml:true,
         specs:[['xelf.spec.screen.label','xelf.spec.screen.val'],['xelf.spec.layout.label','xelf.spec.layout.val'],['xelf.spec.integ.label','xelf.spec.integ.val'],['xelf.spec.body.label','xelf.spec.body.val'],['xelf.spec.form.label','xelf.spec.form.val'],['xelf.spec.cert.label','xelf.spec.cert.val']],
