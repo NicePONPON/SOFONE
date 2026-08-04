@@ -3,3 +3,6 @@
 assets/.DS_Store
 assets/demo/.DS_Store
 .vercel
+
+# Source product photos (folder name contains "+", must never be served)
+assets/PP-9735WL+XM-3010W/
