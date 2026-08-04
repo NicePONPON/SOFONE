@@ -2232,7 +2232,7 @@ td.col-autopos strong {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
-/* ── autopos ONE Hardware Showcase ─────────────────────────── */
+/* ── Hardware Showcase ────────────────────────────────────── */
 
 /* Deck-style compact hardware lineup */
 .hw-lineup {
@@ -2442,7 +2442,7 @@ td.col-autopos strong {
   object-fit: contain;
   background: var(--c-bg);
   padding: 4px;
-  aspect-ratio: 1 / 1;            /* taller box → product shows larger (like autopos ONE) */
+  aspect-ratio: 1 / 1;            /* taller box → product shows larger */
 }
 /* hover-zoom on XELF II cards grows downward so it never covers the assemble above */
 .hw-section .ap-one-feat-card { transform-origin: top center; }
@@ -2594,7 +2594,7 @@ td.col-autopos strong {
 /* ── Hardware Showcase Section ──────────────────────────── */
 .hw-section { background: var(--c-bg); }
 
-/* Description block under the feature cards (autopos ONE & XELF II) */
+/* Description block under the feature cards (XELF II) */
 .ap-one-desc { max-width: 820px; margin: 40px auto 0; text-align: center; }
 .ap-one-desc .hw-specs { text-align: left; margin-bottom: 24px; }
 .ap-one-desc .btn { display: inline-flex; }
@@ -2732,8 +2732,8 @@ td.col-autopos strong {
    .ap-sol-table from the existing hardware blocks; only the
    KS-1000-specific sub-modules are defined here. */
 
-/* The KS-1000 viewer has no decorative ring (unlike autopos ONE), so let the
-   photo fill almost the whole frame. Scoped to .hw-section so the autopos ONE
+/* The KS-1000 viewer has no decorative ring (unlike PP-9735WL), so let the
+   photo fill almost the whole frame. Scoped to .hw-section so the PP-9735WL
    viewer (in #autopos) keeps its original inset. Images are pre-trimmed to
    content, so contain renders each product as large as possible. */
 .hw-section .ap-one-viewer { inset: 8px; }
