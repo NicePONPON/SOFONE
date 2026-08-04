@@ -11,7 +11,8 @@ with the **XM-3010W** 10.1" second (customer-facing) display.
 
 The hardware catalogue redesign (`5fa3f15`) already removed the autopos ONE feature
 cards and the standalone spec grid, so the live surface is much smaller than the
-i18n key count suggests: of 38 `apone.*` keys, only 15 are still rendered.
+i18n key count suggests: of 36 `apone.*` keys plus 2 `hardware.apone.*` keys,
+only 15 are still rendered.
 
 ## Source of truth for specs
 
@@ -32,7 +33,7 @@ describe autopos ONE (Intel N95, −10~45°C, 363×321×191mm) and must all be r
 | `index.html:483-505` | Viewer: 12 frames → 5; slider `max="12"` → `max="4"` |
 | `index.html:2120-2135` | Delete `AP_ONE_FRAME_CONFIG` (12-frame calibration, no longer applicable; the length guard at :2146 already no-ops it) |
 | `index.html:2516-2518` | `HW.apone` entry: img, eyebrow, title, spec list |
-| i18n ×4 langs | Rename `apone.*` → `pp97.*`, delete 23 dead keys, rewrite all values |
+| i18n ×4 langs | Rename `apone.*` → `pp97.*`, delete 21 dead keys, rewrite all values |
 
 `id="apone"` on `.hw-catalogue` is retained — it is not user-visible and may be
 targeted by external or printed links.
@@ -83,11 +84,16 @@ therefore omitted rather than guessed. Add it if the figure is confirmed.
 Branding is straight vendor hardware, matching how XELF II and KS-1000 are
 presented. All "autopos ONE" wording is dropped; no autopos cloud tie-in copy.
 
-## Keys deleted (×4 languages)
+## Keys deleted (21 per language, ×4 languages)
 
-`apone.features.label`, `apone.feat.{a1,f1,f2,f3,f4}.{title,desc}`,
-`apone.spec.{touch,io,temp,size}.{label,val}`, `hardware.apone.name`,
-`hardware.apone.tagline` — all dead since `5fa3f15`.
+- `apone.features.label` (1)
+- `apone.feat.{a1,f1,f2,f3,f4}.{title,desc}` (10)
+- `apone.spec.{touch,io,temp,size}.{label,val}` (8)
+- `hardware.apone.name`, `hardware.apone.tagline` (2)
+
+All dead since `5fa3f15`. Note `apone.spec.ram` and `apone.spec.disp2` were also
+dead but are **revived** as `pp97.spec.ram` / `pp97.spec.disp2` — see the spec
+table above.
 
 ## Assets
 
