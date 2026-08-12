@@ -4,6 +4,35 @@ Session work on the SOFONE landing page (sofone.vercel.app). All changes are liv
 
 ---
 
+## 2026-08-12 — POS terminal swapped to FEC PP-9815WL
+
+Specification-only swap of the first machine in the hardware catalogue, from **FEC PP-9735WL** to **FEC PP-9815WL** (= FEC's catalogue `PP-9815W`, the 15.6" FHD variant). Photos, viewer, layout and CSS all unchanged.
+
+- Model string updated in 18 places: hero alt, lineup card, all 6 viewer frame alts, viewer aria-labels, the eyebrow in 4 language packs, 2 code comments.
+- Specs (all 4 languages): 處理器 → `Intel N150`; 記憶體 → `DDR5 8GB/16GB`; 連網 → `Gigabit LAN・Wi-Fi 6E・藍牙 5.2`; 螢幕 dropped 「全平面」; 作業系統 shortened to `Windows 11 IoT`.
+- **無風扇 kept** (PP-9815W is in FEC's XPPC Fanless family); **「全平面」/True-Flat dropped** (FEC doesn't use that wording for the 9815); **no capacity ceilings** and **base CPU only** — all three per client decision, deliberately diverging from FEC's page.
+- Webfonts re-subset with `--no-hinting` for the new glyphs (藍牙静電容量).
+- Naming debt accepted: photos stay at `assets/pp9735/*` and the i18n namespace stays `pp97.*`, since the photography was reused.
+
+Spec: [`2026-08-12-pp9815wl-spec-swap-design.md`](./superpowers/specs/2026-08-12-pp9815wl-spec-swap-design.md). Commits `51e5c01`, `936119b`.
+
+---
+
+## 2026-08-04 — autopos ONE cancelled, replaced by FEC PP-9735WL
+
+_Logged retroactively on 2026-08-12 — this entry was missed at the time._
+
+- autopos ONE removed from the catalogue; replaced by **FEC PP-9735WL** + optional **XM-3010W** 10.1" second display.
+- i18n namespace `apone.*` → `pp97.*`; `HW` key / `data-machine` / `data-vis` → `pp97`; `.hw-catalogue` id `apone` → `hardware-catalogue` (old `#apone` deep links no longer scroll). 21 dead keys per language deleted.
+- New 6-frame viewer (`assets/pp9735/`), dual-screen shot first, slider `max="5"`.
+- `AP_ONE_FRAME_CONFIG` deleted along with its length-guard consumer — the array was read inside `initApOneViewer()`, which drives **all three** hardware viewers, so removing one without the other throws at load.
+- 19 orphaned files removed (`autoposone_demo_*`, `dev-360.html`, `dev-power.html`).
+- Webfonts re-subset; the shipped subsets were found to have been **already stale for weeks**, silently falling back to a system font for 專拠沈符續背融西談越馬 and others.
+
+Spec: [`2026-08-04-pp9735wl-hardware-swap-design.md`](./superpowers/specs/2026-08-04-pp9735wl-hardware-swap-design.md).
+
+---
+
 ## 2026-07-16 — SERVICE + IMSDOM lifecycle, logos, performance
 
 ### New content (deck p29/p30)
